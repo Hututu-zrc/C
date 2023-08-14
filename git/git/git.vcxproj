@@ -24,6 +24,7 @@
     <ProjectGuid>{280bfe30-f748-499f-9618-f7bf325b4f00}</ProjectGuid>
     <RootNamespace>git</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>gitee</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
