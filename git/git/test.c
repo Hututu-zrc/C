@@ -130,26 +130,185 @@
 
 
 #include<stdio.h>
+//int main()
+//{
+//	char password[20] = { 0 };
+//	printf("请输入密码：");
+//	scanf("%s", password);
+//	int ch = 0;
+//	while ((ch = getchar())!='\n')
+//	{
+//		;
+//	}
+//	printf("请确认密码（Y/N）：");
+//	int ret = getchar();
+//	if ('Y' == ret) 
+//	{
+//		printf("yes\n");
+//
+//	}
+//	else
+//	{
+//		printf("no\n");
+//	}
+//	return 0;
+//}
+
+//
+////打印ASCII值
+//int main()
+//{
+//	int a = 0;
+//	int arr[] = { 73,32,99,97,110,32,105,116,33 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	while (a < sz)
+//	{
+//		printf("%c", arr[a]);
+//		a++;
+//	}
+//
+//	return 0;
+//
+//}
+
+////打印年月日
+//int main()
+//{
+//	int year = 0;
+//	int month = 0;
+//	int day = 0;
+//	scanf("%4d%2d%2d", &year, &month, &day);
+//	printf("year=%d\n", year);
+//	printf("month=%02d\n", month);
+//	printf("day=%02d", day);
+//	return 0;
+//
+//}
+
+//#include <stdio.h>
+//void test()
+//{
+//    //static修饰局部变量
+//    static int i = 0;
+//    i++;
+//    printf("%d ", i);
+//}
+
+#include<stdio.h>
+//int main()
+//{//先将输入的数字存到数组里面去
+//	int arr[4] = { 0 };
+//	int i = 0;
+//	while (i < 4)
+//	{
+//		scanf("%d", &arr[i]);
+//		i++;
+//	}
+//	int max = arr[0];
+//	i = 1;
+//	while (i < 4)
+//	{
+//		if (arr[i] > max)
+//		{
+//			max = arr[i];
+//		}
+//		i++;
+//	}
+//	printf("%d\n", max);
+//	return 0;
+//
+//}
+
+//int main()
+//{
+//	int i = 0;
+//	for (i = 1; i <= 10; i++)
+//	{
+//		if (i == 5)
+//			continue;
+//		printf("%d ", i);
+//	}
+//	return 0;
+//
+//}
+
+//int main()
+//{
+//	int i = 1;
+//	while (i <= 10)
+//	{
+//		if (i == 5)
+//			continue;
+//		printf("%d", i);
+//		i++;
+//
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int i = 0;
+//	int j = 0;
+//	for(;i<3;i++)
+//		for (; j < 3; j++)
+//		{
+//			printf("zhuruncai \n");
+//		}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a = 0;
+//	do
+//	{
+//		printf("zhuruncai\n");
+//		a++;
+//	}
+//	while (a < 10);
+//	return 0;
+//
+//}
+
+//int main()
+//{	//输入数据，储存变量
+//	int n = 1;
+//	int res = 1;
+//	int sum = 0;
+//	for (n = 1; n <= 10; n++)
+//	{
+//		res = res * n;
+//		sum += res;
+//	}
+//	printf("结果:%d", sum);
+//	return 0;
+//}
+
 int main()
 {
-	char password[20] = { 0 };
-	printf("请输入密码：");
-	scanf("%s\n", password);
-	int ch = 0;
-	while ((ch = getchar())!='\n')
+	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+	int k = 7;
+	int left = 0;
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	int right = sz - 1;
+	while (left <= right)
 	{
-		;
+		int mid = (left + right) / 2;
+		if (arr[mid] < k)
+			left = mid + 1;
+		else if (arr[mid] > k)
+			right = mid - 1;
+		else 
+		{
+			printf("下标为：%d\n", mid);
+			break;
+		}
+			
 	}
-	printf("请确认密码（Y\N）：");
-	int ret = getchar();
-	if ('Y' == ret) 
+	if (left > right)
 	{
-		printf("yes\n");
-
-	}
-	else
-	{
-		printf("no\n");
+		printf("找不到下标");
 	}
 	return 0;
 }
