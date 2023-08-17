@@ -284,31 +284,91 @@
 //	printf("结果:%d", sum);
 //	return 0;
 //}
+//
+//int main()
+//{
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int k = 7;
+//	int left = 0;
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int right = sz - 1;
+//	while (left <= right)
+//	{
+//		int mid = (left + right) / 2;//也可以写成int mid = left+(right-left)/2;
+//		if (arr[mid] < k)
+//			left = mid + 1;
+//		else if (arr[mid] > k)
+//			right = mid - 1;
+//		else 
+//		{
+//			printf("下标为：%d\n", mid);
+//			break;
+//		}
+//			
+//	}
+//	if (left > right)
+//	{
+//		printf("找不到下标");
+//	}
+//	return 0;
+//}
 
-int main()
-{
-	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
-	int k = 7;
-	int left = 0;
-	int sz = sizeof(arr) / sizeof(arr[0]);
-	int right = sz - 1;
-	while (left <= right)
-	{
-		int mid = (left + right) / 2;
-		if (arr[mid] < k)
-			left = mid + 1;
-		else if (arr[mid] > k)
-			right = mid - 1;
-		else 
-		{
-			printf("下标为：%d\n", mid);
-			break;
-		}
-			
-	}
-	if (left > right)
-	{
-		printf("找不到下标");
-	}
-	return 0;
-}
+//int main()
+//{
+//	char arr[5] = "abcd";
+//	printf("%s\n", arr);
+//	return 0;
+//}
+
+//
+//#include<stdio.h>
+//#include<Windows.h>
+//#include<stdlib.h>
+//int main()
+//{
+//	char arr[] = "Pp play \"Game for Peace\"like a newcomer";
+//	char arr1[] = "***************************************";
+//	int left = 0;
+//	int right = strlen(arr1) - 1;
+//	while (left <= right)
+//	{
+//		arr1[left] = arr[left];
+//		arr1[right] = arr[right];
+//		printf("%s\n", arr1);
+//		Sleep(1000);
+//		system("cls");
+//		left++;
+//		right--;
+//	}
+//	return 0;
+//}
+
+//#include<string.h>
+//#include<stdio.h>
+//int main()
+//{
+//	int i = 0;
+//	int a = 3;
+//	char password[20] = {0};
+//	for (i = 0; i < 3; i++)
+//	{
+//		printf("请输入密码：");
+//		scanf("%s", password);
+//		if (strcmp(password,"5201314")==0)
+//		{
+//			printf("登陆成功\n");
+//			break;
+//		}
+//		else
+//		{
+//			printf("密码错误，您还有%d次机会！！！\n", a);
+//			a--;
+//		}
+//	}
+//	if (i == 3)
+//		printf("三次机会已使用完，退出程序\n");
+//	return 0;
+//}
+
+
+
