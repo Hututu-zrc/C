@@ -381,23 +381,119 @@
 //
 //}
 
-#include<string.h>
-#include<stdlib.h>
-int main() 
-{
-	char input[20] = { 0 };
-	system("shutdown -s -t 60");
-again:
-	printf("请注意，你的电脑将在一分钟后关机.如果输入:我没实力，朱某将为您取消关机取消关机！\n");
-	scanf("%s", input);
-	if (strcmp(input, "我没实力") == 0)
-	{
-		system("shutdown -a");
+//#include<string.h>
+//#include<stdlib.h>
+//int main()  
+//{
+//	char input[20] = { 0 };
+//	system("shutdown -s -t 60");
+//again:
+//	printf("请注意，你的电脑将在一分钟后关机.如果输入:我没实力，朱某将为您取消关机取消关机！\n");
+//	scanf("%s", input);
+//	if (strcmp(input, "我没实力") == 0)
+//	{
+//		system("shutdown -a");
+//
+//	}
+//	else
+//	{
+//		goto again;
+//	}                        
+//}
 
-	}
-	else
+////写一个函数判断一个数是不是素数
+////打印100~200之间的素数
+//int main()
+//{
+//	int i = 100;
+//	int count = 0;
+//	for (i = 100; i <= 200; i++)
+//	{
+//		//生成一个2~i-1的数，与要判断的数相除，如果除的尽，则是素数
+//		int flag = 1;//首先默认它是素数，然后利用除法，判断
+//		int j = 0;
+//		for (j = 2; j <= i - 1; j++)
+//		{
+//			if (i % j == 0)
+//			{
+//				flag = 0;//发现除的尽，将flag变为0，并跳出循环
+//				break;
+//			}
+//		}
+//		if (flag == 1)
+//		{
+//			count++;
+//			printf("%d ", i);
+//		}
+//	}
+//	printf("\ncount=%d\n ", count);
+//	return 0;
+// }
+
+
+//进阶版2.0
+//#include<math.h>
+////写一个函数判断一个数是不是素数
+////打印100~200之间的素数
+//int main()
+//{
+//	int i = 100;
+//	int count = 0;
+//	for (i = 101; i <= 200; i+=2)
+//	{
+//		//生成一个2~i-1的数，与要判断的数相除，如果除的尽，则是素数
+//		int flag = 1;//首先默认它是素数，然后利用除法，判断
+//		int j = 0;
+//		for (j = 2; j <=sqrt(i); j++)
+//		{
+//			if (i % j == 0)
+//			{
+//				flag = 0;//发现除的尽，将flag变为0，并跳出循环
+//				break;
+//			}
+//		}
+//		if (flag == 1)
+//		{
+//			count++;
+//			printf("%d ", i);
+//		}
+//	}
+//	printf("\ncount=%d\n ", count);
+//	return 0;
+// }
+
+//进阶版3.0
+#include<math.h>
+//写一个函数判断一个数是不是素数
+//打印100~200之间的素数
+int is_prime(int n)
+{
+	//生成一个2~i-1的数，与要判断的数相除，如果除的尽，则是素数
+	int j = 0;
+	for (j = 2; j <= sqrt(n); j++)
 	{
-		goto again;
+		if (n % j == 0)
+		{
+			return 0;
+		}
 	}
+	return 1;
+}
+
+
+
+int main()
+{
+	int i = 100;
+	int count = 0;
+	for (i = 101; i <= 200; i += 2)
+	{
+		if (is_prime(i))//该函数判断是否为素数，如果是，则返回1条件为真，打印；假则返回0，条件为假，跳出
+		{
+			count++;
+			printf("%d ", i);
+		}
+	}
+	printf("\ncount=%d\n ", count);
 	return 0;
 }
