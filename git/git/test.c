@@ -101,7 +101,7 @@
 //int main()
 //{
 //	char ch = "\0";
-//	while ((ch = getchar()) != EOF)
+//	while ((ch = getchar()) != eof)
 //	{
 //		if (ch < '0' || ch > '9')//判断阿斯玛值，确定是否为数字，不是数字则跳过
 //			continue;
@@ -466,34 +466,92 @@
 #include<math.h>
 //写一个函数判断一个数是不是素数
 //打印100~200之间的素数
-int is_prime(int n)
-{
-	//生成一个2~i-1的数，与要判断的数相除，如果除的尽，则是素数
-	int j = 0;
-	for (j = 2; j <= sqrt(n); j++)
-	{
-		if (n % j == 0)
-		{
-			return 0;
-		}
-	}
-	return 1;
-}
-
-
+//int is_prime(int n)
+//{
+//	//生成一个2~i-1的数，与要判断的数相除，如果除的尽，则是素数
+//	int j = 0;
+//	for (j = 2; j <= sqrt(n); j++)
+//	{
+//		if (n % j == 0)
+//		{
+//			return 0;//return直接返回函数，功能比break更强大
+//		}
+//	}
+//	return 1;//return 0；一直没有返回时，才返回return 1；
+//}
+//
+//int main()
+//{
+//	int i = 100;
+//	int count = 0;
+//	for (i = 101; i <= 200; i += 2)
+//	{
+//		if (is_prime(i))//该函数判断是否为素数，如果是，则返回1条件为真，打印；假则返回0，条件为假，跳出.
+//		{
+//			count++;
+//			printf("%d ", i);
+//		}
+//	}
+//	printf("\ncount=%d\n ", count);
+//	return 0;
+//}
+//二分查找：
+//1.首先计算出有序整形数组的长度
+//2.给左右两边的元素标上号，以及计算出中间元素的索引号
+//3.利用arr[mid]索引出来和我们要找的k进行比对，判断这个mid大了，还是小了
+// {(1).如果arr[mid]<k，则将原来的mid+1，变为新的left
+//  (2).如果arr[mid]>k,则将原来的mid-1变成新的right
+//  (3).如果arr[mid]==k,则找到了，返回下标
+//  (4).循环上面的(1),(2)直至找到k的下标
+//// }
+// 
+// 
+// 
+// 
+//binary_search(int arr[], int k, int sz)
+//{
+//	int left = 0;
+//	int right = sz - 1;
+//	
+//	while (left <= right)
+//	{
+//		int mid = left + (right - left) / 2;
+//		if (arr[mid] < k)
+//		{
+//			left = arr[mid] + 1;
+//		}
+//		else if (arr[mid] > k)
+//		{
+//			right = arr[mid] - 1;
+//		}
+//		else
+//		{
+//			return mid;
+//		}
+//	}
+//
+//}
+//
+//int mian()
+//{
+//	int arr[] = {1,2,3,4,5,6,7,8,9,10};
+//	int  k = 7;
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	//找到了，返回下标；找不到，返回-1
+//	int ret = binary_search(arr, k, sz);
+//	if (ret == -1)
+//	{
+//		printf("找不到\n");
+//	}
+//	else
+//	{
+//		printf("找到了，下标是：%d\n", ret);
+//	}
+//	return 0;
+//}
 
 int main()
 {
-	int i = 100;
-	int count = 0;
-	for (i = 101; i <= 200; i += 2)
-	{
-		if (is_prime(i))//该函数判断是否为素数，如果是，则返回1条件为真，打印；假则返回0，条件为假，跳出
-		{
-			count++;
-			printf("%d ", i);
-		}
-	}
-	printf("\ncount=%d\n ", count);
+	printf("%d ",4321);
 	return 0;
 }
