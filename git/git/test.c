@@ -550,8 +550,80 @@
 //	return 0;
 //}
 
-int main()
-{
-	printf("%d ",4321);
-	return 0;
-}
+//int main()
+//{
+//	printf("%d ",4321);
+//	return 0;
+//}
+
+
+//
+//int main()
+//{
+//	printf("%c\n", 128);
+//	return 0;
+//}
+
+#include<stdio.h>
+////递归的方法
+//int jiec(int n)
+//{
+//	if (n <= 1)
+//	{
+//		return 1;
+//	}
+//	else
+//	{
+//		return n * jiec(n - 1);
+//	}
+//
+//}
+
+////迭代的方法
+//int fac(int n)
+//{
+//	int i = 0;
+//	int ret = 1;
+//	for (i = 1; i <= n; i++)
+//	{
+//		ret = ret * i;
+//	}
+//	return ret;
+//}
+//
+////求n的阶乘
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d",&n);
+//	int x = fac(n);
+//	printf("输出为 %d\n",x);
+//	return 0;
+//}
+
+////斐波那契数列
+//int Fib(int n)
+//{
+//	int a = 1;
+//	int b = 1;
+//	int c = 0;
+//	while (n >= 3)
+//	{
+//		c = a + b;
+//		a = b;
+//		b = c;
+//		n--;
+//	}
+//	return c;
+//}
+//
+//int main()
+//{
+//	int i = 0;
+//	scanf("%d", &i);
+//	int ret = Fib(i);
+//	printf("结果：%d\n",ret);
+//	return 0;
+//
+//}
+
