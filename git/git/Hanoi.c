@@ -14,7 +14,7 @@ void Hanoi(int n, char a, char b, char c)
 	}
 	else
 	{
-		Hanoi(n - 1, a, c, b);//采用递归思想
+		Hanoi(n - 1, a, c, b);//采用递归思想，关注起点，中转，终点，不用细想
 		//先取出A上面的n-1个圆盘放置在c上；
 		move(a, c);
 		//再将最大的圆盘放置在C上面
