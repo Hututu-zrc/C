@@ -286,21 +286,90 @@
 //	return 0;
 //}
 
-//交换两个数的值
-void swap(int* px, int* py)
+////交换两个数的值
+//void swap(int* px, int* py)
+//{
+//	int tem = *px;
+//	*px = *py;
+//	*py = tem;
+//}
+//int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	printf("请输入两个数字（中间用空格隔开):");
+//	scanf("%d %d", &a, &b);
+//	swap(&a, &b);
+//	printf("a=%d b=%d",a,b);
+//	return 0;
+//}
+//
+
+//打印乘法口诀表，行列自己决定
+//int main()
+//{
+//	int i = 0;
+//	int n = 0;
+//	printf("请输入数字，打印相应的乘法口诀表：");
+//	scanf("%d", &n);
+//	for (i = 1; i < n+1; i++)
+//	{
+//		int j = 0;
+//		for (j = 1; j <= i; j++)
+//		{
+//			printf("%d*%d=%2d ", i, j, i * j);//%2d是右对齐，不够的话用空格补齐，"%-2d"是左对齐
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+//打印一个整数的每一位（采用递归的形式）
+#include<math.h>
+//法一：
+//int main()
+//{
+//	int i = 0;
+//	char arr[20] = { 0 };
+//	printf("请输入打印的数字：");
+//	scanf("%s", arr);
+//	int sz=strlen(arr);
+//	for (i = 0; i <= sz; i++)
+//	{
+//		printf("%c ", arr[i]);
+//	}
+//	return 0;
+//
+//}
+
+//法二：
+//int main()
+//{
+//	int a = 0;
+//	printf("请输入数字：");
+//	scanf("%d",&a);
+//	while (a)
+//	{
+//		printf("%d ", a % 10);
+//		a = a / 10;
+//	}
+//	return 0;
+//}
+
+//法三：
+void print(int x)
 {
-	int tem = *px;
-	*px = *py;
-	*py = tem;
+	if (x > 9)
+	{
+		print(x/10);
+	}
+	printf("%d ", x%10);
 }
 int main()
 {
 	int a = 0;
-	int b = 0;
-	printf("请输入两个数字（中间用空格隔开):");
-	scanf("%d %d", &a, &b);
-	swap(&a, &b);
-	printf("a=%d b=%d",a,b);
+	printf("请输入数字：");
+	scanf("%d", &a);
+	print(a);
 	return 0;
 }
-
