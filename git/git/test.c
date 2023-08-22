@@ -626,4 +626,77 @@
 //	return 0;
 //
 //}
+//int main()
+//{
+//	int i = 0;
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("&arr[%d]=%p\n",i,&arr[i]);
+//	}
+//	return 0;
+//}
+//
 
+//int main()
+//{
+//	int i = 0;
+//	int arr[3][4] = { 1,2,3,4,4,5,6,7,8,9,5,6};
+//	for (i = 0; i < 3; i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j < 4; j++)
+//		{
+//			scanf("%d",&arr[i][j]);
+//		}
+//	}
+//	for (i = 0; i < 3; i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j < 4; j++)
+//		{
+//			printf("%d ", arr[i][j]);
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+////Ã°ÅÝÅÅÐò
+//void bubble_sort(int arr[], int sz)
+//{
+//	int i = 0;
+//	for (i = 0; i < sz-1; i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j < sz - 1 - i; j++)
+//		{
+//			int tep = arr[j];
+//			arr[j] = arr[j+1];
+//			arr[j + 1] = tep;
+//		}
+//	}
+//}
+//int main()
+//{
+//	int arr[10] = {9,8,7,6,5,4,3,2,1,0};
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	bubble_sort(arr,sz);
+//	int i = 0;
+//	for (i = 0; i <10; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	return 0;
+//}
+
+int main()
+{
+	int arr[3][4] = { 0 };
+	int row = sizeof(arr) / sizeof(arr[0]);
+	int column = sizeof(arr[0]) / sizeof(arr[0][0]);
+	printf("%d %d", column, row);
+	return 0;
+
+}

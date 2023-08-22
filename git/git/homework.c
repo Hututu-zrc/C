@@ -357,19 +357,29 @@
 //}
 
 //法三：
-void print(int x)
-{
-	if (x > 9)
-	{
-		print(x/10);
-	}
-	printf("%d ", x%10);
-}
-int main()
-{
-	int a = 0;
-	printf("请输入数字：");
-	scanf("%d", &a);
-	print(a);
-	return 0;
-}
+//void print(int x)
+//{
+//	if (x > 9)
+//	{
+//		print(x/10);
+//	}
+//	printf("%d ", x%10);
+//}
+//int main()
+//{
+//	int a = 0;
+//	printf("请输入数字：");
+//	scanf("%d", &a);
+//	print(a);
+//	return 0;
+//}
+
+
+//
+//
+//int main()
+//{
+//	int a = 43;
+//	printf("%d", printf("%d", printf("%d", a)));
+//	return 0;
+//}
