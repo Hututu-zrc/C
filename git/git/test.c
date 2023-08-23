@@ -690,13 +690,13 @@
 //	}
 //	return 0;
 //}
-
-int main()
-{
-	int arr[3][4] = { 0 };
-	int row = sizeof(arr) / sizeof(arr[0]);
-	int column = sizeof(arr[0]) / sizeof(arr[0][0]);
-	printf("%d %d", column, row);
-	return 0;
-
-}
+//
+//int main()
+//{
+//	int arr[3][4] = { 0 };
+//	int row = sizeof(arr) / sizeof(arr[0]);
+//	int column = sizeof(arr[0]) / sizeof(arr[0][0]);
+//	printf("%d %d", column, row);
+//	return 0;
+//
+//}

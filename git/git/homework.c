@@ -374,12 +374,56 @@
 //	return 0;
 //}
 
-
-//
-//
+//打印阶乘
+//非递归版本
 //int main()
 //{
-//	int a = 43;
-//	printf("%d", printf("%d", printf("%d", a)));
+//	int i = 0;
+//	int n = 0;
+//	printf("请输入想求阶乘的数字：");
+//	scanf("%d", &n);
+//	int ret = 1;
+//	for (i = 1; i <= n; i++)
+//	{
+//		ret *= i;
+//	}
+//	
+//	return 0;
+//
+//}
+//递归版本
+//int fac(int n)
+//{
+//	int ret = 1;
+//	if (n >= 1)
+//	{
+//		ret = n * fac(n - 1);
+//	}
+//	return ret;
+//}
+//int main()
+//{
+//	int n = 0;
+//	printf("请输入想求阶乘的数字：");
+//	scanf("%d", &n);
+//	fac(n);
+//	printf("阶乘为:%d", fac(n));
 //	return 0;
 //}
+
+//strlen的模拟实现
+//非递归的方法
+int main()
+{
+
+	int i = 0;
+	char arr[] = {0};
+	printf("qingshuchushuzi:");
+	scanf("%s",arr);
+	for (i = 0; i > 0; i++)
+	{
+		printf("输出为：%s ", arr[i]);
+	}
+	
+	return 0;
+}
