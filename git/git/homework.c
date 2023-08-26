@@ -411,19 +411,174 @@
 //	return 0;
 //}
 
-//strlen的模拟实现
-//非递归的方法
-int main()
-{
+////strlen的模拟实现
+////非递归的方法
+//int Strlen(char arr[])
+//{
+//	int count = 0;
+//	while (*arr != '\0')
+//	{
+//		count ++;
+//		arr++;
+//	}
+//	return count;
+//}
+//int main()
+//{
+//
+//	int i = 0;
+//	char arr[20] = {0};
+//	printf("请输入字符串:");
+//	scanf("%s", arr);
+//	int ret = Strlen(arr);
+//	printf("长度为：%d\n", ret);
+//	return 0;
+//}
 
-	int i = 0;
-	char arr[] = {0};
-	printf("qingshuchushuzi:");
-	scanf("%s",arr);
-	for (i = 0; i > 0; i++)
-	{
-		printf("输出为：%s ", arr[i]);
-	}
-	
-	return 0;
-}
+//strlen模拟，递归法
+//int Strlen(char arr[])
+//{
+//	if (*arr != '\0')
+//	{
+//		return 1 + Strlen(arr+1);
+//	}
+//	else
+//	{
+//		return 0;
+//	}
+//}
+//int main()
+//{
+//	int i = 0;
+//	char arr[20] = {0};
+//	printf("请输入字符串:");
+//	scanf("%s", arr);
+//	int ret = Strlen(arr);
+//	printf("长度为：%d\n", ret);
+//	return 0;
+//}
+
+
+////逆序打印
+//int main()
+//{
+//	char arr[] = { "adafsdfsdfsfs"};
+//	int length = sizeof(arr) / sizeof(arr[0]);
+//	int i = 0;
+//	for (i = length; i>0 ; i--)
+//	{
+//		printf("%c", arr[i]);
+//	}
+//	return 0;
+//}
+
+//逆序存放
+//非递归版本
+//void reverse(char arr[],int sz)
+//{
+//	int left = 0;
+//	int right = sz - 2;
+//	while (left < right)
+//	{
+//		char tep = arr[left];
+//		arr[left] = arr[right];
+//		arr[right] = tep;
+//		left++;
+//		right--;
+//	}
+//}
+//int main()
+//{
+//	char arr[] = { "abcdefg" };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	//sizeof计算字符串长度时候，会算进去\0
+//	//所以，我们要先减去一个1，再减去一个1，得到最后一个字符的下标
+//	reverse(arr,sz);
+//	printf("%s\n",arr);
+//	return 0;
+//}
+
+////递归版本1.0  多看，多思考
+//#include<string.h>
+//void reverse(char arr[])//最外层的两个元素不停的调换，直至递归完毕
+//{
+//	char tmp = '\0';//首先创建一个空的字符变量
+//	tmp = *arr;//将第一个元素放到空的字符变量里面
+//	int len = strlen(arr);//因为字符串计算长度包含'\0',所以下面要用算出来的长度减一
+//	*arr = *(arr+len-1);//将最后一个元素放到第一个里面去
+//	*(arr + len - 1) = '\0';//因为要进行递归，所以最后一个位置放上空字符串，方便下面进行递归
+//	if (strlen(arr+1) >= 2)//设定限制条件。条件是里面递归的字符数量要大于2个
+//		reverse(arr +1);//最外层的元素调整后，进行里面元素的递归
+//	*(arr + len - 1) = tmp;//将我们储存在临时变量的元素放回最后一个元素的位置
+//}
+//// 递归版本2.0
+// void reverse(char arr[],int left ,int right)
+//{
+//
+//	if (left < right)
+//	{
+//		char tep = arr[left];
+//		arr[left] = arr[right];
+//		arr[right] = tep;
+//		reverse(arr, left+1, right-1);
+//	}
+//}
+//int main()
+//{
+//	char arr[] = { "abcdef" };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int left = 0;
+//	int right = sz - 2;
+//	reverse(arr,left,right);
+//	printf("%s\n",arr);
+//	return 0;
+//}
+
+////写一个DigitSum函数把输入的数字，一个一个加起来，，再输出最后的结果
+//int DigitSum(unsigned int n)
+//{
+//	if (n > 9)
+//	{
+//		return n % 10 + DigitSum(n / 10);
+//	}
+//	else
+//	{
+//		return n;
+//	}
+//}
+//int main()
+//{
+//	unsigned int n = 0;
+//	printf("请输入数字：");
+//	scanf("%u", &n);
+//	int sum = DigitSum(n);
+//	printf("%d",sum);
+//	return 0;
+//}
+
+//利用递归实现n的k次方
+//double Pow(int n,int k)
+//{
+//	if (k > 0)
+//	{
+//		return n * Pow(n, k - 1);
+//	}
+//	else if (k < 0)
+//	{
+//		return 1.0 / Pow(n, -k);
+//	}
+//	else
+//		return 1;
+//	
+//	
+//}
+//int main()
+//{
+//	int n = 0;
+//	int k = 0;
+//	printf("请输入数字以及要求的次方，中间使用空格分开：");
+//	scanf("%d %d", &n,&k);
+//	double ret = Pow(n,k);
+//	printf("%.3f", ret);
+//	return 0;
+//}

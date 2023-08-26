@@ -663,15 +663,18 @@
 //	return 0;
 //}
 
-////冒泡排序
+////冒泡排序核心思想：相邻两个元素之间的比较
+////一趟冒号排序让一个数据来到它最终应该出现的位置上
+////n个元素则需要n-1趟
+////倒序打印
 //void bubble_sort(int arr[], int sz)
 //{
 //	int i = 0;
 //	for (i = 0; i < sz-1; i++)
 //	{
 //		int j = 0;
-//		for (j = 0; j < sz - 1 - i; j++)
-//		{
+//		for (j = 0; j < sz - 1 - i; j++)//每一趟排序后，完成一个元素，所以是sz-1-i
+//		{	//交换相邻的两个元素
 //			int tep = arr[j];
 //			arr[j] = arr[j+1];
 //			arr[j + 1] = tep;
@@ -679,7 +682,7 @@
 //	}
 //}
 //int main()
-//{
+//{	//我们的目标是把数据升序
 //	int arr[10] = {9,8,7,6,5,4,3,2,1,0};
 //	int sz = sizeof(arr) / sizeof(arr[0]);
 //	bubble_sort(arr,sz);
