@@ -17,9 +17,9 @@ void game()
 	//show全放为'*',我们一般操作判断玩家是否踩雷，在mine上判断。
 	//有雷炸死，无雷直接计算周围雷数，再将show上面的字符改一下
 	IntBoard(show, ROWS, COLS, '*');
-	//DisplayBoard(mine, ROW, COL);
-	SetMine(mine,ROW,COL);//用来生成雷
 	DisplayBoard(show, ROW, COL);
+	SetMine(mine,ROW,COL);//用来生成雷
+	
 	DisplayBoard(mine, ROW, COL);
 	//排查雷
 	FindMine(mine,show,ROW,COL);
@@ -51,6 +51,7 @@ int main()
 			break;
 		}
 	} while (input);
+	return  0;
 }
 
 	////方法二
@@ -62,3 +63,11 @@ int main()
 	//	board[x][y + 1] +
 	//	board[x - 1][y + 1] - 8 * '0');
 
+//后续实践效果
+//1.标记功能:检测出来雷的位置，换上新的标记
+//2.展开功能：
+// 首先排查出来一片无雷空白
+//{1.该坐标没有雷
+// 2.该坐标周边8个位置没有雷（此时，会重复排查，所以有了第三步）
+// 3.该坐标没有被排查过
+//}

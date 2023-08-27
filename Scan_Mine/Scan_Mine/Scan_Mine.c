@@ -101,6 +101,7 @@ void FindMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
 				}
 				if (mine[x][y] == '1')//如果玩家输入坐标有雷
 				{
+					mine[x][y] = "IDI_ICON3";
 					printf("很遗憾，你被炸死！！！\n");
 					DisplayBoard(mine, ROW, COL);
 					break;
