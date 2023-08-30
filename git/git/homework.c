@@ -582,3 +582,90 @@
 //	printf("%.3f", ret);
 //	return 0;
 //}
+
+////小青蛙跳台阶,一次上一阶或者二阶，共有多少中上法
+////解析：当只有一个台阶的时候只有一种上法； 当有两个台阶的时候 有两种上法 
+////假设我们有10个台阶，我们先上一阶，我们剩下上法为fib(9)
+////我们先上2个台阶时，我们剩下上法为fib(8)
+////我们只能上1个或者2个，所以n>=2时，我们fib(n)=fib(n-1)+fib(n-2)
+//int fib(int n)
+//{
+//	if (n <= 2)
+//	{
+//		return n;
+//	}
+//	if (n >= 2)
+//	{
+//		return fib(n - 1) + fib(n - 2);
+//	}
+//}
+//int main()
+//{
+//	int n = 0;
+//	printf("请输入台阶数(1~30)：");
+//	scanf("%d", &n);
+//	int ret = fib(n);
+//	printf("%d", ret);
+//	return 0;
+//}
+
+////有一个整数序列，删除其中的指定整数，不改变其他整数的位置
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);//接收整数序列里面的整数个数
+//	int arr[50] = { 0 };
+//	int i = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		scanf("%d", &arr[i]);//接收整数序列，并把整数序列放入数组里面
+//	}
+//	int del = 0;
+//	scanf("%d", &del);//接受我们需要删除的元素
+//	int j = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		if (arr[i] != del)
+//			//利用循环遍历，如果不相等，我们把元素放入arr[j];
+//			//如果相等，我们让i++，多走一步，错过我们del，把我们剩下的元素放入arr[j]，达到删除指定元素的效果
+//		{
+//			arr[j++] = arr[i];
+//		}
+//	}
+//	//最后，输出元素
+//	for (i = 0; i < j; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	return 0;
+//}
+
+int main()
+{
+	int n = 0;
+	printf("请输入成绩的总个数(1~10000):");
+	scanf("%d", &n);
+	int arr[10000] = { 0 };
+	int i = 0;
+	for (i = 0; i < n; i++)
+	{
+		scanf("%3d", &arr[i]);
+	}
+	int max = 0;
+	int min = 0;
+	for (i = 0; i < n; i++)
+	{
+		if (arr[max] < arr[i])
+		{
+			max = i;
+		}
+		if (arr[min] > arr[i])
+		{
+			min = i;
+		}
+		
+	}
+	int ret = arr[max] - arr[min];
+	printf("差值为：%d", ret);
+	return 0;
+}

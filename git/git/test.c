@@ -736,42 +736,42 @@
 //    return 0;
 //}
 
-
-#include<string.h>
-//它就将不同类型的数据存放在一起，作为一个整体进行处理。
-//结构体在函数中的作用不是简便，其最主要的作用就是封装。封装的好处就是可以再次利用。让使用者不必关心这个是什么，只要根据定义使用就可以了。
-struct Stu
-{
-	//struct 语句定义了一个包含多个成员的新的数据类型
-	char name[20];
-	int age;
-	double score;
-
-};
-void set_stu(struct Stu* ps)//这里接收使用我们的结构体，，然后使用指针接收，更改其中的数据
-{
-	//方法一：
-/*	strcpy(((*ps).name, "zhangsan");
-	(*ps).age = 20;
-	(*ps).score = 100.0；*/
-	//方法二：
-	//结构体指针->成员
-	strcpy(ps->name, "zhangsan");
-	//ss.name="zhangsan"是错误的。ss.name找到的是指针的地址，把字符串赋给地址，显然错误，我们要赋给地址对应的空间里面
-	//我们使用strcpy函数，把字符串复制到字符对应的空间里面去
-	ps->age = 20;
-	ps->score = 100.0;
-
-}
-void print_stu(struct Stu ss)//这里我们打印其中的数据
-{
-	//结构体对象.成员
-	printf("%s %d % 1f\n", ss.name, ss.age, ss.score);//这里的输出项使用ss.成员来查找使用
-}
-int main()
-{
-	struct Stu s = { 0 };
-	set_stu(&s);//这里传参是拷贝一份，如果不传地址，那么修改的只是拷贝版，原版不会有变动
-	print_stu(s);
-	return 0;
-}
+//
+//#include<string.h>
+////它就将不同类型的数据存放在一起，作为一个整体进行处理。
+////结构体在函数中的作用不是简便，其最主要的作用就是封装。封装的好处就是可以再次利用。让使用者不必关心这个是什么，只要根据定义使用就可以了。
+//struct Stu
+//{
+//	//struct 语句定义了一个包含多个成员的新的数据类型
+//	char name[20];
+//	int age;
+//	double score;
+//
+//};
+//void set_stu(struct Stu* ps)//这里接收使用我们的结构体，，然后使用指针接收，更改其中的数据
+//{
+//	//方法一：
+///*	strcpy(((*ps).name, "zhangsan");
+//	(*ps).age = 20;
+//	(*ps).score = 100.0；*/
+//	//方法二：
+//	//结构体指针->成员
+//	strcpy(ps->name, "zhangsan");
+//	//ss.name="zhangsan"是错误的。ss.name找到的是指针的地址，把字符串赋给地址，显然错误，我们要赋给地址对应的空间里面
+//	//我们使用strcpy函数，把字符串复制到字符对应的空间里面去
+//	ps->age = 20;
+//	ps->score = 100.0;
+//
+//}
+//void print_stu(struct Stu ss)//这里我们打印其中的数据
+//{
+//	//结构体对象.成员
+//	printf("%s %d % 1f\n", ss.name, ss.age, ss.score);//这里的输出项使用ss.成员来查找使用
+//}
+//int main()
+//{
+//	struct Stu s = { 0 };
+//	set_stu(&s);//这里传参是拷贝一份，如果不传地址，那么修改的只是拷贝版，原版不会有变动
+//	print_stu(s);
+//	return 0;
+//}
