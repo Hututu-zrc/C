@@ -640,32 +640,128 @@
 //	return 0;
 //}
 
+//int main()
+//{
+//	int n = 0;
+//	printf("请输入成绩的总个数(1~10000):");
+//	scanf("%d", &n);
+//	int arr[10000] = { 0 };
+//	int i = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		scanf("%3d", &arr[i]);
+//	}
+//	int max = 0;
+//	int min = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		if (arr[max] < arr[i])
+//		{
+//			max = i;
+//		}
+//		if (arr[min] > arr[i])
+//		{
+//			min = i;
+//		}
+//		
+//	}
+//	int ret = arr[max] - arr[min];
+//	printf("差值为：%d", ret);
+//	return 0;
+//}
+
+//大小写转换  要求：多组输入
+////蠢蛋版
+//int main()
+//{
+//	char ch = 0;
+//	char n = 0;
+//	char i = 0;
+//	scanf("%c\n", &ch);
+//	scanf("%c\n", &n);
+//	scanf("%c", &i);
+//	if (ch >= 'a' && ch <= 'z' )
+//	{
+//		printf("%c\n", ch - 32);
+//
+//	}
+//	else if(ch >= 'A' && ch <= 'Z')
+//	{
+//		printf("%c\n", ch + 32);
+//	}
+//	if (n >= 'a' && n <= 'z')
+//	{
+//		printf("%c\n", n - 32);
+//	}
+//	else if (n >= 'A' && n <= 'Z')
+//	{
+//		printf("%c\n", n + 32);
+//	}
+//	if (i >= 'a' && i <= 'z')
+//	{
+//		printf("%c\n", i - 32);
+//	}
+//	else if (i >= 'A' && i <= 'Z')
+//	{
+//		printf("%c\n", i + 32);
+//	}
+//	return 0;
+//}
+
+////智能版
+//int main()
+//{
+//	char ch = 0;
+//	while (scanf("%c", &ch)==1)
+//	{
+//		//要引用库函数<stdlib.h> and <ctype.h>
+//		if (ch >= 'a' && ch <= 'z')//判断大小写可以引用库函数islower/isupper
+//		{
+//			printf("%c\n", ch - 32);//转换大小写可以使用库函数tolower/toupper
+//		}
+//		else if (ch >= 'A' && ch <= 'Z')
+//		{
+//			printf("%c\n", ch + 32);
+//		}
+//	}
+//	return 0;
+//}
+
+////判断是不是字母
+//int main()
+//{
+//	char ch = 0;
+//	while (scanf("%c", &ch) == 1)
+//	{
+//		//头文件<ctype.h>
+//		if (ch >= 65 && ch <= 90 || ch >= 97 && ch <= 122)//判断是不是字母islpha
+//		{
+//			printf("%c is  the alphabet.\n", ch);
+//		}
+//		else if (ch >= 48 && ch <= 57)
+//		{
+//			printf("%c is the number.\n", ch);
+//		}
+//		getchar();//getchar()是为了处理我们输入的换行/n
+//	}
+//	return 0;
+//}
+
+//最高分问题
 int main()
 {
-	int n = 0;
-	printf("请输入成绩的总个数(1~10000):");
-	scanf("%d", &n);
-	int arr[10000] = { 0 };
+	int arr[3] = { 0 };
 	int i = 0;
-	for (i = 0; i < n; i++)
+	int max = 0;
+	for (i = 0; i < 3; i++)
 	{
 		scanf("%3d", &arr[i]);
-	}
-	int max = 0;
-	int min = 0;
-	for (i = 0; i < n; i++)
-	{
-		if (arr[max] < arr[i])
+		if (max < arr[i])
 		{
-			max = i;
+			max = arr[i];
 		}
-		if (arr[min] > arr[i])
-		{
-			min = i;
-		}
-		
 	}
-	int ret = arr[max] - arr[min];
-	printf("差值为：%d", ret);
+	int max = arr[0];
+	printf("最高分为：%3d\n", max);
 	return 0;
 }
