@@ -747,21 +747,21 @@
 //	return 0;
 //}
 
-//最高分问题
-int main()
-{
-	int arr[3] = { 0 };
-	int i = 0;
-	int max = 0;
-	for (i = 0; i < 3; i++)
-	{
-		scanf("%3d", &arr[i]);
-		if (max < arr[i])
-		{
-			max = arr[i];
-		}
-	}
-	int max = arr[0];
-	printf("最高分为：%3d\n", max);
-	return 0;
-}
+////最高分问题
+//int main()
+//{
+//	int arr[3] = { 0 };
+//	int i = 0;
+//	int max = 0;
+//	for (i = 0; i < 3; i++)
+//	{
+//		scanf("%3d", &arr[i]);
+//		if (max < arr[i])
+//		{
+//			max = arr[i];
+//		}
+//	}
+//	int max = arr[0];
+//	printf("最高分为：%3d\n", max);
+//	return 0;
+//}

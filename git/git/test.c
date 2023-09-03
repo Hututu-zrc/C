@@ -775,3 +775,12 @@
 //	print_stu(s);
 //	return 0;
 //}
+
+int main()
+{
+	int n = 10;
+	int* px = &n;
+	printf("%p\n", &px);
+	printf("%p\n", px);
+	return 0;
+}
