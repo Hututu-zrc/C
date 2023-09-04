@@ -765,3 +765,27 @@
 //	printf("最高分为：%3d\n", max);
 //	return 0;
 //}
+
+//水仙花数五位数里面的所有水仙花数
+#include<math.h>
+int main()
+{
+	int i = 0;
+	for (i = 10000; i < 99999; i++)
+	{
+		int j = 0;
+		int sum = 0;
+		for (j = 1; j <= 4; j++)
+		{
+			int n = (int)pow(10, j);
+			sum += (i % n) * (i / n);
+		}
+		if (i == sum)
+		{
+			printf("%d ", i);
+		}
+
+	}
+
+	return 0;
+}

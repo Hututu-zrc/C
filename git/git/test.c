@@ -776,11 +776,28 @@
 //	return 0;
 //}
 
-int main()
-{
-	int n = 10;
-	int* px = &n;
-	printf("%p\n", &px);
-	printf("%p\n", px);
-	return 0;
-}
+//int main()
+//{
+//	int n = 10;
+//	int* px = &n;
+//	printf("%p\n", &px);
+//	printf("%p\n", px);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	int i = 0;
+//	int* pn = arr;
+//	for (i = 0; i < 10; i++)
+//	{
+//		//法一：
+//		*pn++ = 1;
+//		//等于*pn=1;pn++;
+//		printf("%d ", arr[i]);
+//		////法二:
+//		//*(pn + i) = 1;
+//	}
+//	return 0;
+//}
