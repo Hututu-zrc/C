@@ -821,21 +821,88 @@
 //	return 0;
 //}
 
-int main()
-{
-	int arr1[4] = { 1,2,3,4 };
-	int arr2[4] = { 2,3,4,5 };
-	int arr3[4] = { 6,3,4,5 };
-	int* p[3] = { arr1,arr2,arr3 };
-	int i = 0;
-	for (i = 0; i <3;i++)
-	{
-		int j = 0;
-		for (j = 0; j <4; j++)
-		{
-			printf("%d ", p[i][j]);
-		}
-		printf("\n");
-	}
-	return 0;
-}
+////指针数组
+//int main()
+//{
+//	int arr1[4] = { 1,2,3,4 };
+//	int arr2[4] = { 2,3,4,5 };
+//	int arr3[4] = { 6,3,4,5 };
+//	int* p[3] = { arr1,arr2,arr3 };
+//	int i = 0;
+//	for (i = 0; i <3;i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j <4; j++)
+//		{
+//			printf("%d ", p[i][j]);
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+//
+////结构体
+//struct stu
+//{
+//	char name[10];
+//	int age;
+//};
+//struct stu run = { "朱润财",18};
+////结构体的嵌套
+//struct Stu
+//{
+//	int peo;
+//	struct stu x;
+//	
+//};
+//struct Stu p = { 30,{"朱润财",18} };
+//////结构体的传参
+////void print(struct stu * run2)
+////{
+////	printf("%s %d\n", (*run2).name, (*run2).age);//结构体对象和.一起用
+////	printf("%s %d\n",run2->name,run2->age);//结构体指针变量和->一起用
+////};
+//
+//int main()
+//{
+//	//print(&run);//结构体传参时传输地址
+//	printf("%s %d\n",run.name, run.age);
+//	printf("%d %s %d", p.peo, p.x.name,p.x.age);
+//	return 0;
+//}
+
+////结构体的传参
+//struct stu//创建结构体的类型
+//{
+//	int age;
+//	char name[10];
+//};
+//struct stu p = { 18,"朱润财" };//结构体的初始化
+//void print(struct stu* pp)
+//{
+//	printf("%d %s\n",(*pp).age,(*pp).name);//结构体的对象使用'.'
+//	printf("%d %s\n",pp->age,pp->name);//结构体的指针使用'->'
+//}
+//int main()
+//{
+//	print(&p);//传递结构体变量的地址
+//	return 0;
+//}
+
+////结构体的嵌套
+//struct stu//创建结构体的类型
+//{
+//	int age;
+//	char name[10];
+//};
+//struct Peo
+//{
+//	int peo;
+//	struct stu x;
+//};
+//struct Peo p = { 60,{18,"朱润财"} };
+//int main()
+//{
+//	printf("%d %d %s", p.peo, p.x.age, p.x.name);
+//	return 0;
+//}
