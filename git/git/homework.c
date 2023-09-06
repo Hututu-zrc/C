@@ -789,3 +789,144 @@
 //
 //	return 0;
 //}
+
+////写一个函数返回二进制里面的个数
+//////方法一：
+//int is_count(int n)
+//{
+//	int count = 0;
+//	while (n)
+//	{
+//		if ((n % 2) == 1)//如果n%2==1，证明n的二进制位最后一位是1
+//		{
+//			count++;
+//		}
+//		n /= 2;//这个计算的是n二进制最后一位，除去后面前面的所有位
+//	}
+//	return count;
+//}
+//////方法二：
+//int is_count(int n)
+//{
+//	int count = 0;
+//	for(int i=0;i<32;i++)//遍历32位对比，判断语句，判断位1则count+1
+//	{
+//		if ((n >> i) & 1 == 1)
+//		{
+//			count++;
+//		}
+//	}
+//	return count;
+//}
+////方法三：
+//int is_count(int n)
+//{
+//	int count=0;
+//	//我们假设n=5,令5&4，二进制位0101&0100=0100；
+//	//再令4&3，二进制0100&0011=0000；
+//	//我们令n&(n-1），循环了两次，而5里面刚好有两个1，所以我们可以利用此方法计算整形二进制里面的1的个数
+//	while (n)
+//	{
+//		n = n & (n - 1);
+//		count++;
+//	}
+//	return count;
+//}
+//int main()
+//{
+//	int num = 0;
+//	scanf("%d", &num);
+//	int ret = is_count(num);
+//	printf("%d", ret);
+//	return 0;
+//}
+
+//判断一个数是不是2的次方
+//我们可以利用二进制判断
+//2^11 0010
+//2^2 0100
+//2^3 1000
+//if((n&(n-1))==0)
+//
+////输入两个整数，判断二进制中有多少个位不相同
+//int is_count(int m, int n)
+//{
+//	int count = 0;
+//	int a = m ^ n;//利用^操作符,相同为0，不相同为1；然后我们再计算1的数量
+//	while (a)
+//	{
+//		a = a & (a - 1);
+//		count++;
+//	}
+//	return count;
+//}
+//int main()
+//{
+//	int m = 0;
+//	int n = 0;
+//	scanf("%d,%d", &m, &n);
+//	int ret = is_count(m, n);
+//	printf("%d\n", ret);
+//	return 0;
+//}
+
+//？？？？////分别打印二进制的奇数位，和偶数位
+//int main()
+//{
+//	int a = 0;
+//	scanf("%d", &a);
+//	int i = 0;
+//	int j = 0;
+//	for (i = 0; i <= 32; i + 2)
+//	{
+//		printf("%d ", (a >> i) & 1);
+//	}
+//	printf("\n");
+//	for (j = 1; j< 32; j+2)
+//	{
+//		printf("%d", (a >> j) & 1);
+//	}
+//	return 0;
+//}
+//int i;//不初始化会默认为0
+//int main()
+//{
+//	i--;
+//	if (i > sizeof(i))//这里i=-1，sizeof(i)=4
+//	//这里两边的类型不一样，会发生算术提升。-1会变为一个很大的整数。所以，if可以执行
+//	{
+//		printf(">\n");
+//	}
+//	else
+//	{
+//		printf("<\n");
+//	}
+//	return 0;
+//}
+
+//打印x
+int main()
+{
+	int a = 0;
+	scanf("%d", &a);
+	int i = 0;
+	int j = 0;
+	for (i = 0; i < a; i++)
+	{
+		for (j = 0; j < a; j++)
+		{
+			if (j == i)
+			{
+				printf("*");
+			}
+			else if (i + j ==  a - 1)
+			{
+				printf("*");
+			}
+			else
+				printf(" ");
+		}
+		printf("\n");
+	}
+	return 0;
+}
