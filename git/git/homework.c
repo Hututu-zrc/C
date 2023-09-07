@@ -870,21 +870,23 @@
 //	return 0;
 //}
 
-//？？？？////分别打印二进制的奇数位，和偶数位
+////分别打印二进制的奇数位，和偶数位
 //int main()
 //{
 //	int a = 0;
 //	scanf("%d", &a);
 //	int i = 0;
 //	int j = 0;
-//	for (i = 0; i <= 32; i + 2)
+//	//奇数位
+//	for (i = 0; i <32; i += 2)
 //	{
 //		printf("%d ", (a >> i) & 1);
 //	}
 //	printf("\n");
-//	for (j = 1; j< 32; j+2)
+//	//偶数位
+//	for (j = 1; j<=32; j+=2)
 //	{
-//		printf("%d", (a >> j) & 1);
+//		printf("%d ", (a >> j) & 1);
 //	}
 //	return 0;
 //}
@@ -904,29 +906,61 @@
 //	return 0;
 //}
 
-//打印x
-int main()
-{
-	int a = 0;
-	scanf("%d", &a);
-	int i = 0;
-	int j = 0;
-	for (i = 0; i < a; i++)
-	{
-		for (j = 0; j < a; j++)
-		{
-			if (j == i)
-			{
-				printf("*");
-			}
-			else if (i + j ==  a - 1)
-			{
-				printf("*");
-			}
-			else
-				printf(" ");
-		}
-		printf("\n");
-	}
-	return 0;
-}
+////打印x
+//int main()
+//{
+//	int a = 0;
+//	scanf("%d", &a);
+//	int i = 0;
+//	int j = 0;
+//	for (i = 0; i < a; i++)
+//	{
+//		for (j = 0; j < a; j++)
+//		{
+//			if (j == i)
+//			{
+//				printf("*");
+//			}
+//			else if (i + j ==  a - 1)
+//			{
+//				printf("*");
+//			}
+//			else
+//				printf(" ");
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+////获得输入的某一年，某一月的天数
+//int is_year(int n)
+//{
+//	if ((0 == n % 4 && n % 100 != 0) || (0 == n % 400))
+//	{
+//		return 1;
+//	}
+//	else
+//	{
+//		return 0;
+//	}
+//
+//}
+//int main()
+//{
+//	int x = 0;
+//	int y = 0;
+//	scanf("%d %d", &x, &y);
+//	int arr[13] = { 0,31,28,31,30,31,30,31,30,31,30,31,30 };
+//	int ret =is_year(x);
+//	if (ret == 1)
+//	{
+//		arr[2] = 29;
+//		printf("%d\n", arr[y]);
+//	}
+//	else
+//	{
+//		printf("%d\n", arr[y]);
+//	}
+//	return 0;
+//}
