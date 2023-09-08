@@ -906,4 +906,23 @@
 //	printf("%d %d %s", p.peo, p.x.age, p.x.name);
 //	return 0;
 //}
-
+//int main()
+//{
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	for (int i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	return 0;
+//}
+//#include<string.h>
+//int main()
+//{
+//	char arr[1000] = { 0 };
+//	scanf("%s", arr);
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	printf("%d\n", strlen(arr));
+//	printf("%d", sz);
+//	return 0;
+//}

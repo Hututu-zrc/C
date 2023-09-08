@@ -964,3 +964,140 @@
 //	}
 //	return 0;
 //}
+
+////输入三个数，判断能不能组成三角形：等边三角形，等腰三角形，普通三角形
+//int main()
+//{
+//	int arr[3] = { 0 };
+//	printf("请输入三个数字：");
+//	scanf("%d %d %d", &arr[0], &arr[1], & arr[2]);
+//	if (arr[0] + arr[1] > arr[2] && arr[0] + arr[2] > arr[1] && arr[2] + arr[1] > arr[0] )
+//	{
+//		printf("可以组成三角形！！！\n");
+//	}
+//	if ( arr[0] == arr[1] && arr[1] == arr[2])
+//	{
+//		printf("组成的是等边三角形！！！");
+//	}
+//	else if (arr[0] == arr[1] || arr[0] == arr[2] || arr[2] == arr[1])
+//	{
+//		printf("组成的是等腰三角形！！！");
+//	}
+//	else
+//	{
+//		printf("组成的是普通三角形！！！");
+//	}
+//	return 0;
+//}
+
+////写一个函数打印arr数组的内容，不适用数组下标，使用指针
+//int main()
+//{
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int* p = arr;
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	for (int n = 0; n < sz; n++)
+//	{
+//		printf("%d ", *(p + n));
+//	}
+//	return 0;
+//}
+
+//写一个函数，读取字符串并且逆序，可以逆序字符串的内容
+////方法一：冒泡排序
+//#include<stdio.h>
+//int main()
+//{
+//	char arr[1000] = { 0 };
+//	gets(arr);
+//	int sz = strlen(arr);
+// 	int n = 0;
+//	for (n = 0; n < sz - 1; n++)
+//	{
+//		int i = 0;
+//		for (i = 0; i < sz -1 - n; i++)
+//		{
+//			char tmp = arr[i];
+//			arr[i] = arr[i+1];
+//			arr[i+1] = tmp;
+//		}
+//	}
+//	printf("%s", arr);
+//	return 0;
+//}
+////方法二：左右对调
+//#include<stdio.h>
+//int main()
+//{
+//	char arr[1001] = { 0 };
+//	gets(arr);
+//	int sz = strlen(arr);
+//	int left = 0;
+//	int right = sz - 1;
+//	while (left < right)
+//	{
+//		char tep = arr[left];
+//		arr[left] = arr[right];
+//		arr[right] = tep;
+//		left++;
+//		right--;
+//	}
+//	printf("%s", arr);
+//	return 0;
+//}
+
+////求前5项之和，输入n项，和数字a，计算a的前n项之和
+////例如：Sn=a+aa+aaa+aaaa+aaaaa
+// 例如：2；22=2*10+2；222=22*10+2；
+// 由举例可知，下一项等于上一项*10+2
+//int main()
+//{
+//	int a = 0;
+//	int n = 0;
+//	printf("请输入两个数字：");
+//	scanf("%d %d", &a, &n);
+//	int sum = 0;
+//	int b = 0;
+//	for (int i = 0; i < n; i++)
+//	{
+//		b = a + 10 * b;
+//		sum += b;
+//	}
+//	printf("%d", sum);
+//	return 0;
+//}
+
+
+//打印0~10000之间所有的水仙花数  自幂数，幂是位数，如：153=1*3+5*3+3*3
+int is_count(int m)
+{
+	int n = 1;
+	while (n / 10)
+	{
+		n++;
+		n /= 10;
+	}
+	return n;
+
+}
+int main()
+{
+	int i = 0;
+	int sum = 0;
+	for (i = 0; i <= 100000; i++)
+	{
+		int ret = is_count(i);
+		while (i) 
+		{
+			i = i % 10;
+			sum += (int)pow(i, ret);
+		}
+		if (i == sum)
+		{
+			printf("%d ", i);
+		}
+
+	}
+	
+	return 0;
+}
