@@ -767,6 +767,7 @@
 //}
 
 ////水仙花数五位数里面的所有水仙花数
+// 1461 = 1 * 461 + 14 * 61 + 146 * 1
 //#include<math.h>
 //int main()
 //{
@@ -1068,36 +1069,109 @@
 //}
 
 
-//打印0~10000之间所有的水仙花数  自幂数，幂是位数，如：153=1*3+5*3+3*3
-int is_count(int m)
-{
-	int n = 1;
-	while (n / 10)
-	{
-		n++;
-		n /= 10;
-	}
-	return n;
+////打印0~10000之间所有的水仙花数  自幂数，幂是位数，如：153=1*3+5*3+3*3
+//#include<math.h>
+//int is_count(int m)
+//{
+//	int n = 1;
+//	while (m / 10)
+//	{
+//		n++;
+//		m /= 10;
+//	}
+//	return n;
+//
+//}
+//int main()
+//{
+//	int i = 0;
+//	for (i = 0; i <= 100000; i++)
+//	{
+//		int ret = is_count(i);
+//		int sum = 0;
+//		int tmp = i;
+//		while (tmp) 
+//		{
+//			sum += (int)pow(tmp%10, ret);
+//			tmp /= 10;
+//		}
+//		if (sum==i)
+//		{
+//			printf("%d ", i);
+//		}
+//
+//	}
+//	
+//	return 0;
+//}
 
-}
+////打印变种水仙花数
+////1461 = 1 * 461 + 14 * 61 + 146 * 1
+//int main()
+//{
+//	int i = 0;
+//	for (i = 10000; i <= 99999; i++)
+//	{
+//		
+//		int j = 5;
+//		int sum = 0;
+//		for (j = 1; j < 5; j++)
+//		{
+//			int n = 0;
+//			n = (int)pow(10, j);
+//			sum += (i / n) * (i % n);
+//		}
+//		if (i == sum)
+//		{
+//			printf("%d ", i);
+//		}
+//	}
+//	return 0;
+//}
+//打印菱形
 int main()
 {
+	int line = 0;
+	scanf("%d", &line);
+	//上
 	int i = 0;
-	int sum = 0;
-	for (i = 0; i <= 100000; i++)
+	//确定打印上半部分的行数
+	for (i = 0; i < line; i++)
 	{
-		int ret = is_count(i);
-		while (i) 
+	//空格
+		int j = 0;
+		for (j = 0; j < line - 1 - i; j++)//从第一行开始，空格的打印次数逐渐变少
 		{
-			i = i % 10;
-			sum += (int)pow(i, ret);
+			printf(" ");
 		}
-		if (i == sum)
+	//星号
+		for (j=0;j<(2*i)+1; j++)
 		{
-			printf("%d ", i);
+			printf("*");
 		}
-
+	//打印一排后换行
+		printf("\n");
 	}
-	
+	//下
+	int x = 0;
+	for (x = 0; x < line - 1; x++)
+	{
+		int y = 0;
+		//空格
+		for (y = 0; y < x + 1; y++)//打印逐渐增多的空格
+		{
+			printf(" ");
+		}
+		//星号
+		for (y=0;y<2*line-3-x*2;y++)//打印逐渐减少的星号
+		{
+			printf("*");
+		}
+		printf("\n");
+	}
 	return 0;
 }
+
+ 
+
+
