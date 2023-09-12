@@ -1128,50 +1128,82 @@
 //	}
 //	return 0;
 //}
-//打印菱形
-int main()
-{
-	int line = 0;
-	scanf("%d", &line);
-	//上
-	int i = 0;
-	//确定打印上半部分的行数
-	for (i = 0; i < line; i++)
-	{
-	//空格
-		int j = 0;
-		for (j = 0; j < line - 1 - i; j++)//从第一行开始，空格的打印次数逐渐变少
-		{
-			printf(" ");
-		}
-	//星号
-		for (j=0;j<(2*i)+1; j++)
-		{
-			printf("*");
-		}
-	//打印一排后换行
-		printf("\n");
-	}
-	//下
-	int x = 0;
-	for (x = 0; x < line - 1; x++)
-	{
-		int y = 0;
-		//空格
-		for (y = 0; y < x + 1; y++)//打印逐渐增多的空格
-		{
-			printf(" ");
-		}
-		//星号
-		for (y=0;y<2*line-3-x*2;y++)//打印逐渐减少的星号
-		{
-			printf("*");
-		}
-		printf("\n");
-	}
-	return 0;
-}
+// 
+// 
+// 
+////打印菱形
+//int main()
+//{
+//	int line = 0;
+//	scanf("%d", &line);
+//	//上
+//	int i = 0;
+//	//确定打印上半部分的行数
+//	for (i = 0; i < line; i++)
+//	{
+//	//空格
+//		int j = 0;
+//		for (j = 0; j < line - 1 - i; j++)//从第一行开始，空格的打印次数逐渐变少
+//		{
+//			printf(" ");
+//		}
+//	//星号
+//		for (j=0;j<(2*i)+1; j++)
+//		{
+//			printf("*");
+//		}
+//	//打印一排后换行
+//		printf("\n");
+//	}
+//	//下
+//	int x = 0;
+//	for (x = 0; x < line - 1; x++)
+//	{
+//		int y = 0;
+//		//空格
+//		for (y = 0; y < x + 1; y++)//打印逐渐增多的空格
+//		{
+//			printf(" ");
+//		}
+//		//星号
+//		for (y=0;y<2*line-3-x*2;y++)//打印逐渐减少的星号
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+
+////买汽水问题，1元1瓶，2个空瓶兑换一瓶汽水
+//int main()
+//{
+//	int money = 0;
+//	printf("请输入你的钱数：");
+//	scanf("%d", &money);
+//	////方法一：
+//	//int total = money;
+//	//int empty = money;
+//	//while (empty >= 2)
+//	//{
+//	//	total += empty / 2;
+//	//	empty = (empty / 2) + (empty % 2);
+//	//}
+//	//方法二：
+//	if (money > 0)
+//	{
+//		printf("%d\n", money);
+//	}
+//	else
+//	{
+//		printf("%d\n", 0);
+//	}
+//	
+//	return 0;
+//}
 
  
+
 
 
