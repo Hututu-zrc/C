@@ -51,11 +51,15 @@ void Seqlistprint(SL* ps)
 
 void SeqlistPopBack(SL* ps)//删除最后一个数据
 {
-	if (ps->size > 0)
+	//方法一：
+	if (ps->size > 0)//这里必须对pa->size--;进行控制，否则最后会减成负值，最后会越界出问题
 	{
 		ps->a[ps->size - 1];//实际上是数组，我们需要将下标减1
 		ps->size--;
 	}
+	////方法二：
+	//assert(ps->size > 0);//这里出问题会直接终止程序，并且会报错断言问题出现的地方
+	//ps->size--;
 	
 }
 void SeqlistPushFront(SL* ps, SLdatatype x);

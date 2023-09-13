@@ -1203,7 +1203,37 @@
 //	return 0;
 //}
 
- 
+// //求最小的公倍数
+//int main()
+//{
+//	int x = 0;
+//	int y = 0;
+//	
+//	printf("请输入两数：");
+//	scanf("%d %d", &x, &y);
+//	int a = x;
+//	int b = y;
+//	int ret = x % y;
+//	while (ret > 0)
+//	{
+//		x = y;
+//		y = ret;
+//		ret = x % y;
+//	}
+//	printf("最小公倍数：%d ",a*b/y );
+//	printf("最小公倍数：%d ",y );
+//
+//	return 0;
+//}
 
+
+//逆序打印字符
+int main()
+{
+	char arr[100] = { 0 };
+	scanf("%s", arr);
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	return 0;
+}
 
 
