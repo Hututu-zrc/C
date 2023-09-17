@@ -13,13 +13,9 @@ void SeqlistDestory(SL* ps)
 	ps -> a = NULL;
 	ps->capacity = ps->size = 0;
 }
-
-void SeqlistPushBack(SL* ps, SLdatatype x)//尾插一个数据
-//三种情况
-//1，顺序表没有空间
-//2，空间不够，扩容
-//3，空间足够，直接插入
-{	if (ps->size == ps->capacity)//首先判断两者是否相等，相等的时候我们选择扩容
+void SeqlistCheckCapacity(SL* ps)
+{
+	if (ps->size == ps->capacity)//首先判断两者是否相等，相等的时候我们选择扩容
 	{
 		//如果我们的capacity为0，扩容无效，我们首先判断，在扩容时按照2倍扩容
 		int newcapacity = ps->capacity == 0 ? 4 : ps->capacity * 2;
@@ -34,6 +30,15 @@ void SeqlistPushBack(SL* ps, SLdatatype x)//尾插一个数据
 		ps->a = tmp;//将我们扩容成功地址赋给地址a
 		ps->capacity = newcapacity;//更新我们的capacity的数值
 	}
+}
+
+void SeqlistPushBack(SL* ps, SLdatatype x)//尾插一个数据
+//三种情况
+//1，顺序表没有空间
+//2，空间不够，扩容
+//3，空间足够，直接插入
+{	
+	SeqlistCheckCapacity(ps);
 	ps->a[ps->size] = x;
 	//我们使用的是顺序表，所以将x的地址给第一个size的地址
 	//顺序表的地址的按照顺序来的，不可以断开，所以size++即可
@@ -54,7 +59,7 @@ void SeqlistPopBack(SL* ps)//删除最后一个数据
 	//方法一：
 	if (ps->size > 0)//这里必须对pa->size--;进行控制，否则最后会减成负值，最后会越界出问题
 	{
-		ps->a[ps->size - 1];//实际上是数组，我们需要将下标减1
+		ps->a[ps->size - 1]=0;//实际上是数组，我们需要将下标减1
 		ps->size--;
 	}
 	////方法二：
@@ -62,5 +67,57 @@ void SeqlistPopBack(SL* ps)//删除最后一个数据
 	//ps->size--;
 	
 }
-void SeqlistPushFront(SL* ps, SLdatatype x);
-void SeqlistPopFront(SL* ps);
+void SeqlistPushFront(SL* ps, SLdatatype x)//头部插入一个数据
+{
+	//检查增容
+	SeqlistCheckCapacity(ps);
+	//挪动数据
+	int end = ps->size - 1;
+	while (end >= 0)
+	{
+		ps->a[end + 1] = ps->a[end];
+		--end;
+	}
+	//插入数据
+	ps->a[0] = x;
+	ps->size++;
+}
+void SeqlistPopFront(SL* ps)//头部删除一个数据
+{
+	if (ps->size > 0)
+	{
+		//挪动数据
+		int begin = 1;
+		while (begin < ps->size)
+		{
+			ps->a[begin - 1] = ps->a[begin];
+			++begin;
+		}
+	}
+	//覆盖一个数据后，长度减一
+	ps->size--;
+}
+
+void SeqlistInsert(SL* ps, int pos, SLdatatype x)
+{
+	//检查增容
+	SeqlistCheckCapacity(ps);
+	int end = ps->size;
+	while(end>=pos-1)
+	{
+		ps->a[end] = ps->a[end-1];
+		--end;
+	}
+	ps->a[pos - 1] = x;
+	ps->size++;
+}
+void SeqlistErase(SL* ps, int pos)
+{
+	int erase = pos;
+	while (erase <ps->size )
+	{
+		ps->a[erase - 1] = ps->a[erase];
+		++erase;
+	}
+	ps->size--;
+}

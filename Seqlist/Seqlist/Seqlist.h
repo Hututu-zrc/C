@@ -37,10 +37,16 @@ typedef struct Seqlist //创建一个结构体来存储数据
 
 //接口函数，命名风格 跟着STL走，方便以后讲解
 //
-void SeqlistLnit(SL* ps);
+void SeqlistInit(SL* ps);
 void SeqlistPushBack(SL* ps, SLdatatype x);
 void SeqlistDestory(SL* ps);
-
+void SeqlistCheckCapacity(SL* ps);
+void Seqlistprint(SL* ps);
 void SeqlistPopBack(SL* ps);
 void SeqlistPushFront(SL* ps, SLdatatype x);
 void SeqlistPopFront(SL* ps);
+int SeqlistFind(SL* ps, SLdatatype x);
+//指定位置插入
+void SeqlistInsert(SL* ps, int pos, SLdatatype x);
+//指定位置删除
+void SeqlistErase(SL* ps, int pos);
