@@ -926,3 +926,29 @@
 //	printf("%d", sz);
 //	return 0;
 //}
+
+//int main()
+//{
+//
+//	printf("hello world");
+//	return 0;
+//}
+
+//int main()
+//{
+//	int n = 0;
+//	int a = 0;
+//	int sum = 0;
+//	int tmp = 0;
+//	scanf("%d %d", &n,&a);
+//	for (int i = 0; i < n; i++)
+//	{
+//		tmp = a;
+//		sum += tmp;
+//		a = a * 10 + a;
+//	}
+//	printf("%d\n", sum);
+//
+//	return 0;
+//}
+

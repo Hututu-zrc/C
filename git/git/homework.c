@@ -1226,14 +1226,41 @@
 //	return 0;
 //}
 
+//
+////逆序打印字符
+//int main()
+//{
+//	char arr[100] = { 0 };
+//	gets(arr);
+//	int sz = strlen(arr);
+//	for (int i = 0; i < sz - 1; i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j < sz - 1 - i; j++)
+//		{
+//			char tmp = arr[j];
+//			arr[j] = arr[j+1];
+//			arr[j+1] = tmp;
+//		}
+//	}
+//	printf("%s\n", arr);
+//	return 0;
+//}
+//
 
-//逆序打印字符
-int main()
-{
-	char arr[100] = { 0 };
-	scanf("%s", arr);
-	int sz = sizeof(arr) / sizeof(arr[0]);
-	return 0;
-}
-
-
+////猴子吃桃问题。猴子第一天摘下若干个桃子，当即吃了一半，还不过瘾，又多吃了一个。
+//// 第二天早. 上又将剩下的桃子吃掉一半，又多吃一个。以后每天早上都吃了前一天剩下的一半零一个。
+//// 到第N天早 上想再吃时，见只剩下-个桃子了。求第一天共摘多少桃子。
+//int main()
+//{
+//	int n = 0;
+//	int count = 1;
+//	scanf("%d", &n);
+//	for (int i = 0; i <n-1; i++)
+//	{
+//		count =2*(count+1);
+//
+//	}
+//	printf("%d", count);
+//	return 0;
+//}
