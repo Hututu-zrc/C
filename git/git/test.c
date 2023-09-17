@@ -952,3 +952,39 @@
 //	return 0;
 //}
 
+
+////判断电脑内存存放的是大端还是小端
+//int main()
+//{
+//	int a = 1;
+//	if (*(char*)&a == 1)
+//	//int*强制类型转换成为char*，取第一个字节判断其大小时候为1
+//	{
+//		printf("小端\n");
+//	}
+//	else
+//	{
+//		printf("大端\n");
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	char a = -1;
+//	unsigned char b = -1;
+//	char c = -128;
+//	//printf("%d\n", a);
+//	printf("%d\n", c);
+//	printf("%u\n", c);
+//	//printf("%d\n",b);
+//	return 0;
+//}
+
+int main()
+{
+	char a = 128;
+	//printf("%d\n", a);
+	printf("%u\n", a);
+	return 0;
+}
