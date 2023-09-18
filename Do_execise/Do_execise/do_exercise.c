@@ -325,12 +325,218 @@
 //	return 0;
 //}
 
-//1026: 求a/b保留小数点后3位
-int main()
-{
-	int a, b;
-	scanf("%d", &a);
-	scanf("%d", &b);
-	printf("%.3lf\n", (double)a / b);
-	return 0;
-}
+////1026: 求a/b保留小数点后3位
+//int main()
+//{
+//	int a, b;
+//	scanf("%d", &a);
+//	scanf("%d", &b);
+//	printf("%.3lf\n", (double)a / b);
+//	return 0;
+//}
+
+////1027: 星期几？
+//int main()
+//{
+//	int N, M;//N是星期，M是天数
+//	scanf("%d %d", &N, &M);
+//	char* arr[] = { "星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六" };
+// //一维数组不能存放多个字符串
+//	int X = (N + M)%7;
+//	printf("%s\n", arr[X]);
+//	return 0;
+//}
+
+////1028: 输入三角形的三边长，使用海伦公式计算三角形的面积
+//int main()
+//{
+//	double a, b, c, p, s;
+//	scanf("%lf %lf %lf", &a, &b, &c);
+//	p = (a + b + c) / 2;
+//	s = p * (p - a) * (p - b) * (p - c);
+//	printf("%.2lf\n", pow(s, 0.5));
+//	return 0;
+//}
+
+////1030: 字符的转换
+//int main()
+//{
+//	char  a= { 0 };
+//	scanf("%c", &a);
+//	if (a >= 65 && a <= 90)
+//	{
+//		printf("%c\n", a + 32);
+//	}
+//	else 
+//	{
+//		printf("%c\n", a);
+//	}
+//
+//	return 0;
+//}
+
+////1031: 给定x值，输出对应的y值。
+//int main()
+//{
+//	int x = 0;
+//	scanf("%d", &x);
+//	if (x < 1)
+//	{
+//		printf("%d\n", x);
+//	}
+//	else if (x > 1 && x < 10)
+//	{
+//		printf("%d\n", 2 * x - 1);
+//	}
+//	else if (x > 10)
+//	{
+//		printf("%d\n", 3 * x - 11);
+//	}
+//	return 0;
+//}
+
+////1032: 输出成绩等级’A’、 ’B’、 ’C’、 ’D’、 ’E’
+//int main()
+//{
+//	int  score = 0;
+//	scanf("%d",&score);
+//	char arr[] = { 'A','B','C','D','E' };
+//	if (score >= 0 && score <= 100)
+//	{
+//		if (score < 60)
+//		{
+//			printf("%c\n", arr[4]);
+//		}
+//		else if (score < 69 && score >= 60)
+//		{
+//			printf("%c\n", arr[3]);
+//		}
+//		else if (score < 80 && score >= 70)
+//		{
+//			printf("%c\n", arr[2]);
+//		}
+//		else if (score < 90 && score >= 80)
+//		{
+//			printf("%c\n", arr[1]);
+//		}
+//		else if (score >= 90)
+//		{
+//			printf("%c\n", arr[0]);
+//		}
+//	}
+//	return 0;
+//}
+
+//////1033: 输入当月利润，求应发放奖金总数
+//int main()
+//{
+//	int earnings = 0;
+//	double bonus = 0.0;
+//	int a = (int)pow(10, 5);
+//	scanf("%d", &earnings);
+//	if (earnings <=a )
+//	{
+//		bonus = earnings * 0.1;
+//		printf("%.2lf\n", bonus);
+//	}
+//	else if (earnings > a && earnings <= 2*a)
+//	{
+//		bonus = a * 0.1 + (earnings - a) * 0.075;
+//		printf("%.2lf\n", bonus);
+//	}	
+//	else if (earnings > 2*a && earnings <= 4*a)
+//	{
+//		bonus = a * 0.1 + a* 0.075+ (earnings - 2*a) * 0.05;
+//		printf("%.2lf\n", bonus);
+//	}	
+//	else if (earnings > 4*a && earnings <= 6*a)
+//	{
+//		bonus = a * 0.1 + a * 0.075 +2*a* 0.05 + (earnings - 4 * a) * 0.03;
+//		printf("%.2lf\n", bonus);
+//	}	
+//	else if (earnings > 6*a && earnings <= 10*a)
+//	{
+//		bonus = (earnings - 6 * a) * 0.015 + a * 0.1 + a * 0.075 + 2 * a * 0.05 + 2*a* 0.03;
+//		printf("%.2lf\n", bonus);
+//	}
+//	else if (earnings > 10 * a)
+//	{
+//		bonus=(earnings-10*a)*0.01+4*a* 0.015 + a * 0.1 + a * 0.075 + 2 * a * 0.05 + 2 * a * 0.03;
+//		printf("%.2lf\n", bonus);
+//	}
+//	return 0;
+//}
+
+////1034: 输入一个字符，判断是否阿拉伯数字
+//int main()
+//{
+//	char num = { 0 };
+//	scanf("%c", &num);
+//	if (num >= 48&& num <= 57)
+//	{
+//		printf("YES\n");
+//	}
+//	else
+//	{
+//		printf("NO\n");
+//	}
+//	return 0;
+//}
+
+//1035: 公式求和
+//int main()
+//{
+//	int i = 0;
+//	
+//	
+//	int sum2 = 0;
+//	for (i = 1; i <= 10; i++)
+//	{
+//		int j = 0;
+//		int tmp = 0;
+//		int sum = 1;
+//		for (j = 1; j <= i; j++)
+//		{
+//			sum *= j;
+//			tmp = sum;
+//		}
+//		sum2 += tmp;
+//	}
+//	printf("%d\n", sum2);
+//	return 0;
+//}
+
+//////1036: 字母概率
+//int main()
+//{
+//	
+//	char alp ;//"0"
+//	char arr[200] = { 0 };
+//	while ((scanf("%c %s", &alp, arr)) != EOF)
+//	{
+//		double count = 0;
+//		getchar();
+//		if (alp >= 65 && alp <= 90)
+//		{
+//			alp += 32;
+//		}
+//		double  st = strlen(arr);//  
+//		for (int n = 0; n < st; n++)
+//		{
+//			if (arr[n] >= 65 && arr[n] <= 90)
+//			{
+//				arr[n] += 32;
+//			}
+//		}
+//		for (int i = 0; i < st; i++)
+//		{
+//			if (alp == arr[i])//取出每个元素进行对比
+//			{
+//				count++;
+//			}
+//		}
+//		 double ret = count / st;
+//		printf("%.5lf\n", ret);
+//	}
+//	return 0;
+//}
