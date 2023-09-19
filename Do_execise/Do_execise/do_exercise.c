@@ -572,30 +572,105 @@
 //}
 
 ////1037: 500年前是一家(5分)
-int main()
-{
-	int n;
-	while (scanf("%d", &n) !=EOF)
-	{
-		int arra[10];
-		int arrb[10];
-		for (int i = 0; i < n; i++)
-		{
-			scanf("%d %d", &arra[n], &arrb[n]);
-		}
-		if ()
-		{
-			printf("you are my elder\n");
-		}
-		else if (arrb[n - 1] == arrb[n - 2])
-		{
-			printf("you are my brother\n");
-		}
-		else if (arrb[n - 1] < arrb[n - 2])
-		{
-			printf("you are my younger\n");
-		}
+//int main()
+//{
+//	int n;
+//	while (scanf("%d", &n) !=EOF)
+//	{
+//		int arra[10];
+//		int arrb[10];
+//		for (int i = 0; i < n; i++)
+//		{
+//			scanf("%d %d", &arra[i], &arrb[i]);
+//		}
+//		if (0 == n % 2)
+//		{
+//			if (arrb[n - 1] > arrb[n - 2])
+//			{
+//				printf("you are my elder\n");
+//			}
+//			else if (arrb[n - 1] == arrb[n - 2])
+//			{
+//				printf("you are my brother\n");
+//			}
+//			else if (arrb[n - 1] < arrb[n - 2])
+//			{
+//				printf("you are my younger\n");
+//			}
+//		}
+//		if (n % 2 != 0)
+//		{
+//			if (arrb[n - 1] > arrb[n - 2])
+//			{
+//				printf("you are my younger\n");
+//			}
+//			else if (arrb[n - 1] == arrb[n - 2])
+//			{
+//				printf("you are my elder\n");
+//			}
+//			/*else if (arrb[n - 1] < arrb[n - 2])
+//			{
+//				printf("you are my brother\n");
+//			}*/
+//			
+//		}
+//	
+//
+//	}
+//	return 0;
+//}
 
-	}
-	return 0;
+
+#include <stdio.h>
+
+#define MAX_N 10
+
+int isRelated(int parent[], int a, int b) {
+    int x = a;
+    int y = b;
+    while (parent[x] != x) {
+        x = parent[x];
+    }
+    while (parent[y] != y) {
+        y = parent[y];
+    }
+    if (x == y) {
+        return 0;  // 同辈
+    }
+    else if (x == a) {
+        return 1;  // a是b的长辈
+    }
+    else if (y == a) {
+        return -1;  // a是b的晚辈
+    }
+    return 0;  // 都不满足，说明没有亲属关系
+}
+
+int main() {
+    int N;
+    while (scanf("%d", &N) != EOF) {
+        int parent[21];  // 存储每个人的父亲编号
+        int i;
+        for (i = 0; i <= 20; i++) {
+            parent[i] = i;  // 初始化父亲编号，自己是自己的父亲
+        }
+
+        for (i = 0; i < N; i++) {
+            int a, b;
+            scanf("%d%d", &a, &b);
+            parent[a] = b;  // 设置父子关系
+        }
+
+        int result = isRelated(parent, 1, 2);
+        if (result == 1) {
+            printf("You are my elder\n");
+        }
+        else if (result == -1) {
+            printf("You are my younger\n");
+        }
+        else {
+            printf("You are my brother\n");
+        }
+    }
+    return 0;
 }
