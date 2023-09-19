@@ -540,3 +540,62 @@
 //	}
 //	return 0;
 //}
+////1038: 读入年、月、日，计算该日在当年中是第几天
+//typedef struct time
+//{
+//	int year;
+//	int month;
+//	int day;
+//
+//}tm;
+//int days(tm* p)
+//{
+//	int arr[] = { 0,31,28,31,30,31,30,31,31,30,31,30,31};
+//	if (p->year % 4 == 0 && p->year % 100 != 0 || p->year % 400 == 0)
+//	{
+//		arr[2] = 29;
+//	}
+//	int sum = 0;
+//	for (int i = 1; i < p->month; i++)
+//	{
+//		sum += arr[i];
+//	}
+//	return sum + p->day;
+//}
+//int main()
+//{
+//	tm ca;
+//	scanf("%d %d %d", &ca.year, &ca.month, &ca.day);
+//	int ret = days(&ca);
+//	printf("%d\n", ret);
+//	return 0;
+//}
+
+////1037: 500年前是一家(5分)
+int main()
+{
+	int n;
+	while (scanf("%d", &n) !=EOF)
+	{
+		int arra[10];
+		int arrb[10];
+		for (int i = 0; i < n; i++)
+		{
+			scanf("%d %d", &arra[n], &arrb[n]);
+		}
+		if ()
+		{
+			printf("you are my elder\n");
+		}
+		else if (arrb[n - 1] == arrb[n - 2])
+		{
+			printf("you are my brother\n");
+		}
+		else if (arrb[n - 1] < arrb[n - 2])
+		{
+			printf("you are my younger\n");
+		}
+
+	}
+	return 0;
+}
