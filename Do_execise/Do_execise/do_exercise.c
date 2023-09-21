@@ -675,60 +675,68 @@
 //    return 0;
 //}
 
-#include <stdio.h>
+//#include <stdio.h>
+//
+//int main() {
+//	int n, i, j, one, two, g1, g2;
+//	while (scanf("%d", &n) != EOF) 
+//	{
+//		int a[10][2];
+//		for (i = 0, j = 0; i < n; j++) 
+//		{
+//			if (j == 2) {
+//				i++;
+//				j = 0;
+//			}
+//			if (i == n && j == 0)
+//			{
+//				break;
+//			}
+//			scanf("%d", &a[i][j]);
+//		}
+//		one = a[0][1];
+//		two = a[1][1];
+//		g1 = 0;
+//		g2 = 0;
+//		for (i = 0; i < n; i++) 
+//		{
+//			if (one == a[i][0]) 
+//			{
+//				one = a[i][1];
+//				g1++;
+//			}
+//			if (two == a[i][0]) 
+//			{
+//				two = a[i][1];
+//				g2++;
+//			}
+//		}
+//
+//		if (g1 > g2)
+//		{
+//			printf("You are my elder\n");
+//		}
+//		
+//		else if (g1 == g2)
+//		{
+//			printf("You are my brother\n");
+//		}
+//			
+//		else
+//		{
+//			printf("You are my younger\n");
+//		}
+//	
+//	}
+//
+//}
 
-int main() {
-	int n, i, j, one, two, g1, g2;
-	int count = 0;
-	while (scanf("%d", &n)) {
-		int a[10][2];
-		for (i = 0, j = 0; i < n ; j++) {
-			if (j == 2) {
-				i++;
-				j = 0;
-			}
-			if (i == n && j == 0)
-			{
-				break;
-			}
-			scanf("%d", &a[i][j]);
-		}
-		one = a[0][1];
-		two = a[1][1];
-		g1 = 0;
-		g2 = 0;
-		for (i = 0; i < n; i++) {
-			if (one == a[i][0]) {
-				one = a[i][1];
-				g1++;
-			}
-			if (two == a[i][0]) {
-				two = a[i][1];
-				g2++;
-			}
-		}
-		
-		if (g1 > g2)
-		{
-			printf("You are my elder\n");
-			count++;
-		}
-		
-		else if (g1 == g2)
-		{
-			printf("You are my brother\n");
-			count++;
-		}
-			
-		else
-		{
-			printf("You are my younger\n");
-			count++;
-		}
-		if (count == 2)
-		{
-			break;
-		}
-	}
+int main()
+{
+	int a, b;
+	scanf("%d,%d", &a, &b);
+	printf("%d\n", a);
+	printf("%d\n", b);
 
+	return 0;
 }
