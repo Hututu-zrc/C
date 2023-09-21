@@ -619,62 +619,7 @@
 //	}
 //	return 0;
 //}
-
-//
-//#include <stdio.h>
-//
-//#define MAX_N 10
-//
-//int isRelated(int parent[], int a, int b) {
-//    int x = a;
-//    int y = b;
-//    while (parent[x] != x) {
-//        x = parent[x];
-//    }
-//    while (parent[y] != y) {
-//        y = parent[y];
-//    }
-//    if (x == y) {
-//        return 0;  // 同辈
-//    }
-//    else if (x == a) {
-//        return 1;  // a是b的长辈
-//    }
-//    else if (y == a) {
-//        return -1;  // a是b的晚辈
-//    }
-//    return 0;  // 都不满足，说明没有亲属关系
-//}
-//
-//int main() {
-//    int N;
-//    while (scanf("%d", &N) != EOF) {
-//        int parent[21];  // 存储每个人的父亲编号
-//        int i;
-//        for (i = 0; i <= 20; i++) {
-//            parent[i] = i;  // 初始化父亲编号，自己是自己的父亲
-//        }
-//
-//        for (i = 0; i < N; i++) {
-//            int a, b;
-//            scanf("%d%d", &a, &b);
-//            parent[a] = b;  // 设置父子关系
-//        }
-//
-//        int result = isRelated(parent, 1, 2);
-//        if (result == 1) {
-//            printf("You are my elder\n");
-//        }
-//        else if (result == -1) {
-//            printf("You are my younger\n");
-//        }
-//        else {
-//            printf("You are my brother\n");
-//        }
-//    }
-//    return 0;
-//}
-
+// 
 //#include <stdio.h>
 //
 //int main() {
@@ -731,12 +676,188 @@
 //
 //}
 
-int main()
-{
-	int a, b;
-	scanf("%d,%d", &a, &b);
-	printf("%d\n", a);
-	printf("%d\n", b);
+//1039: 编写两个函数input和print
+//#include <stdio.h>
+//
+//struct Student {
+//    int number;
+//    char name[20];
+//    int course1;
+//    int course2;
+//    int course3;
+//};
+//
+//void input(struct Student* p)
+//{
+//    for (int i = 0; i < 5; i++) {
+//        scanf("%d %s %d %d %d", &(p[i].number), p[i].name, &(p[i].course1), &(p[i].course2), &(p[i].course3));
+//    }
+//}
+//
+//void print(struct Student* p)
+//{
+//    for (int i = 0; i < 5; i++) {
+//        printf("%d %s %d %d %d\n", p[i].number, p[i].name, p[i].course1, p[i].course2, p[i].course3);
+//    }
+//}
+//
+//int main()
+//{
+//    struct Student stu[5];
+//    input(stu);
+//    print(stu);
+//    return 0;
+//}
+//
+//1042: 移位运算。
+//int main()
+//{
+//	unsigned int a, n;
+//	scanf("%u %u", &a, &n);
+//	//for (n = 1; n <= 30; n++)
+//	//{
+//	//	a = a >> n;
+//	//}
+//	a = a >> n;
+//	printf("%u\n", a);
+//	return 0;
+// }
+//
+//1044: 设计一个函数，使得给出一个16位整数的原码，能够得到该数的补码。
+//int main()
+//{
+//	char ch[17];
+//	scanf("%s", &ch);
+//	if (ch[0] == '0')
+//	{
+//		printf("%s\n", ch);
+//	}
+//	else
+//	{
+//		for (int i = 1; i < 16; i++)
+//		{
+//			if (ch[i] == '0')
+//			{
+//				ch[i] = '1';
+//			}
+//			else
+//			{
+//				ch[i] = '0';
+//			}
+//		}
+//		if (ch[15] == '1')
+//		{
+//			ch[15] = '0';
+//			for (int i = 14; i > 0; i--)
+//			{
+//				if (ch[i] == '1')
+//				{
+//					ch[i] = '0';
+//				}
+//			}
+//		}
+//		else
+//		{
+//			ch[15] = '1';
+//		}
+//		printf("%s\n", ch);
+//	}
+//	return 0;
+//}
 
-	return 0;
-}
+//1045: 输出摄氏温度
+//int main()
+//{
+//	double F,C;
+//	scanf("%lf", &F);
+//	C = 5*(F - 32) / 9;
+//	printf("c=%.2lf\n", C);
+//	return 0;
+//}
+//1047: 求算式的和-1
+//int main()
+//{
+//	int a, b, c;
+//	int sum1= 0; 
+//	int sum2 = 0;
+//	double sum3 = 0.0;
+//	scanf("%d %d %d", &a, &b, &c);
+//	while (a)
+//	{
+//		sum1 += a;
+//		a--;
+//	}
+//	for (int i = 1; i <= b; i++)
+//	{
+//		sum2 += (int)pow(i, 2);
+//	}
+//	for (int i = 1; i <= c; i++)
+//	{
+//		sum3 += 1.0/ i;
+//	}
+//	double sum = sum1 + sum2 + sum3;
+//	printf("%.2lf\n",sum);
+//	return 0;
+//}
+// //1254: 读取字节的低4位
+//int main()
+//{
+//	char ch;
+//	scanf("%c", &ch);
+//		printf("%d\n", ch & 0x0f);
+//	return 0;
+//}
+// //1255: 读取字节的高4位
+//int main()
+//{
+//	char ch;
+//	scanf("%c", &ch);
+//	printf("%d\n", (ch>>4) & 0x0f);
+//	return 0;
+//
+//}
+////1256: 读取字节的低5位
+//int main()
+//{
+//	char ch;
+//	scanf("%c", &ch);
+//	printf("%d\n", ch& 0x1f);
+//	return 0;
+//
+//}
+////1257: 读取字节的最高的5位
+//int main()
+//{
+//	char ch;
+//	scanf("%c", &ch);
+//	printf("%d\n", (ch>>3)& 0x1f);
+//	return 0;
+//
+//}
+//1258: 读取字节的第6位至第2位
+//int main()
+//{
+//	char ch;
+//	scanf("%c", &ch);
+//	printf("%d\n", (ch>>2)& 0xff);
+//	return 0;
+//
+//}
+//1259: 交换字符中的数位
+//int main()
+//{
+//	char ch;
+//	scanf("%c", &ch);
+//	printf("%d\n",(ch>>4)&0x06 | (ch<<4) & 0x60 | ch & 0x99);
+//	return 0;
+//
+//}
+////1258: 读取字节的第6位至第2位
+//int main()
+//{
+//	char ch;
+//	scanf("%c", &ch);
+//	printf("%d\n", (ch >> 2) & 0xff);
+//	return 0;
+//}
+
