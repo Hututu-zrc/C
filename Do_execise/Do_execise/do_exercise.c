@@ -799,6 +799,446 @@
 //	printf("%.2lf\n",sum);
 //	return 0;
 //}
+//1049: 求一个3×3矩阵对角线元素之和。(15分)
+//int main()
+//{
+//	int arr[3][3];
+//	for (int i = 0; i < 3; i++)
+//	{
+//		for (int j = 0; j < 3; j++)
+//		{
+//			scanf("%d", &arr[i][j]);
+//		}
+//	}
+//	printf("%d %d\n", arr[0][0] + arr[1][1] + arr[2][2], arr[0][2] + arr[1][1] + arr[2][0]);
+//	return 0;
+//}
+//// 1050: 按原来排序的规律插入数组中
+//int main()
+//{
+//	int arr[10];
+//	int n;
+//	for (int i = 0; i < 9; i++)
+//	{
+//		scanf("%d", &arr[i]);
+//		
+//	}
+//	scanf("%d", &n);
+//	for (int i = 8; i >= 0; i--)
+//	{
+//		if (arr[i] > n)
+//		{
+//			arr[i + 1] = arr[i];
+//		}
+//		else
+//		{
+//			arr[i+1] = n;
+//			break;
+//		}
+//	}
+//	for (int i = 0; i < 10; i++)
+//	{
+//		printf("%d\n", arr[i]);
+//	}
+//	return 0;
+//}
+// 
+// 
+//// 1051: 最大公约数和最小公倍数
+//int ma(int a, int b)
+//{
+//	int tmp = 1;
+//	while (tmp)
+//	{
+//		tmp = a % b;
+//		a = b;
+//		b = tmp;
+//	}
+//	return a;
+//}
+//int mi(int a, int b)
+//{
+//	return (a * b / ma(a,b));
+//}
+//int main()
+//{
+//	int x, y;
+//	scanf("%d %d", &x, &y);
+//	int ret1=ma(x, y);
+//	int ret2=mi(x, y);
+//	printf("%d %d", ret1,ret2);
+//	return 0;
+//}
+// 1052: 求方程 的根
+//int main()
+//{
+//	int a, b, c;
+//	scanf("%d %d %d", &a, &b, &c);
+//	int ret = pow(b, 2) - 4 * a * c;
+//	double x1, x2;
+//	if (ret > 0)
+//	{
+//		x1 = (-b + pow(ret, 0.5))/ (2.0*a);
+//		x2 =  (-b - pow(ret, 0.5)) / (2.0 * a);
+//		printf("x1=%.3lf x2=%.3lf\n", x1, x2);
+//	}
+//	else if (ret == 0)
+//	{
+//		x1 = (-b + ret) / 2.0 * a;
+//		x2 = x1;
+//		printf("x1=%.3lf x2=%.3lf\n", x1, x2);
+//	}
+//	else
+//	{
+//		double real = -b / (2.0 * a);
+//		double fake = sqrt((4 * a * c - b*b)) / (2.0 * a);
+//		if (a < 0)
+//		{
+//			printf("x1=%.3lf%.3lfi x2=%.3lf%.3lfi\n", real, fake, real, fake);
+//		}
+//		else
+//		{
+//			printf("x1=%.3lf+%.3lfi x2=%.3lf-%.3lfi\n", real, fake, real, fake);
+//		}
+//		
+//	}
+//	return 0;
+//}
+//// 1053: 写一函数，将两个字符串连接
+//int main()
+//{
+//	char ch1[100];
+//	char ch2[100];
+//	scanf("%s", ch1);
+//	scanf("%s", ch2);
+//	printf("%s%s\n", ch1,ch2);
+//	return 0;
+//}
+//// 1054: 写一函数，将字符串中的元音字母复制到另一个字符串，然后输出。
+//int main()
+//{
+//	char ch[100];
+//	char sh[100];
+//	char dh[6] = "aeiou";
+//	scanf("%s", ch);
+//	int sz = strlen(ch);
+//	int n = 0;
+//	for (int i = 0; i < sz; i++)
+//	{
+//		for (int j = 0; j < 6; j++)
+//		{
+//			if (ch[i] == dh[j])//这里会出现元音字母有重复的问题
+//			{
+//				sh[n] = ch[i];
+//				n++;
+//			}
+//		}
+//	
+//	}
+//	sh[n] = '\0';
+//	printf("%s\n", sh);
+//	//这里提供思路：进行遍历如果重复则取出字符并且进行移位
+//	return 0;
+//}
+//1055: 输出已交换后的两个值
+//int main()
+//{
+//	int x, y;
+//	scanf("%d %d", &x, &y);
+//	int tmp = x;
+//	x = y;
+//	y = tmp;
+//	printf("%d %d", x, y);
+//	return 0;
+//}
+// 
+// 1057: 三角形面积
+//#include <stdio.h>
+//#include <math.h>
+//int main()
+//{
+//	double a, b, c,s;
+//
+//	scanf("%lf %lf %lf", &a, &b, &c);
+//	s = (a + b + c) / 2.0;
+//	printf("%.3lf\n", sqrt(s*(s-a)*(s-b)*(s-c)));
+//	return 0;
+//}
+//// 1058: 是否闰年.
+//int main()
+//{
+//	int year = 0;
+//	scanf("%d",& year);
+//	if(year%4==0 && year%100!=0 || year%400==0)
+//	{
+//		printf("L");
+//	}
+//	else
+//	{
+//		printf("N");
+//	}
+//	return 0;
+//}
+//// 1059: 输出实数
+//int main()
+//{
+//	float n;
+//	scanf("%f", &n);
+//	printf("%6.2f\n", n);
+//	printf("%6.2f %6.2f\n", n,n);
+//	printf("%6.2f %6.2f %6.2f\n", n,n,n);
+//
+//	return 0;
+//}
+//// 1060: 三个数中找出最大的数
+//int main()
+//{
+//	double x, y,z;
+//	scanf("%lf %lf %lf", &x, &y,&z);
+//	double ret = x > y ? x : y;
+//	ret = ret > z ? ret : z;
+//	printf("%.3lf\n", ret);
+//	printf("%.3lf\n", ret);
+//	return 0;
+//}
+//////1062: 计算本年中是第几天
+//#include <stdio.h>
+//typedef struct Time
+//{
+//	int year;
+//	int month;
+//	int day;
+//}tim;
+//int main()
+//{
+//	tim input;
+//	int sum=0;
+//	int arr[13] = { 0,31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+//	scanf("%d %d %d", &input.year, &input.month, &input.day);
+//	if (input.year % 4 == 0 && input.year % 100 != 0 || input.year % 400 == 0)
+//	{
+//		arr[2] = 29;
+//	}
+//	for (int i = 0; i < input.month; i++)
+//	{
+//		sum += arr[i];
+//	}
+//	printf("%d\n", sum + input.day);
+//	return 0;
+//}
+////1063: 打印一个学生的数据记录
+//#include <stdio.h>
+//typedef struct Student
+//{
+//	char number[20];
+//	char name[20];
+//	int course1;
+//	int course2;
+//	int course3;
+//}stu;
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	stu st[10];
+//	for(int i=0;i<n;i++)
+//	{
+//		scanf("%s %s %d %d %d", st[i].number, st[i].name, &st[i].course1, &st[i].course2, &st[i].course3);
+//	}
+//	for (int i = 0; i < n; i++)
+//	{
+//		printf("%s,%s,%d,%d,%d\n", st[i].number, st[i].name, st[i].course1, st[i].course2, st[i].course3);
+//	}
+//	
+//	
+//	return 0;
+//
+//}
+//1064: 打印出3门课的总平均成绩，以及最高分的学生的数据
+#include<stdio.h>
+typedef struct Student
+{
+	char number[20];
+	char name[20];
+	int course1;
+	int course2;
+	int course3;
+}stu;
+int main()
+{
+	int n = 0;
+	scanf("%d", &n);
+	stu st[10];
+	for(int i=0;i<n;i++)
+	{
+		scanf("%s %s %d %d %d", st[i].number, st[i].name, &st[i].course1, &st[i].course2, &st[i].course3);
+	}
+	for (int i = 0; i < n; i++)
+	{
+		printf("%s,%s,%d,%d,%d\n", st[i].number, st[i].name, st[i].course1, st[i].course2, st[i].course3);
+	}
+	
+	
+	return 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // //1254: 读取字节的低4位
 //int main()
 //{
