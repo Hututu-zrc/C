@@ -1518,51 +1518,96 @@
 //	
 //	return 0;
 //}
-int main()
-{
-	int n = 0;
-	scanf("%d", &n);
-	for (int i = 0; i < n; i++)
-	{
-		char arr[50];
-		scanf("%s", &arr);
-		int sz = strlen(arr);
-		for (int j = 0; j < sz; j++)
-		{
-			if (arr[j] >= 'A' && arr[j] <= 'Z')
-			{
-				arr[j] += 32;
-			}
-			if (arr[j] == 'A' || arr[j] == 'a')
-			{
-				arr[j] = 'A';
-			}
-			else if (arr[j] == 'e' || arr[j] == 'E')
-			{
-				arr[j] = 'E';
-			}
-			else if (arr[j] == 'I' || arr[j] == 'i')
-			{
-				arr[j] = 'I';
-			}
-			else if (arr[j] == 'o' || arr[j] == 'O')
-			{
-				arr[j] = 'O';
-			}
-			else if (arr[j] == 'u' || arr[j] == 'U')
-			{
-				arr[j] = 'U';
-			}
-			
-		}
-		printf("%s\n", arr);
-	}
-	return 0;
-}
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	for (int i = 0; i < n; i++)
+//	{
+//		char arr[50];
+//		scanf("%s", &arr);
+//		int sz = strlen(arr);
+//		for (int j = 0; j < sz; j++)
+//		{
+//			if (arr[j] >= 'A' && arr[j] <= 'Z')
+//			{
+//				arr[j] += 32;
+//			}
+//			if (arr[j] == 'A' || arr[j] == 'a')
+//			{
+//				arr[j] = 'A';
+//			}
+//			else if (arr[j] == 'e' || arr[j] == 'E')
+//			{
+//				arr[j] = 'E';
+//			}
+//			else if (arr[j] == 'I' || arr[j] == 'i')
+//			{
+//				arr[j] = 'I';
+//			}
+//			else if (arr[j] == 'o' || arr[j] == 'O')
+//			{
+//				arr[j] = 'O';
+//			}
+//			else if (arr[j] == 'u' || arr[j] == 'U')
+//			{
+//				arr[j] = 'U';
+//			}
+//			
+//		}
+//		printf("%s\n", arr);
+//	}
+//	return 0;
+//}
+//
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//1089: 是哪种三角形？（10分）
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int a, b, c;
+//	for (int i = 0; i < n; i++)
+//	{
+//		scanf("%d %d %d", &a, &b, &c);
+//		if (a * a + b * b == c * c || b * b + c * c == a * a || a * a + c * c == b * b)
+//		{
+//			printf("good\n");
+//		}
+//		else if (a == b || b == c || a == c)
+//		{
+//			printf("perfect\n");
+//		}
+//		else
+//		{
+//			printf("just a triangle\n");
+//		}
+//	}
+//	return 0;
+//}
 
 
 
@@ -1761,5 +1806,39 @@ int main()
 //	char ch[5];
 //	scanf("%s", &ch);
 //	printf("%s\n", ch);
+//	return 0;
+//}
+//1265: 问候语
+//int main()
+//{
+//	int i = 0;
+//
+//	int arr[50];
+//	while (scanf("%d", &arr[i])!=EOF)
+//	{
+//		
+//		if (arr[i] >= 0 && arr[i] < 5 || arr[i] == 22 || arr[i] == 23)
+//		{
+//			printf("HI\n");
+//		}
+//		else if (arr[i] >= 5 && arr[i] <= 12)
+//		{
+//			printf("GOOD MORNING\n");
+//		}
+//		else if (arr[i] > 12 && arr[i] <= 17)
+//		{
+//			printf("GOOD AFTERNOON\n");
+//		}
+//		else if (arr[i] > 17 && arr[i] <= 21)
+//		{
+//			printf("GOOD EVENING\n");
+//		}
+//		else
+//		{
+//			printf("HI\n");
+//		}
+//		i++;
+//	}
+//	
 //	return 0;
 //}
