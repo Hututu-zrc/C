@@ -39,10 +39,12 @@ void SeqlistPushBack(SL* ps, SLdatatype x)//尾插一个数据
 //3，空间足够，直接插入
 {	
 	SeqlistCheckCapacity(ps);
-	ps->a[ps->size] = x;
+	ps->a[ps->size] = x;//扩容完毕，直接在size上面插入数据
+	//最后一个元素位序是size，但是实际储存的地址是ps->a[ps->size-1]
+	// 我们尾插数据在最后一个元素的后面尾插，也就是ps->a[ps->size]
 	//我们使用的是顺序表，所以将x的地址给第一个size的地址
 	//顺序表的地址的按照顺序来的，不可以断开，所以size++即可
-	ps->size++;
+	ps->size++;//表长加一
 }
 void Seqlistprint(SL* ps)
 {
@@ -59,6 +61,7 @@ void SeqlistPopBack(SL* ps)//删除最后一个数据
 	//方法一：
 	if (ps->size > 0)//这里必须对pa->size--;进行控制，否则最后会减成负值，最后会越界出问题
 	{
+		
 		ps->a[ps->size - 1]=0;//实际上是数组，我们需要将下标减1
 		ps->size--;
 	}
@@ -102,8 +105,9 @@ void SeqlistInsert(SL* ps, int pos, SLdatatype x)
 {
 	//检查增容
 	SeqlistCheckCapacity(ps);
-	int end = ps->size;
-	while(end>=pos-1)
+	int end = ps->size;//end是最后一个空元素的地址
+	while(end>=pos-1)//这里的在pos位置插入，pos的地址为pos-1
+	//end的最小缩减到pos-1
 	{
 		ps->a[end] = ps->a[end-1];
 		--end;
@@ -113,7 +117,7 @@ void SeqlistInsert(SL* ps, int pos, SLdatatype x)
 }
 void SeqlistErase(SL* ps, int pos)
 {
-	int erase = pos;
+	int erase = pos;//这里采用的思路是将pos位置的数据直接覆盖掉
 	while (erase <ps->size )
 	{
 		ps->a[erase - 1] = ps->a[erase];

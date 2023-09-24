@@ -753,6 +753,7 @@
 //				if (ch[i] == '1')
 //				{
 //					ch[i] = '0';
+//					break;
 //				}
 //			}
 //		}
@@ -1276,57 +1277,288 @@
 //	return 0;
 //}
 //1077: 企业发放奖金
-#include <stdio.h>
+//#include <stdio.h>
+//
+//double calculateBonus(int profit) {
+//    double bonus = 0.0;
+//
+//    switch (profit / 100000) {
+//    case 0: // 利润低于或等于100000元
+//        bonus = profit * 0.1;
+//        break;
+//    case 1: // 利润在100001-200000元之间
+//        bonus = 100000 * 0.1 + (profit - 100000) * 0.075;
+//        break;
+//    case 2: // 利润在200001-400000元之间
+//        bonus = 100000 * 0.1 + 100000 * 0.075 + (profit - 200000) * 0.05;
+//        break;
+//    case 3: // 利润在400001-600000元之间
+//        bonus = 100000 * 0.1 + 100000 * 0.075 + 200000 * 0.05 + (profit - 400000) * 0.03;
+//        break;
+//    case 4: // 利润在600001-1000000元之间
+//        bonus = 100000 * 0.1 + 100000 * 0.075 + 200000 * 0.05 + 200000 * 0.03 + (profit - 600000) * 0.015;
+//        break;
+//    default: // 利润大于1000000元
+//        bonus = 100000 * 0.1 + 100000 * 0.075 + 200000 * 0.05 + 200000 * 0.03 + 400000 * 0.015 + (profit - 1000000) * 0.01;
+//        break;
+//    }
+//
+//    return bonus;
+//}
+//
+//int main() {
+//    int profit;
+//
+//    while (scanf("%d", &profit) == 1) {
+//        double bonus = calculateBonus(profit);
+//        printf("%d\n", (int)bonus); // 输出整数形式的奖金
+//    }
+//
+//    return 0;
+//}
+//1078: 输入两个正整数m和n，求其最大公约数和最小公倍数
+//int ma(int a, int b)
+//{
+//	int tmp = 1;
+//	while (tmp)
+//	{
+//		tmp = a % b;
+//		a = b;
+//		b = tmp;
+//	}
+//	return a;
+//}
+//int mi(int a, int b)
+//{
+//	return (a * b / ma(a, b));
+//}
+//int main()
+//{
+//	int x, y;
+//	scanf("%d %d", &x, &y);
+//	int ret1 = ma(x, y);
+//	int ret2 = mi(x, y);
+//	printf("%d %d", ret1, ret2);
+//	return 0;
+//}
 
-double calculateBonus(int profit) {
-    double bonus = 0.0;
+////1079: 求圆周长，圆面积，圆球表面积，圆球体积，圆柱体积。
+//#include <stdio.h>
+//#include <math.h>
+//int main()
+//{
+//	double r, h;
+//	double PI = 3.14;
+//	double C1, Sa, Sb, Va, Vb;
+//	scanf("%lf %lf", &r, &h);
+//	C1 = 2 * PI * r;
+//	Sa = PI * pow(r, 2);
+//	Sb = 4 * PI * pow(r, 2);
+//	Va = (4 / 3.0) * PI * pow(r, 3);
+//	Vb = Sa * h;
+//	printf("C1=%.2lf\n", C1);
+//	printf("Sa=%.2lf\n", Sa);
+//	printf("Sb=%.2lf\n", Sb);
+//	printf("Va=%.2lf\n", Va);
+//	printf("Vb=%.2lf\n", Vb);
+//	return 0;
+//}
+//
+////1080: 输入数字（表示ASCII码），输出相对应的字符信息
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int  arr[1000] = { 0 };
+//	for (int i = 0; i < n; i++)
+//	{
+//		scanf("%d", &arr[i]);
+//	}
+//	for (int j = 0; j < n; j++)
+//	{
+//		printf("%c", arr[j]);
+//	}
+//	
+//	return 0;
+//}
+////1081: 软件的版本号
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int arr[100][3];
+//	int arr1[100][3];
+//	for (int i = 0; i < n; i++)
+//	{
+//		scanf("%d %d %d", &arr[i][0], &arr[i][1], &arr[i][2]);
+//		scanf("%d %d %d", &arr1[i][0], &arr1[i][1], &arr1[i][2]);
+//	}
+//	for (int i = 0; i < n; i++)
+//	{
+//		if (arr[i][0] > arr1[i][0])
+//		{
+//			printf("First\n");
+//		}
+//		else if(arr[i][0] == arr1[i][0])
+//		{
+//			if (arr[i][1] > arr1[i][1])
+//			{
+//				printf("First\n");
+//			}
+//			else if(arr[i][1] == arr1[i][1])
+//			{
+//				if (arr[i][2] > arr1[i][2])
+//				{
+//					printf("First\n");
+//				}
+//				else if(arr[i][2] == arr1[i][2])
+//				{
+//					printf("Same\n");
+//				}
+//				else
+//				{
+//					printf("Second\n");
+//				}
+//			}
+//			else
+//			{
+//				printf("Second\n");
+//			}
+//		}
+//		else
+//		{
+//			printf("Second\n");
+//		}
+//	}
+//	return 0;
+//}
 
-    switch (profit / 100000) {
-    case 0: // 利润低于或等于100000元
-        bonus = profit * 0.1;
-        break;
-    case 1: // 利润在100001-200000元之间
-        bonus = 100000 * 0.1 + (profit - 100000) * 0.075;
-        break;
-    case 2: // 利润在200001-400000元之间
-        bonus = 100000 * 0.1 + 100000 * 0.075 + (profit - 200000) * 0.05;
-        break;
-    case 3: // 利润在400001-600000元之间
-        bonus = 100000 * 0.1 + 100000 * 0.075 + 200000 * 0.05 + (profit - 400000) * 0.03;
-        break;
-    case 4: // 利润在600001-1000000元之间
-        bonus = 100000 * 0.1 + 100000 * 0.075 + 200000 * 0.05 + 200000 * 0.03 + (profit - 600000) * 0.015;
-        break;
-    default: // 利润大于1000000元
-        bonus = 100000 * 0.1 + 100000 * 0.075 + 200000 * 0.05 + 200000 * 0.03 + 400000 * 0.015 + (profit - 1000000) * 0.01;
-        break;
-    }
+////1082: 小明兑换人民币
+//int main()
+//{
+//	double dollar = 0.0;
+//	scanf("%lf", &dollar);
+//	double arr[12];
+//	for (int i = 0; i < 12; i++)
+//	{
+//		scanf("%lf", &arr[i]);
+//	}
+//	double max = .0;
+//	for (int i = 0; i < 12; i++)
+//	{
+//		if (max < arr[i])
+//		{
+//			max = arr[i];
+//		}
+//	}
+//	printf("%.2lf\n", max * dollar);
+//	return 0;
+//}
 
-    return bonus;
+//1083: 现请你构建一个N*N的矩阵
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int num[100];
+//	for (int i = 0; i < n; i++)
+//	{
+//		scanf("%d", &num[i]);
+//	}
+//	int arr[9][9];
+//	for (int a = 0; a < n; a++)
+//	{
+//		
+//		for (int i = 0; i < num[a]; i++)
+//		{
+//			for (int j = 0; j < num[a]; j++)
+//			{
+//				arr[i][j] = (i+1) * (j+1);
+//			}
+//		}
+
+//		for (int i = 0; i <num[a]; i++)
+//		{
+//			for (int j = 0; j < num[a]; j++)
+//			{
+//				printf("%d ", arr[i][j]);
+//			}
+//			printf("\n");
+//		}
+//	}
+//	return 0;
+//}
+//1084: 元音字母全部为大写 其余字母全部为小写
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	char arr[50][50];
+//	int arr1[50];
+//	char apl[12] = { 'a','A','e','E','i','I','O','o','u','U' };
+//	for (int i = 0; i < n; i++)
+//	{
+//		scanf("%s", &arr[i][50]);
+//		arr1[i] = strlen(arr[i][50]);
+//	}
+//	for (int i = 0; i < n; i++)
+//	{
+//		for (int j = 0; j < arr1[i]; j++)
+//		{
+//			for (int x = 0; x < 12; x++)
+//			{
+//				if (arr[i][arr1[j]] == apl[x])
+//				{
+//
+//				}
+//
+//			}
+//		}
+//	}
+//	
+//	return 0;
+//}
+int main()
+{
+	int n = 0;
+	scanf("%d", &n);
+	for (int i = 0; i < n; i++)
+	{
+		char arr[50];
+		scanf("%s", &arr);
+		int sz = strlen(arr);
+		for (int j = 0; j < sz; j++)
+		{
+			if (arr[j] >= 'A' && arr[j] <= 'Z')
+			{
+				arr[j] += 32;
+			}
+			if (arr[j] == 'A' || arr[j] == 'a')
+			{
+				arr[j] = 'A';
+			}
+			else if (arr[j] == 'e' || arr[j] == 'E')
+			{
+				arr[j] = 'E';
+			}
+			else if (arr[j] == 'I' || arr[j] == 'i')
+			{
+				arr[j] = 'I';
+			}
+			else if (arr[j] == 'o' || arr[j] == 'O')
+			{
+				arr[j] = 'O';
+			}
+			else if (arr[j] == 'u' || arr[j] == 'U')
+			{
+				arr[j] = 'U';
+			}
+			
+		}
+		printf("%s\n", arr);
+	}
+	return 0;
 }
-
-int main() {
-    int profit;
-
-    while (scanf("%d", &profit) == 1) {
-        double bonus = calculateBonus(profit);
-        printf("%d\n", (int)bonus); // 输出整数形式的奖金
-    }
-
-    return 0;
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1522,3 +1754,12 @@ int main() {
 //	return 0;
 //}
 
+//#include <stdio.h>
+//#include <string.h>
+//int main()
+//{
+//	char ch[5];
+//	scanf("%s", &ch);
+//	printf("%s\n", ch);
+//	return 0;
+//}
