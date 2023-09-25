@@ -1101,7 +1101,7 @@
 //		}
 //	}
 //	printf("%d %d %d\n", averge1, averge2, averge3);
-//	printf("%s,%s,%d,%d,%d\n", st[ret].number, st[ret].name, st[ret].course1, st[ret].course2, st[ret].course3);
+//	printf("%s %s %d %d %d\n", st[ret].number, st[ret].name, st[ret].course1, st[ret].course2, st[ret].course3);
 //	return 0;
 //
 //}
@@ -1242,81 +1242,116 @@
 //}
 
 //1073: 括号的匹配问题
-#include <stdio.h>
-int main()
-{
-	char ch[100] = { 0 };//存放输入
-	char ch1[100] = { 0 };//存放输出
-	int  ch2[100] = { 0 };//存放已知配对的）
-	while (scanf("%s", ch) != EOF)
-	{
-		int sz = strlen(ch);
-		//写一个判断方法
-		char bracket = '(';
-		char bracket1 = ')';
-		int count = 0;
-		for (int i = sz - 1; i >= 0; i--)
-		{
-			if (ch[i] == bracket)//如果等于'(',找一个与之匹配的')'
-			{
-				for (int j = i; j < sz; j++)//从我们找到的'('开始，往回找，找到最近与之匹配的')'
-				{
-					if (ch[j] == bracket1)
-					{
-						if (ch2[j] != j)//因为我们初始化为，所以里面的数据默认为0，会索引到我们第一个字符
-						{
-							ch1[i] = ' ';//这里是我们的'(',找到有对应的后赋为空
-							ch1[j] = ' ';//这里是我们找到的匹配的')'，赋为空
-							ch2[j] = j;//我们这里把我们记住这个配对的')'的位序
-							break;
-						}
-
-					}
-					else//如果找不到，说明他是单身
-					{
-						ch1[i] = '$';
-					}
-				}
-			}
-			else if (ch[i] == bracket1)//如果等于'）',
-			{
-				ch1[i] = '?';
-			}
-			else
-			{
-				ch1[i] = ' ';
-			}
-		}
-		for (int i = 0; i < sz; i++)
-		{
-			if (ch2[i] != 0)
-			{
-				ch1[ch2[i]] = ' ';
-			}
-
-		}
-		printf("%s\n", ch);
-		printf("%s\n", ch1);
-	}
-	return 0;
-}
-
-
-//char ch[100] = { 0 };//存放输入
-//char ch1[100] = { 0 };//存放输出
-//int  ch2[100] = { 0 };//存放已知配对的）
-//scanf("%s", &ch);
-//int sz = strlen(ch);
-//char bracket = '(';
-//char bracket1 = ')';
-//for (int i = 0; i < sz; i++)
+//#include <stdio.h>
+//int main()
 //{
-//	if (ch[i] != bracket || ch[i] != bracket1)
+//	char ch[101] = { 0 };//存放输入
+//	char ch1[101] = { 0 };//存放输出
+//	
+//	while (scanf("%s", ch) != EOF)
 //	{
-//		ch1[i] = ' ';
+//		
+//		int sz = strlen(ch);
+//		//写一个判断方法
+//		char bracket = '(';
+//		char bracket1 = ')';
+//		int  ch2[101] = { 0 };//存放已知配对的）
+//		for (int i = sz - 1; i >= 0; i--)
+//		{
+//			if (ch[i] == bracket)//如果等于'(',找一个与之匹配的')'
+//			{
+//				for (int j = i; j < sz; j++)//从我们找到的'('开始，往回找，找到最近与之匹配的')'
+//				{
+//					if (ch[j] == bracket1)
+//					{
+//						if (ch2[j] != j)//因为我们初始化为，所以里面的数据默认为0，会索引到我们第一个字符
+//						{
+//							ch1[i] = ' ';//这里是我们的'(',找到有对应的后赋为空
+//							ch1[j] = ' ';//这里是我们找到的匹配的')'，赋为空
+//							ch2[j] = j;//我们这里把我们记住这个配对的')'的位序
+//							break;
+//						}
+//
+//					}
+//					else//如果找不到，说明他是单身
+//					{
+//						ch1[i] = '$';
+//					}
+//				}
+//			}
+//			else if (ch[i] == bracket1)//如果等于'）',
+//			{
+//				ch1[i] = '?';
+//			}
+//			else
+//			{
+//				ch1[i] = ' ';
+//			}
+//		}
+//		
+//		for (int n = 0; n < sz; n++)
+//		{
+//			if (ch2[n] != 0)
+//			{
+//				ch1[ch2[n]] = ' ';
+//			}
+//
+//		}
+//	
+//		
+//		printf("%s\n", ch);
+//		printf("%s\n", ch1);
+//		for (int m = 0; m < 100; m++)
+//		{
+//			ch2[m] = 0;
+//
+//			ch[m] = '\0';
+//			ch1[m] = '\0';
+//		}
+//	
 //	}
+//	return 0;
 //}
+//#include <stdio.h>
+//#include <string.h>
+//
+//int main() {
+//	int i, j, count;
+//	char s[100], s1[100], s2[100];
+//	while (1) {
+//		gets(s);
+//		if (strlen(s) == 0)
+//			break;
+//		count = 0;
+//		for (i = 0; i < strlen(s); i++) {
+//			if (s[i] == '(')
+//				s1[count++] = '$';
+//			else if (s[i] == ')')
+//				s1[count++] = '?';
+//			else
+//				s1[count++] = ' ';
+//		}
+//		for (i = 0; i < count; i++)
+//			if (s1[i] == '$') {
+//				for (j = i; j < count; j++) {
+//					if (s1[j] == '?') {
+//						s1[j] = ' ';
+//						s1[i] = ' ';
+//						break;
+//					}
+//				}
+//			}
+//
+//
+//		for (i = 0; i < count; i++)
+//			printf("%c", s1[i]);
+//		printf("\n");
+//	}
+//	return 0;
 //}
+
+
+
 
 
 
@@ -1689,11 +1724,197 @@ int main()
 //}
 //
 
+//1085: “ACM”字符串
+//#include <stdio.h>
+//#include <string.h>
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int arr[20] = { 0 };
+//	//输入n行数据
+//	for (int i = 0; i < n; i++)
+//	{
+//		scanf("%d", &arr[i]);
+//	}
+//	char ch[] = "ACM";
+//	char sh[10000] = { 0 };//用来存放复制的字符串
+//	for (int j = 0; j < n; j++)
+//	{
+//		for (int i = 0; i < arr[j]; i++)
+//		{
+//			strncpy(sh+(i*3), ch,3);
+//		}
+//		int sz = strlen(sh);
+//		for (int x = 0; x < sz; x++)
+//		{
+//			printf("%s\n", sh);
+//		}
+//		for (int x = 0; x < sz; x++)
+//		{
+//			sh[x] = '\0';
+//		}
+//	}
+//	return 0;
+//}
+////1086: 比特字符串
+//#include <string.h>
+//int main()
+//{
+//	char arr[50] = {0};
+//	while (scanf("%s", arr))
+//	{
+//		if (arr[0] == '#')
+//		{
+//			break;
+//		}
+//		int sz = strlen(arr);
+//		int count = 0;
+//		for (int i = 0; i < sz; i++)
+//		{
+//			if (arr[i] == '1')
+//			{
+//				count++;
+//			}
+//		}
+//		if (arr[sz - 1] == 'e')//默认为偶，判断奇偶性，奇补1，偶补0
+//		{
+//			if (count % 2 != 0)
+//			{
+//				arr[sz - 1] = '1';
+//			}
+//			else
+//			{
+//				arr[sz - 1] = '0';
+//			}
+//		}
+//		else//默认为奇，
+//		{
+//			if (count % 2 != 0)
+//			{
+//				arr[sz - 1] = '0';
+//			}
+//			else
+//			{
+//				arr[sz - 1] = '1';
+//			}
+//		}
+//		printf("%s\n", arr);
+//		for (int i = 0; i < sz; i++)
+//		{
+//			arr[i] = '\0';
+//		}
+//	}
+//
+//	return 0;
+//}
+//1087: 分子质量
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//
+//	char ch[100] = { 0 };
+//	int sum = 0;
+//	for (int z = 0; z < n; z++)
+//	{
+//		scanf("%s", ch);
+//		int sz = strlen(ch);
+//		for (int i = sz - 1; i >= 0; i--)//倒序查找
+//		{
+//			if (ch[i] == 'H')
+//			{
+//				sum += 1;
+//			}
+//			else if (ch[i]=='C')
+//			{
+//				sum += 12;
+//			}			
+//			else if (ch[i]=='N')
+//			{
+//				sum += 14;
+//			}			
+//			else if (ch[i]=='O')
+//			{
+//				sum += 16;
+//			}			
+//			else if (ch[i]=='F')
+//			{
+//				sum += 19;
+//			}			
+//			else if (ch[i]=='P')
+//			{
+//				sum += 31;
+//			}			
+//			else if (ch[i]=='S')
+//			{
+//				sum += 32;
+//			}	
+//			else if (ch[i]=='K')
+//			{
+//				sum += 39;
+//			}
+//			else
+//			{
+//				if (ch[i-1] == 'H')
+//				{
+//					sum +=(ch[i]-'0')*1;
+//					i -= 1;
+//				}
+//				else if (ch[i-1] == 'C')
+//				{
+//					sum += (ch[i ] - '0') * 12;
+//					i -= 1;
+//				}
+//				else if (ch[i-1] == 'N')
+//				{
+//					sum += (ch[i] - '0') *  14;
+//					i -= 1;
+//				}
+//				else if (ch[i-1] == 'O')
+//				{
+//					sum += (ch[i ] - '0') * 16;
+//					i -= 1;
+//				}
+//				else if (ch[i-1] == 'F')
+//				{
+//					sum += (ch[i] - '0') * 19;
+//					i -= 1;
+//				}
+//				else if (ch[i-1] == 'P')
+//				{
+//					sum += (ch[i] - '0') * 31;
+//					i -= 1;
+//				}
+//				else if (ch[i-1] == 'S')
+//				{
+//					sum += (ch[i] - '0') * 32;
+//					i -= 1;
+//				}
+//				else if (ch[i-1] == 'K')
+//				{
+//					sum += (ch[i] - '0') * 39;
+//					i -= 1;
+//				}
+//			}
+//
+//		}
+//			
+//		printf("%d\n", sum);
+//		sum = 0;
+//	}
+//	return 0;
+//}
 
-
-
-
-
+//for (int a = 0; a < 8; a++)//读取到的是数字
+//{
+//	if (ch[i - 1] == ele[a])
+//	{
+//		sum += (num[a]) * (ch[i] - '0');
+//		i -= 2;
+//		break;
+//	}
+//}
 
 
 
@@ -1909,15 +2130,7 @@ int main()
 //	return 0;
 //
 //}
-//1259: 交换字符中的数位
-//int main()
-//{
-//	char ch;
-//	scanf("%c", &ch);
-//	printf("%d\n",(ch>>4)&0x06 | (ch<<4) & 0x60 | ch & 0x99);
-//	return 0;
-//
-//}
+
 ////1258: 读取字节的第6位至第2位
 //int main()
 //{
@@ -1934,6 +2147,23 @@ int main()
 //	char ch[5];
 //	scanf("%s", &ch);
 //	printf("%s\n", ch);
+//	return 0;
+//}
+// //1259: 交换字符中的数位
+//int main()
+//{
+//	char ch;
+//	scanf("%c", &ch);
+//	printf("%d\n",(ch>>4)&0x06 | (ch<<4) & 0x60 | ch & 0x99);
+//	return 0;
+//
+//}
+//// 1260: 高低字节互换
+//int main()
+//{
+//	char ch = { 0 };
+//	scanf("%c", &ch);
+//	printf("%d\n", ((ch >> 4) & 0x0f) | ((ch << 4) & 0xf0));
 //	return 0;
 //}
 //1265: 问候语
