@@ -1264,3 +1264,51 @@
 //	printf("%d", count);
 //	return 0;
 //}
+
+#include <stdio.h>
+#include <string.h>
+void lable(char s[])
+{
+    int len = strlen(s);
+    int a[len];
+    int b = 0;
+    for(int i = 0;i<len;i++)
+    {
+        if(s[i] == '(')
+        {
+            a[b] = i;
+            b++;
+        }
+        if(s[i] == ')')
+        {
+            if(b>0)
+            {b--;}
+            else if(b==0)//¹Ø¼üelse if
+            {s[i]='?';}
+        }
+    }
+    while(b>0)
+    {
+        int c = a[--b];//¹Ø¼ü--Ç°ÖÃ
+        s[c] = '$';
+    }
+    for(int j = 0;j<len;j++)
+    {
+        if(s[j]!='$' && s[j] != '?')
+        {
+            s[j] = ' ';
+        }
+    }
+}
+int main()
+{
+    char s[101];
+    while(scanf("%s",s) != EOF)
+    {
+        printf("%s\n",s);
+        lable(s);
+        printf("%s\n",s);
+    }
+    return 0;
+}
+

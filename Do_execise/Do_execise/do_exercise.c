@@ -983,7 +983,7 @@
 //// 1059: 输出实数
 //int main()
 //{
-//	float n;
+//	double n;
 //	scanf("%f", &n);
 //	printf("%6.2f\n", n);
 //	printf("%6.2f %6.2f\n", n,n);
@@ -1240,6 +1240,132 @@
 //	return 0;
 //
 //}
+
+//1073: 括号的匹配问题
+#include <stdio.h>
+int main()
+{
+	char ch[100] = { 0 };//存放输入
+	char ch1[100] = { 0 };//存放输出
+	int  ch2[100] = { 0 };//存放已知配对的）
+	while (scanf("%s", ch) != EOF)
+	{
+		int sz = strlen(ch);
+		//写一个判断方法
+		char bracket = '(';
+		char bracket1 = ')';
+		int count = 0;
+		for (int i = sz - 1; i >= 0; i--)
+		{
+			if (ch[i] == bracket)//如果等于'(',找一个与之匹配的')'
+			{
+				for (int j = i; j < sz; j++)//从我们找到的'('开始，往回找，找到最近与之匹配的')'
+				{
+					if (ch[j] == bracket1)
+					{
+						if (ch2[j] != j)//因为我们初始化为，所以里面的数据默认为0，会索引到我们第一个字符
+						{
+							ch1[i] = ' ';//这里是我们的'(',找到有对应的后赋为空
+							ch1[j] = ' ';//这里是我们找到的匹配的')'，赋为空
+							ch2[j] = j;//我们这里把我们记住这个配对的')'的位序
+							break;
+						}
+
+					}
+					else//如果找不到，说明他是单身
+					{
+						ch1[i] = '$';
+					}
+				}
+			}
+			else if (ch[i] == bracket1)//如果等于'）',
+			{
+				ch1[i] = '?';
+			}
+			else
+			{
+				ch1[i] = ' ';
+			}
+		}
+		for (int i = 0; i < sz; i++)
+		{
+			if (ch2[i] != 0)
+			{
+				ch1[ch2[i]] = ' ';
+			}
+
+		}
+		printf("%s\n", ch);
+		printf("%s\n", ch1);
+	}
+	return 0;
+}
+
+
+//char ch[100] = { 0 };//存放输入
+//char ch1[100] = { 0 };//存放输出
+//int  ch2[100] = { 0 };//存放已知配对的）
+//scanf("%s", &ch);
+//int sz = strlen(ch);
+//char bracket = '(';
+//char bracket1 = ')';
+//for (int i = 0; i < sz; i++)
+//{
+//	if (ch[i] != bracket || ch[i] != bracket1)
+//	{
+//		ch1[i] = ' ';
+//	}
+//}
+//}
+
+
+
+
+
+
+//错误版
+
+	//for (int i = 0; i < sz; i++)
+	//{
+	//	
+	//	if (ch[i] == bracket)//如果等于'(',找一个与之匹配的')'
+	//	{
+	//		
+	//		for (int j = i; j < sz; j++)
+	//		{
+	//			if (ch[j] == bracket1)
+	//			{
+	//				ch1[i] = ' ';//找到有对应的后赋为空
+	//				ch1[j] = ' ';
+	//				count++;
+
+	//			}
+	//			else
+	//			{
+	//				ch1[i] = '$';
+	//			}
+	//		}
+	//	}
+	//	else if (ch[i] == bracket1)//如果等于'）',
+	//	{
+	//		ch1[i] = '?';
+	//	}
+	//	else
+	//	{
+	//		ch1[i] = ' ';
+	//	}
+	//}
+
+
+
+
+
+
+
+
+
+
+
 ////1075: 输出以下信息
 //int main()
 //{
@@ -1347,20 +1473,20 @@
 //#include <math.h>
 //int main()
 //{
-//	double r, h;
-//	double PI = 3.14;
-//	double C1, Sa, Sb, Va, Vb;
-//	scanf("%lf %lf", &r, &h);
+//	float r, h;
+//	float PI = 3.14f;
+//	float C1, Sa, Sb, Va, Vb;
+//	scanf("%f %f", &r, &h);
 //	C1 = 2 * PI * r;
 //	Sa = PI * pow(r, 2);
 //	Sb = 4 * PI * pow(r, 2);
 //	Va = (4 / 3.0) * PI * pow(r, 3);
 //	Vb = Sa * h;
-//	printf("C1=%.2lf\n", C1);
-//	printf("Sa=%.2lf\n", Sa);
-//	printf("Sb=%.2lf\n", Sb);
-//	printf("Va=%.2lf\n", Va);
-//	printf("Vb=%.2lf\n", Vb);
+//	printf("C1=%.2f\n", C1);
+//	printf("Sa=%.2f\n", Sa);
+//	printf("Sb=%.2f\n", Sb);
+//	printf("Va=%.2f\n", Va);
+//	printf("Vb=%.2f\n", Vb);
 //	return 0;
 //}
 //
@@ -1436,7 +1562,9 @@
 ////1082: 小明兑换人民币
 //int main()
 //{
-//	double dollar = 0.0;
+//	
+// 
+//  dollar = 0.0;
 //	scanf("%lf", &dollar);
 //	double arr[12];
 //	for (int i = 0; i < 12; i++)
