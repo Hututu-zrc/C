@@ -709,7 +709,7 @@
 //    return 0;
 //}
 //
-//1042: 移位运算。
+////1042: 移位运算。
 //int main()
 //{
 //	unsigned int a, n;
@@ -718,11 +718,83 @@
 //	//{
 //	//	a = a >> n;
 //	//}
-//	a = a >> n;
-//	printf("%u\n", a);
+//	printf("%u\n", a<<(32-n) | (a>>n));
 //	return 0;
 // }
+////1043: 左右循环移位。
+//int  move(unsigned int value, int n)
+//{
+//	return  (value << (32 - n) | (value >> n));
+//}
+//int main()
+//{
+//	int value, n;
+//	scanf("%u %d", &value, &n);
+//	int ret = move(value, n);
+//	printf("%u\n", ret);
+//}
+// 
+// 
+//// 1040: 编写一个函数new
+//typedef struct Room
+//{
+//	int* p;
+//}room;
+//void new(room* space,int n)
+//{
+//	space->p = (int* )malloc(n);
+//	if (space->p == NULL)
+//	{	
+//		exit(-1);
+//	}
+//}
+//void free1(room*space)
+//{
+//	free((*space).p);
+//}
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	room space;
+//	new(&space,n);
+//	free1(&space);
+//	printf("OK");
+//}
+//// 1041: 链表的合并。
+//typedef struct Stu1
+//{
+//	int num;
+//	int grade;
+//	St* next;
+//}St;
 //
+//St* LinkListInit()
+//{
+//	St* p = (St*)malloc(sizeof(St));
+//	if (p == NULL)
+//	{
+//		printf("malloc fail\n");
+//		exit(-1);
+//	}
+//
+//	return p;
+//}
+//
+//int main()
+//{
+//	int m, n;
+//	scanf("%d %d", &m, &n);
+//	St s1;
+//	St s2;
+//	St s3;
+//	LinkListInit(&s1);
+//	LinkListInit(&s2);
+//	LinkListInit(&s3);
+//
+//	return 0;
+//}
+// 
 //1044: 设计一个函数，使得给出一个16位整数的原码，能够得到该数的补码。
 //int main()
 //{
@@ -800,6 +872,26 @@
 //	printf("%.2lf\n",sum);
 //	return 0;
 //}
+// 
+
+// 1048: 用迭代法求平方根
+//int main()
+//{
+//	int x = 0;
+//	scanf("%d", &x);
+//	double x1;
+//	double x2 = 1.0;
+//	x1 = (x2 + x / x2) / 2.0;
+//	while (fabs(x2 - x1) > 0.00001)
+//	{
+//		x2 = x1;
+//		x1 = (x2 + x / x2) / 2.0;
+//	}
+//	printf("%.3lf\n", x1);
+//	return 0;
+//}
+// 
+// 
 //1049: 求一个3×3矩阵对角线元素之和。(15分)
 //int main()
 //{
@@ -1906,15 +1998,56 @@
 //	return 0;
 //}
 
-//for (int a = 0; a < 8; a++)//读取到的是数字
+//1099: 输出一个整数的逆数
+//int main()
 //{
-//	if (ch[i - 1] == ele[a])
+//	char ch[1000] = { 0 };
+//	scanf("%s", &ch);
+//	int sz = strlen(ch);
+//	char tmp;
+//	for (int i = 0;i<sz-1;i++)
 //	{
-//		sum += (num[a]) * (ch[i] - '0');
-//		i -= 2;
-//		break;
+//		for (int j = 0; j < sz - 1 - i; j++)
+//		{
+//			tmp = ch[j];
+//			ch[j] = ch[1+j];
+//			ch[j+1] = tmp;
+//		}
+//	}
+//	/*for (int i = sz-1; i >=0; i--)
+//	{
+//		if (ch[i] == '0' && ch[i - 1] != '0' && ch[i+1]!='0' &&i!=0)
+//		{
+//			continue;
+//		}
+//		else if(ch[i] == '0' )
+//		{
+//			for (int x = i; x < sz; x++)
+//			{
+//				ch[x] = ch[x + 1];
+//			}
+//		}
+//	}
+//	printf("%s\n", ch);
+//	return 0;*/
+//	int n = 0;
+//	for (int i = 0; i < sz - 1; i++)
+//	{
+//		if (ch[i] == '0')
+//		{
+//			n++;
+//		}
+//		else
+//		{
+//			break;
+//		}
+//	}
+//	for (n; n < sz ; n++)
+//	{
+//		printf("%c", ch[n]);
 //	}
 //}
+
 
 
 
@@ -1958,14 +2091,156 @@
 //	return 0;
 //}
 
+//1100: 输出一个3位整数（100<=x and x<=999）的每一位的数字
+//int main()
+//{
+//	char n[1000] = { 0 };
+//	scanf("%s", n);
+//	int sz = strlen(n);
+//	for (int i = 0; i < sz; i++)
+//	{
+//		if (i != (sz - 1))
+//		{
+//			printf("%c", n[i]);
+//			printf(",");
+//		}
+//		else
+//		{
+//			printf("%c", n[i]);
+//			printf("\n");
+//		}
+//	
+//	}
+//	return 0;
+//}
+//1101: 日期加月份
+//int main()
+//{
+//	int year, month, day,n;
+//	scanf("%d,%d,%d", &year, &month, &day);
+//	scanf("%d", &n);
+//	year = year + (month + n) / 13;
+//	printf("%d-%d-%d\n", year, (month + n-1) % 12+1,day);
+//	return 0;
+//}
 
-
-
-
-
-
-
-
+//1103: 计算整数个数
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	for (int z = 0; z < n; z++)
+//	{
+//		int m = 0;
+//		int one = 0, five = 0, ten = 0;
+//		scanf("%d", &m);
+//		int arr[300] = { 0 };
+//		for (int i = 0; i < m; i++)
+//		{
+//			scanf("%d", &arr[i]);
+//		}
+//		for (int i = 0; i < m; i++)
+//		{
+//			if (arr[i] == 1)
+//			{
+//				one++;
+//			}
+//			else if (arr[i] == 5)
+//			{
+//				five++;
+//			}
+//			else if (arr[i] == 10)
+//			{
+//				ten++;
+//			}
+//		}
+//		printf("%d %d %d\n", one, five, ten);
+//	}
+//}
+//1104: 二倍的问题
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	for (int x = 0; x < n; x++)
+//	{
+//		int arr[100] = { 1 };
+//
+//		int i = 0;
+//		for (i = 0; i >= 0; i++)
+//		{
+//			scanf("%d", &arr[i]);
+//			if (arr[i] == 0)
+//			{
+//				break;
+//			}
+//		}
+//		int count = 0;
+//		for (int z = 0; z < i - 1; z++)
+//		{
+//			for (int j = 0; j < i - 1; j++)
+//			{
+//				if (arr[z] * 2 == arr[j])
+//				{
+//					count++;
+//				}
+//			}
+//		}
+//		printf("%d\n", count);
+//	}
+//
+//	return 0;
+//}
+//
+//1105: 喜洋洋
+//int main()
+//{
+//	int n, m, k;
+//	
+//	while ((scanf("%d %d %d", &n, &m, &k))!=EOF)
+//	{
+//		int count = 0;
+//		for (int i = n; i <= m; i += k)
+//		{
+//			count += i;
+//		}
+//		printf("%d\n", count);
+//
+//	}
+//
+//	return 0;
+//}
+//1108: count characters
+//int main()
+//{
+//	char arr[100] = { 0 };
+//	int i = 0;
+//	int count = 0;
+//	while (scanf("%c", &arr[i]) != EOF)
+//	{
+//		count++;
+//		i++;
+//	}
+//	printf("%d",count);
+//	return 0;
+//}
+//1109: Count white spaces!
+int main()
+{
+	char arr[100] = { 0 };
+	int i = 0;
+	int count = 0;
+	while (scanf("%c", &arr[i]) != EOF)
+	{
+		if (arr[i] == ' ' || arr[i] == '\t' || arr[i] == '\n')
+		{
+			count++;
+		}
+		i++;
+	}
+	printf("%d", count);
+	return 0;
+}
 
 
 
