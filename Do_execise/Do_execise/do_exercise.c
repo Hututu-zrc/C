@@ -1997,6 +1997,170 @@
 //	}
 //	return 0;
 //}
+////1088: 铺设瓷砖   时2023.9.29这题不会，等我沉淀
+//int Pave(int n)
+//{
+//	if (n==1)//基准时n==1，时只有一种贴法，就是竖着贴1*1
+//	{
+//		return n;
+//	}
+//	else if (n == 2)
+//	//n==2时，一种是2个1*1竖着贴，一种是2*2的方法
+//	//最后一种是两个1*1的横着摆；
+//	{
+//		return 3;
+//	}
+//	else
+//	//当我们选择铺地砖时，一种是Pave(n-1)先放1*1，
+//	// 另一种就是Pave(n-2)有两种方法，是先铺2*2和横着铺1*1，第一排都占两个格子
+//	{
+//		return  (Pave(n - 1)+Pave(n-2)*2 );
+//	}
+//}
+//int main()
+//{
+//	int n = 0;
+//	int m = 0;
+//	scanf("%d", &n);
+//	for (int i = 0; i < n; i++)
+//	{
+//		scanf("%d", &m);
+//		int ret = Pave(m);
+//		printf("%d\n", ret);
+//	}
+//
+//}
+// 
+//1089: 是哪种三角形？（10分）
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int a, b, c;
+//	for (int i = 0; i < n; i++)
+//	{
+//		scanf("%d %d %d", &a, &b, &c);
+//		if (a * a + b * b == c * c || b * b + c * c == a * a || a * a + c * c == b * b)
+//		{
+//			printf("good\n");
+//		}
+//		else if (a == b || b == c || a == c)
+//		{
+//			printf("perfect\n");
+//		}
+//		else
+//		{
+//			printf("just a triangle\n");
+//		}
+//	}
+//	return 0;
+//}
+// 
+// 1090: 小明的侄子过生日
+//int main()
+//{
+//
+//	int m = 0;
+//	scanf("%d", &m);
+//	for (int z = 0; z < m; z++)
+//	{
+//		int n = 0;
+//		scanf("%d", &n);
+//		int x = 0;
+//		int ch[10000] = { 0 };
+//		int a = 0, b = 0, c = 0;
+//		for (int i = n ; i >= 1; i--)
+//		{
+//			if (n % i == 0)
+//			{
+//				a = n / i;
+//				for (int j = i; j >= 1; j--)
+//				{
+//					if (i % j == 0)
+//					{
+//						b = j;
+//						c = i / j;
+//						ch[x] = (a * b + b * c + a * c) * 2;
+//						x++;
+//					}
+//
+//				}
+//			}
+//
+//		}
+//		int min = ch[0];
+//		for (int k = 1; k < x; k++)
+//		{
+//			if (ch[k] < min)
+//			{
+//				min = ch[k];
+//			}
+//		}
+//		printf("%d\n", min);
+//	}
+//	return 0;
+//}
+//1094: 小明看电视
+void swap(int* a, int* b)
+{
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+}
+int main()
+{
+	int n = 0;
+	scanf("%d", &n);
+	int arr[100][2];
+	for (int i = 0; i < n; i++)
+	{
+		scanf("%d %d", &arr[i][0],&arr[i][1]);
+	}
+	scanf("%d", &arr[n][0]);
+	for (int i = 0; i < n - 1; i++)
+	{
+		for (int j = 0; j < n - 1 - i; j++)
+		{
+			if (arr[j][0] < arr[j + 1][0])
+			{
+				for (int x = 0; x < 2; x++)
+				{
+					swap(&arr[j][x], &arr[j + 1][x]);
+				}
+			}
+			else if (arr[j][0] == arr[j + 1][0])
+			{
+				if (arr[j][1] > arr[j + 1][1])
+				{
+					int temp = arr[j][1];
+					arr[j][1] = arr[j + 1][1];
+					arr[j + 1][1] = temp;
+				}
+			}
+
+		}
+	}
+	int h = 1;
+	for (int k = 0; k < n; k++)
+	{
+		int count = 0;
+		for (int i = 0; i < n; i++)
+		{
+			for (int j = i + 1; j < n; j++)
+			{
+				if (arr[j][0] >= arr[i][1])
+				{
+					count++;
+					i = j;
+					break;
+				}
+			}
+		}
+		n = count;
+	}
+	printf("%d\n", h);
+}
+
 
 //1099: 输出一个整数的逆数
 //int main()
@@ -2066,30 +2230,6 @@
 
 
 
-//1089: 是哪种三角形？（10分）
-//int main()
-//{
-//	int n = 0;
-//	scanf("%d", &n);
-//	int a, b, c;
-//	for (int i = 0; i < n; i++)
-//	{
-//		scanf("%d %d %d", &a, &b, &c);
-//		if (a * a + b * b == c * c || b * b + c * c == a * a || a * a + c * c == b * b)
-//		{
-//			printf("good\n");
-//		}
-//		else if (a == b || b == c || a == c)
-//		{
-//			printf("perfect\n");
-//		}
-//		else
-//		{
-//			printf("just a triangle\n");
-//		}
-//	}
-//	return 0;
-//}
 
 //1100: 输出一个3位整数（100<=x and x<=999）的每一位的数字
 //int main()
@@ -2225,24 +2365,24 @@
 //	return 0;
 //}
 //1109: Count white spaces!
-int main()
-{
-	char arr[100] = { 0 };
-	int i = 0;
-	int count = 0;
-	while (scanf("%c", &arr[i]) != EOF)
-	{
-		if (arr[i] == ' ' || arr[i] == '\t' || arr[i] == '\n')
-		{
-			count++;
-		}
-		i++;
-	}
-	printf("%d", count);
-	return 0;
-}
-
-
+//int main()
+//{
+//	char arr[100] = { 0 };
+//	int i = 0;
+//	int count = 0;
+//	while (scanf("%c", &arr[i]) != EOF)
+//	{
+//		if (arr[i] == ' ' || arr[i] == '\t' || arr[i] == '\n')
+//		{
+//			count++;
+//		}
+//		i++;
+//	}
+//	printf("%d", count);
+//	return 0;
+//}
+//
+//
 
 
 
