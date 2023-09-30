@@ -2101,65 +2101,144 @@
 //	return 0;
 //}
 //1094: 小明看电视
-void swap(int* a, int* b)
-{
-	int temp = *a;
-	*a = *b;
-	*b = temp;
-}
-int main()
-{
-	int n = 0;
-	scanf("%d", &n);
-	int arr[100][2];
-	for (int i = 0; i < n; i++)
-	{
-		scanf("%d %d", &arr[i][0],&arr[i][1]);
-	}
-	scanf("%d", &arr[n][0]);
-	for (int i = 0; i < n - 1; i++)
-	{
-		for (int j = 0; j < n - 1 - i; j++)
-		{
-			if (arr[j][0] < arr[j + 1][0])
-			{
-				for (int x = 0; x < 2; x++)
-				{
-					swap(&arr[j][x], &arr[j + 1][x]);
-				}
-			}
-			else if (arr[j][0] == arr[j + 1][0])
-			{
-				if (arr[j][1] > arr[j + 1][1])
-				{
-					int temp = arr[j][1];
-					arr[j][1] = arr[j + 1][1];
-					arr[j + 1][1] = temp;
-				}
-			}
-
-		}
-	}
-	int h = 1;
-	for (int k = 0; k < n; k++)
-	{
-		int count = 0;
-		for (int i = 0; i < n; i++)
-		{
-			for (int j = i + 1; j < n; j++)
-			{
-				if (arr[j][0] >= arr[i][1])
-				{
-					count++;
-					i = j;
-					break;
-				}
-			}
-		}
-		n = count;
-	}
-	printf("%d\n", h);
-}
+//void swap1(int* a, int* b)//交换两行数据
+//{
+//	int temp = *a;
+//	*a = *b;
+//	*b = temp;
+//}
+//int main()
+//{
+//	int n = 0;
+//	while ((scanf("%d", &n)) != EOF)
+//	{
+//		if (n == 0)
+//		{
+//			exit(-1);
+//		}
+//		int arr[100][2];
+//	//循环读入
+//		for (int i = 0; i < n; i++)
+//		{
+//			scanf("%d %d", &arr[i][0], &arr[i][1]);
+//		}
+//
+//		//下面的冒泡排序，按照一行里面第二个元素的大小进行递增排序
+//		for (int i = 0; i < n - 1; i++)
+//		{
+//			for (int j = 0; j < n - 1 - i; j++)
+//			{
+//				if (arr[j][1] > arr[j + 1][1])
+//				{
+//					for (int x = 0; x < 2; x++)
+//					{
+//						swap1(&arr[j][x], &arr[j + 1][x]);
+//					}
+//				}
+//			}
+//		}
+//		int count = 1;
+//		int h = 0;
+//		for (int k = 1; k < n; k++)
+//		{
+//			//第一行属于必看，从第二行开始，找到比第一行的第二个元素大的数
+//			//因为我们是按照每行的第二个元素的大小排序，所以只要找到就是最优解
+//			if (arr[k][0] >= arr[h][1])
+//			{
+//				h = k;
+//				count++;
+//			}
+//		}
+//		printf("%d\n", count);
+//	}
+//	return 0;
+//}
+////1097: 二进制数问题
+//int main()
+//{
+//	int count_A = 0;
+//	int count_B = 0;
+//	for (int i =1; i <= 1000; i++)
+//	{
+//		int x = 0;
+//		int tmp = i;
+//		int ch[10];
+//		while (tmp!= 0 )
+//		{
+//
+//			ch[x] = tmp % 2;
+//			tmp = tmp / 2;
+//			x++;
+//		}
+//		int count_one = 0;
+//		int count_zero = 0;
+//		for (int j = 0; j < 10; j++)
+//		{
+//			if (ch[j] == 0)
+//			{
+//				count_zero++;
+//			}
+//			else if (ch[j] == 1)
+//			{
+//				count_one++;
+//			}
+//		}
+//		
+//		if (count_one > count_zero)
+//		{
+//			count_A++;
+//		}
+//		else 
+//		{
+//			count_B++;
+//		}
+//
+//	}
+//	printf("%d %d\n", count_A, count_B);
+//	return 0;
+//}
+//1098: 最大公约数和最小公倍数问题
+//int main()
+//{
+//	int count = 0;
+//	
+//	int d, c;
+//	int x, y, a, b;
+//	scanf("%d %d", &a, &b);
+//	y = a > b ? a : b;//y大
+//	x = a > b ? b : a;//x小
+//	for (int i =x ; i <= y; i++)
+//	{
+//		if (i % x == 0)
+//		{
+//			for (int j = i + 1; j <= y; j++)
+//			{
+//				if (j % x == 0)
+//				{
+//					if ((j* i) / x == y )
+//					{
+//						d = j;
+//						c = i;
+//						int tmp = 1;
+//						while (tmp) 
+//						{
+//							tmp = d % c;
+//							d = c;
+//							c = tmp;
+//						}
+//						if (d == x)
+//						{
+//							count++;
+//						}
+//						
+//					}
+//				}
+//			}
+//		}
+//	}
+//	printf("%d\n", count*2);
+//	return 0;
+//}
 
 
 //1099: 输出一个整数的逆数
@@ -2350,6 +2429,61 @@ int main()
 //
 //	return 0;
 //}
+//1106: 安全的密码
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int arr[4] = { 0 };
+//	for (int i = 0; i < n; i++)
+//	{
+//		char ch[100] = { 0 };
+//		scanf("%s", ch);
+//		char sh[] = { '!','~','@','#','$','%','^' };
+//		int sz = strlen(ch);
+//		for (int j = 0; j < sz; j++)
+//		{
+//			if (ch[j] > 'A' && ch[j] < 'Z')
+//			{
+//				arr[0] = 1;
+//			}
+//			else if (ch[j] > 'a' && ch[j] < 'z')
+//			{
+//				arr[1] = 1;
+//			}
+//			else if (ch[j] > '0' && ch[j] < '9')
+//			{
+//				arr[2] = 1;
+//			}
+//			else
+//			{
+//				for (int x = 0; x < 7; x++)
+//				{
+//					if (ch[j] == sh[x])
+//					{
+//						arr[3] = 1;
+//					}
+//				}
+//			}
+//		}
+//		int sum = 0;
+//		for (int i = 0; i < 4; i++)
+//		{
+//			sum += arr[i];
+//			arr[i] = 0;
+// 		}
+//		if (sum < 3 || sz >= 16 || sz < 8)
+//		{
+//			
+//			printf("NO\n");
+//		}
+//		else if(sum >= 3 && sz<16 &&sz>=8)
+//		{
+//			printf("YES\n");
+//		}
+//	
+//	}
+//}
 //1108: count characters
 //int main()
 //{
@@ -2382,8 +2516,80 @@ int main()
 //	return 0;
 //}
 //
-//
+//// 1110: 整数的位数
+//int main()
+//{
+//	unsigned long int a = 0;
+//	scanf("%u", &a);
+//	int count = 1;
+//	while (a / 10 != 0)
+//	{
+//		a /= 10;
+//		count++;
+//	}
+//	printf("%d\n", count);
+//	return 0;
+//}
 
+//1111: 移动最后一位数到第一位
+//int main()
+//{
+//	char ch[1000] = { 0 };
+//	scanf("%s", ch);
+//	int sz = strlen(ch);
+//	if (ch[sz - 1] != '0')
+//	{
+//		for (int i = sz - 1; i >= 0; i--)
+//		{
+//			ch[i + 1] = ch[i];
+//		}
+//		ch[0] = ch[sz];
+//		ch[sz] = '\0';
+//		printf("%s\n", ch);
+//	}
+//	else
+//	{
+//		ch[sz-1] = '\0';
+//		printf("%s\n", ch);
+//	}
+//	
+//	return 0;
+//}
+//1112: n天后是星期几
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	char ch[7][10] = { "Sunday", "Monday", "Tuesday","Wednesday","Thursday","Friday","Saturday" };
+//	printf("%s\n", ch[((3 + n) % 7 + 1)]);
+//	return 0;
+//}
+//1114: 单链表反序输出
+typedef struct Num
+{
+	int data;
+	int* next;
+}num,*List;
+int main()
+{
+	num a;
+	List l,L,p;
+	l =L= &a;
+	
+	while (scanf("%d", L->data)!=EOF)
+	{
+		p = (num*)malloc(sizeof(num));
+		if (p== NULL)
+		{
+			printf("malloc fail\n");
+			exit(-1);
+		}
+		L = p;
+	}
+	
+
+	return 0;
+}
 
 
 
