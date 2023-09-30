@@ -2564,32 +2564,86 @@
 //	printf("%s\n", ch[((3 + n) % 7 + 1)]);
 //	return 0;
 //}
-//1114: 单链表反序输出
-typedef struct Num
+//1114: 单链表反序输出  不会
+typedef struct num
 {
 	int data;
-	int* next;
+	struct num * next;
 }num,*List;
+num* LinkListInit()
+{
+	num* headnode= (num*)malloc(sizeof(num));
+	if (headnode == NULL)
+	{
+		printf("malloc fail\n");
+		exit(-1);
+	}
+	headnode->next = NULL;
+	return headnode;
+}
+num* LinkListCreate(int data)
+{
+	num* newnode = (num*)malloc(sizeof(num));
+	if (newnode == NULL)
+	{
+		printf("malloc fail\n");
+		exit(-1);
+	}
+	newnode->data = data;
+	newnode->next = NULL;
+	return newnode;
+}
 int main()
 {
-	num a;
-	List l,L,p;
-	l =L= &a;
-	
-	while (scanf("%d", L->data)!=EOF)
+	num* p;
+	num* q;
+	List L = NULL;
+	L=LinkListInit();
+	int value = 0;
+	while (scanf("%d", &value) != EOF)
 	{
-		p = (num*)malloc(sizeof(num));
-		if (p== NULL)
+		p = LinkListCreate(value);
+		if (L->next == NULL)
 		{
-			printf("malloc fail\n");
-			exit(-1);
+			L->next = p;
 		}
-		L = p;
+		else
+		{
+			num* tail = L->next;
+			while (tail->next != NULL)
+			{
+				tail = tail->next;
+			}
+			tail->next = p;
+		}
+
 	}
-	
 
 	return 0;
 }
+
+////1115: 判断是否子序列
+//int main()
+//{
+//	char arr1[100] = { 0 };
+//	char arr2[100] = { 0 };
+//	scanf("%s", arr1);
+//	scanf("%s", arr2);
+//	int sz1 = strlen(arr1);
+//	int sz2 = strlen(arr2);
+//	int signal = 0;
+//	for (int i = 0; i < sz2; i++)
+//	{
+//		for (int j = 0; j < sz2; j++)
+//		{
+//			if (arr2[i] == arr2[j])
+//			{
+//				signal++;
+//			}
+//		}
+//	}
+//	return 0;
+//}
 
 
 
