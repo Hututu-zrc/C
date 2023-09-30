@@ -2565,62 +2565,62 @@
 //	return 0;
 //}
 //1114: 单链表反序输出  不会
-typedef struct num
-{
-	int data;
-	struct num * next;
-}num,*List;
-num* LinkListInit()
-{
-	num* headnode= (num*)malloc(sizeof(num));
-	if (headnode == NULL)
-	{
-		printf("malloc fail\n");
-		exit(-1);
-	}
-	headnode->next = NULL;
-	return headnode;
-}
-num* LinkListCreate(int data)
-{
-	num* newnode = (num*)malloc(sizeof(num));
-	if (newnode == NULL)
-	{
-		printf("malloc fail\n");
-		exit(-1);
-	}
-	newnode->data = data;
-	newnode->next = NULL;
-	return newnode;
-}
-int main()
-{
-	num* p;
-	num* q;
-	List L = NULL;
-	L=LinkListInit();
-	int value = 0;
-	while (scanf("%d", &value) != EOF)
-	{
-		p = LinkListCreate(value);
-		if (L->next == NULL)
-		{
-			L->next = p;
-		}
-		else
-		{
-			num* tail = L->next;
-			while (tail->next != NULL)
-			{
-				tail = tail->next;
-			}
-			tail->next = p;
-		}
-
-	}
-
-	return 0;
-}
+//typedef struct num
+//{
+//	int data;
+//	struct num * next;
+//}num,*List;
+//num* LinkListInit()
+//{
+//	num* headnode= (num*)malloc(sizeof(num));
+//	if (headnode == NULL)
+//	{
+//		printf("malloc fail\n");
+//		exit(-1);
+//	}
+//	headnode->next = NULL;
+//	return headnode;
+//}
+//num* LinkListCreate(int data)
+//{
+//	num* newnode = (num*)malloc(sizeof(num));
+//	if (newnode == NULL)
+//	{
+//		printf("malloc fail\n");
+//		exit(-1);
+//	}
+//	newnode->data = data;
+//	newnode->next = NULL;
+//	return newnode;
+//}
+//int main()
+//{
+//	num* p;
+//	num* q;
+//	List L = NULL;
+//	L=LinkListInit();
+//	int value = 0;
+//	while (scanf("%d", &value) != EOF)
+//	{
+//		p = LinkListCreate(value);
+//		if (L->next == NULL)
+//		{
+//			L->next = p;
+//		}
+//		else
+//		{
+//			num* tail = L->next;
+//			while (tail->next != NULL)
+//			{
+//				tail = tail->next;
+//			}
+//			tail->next = p;
+//		}
+//
+//	}
+//
+//	return 0;
+//}
 
 ////1115: 判断是否子序列
 //int main()
@@ -2644,9 +2644,186 @@ int main()
 //	}
 //	return 0;
 //}
+//1117: 1970年1月1日是星期四，x年y月z日是星期几
+//int main()
+//{
+//	int year, month, day;
+//	scanf("%d-%d-%d", &year, &month, &day);
+//	char ch[7][10] = { "Sunday", "Monday", "Tuesday",
+//		"Wednesday","Thursday","Friday","Saturday" };
+//	int arr[13] = { 0,31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+//	int sum = 0;
+//	int daysum = 0;
+//	int yearsum = 365;
+//	for (int i = 1970; i < year; i++)
+//	{
+//		if (i % 4 == 0 && i % 100 != 0 || i % 400 == 0)
+//		{
+//			sum += yearsum + 1;
+//		}
+//		else
+//		{
+//			sum += yearsum;
+//		}
+//	}
+//	if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
+//	{
+//		arr[2] = 29;
+//	}
+//	for (int i = 0; i < month; i++)
+//	{
+//		daysum += arr[i];
+//	}
+//	int total = (daysum + sum + day+2) % 7 + 1;
+//
+//	printf("%s\n", ch[total]);
+//	//printf("%d", sum);
+//	return 0;
+//}
 
+//1118: 2019年2个日期间的天数
+//int main()
+//{
+//	int arr[13] = { 0,31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+//	int month, day,month1,day1;
+//	int ret = 0;
+//	int sum = 0;
+//	scanf("%d-%d", &month, &day);
+//	scanf("%d-%d", &month1, &day1);
+//	if (month == month1)
+//	{
+//		ret = day1 - day;
+//	}
+//	else
+//	{
+//		for (int i = month+1; i < month1; i++)
+//		{
+//			sum += arr[i];
+//		}
+//		ret = arr[month] - day + day1+sum;
+//	}
+//	
+//	printf("%d\n", ret);
+//	
+//	return 0;
+//}
+//1119: 2个日期间的天数。
+int main()
+{
+	int arr[13] = { 0,31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+	int arr1[13] = { 0,31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+	int month, day,month1,day1,year,year1;
+	int ret = 0;
+	int sum = 0;
+	int sum1 = 0;
+	int total = 365;
+	int ret2 = 0;
+	scanf("%d-%d-%d",&year, &month, &day);
 
-
+	scanf("%d-%d-%d",&year1, &month1, &day1);
+	if (year == year1 )
+	{
+		if (month == month1)
+		{
+			ret = day1 - day;
+		}
+		else
+		{
+			if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
+			{
+				for (int i = month + 1; i < month1; i++)
+				{
+					sum += arr1[i];
+				}
+				ret = arr[month] - day + day1 + sum;
+			}
+			else
+			{
+				for (int i = month + 1; i < month1; i++)
+				{
+					sum += arr[i];
+				}
+				ret = arr[month] - day + day1 + sum;
+			}
+		
+		}
+	}
+	else//两年日期不相等
+	{
+		if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)//第一个闰年和非闰年
+		{
+			for (int i = month + 1; i < 13; i++)//闰年
+			{
+				sum += arr1[i];
+			}
+			sum1 = sum + arr1[month] - day;
+		}
+		else
+		{
+			for (int i = month + 1; i < 13; i++)//非闰年
+			{
+				sum += arr[i];
+			}
+			sum1 = sum + arr[month] - day;
+		}
+		if (year1 % 4 == 0 && year1 % 100 != 0 || year1 % 400 == 0)//第二个闰年
+		{
+			for (int j = 1; j < month1; j++)
+			{
+				ret += arr1[j];//第二个输入的年份的月份前几个月天数之和
+			}
+			ret = sum1 + day1;
+			if (year1 - year == 1)//连续年
+			{
+				;
+			}
+			else//非连续年
+			{
+				for (int x = year + 1; x < year1; x++)
+				{
+					if (x % 4 == 0 && x % 100 != 0 || x % 400 == 0)
+					{
+						ret += total + 1;
+					}
+					else
+					{
+						ret += total;
+					}
+				}
+			}
+			
+		}
+		else//第二个不是闰年
+		{
+			for (int j = 1; j < month1; j++)
+			{
+				ret += arr[j];
+			}
+			ret += sum1 + day1;
+			if (year1 - year == 1)
+			{
+				;
+			}
+			else
+			{
+				for (int x = year + 1; x < year1; x++)
+				{
+					
+					if (x % 4 == 0 && x % 100 != 0 || x % 400 == 0)
+					{
+						ret += total + 1;
+					}
+					else
+					{
+						ret += total;
+					}
+				}
+			}
+		}
+	}
+	printf("%d\n", ret);
+	return 0;
+}
 
 
 
