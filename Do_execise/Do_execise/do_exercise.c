@@ -2708,132 +2708,320 @@
 //	return 0;
 //}
 //1119: 2个日期间的天数。
+//int main()
+//{
+//	int arr[13] = { 0,31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+//	int arr1[13] = { 0,31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+//	int month, day,month1,day1,year,year1;
+//	int ret = 0;
+//	int sum = 0;
+//	int sum1 = 0;
+//	int total = 365;
+//	int ret2 = 0;
+//	scanf("%d-%d-%d",&year, &month, &day);
+//	scanf("%d-%d-%d",&year1, &month1, &day1);
+//	if (year == year1 )
+//	{
+//		if (month == month1)
+//		{
+//			ret = day1 - day;
+//		}
+//		else
+//		{
+//			if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)//闰年
+//			{
+//				for (int i = month + 1; i < month1; i++)
+//				{
+//					sum += arr1[i];//闰年2月使用arr1
+//				}
+//				ret = arr[month] - day + day1 + sum;
+//			}
+//			else
+//			{
+//				for (int i = month + 1; i < month1; i++)
+//				{
+//					sum += arr[i];//非闰年2月使用arr
+//				}
+//				ret = arr[month] - day + day1 + sum;
+//			}
+//		
+//		}
+//	}
+//	else//两年日期不相等
+//	{
+//		if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)//第一个闰年和非闰年
+//		{
+//			for (int i = month + 1; i < 13; i++)//闰年
+//			{
+//				sum += arr1[i];
+//			}
+//			sum1 = sum + arr1[month] - day;
+//		}
+//		else
+//		{
+//			for (int i = month + 1; i < 13; i++)//非闰年
+//			{
+//				sum += arr[i];
+//			}
+//			sum1 = sum + arr[month] - day;
+//		}
+//		if (year1 % 4 == 0 && year1 % 100 != 0 || year1 % 400 == 0)//第二个闰年
+//		{
+//			for (int j = 1; j < month1; j++)
+//			{
+//				ret += arr1[j];//第二个输入的年份的月份前几个月天数之和
+//			}
+//			//sum1是year天数，ret1里面已经计算了year1前几个月的天数
+//			ret += sum1 + day1;//此时的ret已经是year年和year1那年的和
+//			if (year1 - year == 1)//连续年
+//			{
+//				;
+//			}
+//			else//非连续年
+//			{
+//				for (int x = year + 1; x < year1; x++)
+//				{
+//					if (x % 4 == 0 && x % 100 != 0 || x % 400 == 0)
+//					{
+//						ret += total + 1;
+//					}
+//					else
+//					{
+//						ret += total;
+//					}
+//				}
+//			}
+//			
+//		}
+//		else//第二个不是闰年
+//		{
+//			for (int j = 1; j < month1; j++)
+//			{
+//				ret += arr[j];
+//			}
+//			ret += sum1 + day1;
+//			if (year1 - year == 1)
+//			{
+//				;
+//			}
+//			else
+//			{
+//				for (int x = year + 1; x < year1; x++)
+//				{
+//					
+//					if (x % 4 == 0 && x % 100 != 0 || x % 400 == 0)
+//					{
+//						ret += total + 1;
+//					}
+//					else
+//					{
+//						ret += total;
+//					}
+//				}
+//			}
+//		}
+//	}
+//	printf("%d\n", ret);
+//	return 0;
+//}
+//1120: 整数--均值
+//int main()
+//{
+//	int n = 0;
+//	while (scanf("%d", &n) != EOF)
+//	{
+//		int arr[100]; 
+//		double ret = 0.0;
+//		for (int i = 0; i < n; i++)
+//		{
+//			scanf("%d", &arr[i]);
+//			ret += arr[i];
+//		}
+//		printf("%.2lf\n", ret / n);
+//	}
+//	return 0;
+//}
+//1121: 分数大战
+//int main()
+//{
+//	int a=0, b=0, c=0, d=0,e=0,f=0,e1=0,f1=0;
+//	int tmp = 1;
+//	while (scanf("%d %d %d %d",&a,&b,&c,&d) != EOF)
+//	{
+//		tmp = 1;
+//		if (b == d)
+//		{
+//			f = b;
+//			e = a + c;
+//			e1 = e;
+//			f1 = f;
+//			while (tmp)
+//			{
+//				tmp = e1 % f1;
+//				e1 = f1;
+//				f1 = tmp;
+//			}
+//			f /= e1;
+//			e /= e1;
+//			printf("%d/%d\n", e, f);
+//		}
+//		else
+//		{
+//			f = b * d;
+//			e = a * d + b * c;
+//			e1 = e;
+//			f1 = f;
+//			while (tmp)
+//			{
+//				tmp = e1 % f1;
+//				e1 = f1;
+//				f1 = tmp;
+//			}
+//			if (e1 == 1)
+//			{
+//				printf("%d/%d\n", e, f);
+//			}
+//			else
+//			{
+//				f /= e1;
+//				e /= e1;
+//				printf("%d/%d\n", e, f);
+//			}
+//			
+//		}
+//	}
+//	return 0;
+//}
+//1122: 输出正方形字符串
+//#include <stdio.h>
+//#include <string.h>
+//int main()
+//{
+//	int n = 0;
+//	while (scanf("%d", &n) != EOF)
+//	{
+//
+//		char ch[] = "ACM";
+//		char sh[10000] = { 0 };//用来存放复制的字符串
+//		for (int i = 0; i < n; i++)
+//		{
+//			strncpy(sh +(i*3), ch, 3);
+//		}
+//		
+//		int sz = strlen(sh);
+//		for (int x = 0; x < sz; x++)
+//		{
+//			printf("%s\n", sh);
+//		}
+//		for (int x = 0; x < sz; x++)
+//		{
+//			sh[x] = '\0';
+//		}
+//		
+//	}
+//	
+//	return 0;
+//}
+
+//1123: Replace to single blank
+////// 错误版
 int main()
 {
-	int arr[13] = { 0,31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-	int arr1[13] = { 0,31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-	int month, day,month1,day1,year,year1;
-	int ret = 0;
-	int sum = 0;
-	int sum1 = 0;
-	int total = 365;
-	int ret2 = 0;
-	scanf("%d-%d-%d",&year, &month, &day);
+	
+	char ch[1000] = { 0 };
+	char ch1[1000] = { 0 };
+	while (gets(ch) != EOF)
+	{
+		int sz = strlen(ch);
+		int j = 0;
+		for (int i = 0; i < sz; i++)
+		{
+			if (ch[i] != ' ')
+			{
+				ch1[j] = ch[i];
+				j++;
+			}
+			else
+			{
+				if (ch[i + 1] != ' ')
+				{
+					ch1[j] = ch[i];
+					j++;
+				}
+			}
 
-	scanf("%d-%d-%d",&year1, &month1, &day1);
-	if (year == year1 )
-	{
-		if (month == month1)
-		{
-			ret = day1 - day;
 		}
-		else
-		{
-			if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
-			{
-				for (int i = month + 1; i < month1; i++)
-				{
-					sum += arr1[i];
-				}
-				ret = arr[month] - day + day1 + sum;
-			}
-			else
-			{
-				for (int i = month + 1; i < month1; i++)
-				{
-					sum += arr[i];
-				}
-				ret = arr[month] - day + day1 + sum;
-			}
 		
+		printf("%s\n", ch1);
+		int sz1 = strlen(ch1);
+		for (int i = 0; i < sz1; i++)
+		{
+			ch1[i] = '\0';
+		}
+		for (int i = 0; i < sz; i++)
+		{
+			ch[i] = '\0';
 		}
 	}
-	else//两年日期不相等
-	{
-		if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)//第一个闰年和非闰年
-		{
-			for (int i = month + 1; i < 13; i++)//闰年
-			{
-				sum += arr1[i];
-			}
-			sum1 = sum + arr1[month] - day;
-		}
-		else
-		{
-			for (int i = month + 1; i < 13; i++)//非闰年
-			{
-				sum += arr[i];
-			}
-			sum1 = sum + arr[month] - day;
-		}
-		if (year1 % 4 == 0 && year1 % 100 != 0 || year1 % 400 == 0)//第二个闰年
-		{
-			for (int j = 1; j < month1; j++)
-			{
-				ret += arr1[j];//第二个输入的年份的月份前几个月天数之和
-			}
-			ret = sum1 + day1;
-			if (year1 - year == 1)//连续年
-			{
-				;
-			}
-			else//非连续年
-			{
-				for (int x = year + 1; x < year1; x++)
-				{
-					if (x % 4 == 0 && x % 100 != 0 || x % 400 == 0)
-					{
-						ret += total + 1;
-					}
-					else
-					{
-						ret += total;
-					}
-				}
-			}
-			
-		}
-		else//第二个不是闰年
-		{
-			for (int j = 1; j < month1; j++)
-			{
-				ret += arr[j];
-			}
-			ret += sum1 + day1;
-			if (year1 - year == 1)
-			{
-				;
-			}
-			else
-			{
-				for (int x = year + 1; x < year1; x++)
-				{
-					
-					if (x % 4 == 0 && x % 100 != 0 || x % 400 == 0)
-					{
-						ret += total + 1;
-					}
-					else
-					{
-						ret += total;
-					}
-				}
-			}
-		}
-	}
-	printf("%d\n", ret);
+
 	return 0;
 }
+////#include <stdio.h>
+////我的理想型
+////int main() {
+////	char ch;
+////	char prevChar = ' ';
+////
+////	while ((ch = getchar()) != EOF) {
+////		if (ch == ' ' && prevChar == ' ') {
+////			 如果当前字符是空格且前一个字符也是空格，则不输出
+////			continue;
+////		}
+////
+////		putchar(ch);
+////		prevChar = ch;
+////	}
+////
+////	return 0;
+////}
 
 
 
+//1124: Replace backslach and newline character
+//int main()
+//{
+//	char ch[1000] = { 0 };
+//	scanf("%s", ch);
+//	int j = 0;
+//	char ch1[1000] = { 0 };
+//	int sz = strlen(ch);
+//	for (int i = 0; i < sz; i++)
+//	{
+//		
+//		ch1[j] = ch[i];
+//		if (ch[i] == '\\')
+//		{
+//			ch1[i + 1] = '\\'; 
+//			j++;
+//		}
+//		j++;
+//	}
+//	return 0;
+//}
 
-
-
-
-
-
-
+//1126: 只留字母
+//int main()
+//{
+//	char ch;
+//	while (ch = getchar() != EOF)
+//	{
+//		if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))
+//		{
+//
+//		}
+//	}
+//	return 0;
+//}
 
 
 

@@ -1,2 +1,5 @@
 ﻿  do_exercise.c
+F:\visual studio code\c-language\Do_execise\Do_execise\do_exercise.c(2933,9): warning C4013: “gets”未定义；假设外部返回 int
+F:\visual studio code\c-language\Do_execise\Do_execise\do_exercise.c(2935,12): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+F:\visual studio code\c-language\Do_execise\Do_execise\do_exercise.c(2956,13): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
   Do_execise.vcxproj -> F:\visual studio code\c-language\Do_execise\x64\Debug\Do_execise.exe
