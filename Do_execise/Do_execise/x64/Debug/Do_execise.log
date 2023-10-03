@@ -1,5 +1,11 @@
 ﻿  do_exercise.c
-F:\visual studio code\c-language\Do_execise\Do_execise\do_exercise.c(2933,9): warning C4013: “gets”未定义；假设外部返回 int
-F:\visual studio code\c-language\Do_execise\Do_execise\do_exercise.c(2935,12): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-F:\visual studio code\c-language\Do_execise\Do_execise\do_exercise.c(2956,13): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-  Do_execise.vcxproj -> F:\visual studio code\c-language\Do_execise\x64\Debug\Do_execise.exe
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(741,5): error MSB6006: “CL.exe”已退出，代码为 2。
+F:\visual studio code\c-language\Do_execise\Do_execise\do_exercise.c(3740,15): error C2065: “array1”: 未声明的标识符
+F:\visual studio code\c-language\Do_execise\Do_execise\do_exercise.c(3740,14): error C2109: 下标要求数组或指针类型
+F:\visual studio code\c-language\Do_execise\Do_execise\do_exercise.c(3746,28): error C2065: “array1”: 未声明的标识符
+F:\visual studio code\c-language\Do_execise\Do_execise\do_exercise.c(3746,27): error C2109: 下标要求数组或指针类型
+F:\visual studio code\c-language\Do_execise\Do_execise\do_exercise.c(3746,42): error C2065: “array1”: 未声明的标识符
+F:\visual studio code\c-language\Do_execise\Do_execise\do_exercise.c(3746,41): error C2109: 下标要求数组或指针类型
+F:\visual studio code\c-language\Do_execise\Do_execise\do_exercise.c(3746,12): warning C4473: “printf”: 没有为格式字符串传递足够的参数
+F:\visual studio code\c-language\Do_execise\Do_execise\do_exercise.c(3746,12): message : 占位符和其参数预计 2 可变参数，但提供的却是 0 参数
+F:\visual studio code\c-language\Do_execise\Do_execise\do_exercise.c(3746,12): message : 缺失的可变参数 1 为格式字符串“%d”所需

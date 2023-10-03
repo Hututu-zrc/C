@@ -2925,47 +2925,47 @@
 
 //1123: Replace to single blank
 ////// 错误版
-int main()
-{
-	
-	char ch[1000] = { 0 };
-	char ch1[1000] = { 0 };
-	while (gets(ch) != EOF)
-	{
-		int sz = strlen(ch);
-		int j = 0;
-		for (int i = 0; i < sz; i++)
-		{
-			if (ch[i] != ' ')
-			{
-				ch1[j] = ch[i];
-				j++;
-			}
-			else
-			{
-				if (ch[i + 1] != ' ')
-				{
-					ch1[j] = ch[i];
-					j++;
-				}
-			}
-
-		}
-		
-		printf("%s\n", ch1);
-		int sz1 = strlen(ch1);
-		for (int i = 0; i < sz1; i++)
-		{
-			ch1[i] = '\0';
-		}
-		for (int i = 0; i < sz; i++)
-		{
-			ch[i] = '\0';
-		}
-	}
-
-	return 0;
-}
+//int main()
+//{
+//	
+//	char ch[1000] = { 0 };
+//	char ch1[1000] = { 0 };
+//	while (gets(ch) != EOF)
+//	{
+//		int sz = strlen(ch);
+//		int j = 0;
+//		for (int i = 0; i < sz; i++)
+//		{
+//			if (ch[i] != ' ')
+//			{
+//				ch1[j] = ch[i];
+//				j++;
+//			}
+//			else
+//			{
+//				if (ch[i + 1] != ' ')
+//				{
+//					ch1[j] = ch[i];
+//					j++;
+//				}
+//			}
+//
+//		}
+//		
+//		printf("%s\n", ch1);
+//		int sz1 = strlen(ch1);
+//		for (int i = 0; i < sz1; i++)
+//		{
+//			ch1[i] = '\0';
+//		}
+//		for (int i = 0; i < sz; i++)
+//		{
+//			ch[i] = '\0';
+//		}
+//	}
+//
+//	return 0;
+//}
 ////#include <stdio.h>
 ////我的理想型
 ////int main() {
@@ -2988,6 +2988,7 @@ int main()
 
 
 //1124: Replace backslach and newline character
+// //错误版
 //int main()
 //{
 //	char ch[1000] = { 0 };
@@ -3008,42 +3009,747 @@ int main()
 //	}
 //	return 0;
 //}
-
-//1126: 只留字母
 //int main()
 //{
 //	char ch;
-//	while (ch = getchar() != EOF)
+//	while ((ch = getchar()) != EOF)
 //	{
-//		if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))
+//		if (ch == '\\')
 //		{
-//
+//			putchar(ch);
+//			putchar(ch);
 //		}
+//		else if (ch == '\n')
+//		{
+//			putchar('\\');
+//			putchar('n');
+//		}
+//		else
+//			putchar(ch);
 //	}
 //	return 0;
 //}
 
+//1125: 输出由红、绿、蓝三元色组成的所有排列。
+//int main()
+//{
+//	printf("R,G,B\n");
+//	printf("R,B,G\n");
+//	printf("G,R,B\n");
+//	printf("G,B R\n");
+//	printf("B,R,G\n");
+//	printf("B,G,R\n");
+//	return 0;
+//}
+// #include <stdio.h>
 
+//// 交换数组元素
+//void swap(char* a, char* b) {
+//	char temp = *a;
+//	*a = *b;
+//	*b = temp;
+//}
 
+//// 递归函数，生成三元色排列
+//void generate_permutations(char colors[], int n) {
+//	if (n == 1) {
+//		for (int i = 0; i < 3; i++) {
+//			printf("%c", colors[i]);
+//			if (i < 2) {
+//				printf(",");
+//			}
+//		}
+//		printf("\n");
+//	}
+//	else {
+//		for (int i = 0; i < n; i++) {
+//			// 交换元素
+//			swap(&colors[i], &colors[n - 1]);
+//			// 递归生成剩余元素的排列
+//			generate_permutations(colors, n - 1);
+//			// 恢复原始顺序
+//			swap(&colors[i], &colors[n - 1]);
+//		}
+//	}
+//}
+//
+//int main() {
+//	char colors[] = { 'R', 'G', 'B' };
+//	generate_permutations(colors, 3);
+//
+//	return 0;
+//}
 
+////1126: 只留字母
+//int main()
+//{
+//	char ch;
+//	while ((ch = getchar())!= EOF)
+//	{
+//		if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))
+//		{
+//			putchar(ch);
+//		}
+//	}
+//	return 0;
+//}
+//1127: 求和
 
+//int main()
+//{
+//	int n = 0;
+//	while ((scanf("%d", &n) != EOF))
+//	{
+//
+//		int arr[100] = { 0 };
+//		for (int i = 0; i < n; i++)
+//		{
+//			scanf("%d", &arr[i]);
+//		}
+//		int m = 0;
+//		int sum = 0;
+//		int temp = 0;
+//		scanf("%d", &m);
+//		for (int i = 1; i <= m; i++)
+//		{
+//			for (int j = 0; j < n; j++)
+//			{
+//				temp = i;
+//				if (temp == arr[j])
+//				{
+//					sum -= i;
+//				}
+//			}
+//			sum += i;
+//		}
+//		printf("%d\n", sum);
+//
+//	}
+//	return 0;
+////}
+//// 1128: 哥德巴赫猜想
+//int main()
+//{
+//	int n = 0;
+//	while (scanf("%d", &n) != EOF)
+//	{
+//		int count = 0;
+//		int m = 0;
+//		int i = 2;
+//		while (m % i != 0)
+//		{
+//			i++;
+//			if (i >= m - 1)
+//			{
+//				
+//				break;
+//			}
+//		}
+//	}
+//	
+//}
 
+//1130: 输出三角形-1
+//int main()
+//{
+//	int n = 0;
+//	while ((scanf("%d", &n) != EOF))
+//	{
+//		char ch = '*';
+//		for(int i=1;i<=n;i++)
+//		{
+//			for (int j = 1; j <= i; j++)
+//			{
+//				printf("%c", ch);
+//				if (i != j)
+//				{
+//					printf(" ");
+//				}
+//			}
+//			printf("\n");
+//		}
+//	}
+//
+//	return 0;
+//}
 
+//1131: 输出三角形 - 2
+//int main()
+//{
+//	int n = 0;
+//	while ((scanf("%d", &n) != EOF))
+//	{
+//		char arr[100][10000];
+//		for (int j = 0; j < n; j++)
+//		{
+//
+//			for (int i = j * 2; i < 2 * n - 1; i += 2)
+//			{
+//
+//				arr[j][i] = '*';
+//				if (i != 2 * n - 2)
+//				{
+//					arr[j][i + 1] = ' ';
+//				}
+//			}
+//		}
+//		for (int i = 0; i < n; i++)
+//		{
+//			for (int k = 0; k < i * 2; k++)
+//			{
+//				printf(" ");
+//			}
+//			for (int j = i * 2; j < 2 * n - 1; j++)
+//			{
+//				printf("%c", arr[i][j]);
+//			}
+//			printf("\n");
+//		}
+//
+//	}
+//	
+//	
+//	return 0;
+//}
+// 错误版
+//int main()
+//{
+//	int n = 0;
+//	while ((scanf("%d", &n) != EOF))
+//	{
+//		for (int j = 1; j <=n; j++)
+//		{
+//			for (int i = j*2-1; i <= 2 * n - 1; i++)
+//			{
+//				if (i % 2 == 0)
+//				{
+//					printf(" ");
+//				}
+//				else
+//				{
+//					printf("*");
+//				}
+//				/*for (int j = i * 2; j < 2 * n - 1; j++)
+//				{
+//					printf("*");
+//				}*/
+//			}
+//			printf("\n");
+//		}
+//	
+//	}
+//	return 0;
+//}
+//
+//1132: 缩写词组
+//int main()
+//{
+//	int T = 0;
+//	scanf("%d", &T);
+//	getchar();
+//	for (int x = 0; x < T; x++)
+//	{
+//		
+//		char ch[1000] = { 0 };
+//		gets(ch);
+//		int count = 0;
+//		char arr[100] = { 0 };
+//		int sz = strlen(ch);
+//		int signal = 0;
+//		for (int i = 0; i < sz; i++)
+//		{
+//			if (signal == 0)
+//			{
+//				if (ch[i] >= 'A' && ch[i] <= 'Z')
+//				{
+//					arr[count] = ch[i];
+//					count++;
+//				}
+//				else if (ch[i] >= 'a' && ch[i] <= 'z')
+//				{
+//					arr[count] = ch[i] - 32;
+//					count++;
+//				}
+//			}
+//			if ((ch[i] >= 'A' && ch[i] <= 'Z') ||
+//				(ch[i] >= 'a' && ch[i] <= 'z'))
+//			{
+//				signal = 1;
+//			}
+//			else if (ch[i] == ' ')
+//			{
+//				signal = 0;
+//			}
+//		}
+//		printf("%s\n", arr);
+//	}
+//	
+//	return 0;
+//}
+////1133: 填数字
+//int geometric (int *f,int*g,int*h,int*i,int*j)
+//{
+//	int dif = (*j) / (*i);
+//	(*f) = (*j) * dif;
+//	(*g) = (*f) * dif;
+//	(*h) = (*g) * dif;
+//	(*i) = (*h) * dif;
+//	(*j) = (*i) * dif;
+//	return 0;
+//}
+//int arithmetic (int* f, int* g, int* h, int* i, int* j)
+//{
+//	int dif = (*j) - (*i);
+//	(*f) = (*j) + dif;
+//	(*g) = (*f) + dif;
+//	(*h) = (*g) + dif;
+//	(*i) = (*h) + dif;
+//	(*j) = (*i) + dif;
+//	return 0;
+//}
+//int Fib(int* f, int* g, int* h, int* i, int* j)
+//{
+//	(*f) = (*j) + (*i);
+//	(*g) = (*f) + (*j);
+//	(*h) = (*f) +(*g) ;
+//	(*i) = (*g) + (*h);
+//	(*j) = (*i) + (*h);
+//	return 0;
+//}
+//int main()
+//{
+//	int a, b, c, d, e;
+//	while ((scanf("%d %d %d %d %d", &a, &b, &c, &d, &e) != EOF))
+//	{
+//		if (a == 0 && b == 0 && c == 0 && d == 0 && e == 0)
+//		{
+//			break;
+//		}
+//		 if ((e - d) == (d - c))
+//		{
+//			arithmetic(&a,&b, &c, &d, &e);
+//		}
+//		 else if ((e == (d + c)))
+//		 {
+//			 Fib(&a, &b, &c, &d, &e);
+//		 }
+//		 else if ((e / d) == (d / c))
+//		{
+//			geometric(&a, &b, &c, &d, &e);
+//		}
+//		 
+//		 printf("%d %d %d %d %d\n", a, b, c, d, e);
+//	}
+//}
+//1134: Write a program that prints its input one word per line.
+// 错误版
+//int main()
+//{
+//	char ch[1000] = { 0 };
+//	char arr[1000] = { 0 };
+//	gets(ch);
+//	int signal = 1;
+//	int sz = strlen(ch);
+//	for (int i = 0; i < sz; i++)
+//	{
+//		if ((ch[i] >= 'A' && ch[i] <= 'Z') ||(ch[i] >= 'a' && ch[i] <= 'z'))
+//		{
+//			if (signal == 1)
+//			{
+//				arr[i] = ch[i];
+//				signal = 1;
+//			}
+//			
+//		}
+//		else if (ch[i] == ' ')
+//		{
+//			signal = 0;
+//		}
+//	}
+//	return 0;
+//}
+// 正确版
+//int main()
+//{
+//	char ch;
+//	char prechar;
+//	while ((ch = getchar()) != EOF)
+//	{
+//		if (ch != ' ' && ch != '\t' && ch != '\n')
+//		{
+//			putchar(ch);
+//		}
+//		else if(prechar != '\t' && prechar != '\n' && prechar!=' ')
+//		{
+//			putchar('\n');
+//		}
+//		prechar = ch;
+//	}
+//	return 0;
+//}
+//#include <stdio.h>
+//1135: 子网掩码
+//int main()
+//{
+//	int a, b, c, d, e, f, g, h,input;
+//	int a1, b1, c1, d1,ret1,ret2,ret3,ret4;
+//	scanf("%d.%d.%d.%d", &a, &b, &c, &d);
+//	scanf("%d.%d.%d.%d", &e, &f, &g, &h);
+//	scanf("%d", &input);
+//	ret1 = a & e;
+//	ret2 = b & f;
+//	ret3 = c & g;
+//	ret4 = d & h;
+//	for (int i = 0;i<input ;i++)
+//	{
+//		scanf("%d.%d.%d.%d", &a1, &b1, &c1, &d1);
+//		if ((ret1 == (e & a1)) && (ret2 == (f & b1)) &&
+//			(ret3 == (g & c1)) && (ret4 == (h & d1)))
+//		{
+//			printf("INNER\n");
+//		}
+//		else
+//		{
+//			printf("OUTER\n");
+//		}
+//	}
+//	return 0;
+//}
+//1136: 湖北警官学院IP地址
 
+//int main()
+//{
+//	int a, b, c, d;
+//	while ((scanf("%d.%d.%d.%d", &a, &b, &c, &d)) != EOF)
+//	{
+//		if (a == 122)
+//		{
+//			if (b == 204)
+//			{
+//				if (c >= 224 && c <= 231)
+//				{
+//					if (d >= 0 && d <= 255)
+//					{
+//						printf("YES\n");
+//					}
+//					else
+//					{
+//						printf("NO\n");
+//					}
+//				}
+//				else
+//				{
+//					printf("NO\n");
+//				}
+//			}
+//			else
+//			{
+//				printf("NO\n");
+//			}
+//		}
+//		else
+//		{
+//			printf("NO\n");
+//		}
+//	}
+//	
+//	return 0;
+//}
 
+//1137: 等差数列
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	for (int i = 0; i < n; i++)
+//	{
+//		int arr[5];
+//		int ch[4];
+//		int count = 0;
+//		scanf("%d %d %d %d %d", &arr[0], &arr[1], &arr[2], &arr[3], &arr[4]);
+//		for (int j = 0; j < 4; j++)
+//		{
+//			ch[j] = arr[j + 1] - arr[j];
+//		}
+//		for (int j = 0; j < 3; j++)
+//		{
+//			if (ch[j] == ch[j + 1])
+//			{
+//				count++;
+//			}
+//		}
+//		if (count==3 )
+//		{
+//			printf("YES\n");
+//		}
+//		else
+//		{
+//			printf("NO\n");
+//		}
+//	}
+//	return 0;
+//}
+//1138: IP地址的合法性检查。
+////是否有四个点
+////是否全是数字
+////是否在~255之间
+//	}
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	for (int i = 0; i < n; i++)
+//	{
+//		int a, b, c, d;
+//		char ch[10] = { 0 };
+//		if ((scanf("%d.%d.%d.%d", &a, &b, &c, &d)) !=4)
+//		{
+//			printf("NO\n");
+//		}
+//		
+//		else
+//		{
+//			gets(ch);
+//			if ((a>= 0 &&a<= 255) && (b>= 0 && b<= 255)
+//				&& (c>= 0 && c<= 255) && (d>= 0 && d<= 255)) 
+//			{
+//				int signal = 0;
+//				for (int j = 0; j < 10; j++)
+//				{
+//					if (ch[j] != '\0')
+//					{
+//						signal = 1;
+//					}
+//				}
+//				if (signal == 0)
+//				{
+//					printf("YES\n");
+//				}
+//				else
+//				{
+//					printf("NO\n");
+//				}
+//			}
+//			else
+//			{
+//				printf("NO\n");
+//			}
+//		}
+//	}
+//	return 0;
+//}
+//
+//1139: 费波拉契数列
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	for (int i = 0; i < n; i++)
+//	{
+//		int arr[5];
+//		scanf("%d %d %d %d %d", &arr[0], &arr[1], &arr[2], &arr[3], &arr[4]);
+//		int singal = 0;
+//		for (int j = 2; j < 5; j++)
+//		{
+//			if (arr[j] == arr[j - 1] + arr[j - 2])
+//			{
+//				singal++;
+//			}
+//
+//		}
+//		if (singal == 3)
+//		{
+//			printf("YES\n");
+//		}
+//		else
+//		{
+//			printf("NO\n");
+//		}
+//	}
+//		
+//	return 0;
+//}
 
+//1142: Reverse your input string
+//int main()
+//{
+//	char ch[1000] = { 0 };
+//	while (scanf("%s", ch) != EOF)
+//	{
+//		int sz = strlen(ch);
+//		for (int i = 0; i < sz - 1; i++)
+//		{
+//			for (int j = 0; j < sz - 1 - i; j++)
+//			{
+//				char tmp = ch[j];
+//				ch[j] = ch[j + 1];
+//				ch[j + 1] = tmp;
+//			}
+//		}
+//		printf("%s\n", ch);
+//		for (int i = 0; i < sz; i++)
+//		{
+//			ch[i] = '\0';
+//		}
+//	}
+//
+//	return 0;
+//}
+//1143: 完数
+//int main()
+//{
+//	int n = 0;
+//	while (scanf("%d", &n) != EOF)
+//	{
+//		int sum = 0;
+//		int i = 1;
+//		while (i)
+//		{
+//			if (n % i == 0)
+//			{
+//				sum += i;
+//			}
+//			
+//			i++;
+//			if (i>=n)
+//			{
+//				break;
+//			}
+//		}
+//		if (sum == n)
+//		{
+//			printf("YES\n");
+//		}
+//		else
+//		{
+//			printf("NO\n");
+//		}
+//	}
+//	return 0;
+//}
+//
 
+//1145: 求一元二次方程的解
+//int main()
+//{
+//	int a, b, c;
+//	while (scanf("%d %d %d", &a, &b, &c) != EOF)
+//	{
+//		if ((b * b - 4.0 * a * c) < 0)
+//		{
+//			printf("NO SOLUTION\n");
+//		}
+//		else
+//		{
+//			double num = sqrt(b * b - 4.0 * a * c);
+//			double ret1 = (-b + num) / (2 * a);
+//			double ret2 = (-b - num) / (2 * a);
+//			printf("%.3lf~~~%.3lf\n", ret1, ret2);
+//		}
+//
+//	}
+//	return 0;
+//}
+//1146: 求最大值
+//int main()
+//{
+//	int n = 0;
+//	while (scanf("%d", &n) != EOF)
+//	{
+//		int arr[100] = { 0 };
+//		for (int i = 0; i < n; i++)
+//		{
+//			scanf("%d", &arr[i]);
+//		}
+//		int max = arr[0];
+//		for (int i = 0; i < n; i++)
+//		{
+//			if (max < arr[i])
+//			{
+//				max = arr[i];
+//			}
+//		}
+//		printf("%d\n", max);
+//	}
+//	return 0;
+//}
+//
+////1147: 级数求和
+//int main()
+//{
+//	int k = 0;
+//	scanf("%d", &k);
+//	double sum = 0.0;
+//	int i = 1;
+//	while (i)
+//	{
+//		sum += 1.0 / i;
+//		i++;
+//		if (sum > k)
+//		{
+//			break;
+//		}
+//	}
+//	printf("%d\n", i-1);
+//}
+//
+//
+// 1148: 出现的次数
+int main()
+{
+	int n = 0;
+	while (scanf("%d", &n) != EOF)//循环
+	{
+		int arr[1000] = { 0 };
+		for (int x = 0; x < n; x++)
+		{
+			scanf("%d", &arr[x]);//读入
+		}
+		//排序
+		for (int i = 0; i < n - 1; i++)
+		{
+			for (int j = 0; j < n - 1 - i; j++)
+			{
+				if (arr[j] > arr[j + 1])
+				{
+					int temp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = temp;
+				}
+			}
+		}
 
+		for (int i = 1; i < n; i++)
+		{
+			int count = 0;
+			int array1[1000][3] = { 0 };
+			array1[count][1] = 1;
+			array1[count][0] = arr[0];
+			if (arr[i] == array1[count][0])
+			{
+				array1[count][1]++;
+			}
+			else
+			{
+				count++;
+				array1[count][0] = arr[i];
+			}
+		}
+		for (int i = 0; i >= 0; i++)
+		{
+			if (array1[i][0] == 0)
+			{
+				break;
+			}
+			else
+			{
+				printf("%d %d", array1[i][0], array1[i][1]);
+			}
+		}
 
-
-
-
-
-
-
-
-
-
+	}
+	return 0;
+}
 
 
 
