@@ -3718,13 +3718,13 @@ int main()
 				}
 			}
 		}
-
-		for (int i = 1; i < n; i++)
+		int array1[1000][3] = { 0 };
+		int count = 0;
+		array1[count][1] = 0;
+		array1[count][0] = arr[0];
+		for (int i = 0; i < n; i++)
 		{
-			int count = 0;
-			int array1[1000][3] = { 0 };
-			array1[count][1] = 1;
-			array1[count][0] = arr[0];
+			
 			if (arr[i] == array1[count][0])
 			{
 				array1[count][1]++;
@@ -3733,6 +3733,7 @@ int main()
 			{
 				count++;
 				array1[count][0] = arr[i];
+				array1[count][1] = 1;
 			}
 		}
 		for (int i = 0; i >= 0; i++)
@@ -3743,7 +3744,7 @@ int main()
 			}
 			else
 			{
-				printf("%d %d", array1[i][0], array1[i][1]);
+				printf("%d %d\n", array1[i][0], array1[i][1]);
 			}
 		}
 
