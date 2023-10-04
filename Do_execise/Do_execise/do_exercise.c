@@ -3694,70 +3694,201 @@
 //}
 //
 //
-// 1148: 出现的次数
-int main()
-{
-	int n = 0;
-	while (scanf("%d", &n) != EOF)//循环
-	{
-		int arr[1000] = { 0 };
-		for (int x = 0; x < n; x++)
-		{
-			scanf("%d", &arr[x]);//读入
-		}
-		//排序
-		for (int i = 0; i < n - 1; i++)
-		{
-			for (int j = 0; j < n - 1 - i; j++)
-			{
-				if (arr[j] > arr[j + 1])
-				{
-					int temp = arr[j];
-					arr[j] = arr[j + 1];
-					arr[j + 1] = temp;
-				}
-			}
-		}
-		int array1[1000][3] = { 0 };
-		int count = 0;
-		array1[count][1] = 0;
-		array1[count][0] = arr[0];
-		for (int i = 0; i < n; i++)
-		{
-			
-			if (arr[i] == array1[count][0])
-			{
-				array1[count][1]++;
-			}
-			else
-			{
-				count++;
-				array1[count][0] = arr[i];
-				array1[count][1] = 1;
-			}
-		}
-		for (int i = 0; i >= 0; i++)
-		{
-			if (array1[i][0] == 0)
-			{
-				break;
-			}
-			else
-			{
-				printf("%d %d\n", array1[i][0], array1[i][1]);
-			}
-		}
+//// 1148: 出现的次数
+//int main()
+//{
+//	int n = 0;
+//	while (scanf("%d", &n) != EOF)//循环
+//	{
+//		int arr[1000] = { 0 };
+//		for (int x = 0; x < n; x++)
+//		{
+//			scanf("%d", &arr[x]);//读入
+//		}
+//		//排序
+//		for (int i = 0; i < n - 1; i++)
+//		{
+//			for (int j = 0; j < n - 1 - i; j++)
+//			{
+//				if (arr[j] > arr[j + 1])
+//				{
+//					int temp = arr[j];
+//					arr[j] = arr[j + 1];
+//					arr[j + 1] = temp;
+//				}
+//			}
+//		}
+//		int array1[1000][3] = { 0 };
+//		int count = 0;
+//		array1[count][1] = 0;
+//		array1[count][0] = arr[0];
+//		for (int i = 0; i < n; i++)
+//		{
+//			
+//			if (arr[i] == array1[count][0])
+//			{
+//				array1[count][1]++;
+//			}
+//			else
+//			{
+//				count++;
+//				array1[count][0] = arr[i];
+//				array1[count][1] = 1;
+//			}
+//		}
+//		for (int i = 0; i >= 0; i++)
+//		{
+//			if (array1[i][0] == 0)
+//			{
+//				break;
+//			}
+//			else
+//			{
+//				printf("%d %d\n", array1[i][0], array1[i][1]);
+//			}
+//		}
+//
+//	}
+//	return 0;
+//}
+//1149: 阿拉伯数字
+//int main()
+//{
+//	char ch[1000];
+//	while (gets(ch) != NULL)
+//	{
+//		
+//		int sz = strlen(ch);
+//		int signal = 0;
+//		for (int i = 0; i < sz; i++)
+//		{
+//			if (ch[i] >= '0' && ch[i] <= '9')
+//			{
+//				signal = 1;
+//			}
+//			else
+//			{
+//				signal = 0;
+//				break;
+//			}
+//		}
+//		if (signal == 1)
+//		{
+//			printf("YES\n");
+//		}
+//		else
+//		{
+//			printf("NO\n");
+//		}
+//	}
+//
+//	return 0;
+//
+//}
+//1150: 求费波拉契序列的第n项
+//int main()
+//{
+//	int n = 0;
+//	
+//
+//	while ((scanf("%d", &n) != EOF))
+//	{
+//		int a = 1;
+//		int b = 1;
+//		int c = 1;
+//		for (int count = 3; count <= n; count++)
+//		{
+//			a = b;
+//			b = c;
+//			c = a + b;
+//		}
+//		printf("%d\n", c);
+//	}
+//}
+//
+//1151: 求整数和
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int arr[100] = { 0 };
+//	for (int j = 0; j < n; j++)
+//	{
+//		scanf("%d", &arr[j]);
+//		int sum = 0;
+//		if (arr[j] > 0)
+//		{
+//			for (int i = arr[j]; i <= 2 * arr[j]; i++)
+//			{
+//				sum += i;
+//			}
+//		}
+//		else if (arr[j] < 0)
+//		{
+//			for (int i = arr[j]; i >= 2 * arr[j]; i--)
+//			{
+//				sum += i;
+//			}
+//		}
+//		else
+//		{
+//			sum = 0;
+//		}
+//		printf("%d\n", sum);
+//	}
+//
+//}
 
-	}
-	return 0;
-}
+//1152: Prime Number
+//int main()
+//{
+//	int n = 0;
+//	while ((scanf("%d", &n) != EOF))
+//	{
+//		int count = 1;
+//		int num =2;
+//
+//		if (n == 1)
+//		{
+//			printf("2");
+//			
+//		}
+//		while (count != n)
+//		{
+//			int i = 2;
+//			num++;
+//			while (num % i != 0)
+//			{
+//				if (i >= num - 1)
+//				{
+//					count++;
+//					break;
+//				}
+//				i++;
+//			}
+//			
+//		}
+//		printf("%d\n", num);
+//		
+//	}
+//	return 0;
+//}
 
-
-
-
-
-
-
+//	while (n % i != 0)
+//	{
+//		i++;
+//		if (i >= n-1)
+//		{
+//			printf("prime\n");
+//			break;
+//		}
+//	}
+//	if (i != n - 1 && i!=n)
+//	{
+//		printf("not prime\n");
+//	}
+//	return 0;
+//}
 
 
 
