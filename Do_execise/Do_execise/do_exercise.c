@@ -3889,9 +3889,122 @@
 //	}
 //	return 0;
 //}
-
-
-
+//1154: 减去1234
+//int main()
+//{
+//	char arr[100];
+//	
+//	while ((gets(arr)) !=NULL)//注意gets是NULL
+//	{
+//		int sz = strlen(arr);
+//		int j = 0;
+//		int ch[100] = { 0 };
+//		for (int i = 0; i < sz; i++)
+//		{
+//			if (arr[i] >= '0' && arr[i] <= '9')
+//			{
+//				ch[j] = arr[i] - '0';
+//				j++;
+//			}
+//		}
+//		int tmp = 4;
+//		for (int x = j-1; x >= j - 4; x--)
+//		{
+//			if (ch[x] >= tmp)
+//			{
+//				ch[x] -= tmp;
+//				tmp--;
+//			}
+//			else
+//			{
+//				ch[x - 1] -= 1;
+//				ch[x] = ch[x] + 10 - tmp;
+//				tmp--;
+//			}
+//		}
+//		int count = 0;
+//		for (int y = 0; y < j; y++)
+//		{
+//			if (ch[y] == 0)
+//			{
+//				count++;
+//			}
+//			else
+//			{
+//				break;
+//			}
+//		}
+//		for (int y = count; y < j; y++)
+//		{
+//			printf("%d", ch[y]);
+//		}
+//		printf("\n");
+//	}
+//	
+//	return 0;
+//
+//}
+//1155: ISBN号码
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	char ch[20];
+//	
+//	while ((gets(ch))!=NULL)
+//	{
+//		int sz = strlen(ch);
+//		int temp = 0;
+//		for (int i = 0; i < sz; i++)
+//		{
+//			if (ch[i] >= '0' && ch[i] <= '9')
+//			{
+//				arr[temp] = ch[i] - '0';
+//				temp++;
+//			}
+//		}
+//		int ret = (arr[0] * 1 + arr[1] * 2 + arr[2] * 3 + arr[3] * 4 +
+//			arr[4] * 5 + arr[5] * 6 + arr[6] * 7 + arr[7] * 8 + arr[8] * 9) % 11;
+//		if (sz != 13 || ch[1] != '-' || ch[5] != '-' || ch[11] != '-')
+//		{
+//			
+//			if (ret == 10)
+//			{
+//				printf("%d-%d%d%d-%d%d%d%d%d-%c\n", arr[0],
+//					arr[1], arr[2], arr[3], arr[4], arr[5],
+//					arr[6], arr[7], arr[8], 'X');
+//			}
+//			else
+//			{
+//				printf("%d-%d%d%d-%d%d%d%d%d-%d\n", arr[0],
+//					arr[1], arr[2], arr[3], arr[4], arr[5],
+//					arr[6], arr[7], arr[8], ret);
+//			}
+//		}
+//		else
+//		{
+//			if (ret == arr[9])
+//			{
+//				printf("Right\n");
+//			}
+//			else if (ret == 10)
+//			{
+//				printf("%d-%d%d%d-%d%d%d%d%d-%c\n", arr[0],
+//					arr[1], arr[2], arr[3], arr[4], arr[5],
+//					arr[6], arr[7], arr[8], 'X');
+//			}
+//			else
+//			{
+//				printf("%d-%d%d%d-%d%d%d%d%d-%d\n", arr[0],
+//					arr[1], arr[2], arr[3], arr[4], arr[5],
+//					arr[6], arr[7], arr[8], ret);
+//			}
+//		}
+//	}
+//
+//	return 0;
+//}
+//
+//
 
 
 
