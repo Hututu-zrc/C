@@ -136,7 +136,7 @@
 //	}
 //	return 0;
 //}
-////问题 E: 人民币大写-1
+//问题 E: 人民币大写-1
 //int main()
 //{
 //	int N = 0;
@@ -272,4 +272,48 @@
 //	}
 //
 //	return 0;
+//}
+//#include <stdio.h>
+//int main()
+//{
+//	int  ten, one;
+//	int N = 0;
+//	const char* D[] = { "","壹","贰","叁","肆","伍","陆","柒","捌","玖" };
+//	ten = N / 10;
+//	one = N % 10;
+//	scanf("%d", &N);
+//	if (N % 10 == 0) {
+//		printf("人民币：%s拾元整", D[ten]);
+//	}
+//	else {
+//		printf("人民币：%s拾%s元整", D[ten], D[one]);
+//	}
+//
+//}
+//#include <stdio.h>
+//
+//int main() {
+//    int N, ten, one;
+//
+//    // 数字大写表
+//    const char* num[] = { "", "壹", "贰", "叁", "肆", "伍", "陆", "柒", "捌", "玖" };
+//    scanf("%d", &N);
+//
+//    ten = N / 10;  // 十位数字
+//    one = N % 10;  // 个位数字
+//
+//    printf("人民币：");
+//
+//    if (ten > 0) {  // 十位数字不为0时
+//        printf("%s拾", num[ten]);
+//    }
+//
+//    if (one == 0) {  // 个位数字为0时
+//        printf("元整");
+//    }
+//    else {
+//        printf("%s元整", num[one]);
+//    }
+//
+//    return 0;
 //}

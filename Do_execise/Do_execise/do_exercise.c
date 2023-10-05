@@ -3954,12 +3954,20 @@
 //	{
 //		int sz = strlen(ch);
 //		int temp = 0;
+//		int signal = 0;
 //		for (int i = 0; i < sz; i++)
 //		{
 //			if (ch[i] >= '0' && ch[i] <= '9')
 //			{
 //				arr[temp] = ch[i] - '0';
 //				temp++;
+//			}
+//			else
+//			{
+//				if (ch[i] == 'X')
+//				{
+//					signal = 1;
+//				}
 //			}
 //		}
 //		int ret = (arr[0] * 1 + arr[1] * 2 + arr[2] * 3 + arr[3] * 4 +
@@ -3982,7 +3990,7 @@
 //		}
 //		else
 //		{
-//			if (ret == arr[9])
+//			if (ret == arr[9] || signal==1)
 //			{
 //				printf("Right\n");
 //			}
@@ -4003,8 +4011,8 @@
 //
 //	return 0;
 //}
-//
-//
+
+
 
 
 
