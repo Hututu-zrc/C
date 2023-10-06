@@ -4122,9 +4122,120 @@
 //	return 0;
 //}
 //
+//1160: 输出大写的英文字母
+//int main()
+//{
+//	int n = 0;
+//	while ((scanf("%d", &n)) != EOF)
+//	{
+//		char arr[30] = { 65,66,67,68,69,70,71,72,
+//		73,74,75,76,77,78,79,80,81,82,83,84,85,
+//		86,87,88,89,90 };
+//		for (int i = 0; i < n-1; i++)
+//		{
+//			printf("%c,", arr[i]);
+//		}
+//		printf("%c\n", arr[n - 1]);
+//	}
+//	return 0;
+//}
 //
+////1161: 求和的数对
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int arr[10000];
+//	for (int i = 0; i < n; i++)
+//	{
+//		scanf("%d", &arr[i]);
+//	}
+//	int sum = 0;
+//	int k = 0;
+//	scanf("%d", &sum);
+//	int ch[10000][2] = { 0 };
+//	for (int i = 0; i < n-1; i++)
+//	{
+//		for (int j = 0; j < n -1- i; j++)
+//		{
+//			if (arr[j] > arr[j + 1])
+//			{
+//				int temp = arr[j];
+//				arr[j] = arr[j + 1];
+//				arr[j + 1] = temp;
+//			}
+//		}
+//	}
+//	for (int i = 0; i < n; i++)
+//	{
+//		for (int j = i+1; j < n; j++)
+//		{
+//			if (sum == (arr[i] + arr[j]))
+//			{
+//				ch[k][0] = arr[i];
+//				ch[k][1] = arr[j];
+//				k++;
+//			}
+//		}
+//	}
+//	if (ch[0][0] != 0 && ch[0][1] != 0)
+//	{
+//		printf("%d %d", ch[0][0], ch[0][1]);
+//	}
+//	else
+//	{
+//		printf("NO\n");
+//	}
+//	return 0;
+//}
+//1162: 找最小的日期  暂做
+int main()
+{
+	int n = 0;
+	while ((scanf("%d", &n) != EOF))
+	{
+		int year[1000];
+		int month[1000];
+		int day[1000];
+		for (int i = 0; i < n; i++)
+		{
+			scanf("%d-%02d-%02d", &year[i], &month[i], &day[i]);
+		}
+		int min = year[0];
+		int temp;
+		for (int i = 1; i < n; i++)
+		{
+			if (min > year[i])
+			{
+				min = year[i];
+				temp = i;
+			}
+		}
+		int min1 = month[0];
+		int temp1;
+		for (int i = 1; i < n; i++)
+		{
+			if (min1 > month[i])
+			{
+				min1 = month[i];
+				temp1 = i;
+			}
+		}
+		int min2 = day[0];
+		int temp2;
+		for (int i = 1; i < n; i++)
+		{
+			if (min2 > day[i])
+			{
+				min2 = day[i];
+				temp2 = i;
+			}
+		}
+		
 
-
+	}
+	return 0;
+}
 
 
 

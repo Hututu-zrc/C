@@ -1,3 +1,1 @@
-﻿  do_exercise.c
-F:\visual studio code\c-language\Do_execise\Do_execise\do_exercise.c(4071,15): warning C4305: “初始化”: 从“__int64”到“long”截断
-  Do_execise.vcxproj -> F:\visual studio code\c-language\Do_execise\x64\Debug\Do_execise.exe
+﻿  Do_execise.vcxproj -> F:\visual studio code\c-language\Do_execise\x64\Debug\Do_execise.exe
