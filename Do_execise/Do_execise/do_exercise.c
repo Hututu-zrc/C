@@ -4011,12 +4011,118 @@
 //
 //	return 0;
 //}
-
-
-
-
-
-
+//1157: 减去某个整数
+//int main()
+//{
+//	char arr[100];
+//	char arr1[100];
+//	while ((gets(arr)) != NULL)//注意gets是NULL
+//	{
+//		gets(arr1);
+//		int sz = strlen(arr);
+//		int sz1 = strlen(arr1);
+//		int j = 0;
+//		int ch[100] = { 0 };
+//		for (int i = sz-1; i>=0; i--)
+//		{
+//			if (arr[i] >= '0' && arr[i] <= '9')
+//			{
+//				ch[j] = arr[i] - '0';
+//				j++;
+//			}
+//		}
+//		int ch1[100] = { 0 };
+//		int k = 0;
+//		for (int i = sz-1; i >=0; i--)
+//		{
+//
+//			if (arr1[i] >= '0' && arr1[i] <= '9')
+//			{
+//				ch1[k] = arr1[i] - '0';
+//				k++;
+//			}
+//		}
+//
+//		int sum = 0;
+//		int sum1 = 0;
+//		for (int i = 0; i < k; i++)
+//		{
+//			sum += ch1[i] * pow(10, i);
+//		}
+//		for (int i = 0; i < j; i++)
+//		{
+//			sum1 += ch[i] * pow(10, i);
+//		}
+//		printf("%d\n", sum1 - sum);
+//
+//	}
+//
+//	return 0;
+//
+//}
+//
+//1158: 一个拆二代的征婚广告 不会
+//int  main()
+//{
+//	int num = 2;
+//	int a = 0;
+//	int b = 0;
+//	int k = 0;
+//	long int c = 7140229933;
+//	//判断一个数是不是素数
+//	double f=0.0;
+//	k = (int)sqrt((double)num);
+//	while (num <= c)
+//	{
+//		for (int i = 2; i <= k; i++)
+//		{
+//			if (num % i == 0)
+//			{
+//				break;
+//			}
+//		}
+//		if (num > k)//确定一个较小的素数
+//		{
+//			a = num;
+//			f = c*1.0 / a;//用c除以这个素数得到的是小数直接排除
+//			if (f != (int)f)
+//			{
+//				break;
+//			}
+//			else if(num % 6 != 1 && num % 6 != 5)
+//			{
+//				break;
+//			}
+//			else
+//			{
+//				//判断另一个数是不是素数
+//				for (int i = 2; i <= (int)sqrt((double)f); i++)
+//				{
+//					if ((int)f % i == 0)
+//					{
+//						break;
+//					}
+//				}
+//				if ((int)f > (int)sqrt((double)f))
+//				{
+//					break;
+//				}
+//				else
+//				{
+//					num++;
+//				}
+//			}
+//		}
+//		else
+//		{
+//			num++;
+//		}
+//	}
+//	printf("Lin%d%d", num, (int)f);
+//	return 0;
+//}
+//
+//
 
 
 
