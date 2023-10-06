@@ -4189,19 +4189,37 @@
 //	return 0;
 //}
 //1162: 找最小的日期  暂做
+void swap(int* a, int* b)
+{
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+}
 int main()
 {
 	int n = 0;
 	while ((scanf("%d", &n) != EOF))
 	{
-		int year[1000];
-		int month[1000];
-		int day[1000];
+		int temp[1][3];
+		int time[1000][3];
 		for (int i = 0; i < n; i++)
 		{
-			scanf("%d-%02d-%02d", &year[i], &month[i], &day[i]);
+			scanf("%d-%d-%d", &time[i][0], &time[i][1], &time[i][2]);
 		}
-		int min = year[0];
+		for (int i = 0; i < n-1; i++)
+		{
+			for (int j = 0; j < n - 1 - 1; j++)
+			{
+				if (time[j][0] > time[j + 1][0])
+				{
+					for (int k = 0; k < 3; k++)
+					{
+						swap(&time[j][k], &time[j + 1][k]);
+					}
+				}
+			}
+		}
+	/*	int min = year[0];
 		int temp;
 		for (int i = 1; i < n; i++)
 		{
@@ -4231,14 +4249,11 @@ int main()
 				temp2 = i;
 			}
 		}
-		
+		*/
 
 	}
 	return 0;
 }
-
-
-
 
 
 
