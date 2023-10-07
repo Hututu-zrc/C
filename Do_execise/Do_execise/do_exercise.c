@@ -3148,6 +3148,55 @@
 //	}
 //	
 //}
+//1129: 杨辉三角
+//int main()
+//{
+//	int n = 0;
+//	while ((scanf("%d", &n)) != EOF)
+//	{
+//		int arr[100][100];
+//		arr[0][0] = 1;
+//		arr[1][0] = 1;
+//		arr[1][1] = 1;
+//		if (n == 1)
+//		{
+//			printf("%d\n", arr[0][0]);
+//		}
+//		else if (n == 2)
+//		{
+//			printf("%d\n", arr[0][0]);
+//			printf("%d %d\n", arr[1][0],arr[1][1]);
+//
+//		}
+//		else
+//		{
+//			for (int i =2; i < n; i++)
+//			{
+//				arr[i][0] = 1;
+//				for (int j = 1; j < i; j++)
+//				{
+//					arr[i][j] = arr[i - 1][j] + arr[i - 1][j - 1];
+//				}
+//				arr[i][i] = 1;
+//			}
+//			for (int i =0; i < n; i++)
+//			{
+//				for (int j = 0; j <= i; j++)
+//				{
+//					printf("%d", arr[i][j]);
+//					if (j != i) 
+//					{
+//						putchar(' ');
+//					}
+//				}
+//				printf("\n");
+//			}
+//			
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
 
 //1130: 输出三角形-1
 //int main()
@@ -4188,80 +4237,194 @@
 //	}
 //	return 0;
 //}
-//1162: 找最小的日期  暂做
-void swap(int* a, int* b)
-{
-	int temp = *a;
-	*a = *b;
-	*b = temp;
-}
-int main()
-{
-	int n = 0;
-	while ((scanf("%d", &n) != EOF))
-	{
-		int temp[1][3];
-		int time[1000][3];
-		for (int i = 0; i < n; i++)
-		{
-			scanf("%d-%d-%d", &time[i][0], &time[i][1], &time[i][2]);
-		}
-		for (int i = 0; i < n-1; i++)
-		{
-			for (int j = 0; j < n - 1 - 1; j++)
-			{
-				if (time[j][0] > time[j + 1][0])
-				{
-					for (int k = 0; k < 3; k++)
-					{
-						swap(&time[j][k], &time[j + 1][k]);
-					}
-				}
-			}
-		}
-	/*	int min = year[0];
-		int temp;
-		for (int i = 1; i < n; i++)
-		{
-			if (min > year[i])
-			{
-				min = year[i];
-				temp = i;
-			}
-		}
-		int min1 = month[0];
-		int temp1;
-		for (int i = 1; i < n; i++)
-		{
-			if (min1 > month[i])
-			{
-				min1 = month[i];
-				temp1 = i;
-			}
-		}
-		int min2 = day[0];
-		int temp2;
-		for (int i = 1; i < n; i++)
-		{
-			if (min2 > day[i])
-			{
-				min2 = day[i];
-				temp2 = i;
-			}
-		}
-		*/
-
-	}
-	return 0;
-}
-
-
-
-
-
-
-
-
+////1162: 找最小的日期  
+//void swap(int* a, int* b)
+//{
+//	int temp = *a;
+//	*a = *b;
+//	*b = temp;
+//}
+//int main()
+//{
+//	int n = 0;
+//	while ((scanf("%d", &n) != EOF))
+//	{
+//		int temp = 0;
+//		int time[102][3];
+//		for (int i = 0; i < n; i++)
+//		{
+//			scanf("%d-%d-%d", &time[i][0], &time[i][1], &time[i][2]);
+//		}
+//		for (int i = 0; i < n-1; i++)//year排序
+//		{
+//			for (int j = 0; j < n - 1 - i; j++)
+//			{
+//				if (time[j][0] > time[j + 1][0])
+//				{
+//					for (int k = 0; k < 3; k++)
+//					{
+//						swap(&time[j][k], &time[j + 1][k]);
+//					}
+//				}
+//			}
+//		}
+//		for (int i = 1; i <= n; i++)//判断year是否存在相同的
+//		{
+//			if (time[i][0] != time[0][0])
+//			{
+//				temp = i;
+//				break;
+//			}
+//		}
+//		for (int i = 0; i < temp-1; i++)//如果有相同的直接开始month排序
+//		{
+//			for (int j = 0; j < temp-1- i; j++)
+//			{
+//				if (time[j][1] > time[j + 1][1])
+//				{
+//					for (int k = 1; k < 3; k++)
+//					{
+//						swap(&time[j][k], &time[j + 1][k]);
+//					}
+//				}
+//			}
+//		}
+//		for (int i = 1; i <= n; i++)//判断month是否有相同的
+//		{
+//			if (time[i][1] != time[0][1])
+//			{
+//				temp = i;
+//				break;
+//			}
+//		}
+//		for (int i = 0; i < temp-1; i++)//对day排序
+//		{
+//			for (int j = 0; j < temp-1- i; j++)
+//			{
+//				if (time[j][2] > time[j + 1][2])
+//				{
+//					swap(&time[j][2], &time[j + 1][2]);
+//				}
+//			}
+//		}
+//		printf("%d-%02d-%02d\n", time[0][0], time[0][1], time[0][2]);
+//	}
+//	return 0;
+//}
+//
+////1163: 最复杂的数
+//void swap(int* a, int* b)
+//{
+//	int temp = *a;
+//	*a = *b;
+//	*b = temp;
+//}
+//int main()
+//{
+//	int T = 0;
+//	while ((scanf("%d", &T)) != EOF)
+//	{
+//		int arr[100];
+//		int output[100000][2];
+//		for (int i = 0; i < T; i++)
+//		{
+//			scanf("%d", &arr[i]);//读取多个数
+//			int n = 0;
+//			for (int j = 1; j <= arr[i]; j++)//每个数，从1到arr[i]
+//			{
+//				int count = 0;
+//				//计算约数
+//				for (int k = 1; k <= j; k++)
+//				{
+//					if (j % k == 0)
+//					{
+//						count++;
+//					}
+//				}
+//				output[n][0] = j;
+//				output[n][1] = count;
+//				n++;
+//			}
+//			for (int x = 0; x < arr[i] - 1; x++)
+//			{
+//				for (int y = 0; y < arr[i] - 1 - x; y++)
+//				{
+//					if (output[y][1] < output[y + 1][1])
+//					{
+//						for (int m = 0; m < 2; m++)
+//						{
+//							swap(&output[y][m], &output[y + 1][m]);
+//						}
+//					}
+//				
+//				}
+//			}
+//			printf("%d %d\n", output[0][0], output[0][1]);
+//
+//		}
+//		
+//	
+//	}
+//	return 0;
+//}
+// chat版本
+//#include <stdio.h>
+//#include <math.h>
+//#include <stdlib.h>
+//
+//void swap(int* a, int* b) {
+//    int temp = *a;
+//    *a = *b;
+//    *b = temp;
+//}
+//
+//int main() {
+//    int T;
+//    while (scanf("%d", &T) != EOF) {
+//        for (int t = 0; t < T; t++) {
+//            int n;
+//            scanf("%d", &n);
+//
+//            int** output = (int**)malloc(n * sizeof(int*));
+//            for (int i = 0; i < n; i++) {
+//                output[i] = (int*)malloc(2 * sizeof(int));
+//                output[i][0] = i + 1;
+//                output[i][1] = 0;
+//            }
+//
+//            for (int j = 1; j <= n; j++) {
+//                int sqrt_j = sqrt(j);
+//                for (int k = 1; k <= sqrt_j; k++) {
+//                    if (j % k == 0) {
+//                        output[j - 1][1]++;
+//                        if (k != j / k) {
+//                            output[j - 1][1]++;
+//                        }
+//                    }
+//                }
+//            }
+//
+//            for (int x = 0; x < n - 1; x++) {
+//                for (int y = 0; y < n - 1 - x; y++) {
+//                    if (output[y][1] < output[y + 1][1]) {
+//                        for (int m = 0; m < 2; m++) {
+//                            swap(&output[y][m], &output[y + 1][m]);
+//                        }
+//                    }
+//                }
+//            }
+//
+//            printf("%d %d\n", output[0][0], output[0][1]);
+//
+//            for (int i = 0; i < n; i++) {
+//                free(output[i]);
+//            }
+//            free(output);
+//        }
+//    }
+//    return 0;
+//}
+//
 
 
 
