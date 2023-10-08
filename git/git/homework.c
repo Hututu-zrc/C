@@ -1176,30 +1176,31 @@
 //}
 
 
-////买汽水问题，1元1瓶，2个空瓶兑换一瓶汽水
+//////买汽水问题，1元1瓶，2个空瓶兑换一瓶汽水
 //int main()
 //{
 //	int money = 0;
 //	printf("请输入你的钱数：");
 //	scanf("%d", &money);
-//	////方法一：
-//	//int total = money;
-//	//int empty = money;
-//	//while (empty >= 2)
-//	//{
-//	//	total += empty / 2;
-//	//	empty = (empty / 2) + (empty % 2);
-//	//}
-//	//方法二：
-//	if (money > 0)
+//	//方法一：
+//	int total = money;
+//	int empty = money;
+//	while (empty >= 2)
 //	{
-//		printf("%d\n", money);
+//		total += empty / 2;
+//		empty = (empty / 2) + (empty % 2);
 //	}
-//	else
-//	{
-//		printf("%d\n", 0);
-//	}
-//	
+////	//方法二：
+////	if (money > 0)
+////	{
+////		printf("%d\n", money);
+////	}
+////	else
+////	{
+////		printf("%d\n", 0);
+////	}
+////	
+//	printf("%d\n", total);
 //	return 0;
 //}
 
@@ -1264,51 +1265,64 @@
 //	printf("%d", count);
 //	return 0;
 //}
-
-#include <stdio.h>
-#include <string.h>
-void lable(char s[])
-{
-    int len = strlen(s);
-    int a[len];
-    int b = 0;
-    for(int i = 0;i<len;i++)
-    {
-        if(s[i] == '(')
-        {
-            a[b] = i;
-            b++;
-        }
-        if(s[i] == ')')
-        {
-            if(b>0)
-            {b--;}
-            else if(b==0)//关键else if
-            {s[i]='?';}
-        }
-    }
-    while(b>0)
-    {
-        int c = a[--b];//关键--前置
-        s[c] = '$';
-    }
-    for(int j = 0;j<len;j++)
-    {
-        if(s[j]!='$' && s[j] != '?')
-        {
-            s[j] = ' ';
-        }
-    }
-}
-int main()
-{
-    char s[101];
-    while(scanf("%s",s) != EOF)
-    {
-        printf("%s\n",s);
-        lable(s);
-        printf("%s\n",s);
-    }
-    return 0;
-}
-
+//
+//#include <stdio.h>
+//#include <string.h>
+//void lable(char s[])
+//{
+//    int len = strlen(s);
+//    int a[len];
+//    int b = 0;
+//    for(int i = 0;i<len;i++)
+//    {
+//        if(s[i] == '(')
+//        {
+//            a[b] = i;
+//            b++;
+//        }
+//        if(s[i] == ')')
+//        {
+//            if(b>0)
+//            {b--;}
+//            else if(b==0)//关键else if
+//            {s[i]='?';}
+//        }
+//    }
+//    while(b>0)
+//    {
+//        int c = a[--b];//关键--前置
+//        s[c] = '$';
+//    }
+//    for(int j = 0;j<len;j++)
+//    {
+//        if(s[j]!='$' && s[j] != '?')
+//        {
+//            s[j] = ' ';
+//        }
+//    }
+//}
+//int main()
+//{
+//    char s[101];
+//    while(scanf("%s",s) != EOF)
+//    {
+//        printf("%s\n",s);
+//        lable(s);
+//        printf("%s\n",s);
+//    }
+//    return 0;
+//}
+//
+////
+//#include <stdio.h>
+//int main()
+//{
+//    int i = 0;
+//    int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//    for (i = 0; i <= 12; i++)
+//    {
+//        arr[i] = 0;
+//        printf("hello bit\n");
+//    }
+//    return 0;
+//}

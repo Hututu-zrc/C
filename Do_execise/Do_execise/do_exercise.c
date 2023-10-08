@@ -4425,29 +4425,450 @@
 //    return 0;
 //}
 //
+//1164: 查找-1
+//int main()
+//{
+//	int N = 0;
+//	while ((scanf("%d", &N)) != EOF)
+//	{
+//		int arr[100];
+//		for (int i = 0; i < N; i++)
+//		{
+//			scanf("%d", &arr[i]);
+//		}
+//		int m = 0;
+//		scanf("%d", &m);
+//		int signal = 0;
+//		for (int i = 0; i < N; i++)
+//		{
+//			if (m == arr[i])
+//			{
+//				signal = 1;
+//				printf("%d\n", i + 1);
+//				break;
+//			}
+//		}
+//		if (signal == 0)
+//		{
+//			printf("NO\n");
+//		}
+//	}
+//	return 0;
+//}
+////1165: 求平均分
+//#include <stdio.h>
+//#include <stdlib.h>
+//int compare(const void* a, const void* b)
+//{
+//	return ((*(int*)a) - (*(int*)b));
+//}
+//int main()
+//{
+//	int n = 0;
+//	while((scanf("%d",&n))!=EOF)
+//	{
+//		int arr[100];
+//	
+//		for (int i = 0; i < n; i++)
+//		{
+//			scanf("%d", &arr[i]);
+//		}
+//		size_t sz = sizeof(arr[0]);
+//		qsort(arr, n, sz, compare);
+//		double sum = 0.0;
+//		for(int i=0;i<n;i++)
+//		{
+//			sum += arr[i] * 1.0;
+//		}
+//		printf("%d %d %.2lf\n", arr[n-1], arr[0], sum / n);
+//		
+//
+//	}
+//}
+////1166: 数组升序
+//int compare(const void* a, const void* b)
+//{
+//	return ((*(int*)a) - (*(int*)b));
+//}
+//int main()
+//{
+//	int n = 0;
+//	while ((scanf("%d", &n)) != EOF)
+//	{
+//		int arr[100];
+//		for (int i = 0; i < n; i++)
+//		{
+//			scanf("%d", &arr[i]);
+//		}
+//		qsort(arr, n, sizeof(int), compare);
+//		for (int i = 0; i < n; i++)
+//		{
+//			printf("%d ", arr[i]);
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+//
+//
+//
+//1167: 合法的手机号码
+//int main()
+//{
+//	char arr[30];
+//	while ((fgets(arr, 25, stdin)) != NULL)
+//	{
+//		int sz = strlen(arr)-1;
+		//if (arr[0] == '1' && sz == 11)
+		//{
+		//	if (arr[1] == '3' || arr[1] == '5' ||
+		//		arr[1] == '7' || arr[1] == '8')
+		//	{
+		//		int signal = 0;
+		//		for (int i = 2; i < 11; i++)
+		//		{
+		//			if (arr[i] >= '0' && arr[i] <= '9')
+		//			{
+		//				signal = 1;
+		//				break;
+		//			}
+		//			else
+		//			{
+		//				signal = 0;
+		//				break;
+		//			}
+		//		}
+		//		if (signal == 1)
+		//		{
+		//			printf("YES\n");
+		//			
+		//		}
+		//		else
+		//		{
+		//			printf("NO\n");
+		//			
+		//		}
+		//		
+		//	}
+		//	else
+		//	{
+		//		printf("NO\n");
+		//		
+		//	}
+		//}
+		//else
+		//{
+		//	printf("NO\n");
+		//	
+		//}
+//	}
+//	return 0;
+//}
+//1168: 从一个文本中找出所有的手机号码
+//int main()
+//{
+//	char arr[150];
+//	while ((fgets(arr, 150, stdin)) != NULL)
+//	{
+//		int sz = strlen(arr) - 1;
+//		int i = 0;
+//		int signal2 = 0;
+//		for (; i < sz; i++)//开始循环判断每一个数
+//		{
+//			if (arr[i] >= '0' && arr[i] <= '9' && (i+11)<sz)
+//			{
+//				for (int j = i; j < i + 11; j++)
+//				{
+//					//判断是不是电话号码
+//					if (arr[j] == '1')
+//					{
+//						if (arr[j + 1] == '3' || arr[j + 1] == '5' ||
+//							arr[j + 1] == '7' || arr[j + 1] == '8')
+//						{
+//							int signal = 0;
+//							for (int x = j + 2; x < j + 11; x++)
+//							{
+//								if (arr[x] >= '0' && arr[x] <= '9')
+//								{
+//									signal = 1;
+//									
+//								}
+//								else
+//								{
+//									signal = 0;
+//									break;
+//								}
+//							}
+//							if (signal == 1)
+//							{
+//								for (int y = j; y < 11 + j; y++)
+//								{
+//									signal2 = 1;
+//									printf("%c", arr[y]);
+//
+//								}
+//								printf("\n");
+//							}
+//						}
+//						else
+//						{
+//							break;
+//						}
+//					}
+//					else
+//					{
+//						break;
+//					}
+//			
+//					
+//				}
+//			}
+//		}
+//
+//		if (i >= sz - 1 && signal2==0)
+//		{
+//			printf("NO\n");
+//		}
+//	}
+//	return 0;
+//}
+//
+//
+//
+//1169: 中文字符
+//int main()
+//{
+//	char arr[100];
+//	while ((fgets(arr, 150, stdin)) != NULL)
+//	{
+//		int sz = strlen(arr) - 1;
+//		int signal = 0;
+//		for (int i = 0; i < sz; i++)
+//		{
+//			if ((arr[i] >> 15 & 1) == 1)
+//			{
+//				printf("YES\n");
+//				signal = 0;
+//				break;
+//			}
+//			else
+//			{
+//				signal = 1;
+//			}
+//		}
+//		if (signal == 1)
+//		{
+//			printf("NO\n");
+//		}
+//	}
+//}
+//
+//
+//1170: 输出< >间的信息 AC50%
+int main()
+{
+	char arr[150];
+	while ((fgets(arr, 150, stdin)) != NULL)
+	{
+		int ch[50][2];
+		int sz = strlen(arr)-1;
+		int k = 0;
+		int signal = 0;
+		for (int i = 0; i < sz; i++)
+		{
+			if (arr[i] == '<')
+			{
+				ch[k][0] = i;
+				for (int j = i; j < sz; j++)
+				{
+					if (arr[j] == '>')
+					{
+						
+						ch[k][1] = j;
+						
+						for (int x = ch[k][0];x <= ch[k][1]; x++)
+						{
+							printf("%c", arr[x]);
+							signal = 1;
+						}
+						i = ch[k][1];
+						k++;
+						printf("\n");
+						break;
+					}
+				}
+			}
+		}
+		if (signal == 0)
+		{
+			printf("NO\n");
+		}
+	}
+	return 0;
+}
+////1171: 数字字符串
+//int main()
+//{
+//	char arr[100];
+//	while ((fgets(arr, 150, stdin)) != NULL)
+//	{
+//		int sz = strlen(arr) - 1;
+//		int a = 0;
+//		for (int i = 0; i < sz; i++)
+//		{
+//			if (!(arr[i] >= '0' && arr[i] <= '9'))
+//			{
+//				printf("NO\n");
+//				a = 1;
+//				break;
+//			}
+//			
+//		}
+//		if (a == 0)
+//		{
+//			printf("YES\n");
+//		}
+//	}
+//	return 0;
+//}
+//
+//1172: 升序数组的插值
+//int compare(const void* a, const void* b)
+//{
+//	return ((*(int*)a) - (*(int*)b));
+//}
+//int main()
+//{
+//	int n = 0;
+//	while ((scanf("%d", &n)) != EOF)
+//	{
+//		int arr[150];
+//		for (int i = 0; i < n; i++)
+//		{
+//			scanf("%d", &arr[i]);
+//		}
+//		scanf("%d", &arr[n]);
+//		qsort(arr, n + 1, sizeof(int), compare);
+//		for (int i = 0; i < n + 1; i++)
+//		{
+//			printf("%d ", arr[i]);
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+//
+//1173: 是否标识符
+//int main()
+//{
+//	char arr[1000];
+//	while ((fgets(arr, 1000, stdin)) != NULL)
+//	{
+//		int sz = strlen(arr) - 1;
+//		int signal = 0;
+//		if ((arr[0] >= 'a' && arr[0] <= 'z') || (arr[0] >= 'A' && arr[0] <= 'Z') || (arr[0] == '_'))
+//		{
+//			if (sz == 1)
+//			{
+//				printf("YES\n");
+//			}
+//			else
+//			{
+//				for (int i = 1; i < sz; i++)
+//				{
+//					if ((arr[i] >= 'a' && arr[i] <= 'z') || (arr[i] >= 'A' && arr[i] <= 'Z') ||
+//						(arr[i] >= '0' && arr[i] <= '9') || (arr[i] == '_'))
+//					{
+//						signal = 1;
+//					}
+//					else
+//					{
+//						printf("NO\n");
+//						signal = 0;
+//						break;
+//					}
+//				}
+//			}
+//		}
+//		else
+//		{
+//			printf("NO\n");
+//
+//		}
+//
+//		if (signal == 1)
+//		{
+//			printf("YES\n");
+//		}
+//	}
+//	return 0;
+//}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//#include <stdio.h>
+//#include <string.h>
+//#include <stdbool.h>
+//#include <ctype.h>
+//
+//bool isValidIdentifier(char* str) {
+//	if (strlen(str) == 0) {
+//		return false;
+//	}
+//
+//	 //判断第一个字符是否为英文字母或下划线
+//	if (!(isalpha(str[0]) || str[0] == '_')) {
+//		return false;
+//	}
+//
+//	 //检查剩余字符
+//	for (int i = 1; i < strlen(str); ++i) {
+//		 //字符既不是数字也不是字母或下划线，则不是合法标识符
+//		if (!(isalnum(str[i]) || str[i] == '_')) {
+//			return false;
+//		}
+//	}
+//
+//	return true;
+//}
+//
+//int main() {
+//	char input[100];
+//	while (fgets(input, sizeof(input), stdin) != NULL) {
+//		 //去除换行符
+//		input[strcspn(input, "\n")] = 0;
+//
+//		if (isValidIdentifier(input)) {
+//			printf("YES\n");
+//		}
+//		else {
+//			printf("NO\n");
+//		}
+//	}
+//	return 0;
+//}
+//
+////1181: 最长子字符串  最大的子字符串，并且连续
+//int main()
+//{
+//	char s1[100];
+//	char s2[100];
+//	while ((fgets(s1, 1000, stdin)) != NULL)
+//	{
+//		fgets(s2, 1000, stdin);
+//		int sz1 = strlen(s1) - 1;
+//		int sz2 = strlen(s2) - 1;
+//		for (int i = 0; i < sz1; i++)
+//		{
+//			for (int j = 0; j < sz2; j++)
+//			{
+//				if (s1[i] == s2[j])
+//				{
+//					printf("%c", s1[i]);
+//				}
+//			}
+//		}
+//		printf("\n");
+//	}
+//}
 
 
 
