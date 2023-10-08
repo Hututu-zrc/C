@@ -4665,47 +4665,47 @@
 //
 //
 //1170: 输出< >间的信息 AC50%
-int main()
-{
-	char arr[150];
-	while ((fgets(arr, 150, stdin)) != NULL)
-	{
-		int ch[50][2];
-		int sz = strlen(arr)-1;
-		int k = 0;
-		int signal = 0;
-		for (int i = 0; i < sz; i++)
-		{
-			if (arr[i] == '<')
-			{
-				ch[k][0] = i;
-				for (int j = i; j < sz; j++)
-				{
-					if (arr[j] == '>')
-					{
-						
-						ch[k][1] = j;
-						
-						for (int x = ch[k][0];x <= ch[k][1]; x++)
-						{
-							printf("%c", arr[x]);
-							signal = 1;
-						}
-						i = ch[k][1];
-						k++;
-						printf("\n");
-						break;
-					}
-				}
-			}
-		}
-		if (signal == 0)
-		{
-			printf("NO\n");
-		}
-	}
-	return 0;
-}
+//int main()
+//{
+//	char arr[150];
+//	while ((fgets(arr, 150, stdin)) != NULL)
+//	{
+//		int ch[50][2];
+//		int sz = strlen(arr)-1;
+//		int k = 0;
+//		int signal = 0;
+//		for (int i = 0; i < sz; i++)
+//		{
+//			if (arr[i] == '<')
+//			{
+//				ch[k][0] = i;
+//				for (int j = i; j < sz; j++)
+//				{
+//					if (arr[j] == '>')
+//					{
+//						
+//						ch[k][1] = j;
+//						
+//						for (int x = ch[k][0];x <= ch[k][1]; x++)
+//						{
+//							printf("%c", arr[x]);
+//							signal = 1;
+//						}
+//						i = ch[k][1];
+//						k++;
+//						printf("\n");
+//						break;
+//					}
+//				}
+//			}
+//		}
+//		if (signal == 0)
+//		{
+//			printf("NO\n");
+//		}
+//	}
+//	return 0;
+//}
 ////1171: 数字字符串
 //int main()
 //{
@@ -4846,6 +4846,139 @@ int main()
 //	return 0;
 //}
 //
+// 
+//// 1175: 真假身份证
+//#include <stdio.h>
+//#include <string.h>
+//int main()
+//{
+//	char arr[20];
+//	while (fgets(arr, 20, stdin) != NULL)
+//	{
+//		int sum = (arr[0]-'0') * 7 + (arr[1]-'0') * 9 + (arr[2] - '0') * 10 + (arr[3] - '0') * 5 +
+//			(arr[4] - '0') * 8 + (arr[5] - '0') * 4 + (arr[6] - '0') * 2 +( arr[7] - '0') * 1 + (arr[8] - '0') * 6 +
+//			(arr[9] - '0') * 3 + (arr[10] - '0') * 7 + (arr[11] - '0') * 9 + (arr[12] - '0') * 10 + (arr[13] - '0') * 5 +( arr[14] - '0') * 8 +
+//			(arr[15] - '0') * 4 +( arr[16] - '0') * 2;
+//		int ret = 0;;
+//		char ch;
+//		switch (sum % 11)
+//		{
+//		case 0:
+//			ret = 1;
+//			break;
+//		case 1:
+//			ret = 0;
+//			break;
+//		case 2:
+//			ch = 'X';
+//			break;
+//		case 3:
+//			ret = 9;
+//			break;
+//		case 4:
+//			ret = 8;
+//			break;
+//		case 5:
+//			ret = 7;
+//			break;
+//		case 6:
+//			ret = 6;
+//			break;
+//		case 7:
+//			ret = 5;
+//			break;
+//		case 8:
+//			ret = 4;
+//			break;
+//		case 9:
+//			ret = 3;
+//			break;
+//		case 10:
+//			ret = 2;
+//			break;
+//		}
+//		int temp = sum % 11;
+//		if (temp == 2)
+//		{
+//			if (arr[17]!=ch)
+//			{
+//				printf("NO\n");
+//			}
+//			else 
+//			{
+//				printf("YES\n");
+//			}
+//		}
+//		else
+//		{
+//			if ((arr[17]-'0') == ret)
+//			{
+//				printf("YES\n");
+//			}
+//			else
+//			{
+//				printf("NO\n");
+//			}
+//		}
+//	}
+//
+//	return 0;
+
+//}
+// //1176: #####的匹配
+//int main()
+//{
+//	char arr[100];
+//	while (fgets(arr, 100, stdin) != NULL)
+//	{
+//		int sz = strlen(arr) - 1;
+//		int count1 = 0;
+//		int count2 = 0;
+//		for (int i = 0; i < sz; i++)
+//		{
+//			if (arr[i] == '#')
+//			{
+//				count1++;
+//			}
+//			else
+//			{
+//				break;
+//			}
+//		}
+//		for (int j = sz - 1; j >= 0; j--)
+//		{
+//			if (arr[j] == '#')
+//			{
+//				count2++;
+//			}
+//			else
+//			{
+//				break;
+//			}
+//		}
+//		if (count1 < count2)
+//		{
+//			int temp = count2 - count1;
+//			arr[sz - temp] = '\0';
+//		}
+//		else if (count1 > count2)
+//		{
+//			for (int i = sz; i < sz + count1 - count2; i++)
+//			{
+//				arr[i] = '#';
+//			}
+//			arr[sz + count1 - count2] = '\0';
+//		}
+//		int sz1 = strlen(arr);
+//		for (int i = 0; i < sz1; i++)
+//		{
+//			printf("%c", arr[i]);
+//		}
+//		printf("\n");
+//	}
+//
+//	return 0;
+//}
 ////1181: 最长子字符串  最大的子字符串，并且连续
 //int main()
 //{
