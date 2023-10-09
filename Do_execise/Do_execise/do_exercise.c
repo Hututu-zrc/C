@@ -331,7 +331,8 @@
 //	int a, b;
 //	scanf("%d", &a);
 //	scanf("%d", &b);
-//	printf("%.3lf\n", (double)a / b);
+//	double c = a * 1.0 / b;
+//	printf("%.3lf\n",c);
 //	return 0;
 //}
 
@@ -4845,8 +4846,8 @@
 //	}
 //	return 0;
 //}
-//
-// 
+
+ 
 //// 1175: 真假身份证
 //#include <stdio.h>
 //#include <string.h>
@@ -4979,30 +4980,153 @@
 //
 //	return 0;
 //}
-////1181: 最长子字符串  最大的子字符串，并且连续
+// 1177: 评委打分
+//int compare(const void* a, const void* b)
+//{
+//	return ((*(int*) a) - (*(int*) b));
+//}
 //int main()
 //{
-//	char s1[100];
-//	char s2[100];
-//	while ((fgets(s1, 1000, stdin)) != NULL)
+//	int n;
+//	while ((scanf("%d", &n)) != EOF)
 //	{
-//		fgets(s2, 1000, stdin);
-//		int sz1 = strlen(s1) - 1;
-//		int sz2 = strlen(s2) - 1;
-//		for (int i = 0; i < sz1; i++)
+//		int arr[100];
+//		for (int i = 0; i < n; i++)
 //		{
-//			for (int j = 0; j < sz2; j++)
+//			scanf("%d", &arr[i]);
+//		}
+//		qsort(arr, n, sizeof(int), compare);
+//		int sum = 0;
+//		for (int i = 1; i < n - 1; i++)
+//		{
+//			sum += arr[i];
+//		}
+//		printf("%.2lf\n", (double)sum / (n - 2));
+//
+//	}
+//}
+// 
+// //
+// //
+//1178: 数字符
+//int main()
+//{
+//	char ch[300];
+//	while ((fgets(ch, 300, stdin)) != NULL)
+//	{
+//		int alphabet = 0;
+//		int hanzi = 0;
+//		int sz = strlen(ch) - 1;
+//		for (int i = 0; i < sz; i++)
+//		{
+//			if ((ch[i] >= 'A' && ch[i] <= 'Z') ||
+//				(ch[i] >= 'a' && ch[i] <= 'z') ||ch[i]>='0' &&ch[i]<='9')
 //			{
-//				if (s1[i] == s2[j])
-//				{
-//					printf("%c", s1[i]);
-//				}
+//				alphabet++;
+//			}
+//			else if ((ch[i] >> 17) & 1 == 1)
+//			{
+//				hanzi++;
+//				i++;
+//			}
+//		}
+//		printf("%d %d\n", hanzi,alphabet);
+//	}
+//
+//	return 0;
+//}
+// 1179: 字母后面加数字1
+//int main()
+//{
+//	char arr[100];
+//	while ((fgets(arr, 100, stdin)) != NULL)
+//	{
+//		int sz = strlen(arr) - 1;
+//		for (int i = 0; i < sz; i++)
+//		{
+//			if ((arr[i] >= 'A' && arr[i] <= 'Z')
+//				&& (!(arr[i + 1] >= '0' && arr[i+1] <= '9')))
+//			{
+//				putchar(arr[i]);
+//				putchar('1');
+//			}
+//			else if((arr[i] >= 'A' && arr[i] <= 'Z')
+//				&& (arr[i + 1] >= '0' && arr[i + 1] <= '9'))
+//			{
+//				putchar(arr[i]);
+//				putchar(arr[i + 1]);
 //			}
 //		}
 //		printf("\n");
 //	}
+//	return 0;
 //}
-
+//1181: 最长子字符串  最大的子字符串，并且连续
+//int compare(const void* a, const void* b)
+//{
+//	return ((*(int*) b) - (*(int*) a));
+//}
+//int main()
+//{
+//	char s1[100];
+//	char s2[100];
+//	
+//	while ((fgets(s1, 1000, stdin)) != NULL)
+//	{
+//		fgets(s2, 1000, stdin);
+//		char s3[100][100];
+//		int k = 0;
+//		int ch[50];
+//		int e = 0;
+//		int g = 0;
+//		char s4[100][100];
+//		int sz1 = strlen(s1) - 1;
+//		int sz2 = strlen(s2) - 1;
+//		for (int i = 0; i < sz1; i++)
+//		{
+//		
+//			int h = 0;
+//			int signal = 0;
+//			for (int j = 0; j < sz2; j++)
+//			{
+//				if (s1[i] == s2[j])
+//				{
+//					s3[k][h] = s1[i];
+//					i++;
+//					h++;
+//					signal = 1;
+//				}
+//
+//			}
+//			
+//			if (signal == 1)
+//			{
+//				s4[g][0] = k;
+//				s4[g][1] = h;
+//				g++;
+//				ch[e] = h;
+//				e++;
+//				k++;
+//			}
+//		}
+//		qsort(ch, k, sizeof(int), compare);
+//		for (int i = 0; i <k; i++)
+//		{
+//			if (s4[i][1] == ch[0])
+//			{
+//				for (int j = 0; j < ch[0]; j++)
+//				{
+//					printf("%c", s3[i][j]);
+//				}
+//				break;
+//			}
+//				
+//		}
+//		printf("\n");
+//	}
+//}
+//
+//1182: 求和-n
 
 
 
