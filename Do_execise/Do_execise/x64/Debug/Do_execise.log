@@ -1,2 +1,4 @@
 ﻿  do_exercise.c
+F:\visual studio code\c-language\Do_execise\Do_execise\do_exercise.c(5497,10): warning C4013: “gets”未定义；假设外部返回 int
+F:\visual studio code\c-language\Do_execise\Do_execise\do_exercise.c(5510,12): warning C4553: “==”: 未使用表达式结果；是否打算使用“=”?
   Do_execise.vcxproj -> F:\visual studio code\c-language\Do_execise\x64\Debug\Do_execise.exe

@@ -5127,17 +5127,398 @@
 //}
 //
 //1182: 求和-n
+//int main()
+//{
+//	int n;
+//	while ((scanf("%d", &n)) != EOF)
+//	{
+//		int i = 2;
+//		int sum = 0;
+//		if (n == 1)
+//		{
+//			printf("1\n");
+//		}
+//		else
+//		{
+//			while (i <= n)
+//			{
+//				int j = 1;
+//				while (j <= i)
+//				{
+//					sum += (i * 10) + j;
+//					j++;
+//				}
+//				i++;
+//			}
+//			printf("%d\n", sum + 1);
+//			
+//		}
+//	}
+//	return 0;
+//}
+//
+//1183: 字符出现的次数
+//#include <stdio.h>
+//int main()
+//{
+//	char arr[100];
+//	while ((fgets(arr, 100, stdin)) != NULL)
+//	{
+//		char ch;
+//		scanf("%c", &ch);
+//		int i = 0;
+//		int count = 0;
+//		while (arr[i] != '\0')
+//		{
+//			if (arr[i] == ch)
+//			{
+//				count++;
+//			}
+//			i++;
+//		}
+//		printf("%d\n", count);
+//		getchar();
+//		getchar();
+//	}
+//	return 0;
+//}
 
+//1184: 字符在字符串中出现的位置
 
+//#include <stdio.h>
+//int main()
+//{
+//	char arr[100];
+//	while ((fgets(arr, 100, stdin)) !=NULL)
+//	{
+//		char ch;
+//		scanf("%c", &ch);
+//		int i = 0;
+//		int count = 0;
+//		int signal = 0;
+//		while (arr[i] != '\0')
+//		{
+//			if (arr[i] == ch)
+//			{
+//				signal = 1;
+//				printf("%d ", i);
+//			}
+//			i++;
+//		}
+//		if (signal == 0)
+//		{
+//			printf("NULL");
+//		}
+//		printf("\n");
+//		getchar();
+//		getchar();
+//	}
+//	return 0;
+//}
+//1186: 将字符串转换为整数。
+//int main()
+//{
+//	char arr[100];
+//	while ((gets(arr)) != NULL)
+//	{
+//		int sz = strlen(arr);
+//		if ((sz == 3 && arr[0] != '0' && (arr[0] > '0' && arr[0] <= '9')
+//			&& (arr[1] >= '0' && arr[1] <= '9')&&
+//			(arr[2] >= '0' && arr[2] <= '9')) ||(sz ==2 && arr[0] != '0' && (arr[0] > '0' && arr[0] <= '9')
+//			&& (arr[1] >= '0' && arr[1] <= '9'))
+//			||(sz == 1 && arr[0] != '0' && (arr[0] > '0' && arr[0] <= '9')))
+//		{
+//			int ret = 0;
+//			if (sz == 3)
+//			{
+//				ret = (arr[0] - '0') * 100 + (arr[1] - '0') * 10 + (arr[2] - '0');
+//			}
+//			else if (sz == 2)
+//			{
+//				ret = (arr[0] - '0') * 10 + (arr[1] - '0') * 1 ;
+//			}
+//			else if (sz == 1)
+//			{
+//				ret = (arr[0] - '0') * 1;
+//			}
+//			
+//			if (ret >= 0 && ret <= 255)
+//			{
+//				printf("YES\n");
+//			}
+//			else
+//			{
+//				printf("NO\n");
+//			}
+//			
+//		}
+//		else
+//		{
+//			printf("NO\n");
+//		}
+//	}
+//	return 0;
+//}
+//
+//1187: 等比数列
+//int main()
+//{
+//	int arr[4];
+//	while (scanf("%d %d %d %d", &arr[0], &arr[1], &arr[2], &arr[3]) != EOF)
+//	{
+//		if (arr[0] < arr[1] && arr[1] < arr[2] && arr[2] < arr[3])
+//		{
+//			if ((arr[1] * arr[1] == arr[0] * arr[2]) && (arr[2] * arr[2] == arr[1] * arr[3]))
+//			{
+//				printf("YES\n");
+//			}
+//			else
+//			{
+//				printf("NO\n");
+//			}
+//		}
+//		else
+//		{
+//			printf("NO\n");
+//		}
+//	
+//	}
+//
+//	return 0;
+//}
+// 1188: 相邻的素数
+//int prime_number(int a)
+//{
+//	int i = 2;
+//	for ( ;i <=(int) sqrt(a); i++)
+//	{
+//		if (a % i == 0)
+//		{
+//			return 0;
+//			break;
+//		}
+//	}
+//	return 1;
+//		
+//}
+//int main()
+//{
+//	int n = 0;
+//	while ((scanf("%d", &n)) != EOF)
+//	{
+//		int minor;
+//		int major;
+//		for (int i = n - 1; i >= 2; i--)
+//		{
+//			if (prime_number(i) == 1)
+//			{
+//				minor = i;
+//				break;
+//			}
+//		}	
+//		for (int i = n + 1; i >= n; i++)
+//		{
+//			if (prime_number(i) == 1)
+//			{
+//				major = i;
+//				break;
+//			}
+//		}
+//		printf("%d<%d<%d\n", minor, n, major);
+//	}
+//	return 0;
+//}
+//1189: 降序输出
+//int compare(const void* a, const void* b)
+//{
+//	return ((*(int*)b) - (*(int*)a));
+//}
+//int main()
+//{
+//	int arr[3];
+//	while ((scanf("%d %d %d", &arr[0], &arr[1], &arr[2])) != EOF)
+//	{
+//		qsort(arr, 3, sizeof(int), compare);
+//		printf("%d>%d>%d\n", arr[0], arr[1], arr[2]);
+//	}
+//
+//	return 0;
+//}
+//
+//1190: 阶乘的和
+//int factorial(int a)
+//{
+//	int i = 1;
+//	int sum = 1;
+//	while (i <= a)
+//	{
+//		sum *= i;
+//		i++;
+//	}
+//	return sum;
+//}
+//int main()
+//{
+//	int n;
+//	while ((scanf("%d", &n)) != EOF)
+//	{
+//		int y2 = 0;
+//		int y1 = 0;
+//		if (n % 2 == 0)//偶数
+//		{
+//			for (int i = 2; i <= n; i+=2)
+//			{
+//				y2 += factorial(i);
+//			}
+//			for (int i = 1; i <= n-1; i+=2)
+//			{
+//				y1 += factorial(i);
+//			}
+//		}
+//		else//奇数
+//		{
+//			for (int i = 1; i <= n; i+=2)
+//			{
+//				y1 += factorial(i);
+//			}
+//			for (int i = 2; i <= n-1; i+=2)
+//			{
+//				y2 += factorial(i);
+//			}
+//		}
+//		printf("%d %d\n", y1, y2);
+//	}
+//	return 0;
+//}
+//
+//1191: 日期问题
+//int main()
+//{
+//	int year; int day;
+//	while ((scanf("%d %d", &year, &day)) != EOF)
+//	{
+//		int arr[13] = { 0,31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+//		if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
+//		{
+//			arr[2] = 29;
+//		}
+//		int i = 1;
+//		for (;i < 13; i++)
+//		{
+//			if ((day - arr[i]) > 0)
+//			{
+//				day -= arr[i];
+//			}
+//			else
+//			{
+//				break;
+//			}
+//		}
+//		printf("%d-%02d-%02d\n", year, i, day);
+//
+//	}
+//	return 0;
+//}
+//1192: 守形数
+//int main()
+//{
+//	int n;
+//	while ((scanf("%d", &n)) != EOF)
+//	{
+//		int m = n * n;
+//		int signal = 0;
+//		while (n % 10 != 0)
+//		{
+//			if ((m % 10) == (n % 10))
+//			{
+//				signal = 1;
+//				n /= 10;
+//				m /= 10;
+//			}
+//			else
+//			{
+//				signal = 0;
+//				break;
+//			}
+//		}
+//		if (signal == 1)
+//		{
+//			printf("YES!\n");
+//		}
+//		else
+//		{
+//			printf("NO!\n");
+//		}
+//	}
+//	return 0;
+//}
+//1193: 判断算式是否正确。
+//int main()
+//{
+//	int n;
+//	while ((scanf("%d", &n)) != EOF)
+//	{
+//		for (int i = 0; i < n; i++)
+//		{
+//			int a = 0, b = 0, c = 0;
+//			char ch;
+//			scanf("%d%c%d=%d", &a, &ch, &b, &c);
+//			if (ch == '+')
+//			{
+//				if ((a + b) == c)
+//				{
+//					printf("TRUE\n");
+//				}
+//				else
+//				{
+//					printf("FALSE\n");
+//				}
+//			}
+//			if (ch == '-')
+//			{
+//				if ((a - b) == c)
+//				{
+//					printf("TRUE\n");
+//				}
+//				else
+//				{
+//					printf("FALSE\n");
+//				}
+//			}
+//		}
+//	
+//	}
+//	return 0;
+//}
+//1194: 字符串没有重复的字符
+int main()
+{
+	char ch[1000];
+	while ((gets(ch))!= EOF)
+	{
+		int i = 0;
+		char arr[1000] = { 0 };
+		int length = 1;
+		int j = 0;
+		while (ch[i] != '\0')
+		{
+			if (ch[i] != arr[j])
+			{
+				for (int x = 0; x <= length; x++)
+				{
 
+					ch[i] == arr[j];
+					i++;
+					j++;
+					length++;
 
-
-
-
-
-
-
-
+				}
+			}
+		}
+			
+	}
+	return 0;
+}
 
 
 
