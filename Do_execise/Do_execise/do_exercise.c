@@ -5491,45 +5491,80 @@
 //	return 0;
 //}
 //1194: 字符串没有重复的字符
-int main()
-{
-	char ch[1000];
-	while ((gets(ch))!= EOF)
+//int main()
+//{
+//	char arr[1000];
+//	while ((gets(arr))!= NULL)
+//	{
+//		int k;
+//		for (int i = 0; arr[i]; i++)
+//		{
+//			for (int j = i + 1; arr[j];)
+//			{
+//				if (arr[i] == arr[j])
+//				{
+//					for (k = j; arr[k]; k++)
+//					{
+//						arr[k] = arr[k + 1];
+//					}
+//				}
+//				else
+//				{
+//					j++;
+//				}
+//			}
+//		}
+//		puts(arr);
+//	}
+//	return 0;
+//}
+//
+
+//1195: 中文字符串没有重复的汉字
+//int main()
+//{
+//	
+//}
+#include <stdio.h>
+#include <locale.h>
+#include <string.h>
+int main(char argv, char* args) {
+	setlocale(LC_ALL, "");
+	wchar s[256];
+	while (wscanf(L"%ls", s) != EOF)
 	{
-		int i = 0;
-		char arr[1000] = { 0 };
-		int length = 1;
-		int j = 0;
-		while (ch[i] != '\0')
+		for (int i = 0; s[i] != '\0'; i++)
 		{
-			if (ch[i] != arr[j])
+			for (int j = i + 1; s[j] != '\0'; j++)
 			{
-				for (int x = 0; x <= length; x++)
+				if (s[i] == s[j])
 				{
-
-					ch[i] == arr[j];
-					i++;
-					j++;
-					length++;
-
+					s[j] = ' ';
 				}
 			}
 		}
-			
+		for (int z = 0; s[z] != '\0'; z++)
+		{
+			if (s[z] != ' ')
+			{
+				printf("%lc", s[z]);
+			}
+		}
+		printf("\n");
 	}
+	//wscanf(L"%ls", s);    //输入
+	//wprintf(L"%lc", s[2]);    //输出
 	return 0;
 }
 
 
 
-
-
-
-
-
-
-
-
+//1196: 字符串中没有重复的中英文字符(3分)
+//int main()
+//{
+//
+//	return 0;
+//}
 
 
 
