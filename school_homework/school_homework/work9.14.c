@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include"Head.h"
+//C语言第一次作业
 ////A	输出下面的字符串-2
 //int main()
 //{
@@ -79,7 +80,8 @@
 //	return 0;
 //}
 
-//
+//C语言第二次作业
+
 ////问题 A: 输入一个字符，判断是否阿拉伯数字
 //int main()
 //{
@@ -317,3 +319,175 @@
 //
 //    return 0;
 //}
+///
+//C语言第三次作业
+//问题 A: 输出一个整数的逆数
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	while (n)
+//	{
+//		if (n % 10 != 0)
+//		{
+//			break;
+//		}
+//		else
+//			n /= 10;
+//		
+//		
+//	}
+//	while (n)
+//	{
+//		printf("%d", n % 10); n /= 10;
+//	}
+//	
+//	return 0;
+//}
+//问题 B: 1的个数
+//int main()
+//{
+//	int n = 0;
+//	while ((scanf("%d", &n)) != EOF)
+//	{
+//		int count = 0;
+//		for (int m = 1; m <= n; m++)
+//		{
+//			int i = m;
+//			while (i)
+//			{
+//				if (i % 10 == 1)
+//				{
+//					count++;
+//				}
+//				i /= 10;
+//			}
+//		}
+//		printf("%d\n", count);
+//	}
+//	return 0;
+//}
+//问题 C: 1970年1月1日是星期四，x年y月z日是星期几
+//#include <stdio.h>
+//int main()
+//{
+//	int year, month, day;
+//	scanf("%d-%d-%d", &year, &month, &day);
+//	char ch[7][10] = { "Sunday", "Monday", "Tuesday",
+//		"Wednesday","Thursday","Friday","Saturday" };
+//	int arr[13] = { 0,31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+//	int sum = 0;
+//	int daysum = 0;
+//	int yearsum = 365;
+//	for (int i = 1970; i < year; i++)
+//	{
+//		if (i % 4 == 0 && i % 100 != 0 || i % 400 == 0)
+//		{
+//			sum += yearsum + 1;
+//		}
+//		else
+//		{
+//			sum += yearsum;
+//		}
+//	}
+//	if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
+//	{
+//		arr[2] = 29;
+//	}
+//	for (int i = 0; i < month; i++)
+//	{
+//		daysum += arr[i];
+//	}
+//	int total = (daysum + sum + day + 2) % 7 + 1;
+//
+//	printf("%s\n", ch[total]);
+//	//printf("%d", sum);
+//	return 0;
+//}
+//问题 D: 计算整数个数
+//#include <stdio.h>
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	for (int z = 0; z < n; z++)
+//	{
+//		int m = 0;
+//		int one = 0, five = 0, ten = 0;
+//		scanf("%d", &m);
+//		int arr[300] = { 0 };
+//		for (int i = 0; i < m; i++)
+//		{
+//			scanf("%d", &arr[i]);
+//		}
+//		for (int i = 0; i < m; i++)
+//		{
+//			if (arr[i] == 1)
+//			{
+//				one++;
+//			}
+//			else if (arr[i] == 5)
+//			{
+//				five++;
+//			}
+//			else if (arr[i] == 10)
+//			{
+//				ten++;
+//			}
+//		}
+//		printf("%d %d %d\n", one, five, ten);
+//	}
+//}
+//
+//问题 E: count characters
+//int main()
+//{
+//	int n = 0;
+//	while ((getchar()) != EOF)
+//	{
+//		n++;
+//	}
+//	printf("%d\n", n);
+//	return 0;
+//}
+//问题 F: 最复杂的数
+//#include <stdio.h>
+//
+//int main()
+//{
+//	int T = 0;
+//	while ((scanf("%d", &T)) != EOF)
+//	{
+//		int arr[100];
+//		int max, max_num;
+//		for (int i = 0; i < T; i++)
+//		{
+//			scanf("%d", &arr[i]);//读取多个数
+//			max = 0;//最大的约数
+//			max_num = 0;//约数个数
+//			for (int j = 1; j <= arr[i]; j++)//每个数，从1到arr[i]
+//			{
+//				int count = 0;
+//				
+//				//计算约数
+//				for (int k = 1; k <= j; k++)
+//				{
+//					if (j % k == 0)
+//					{
+//						count++;
+//					}
+//				}
+//				if (max_num < count)
+//				{
+//					max_num = count;
+//					max = j;
+//				}
+//			}
+//			printf("%d %d\n", max, max_num);
+//		}
+//		
+//	}
+//	return 0;
+//}
+
+

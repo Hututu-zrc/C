@@ -5525,37 +5525,37 @@
 //{
 //	
 //}
-#include <stdio.h>
-#include <locale.h>
-#include <string.h>
-int main(char argv, char* args) {
-	setlocale(LC_ALL, "");
-	wchar s[256];
-	while (wscanf(L"%ls", s) != EOF)
-	{
-		for (int i = 0; s[i] != '\0'; i++)
-		{
-			for (int j = i + 1; s[j] != '\0'; j++)
-			{
-				if (s[i] == s[j])
-				{
-					s[j] = ' ';
-				}
-			}
-		}
-		for (int z = 0; s[z] != '\0'; z++)
-		{
-			if (s[z] != ' ')
-			{
-				printf("%lc", s[z]);
-			}
-		}
-		printf("\n");
-	}
-	//wscanf(L"%ls", s);    //输入
-	//wprintf(L"%lc", s[2]);    //输出
-	return 0;
-}
+//#include <stdio.h>
+//#include <locale.h>
+//#include <string.h>
+//int main(char argv, char* args) {
+//	setlocale(LC_ALL, "");
+//	wchar s[256];
+//	while (wscanf(L"%ls", s) != EOF)
+//	{
+//		for (int i = 0; s[i] != '\0'; i++)
+//		{
+//			for (int j = i + 1; s[j] != '\0'; j++)
+//			{
+//				if (s[i] == s[j])
+//				{
+//					s[j] = ' ';
+//				}
+//			}
+//		}
+//		for (int z = 0; s[z] != '\0'; z++)
+//		{
+//			if (s[z] != ' ')
+//			{
+//				printf("%lc", s[z]);
+//			}
+//		}
+//		printf("\n");
+//	}
+//	//wscanf(L"%ls", s);    //输入
+//	//wprintf(L"%lc", s[2]);    //输出
+//	return 0;
+//}
 
 
 
@@ -5566,13 +5566,239 @@ int main(char argv, char* args) {
 //	return 0;
 //}
 
-
-
-
-
-
-
-
+//1197: 签到题
+//int main()
+//{
+//	srand((unsigned int)time(NULL));
+//	int ret = rand() % 2;
+//	if (ret == 1)
+//	{
+//		printf("Accepted\n");
+//	}
+//	else
+//	{
+//		printf("Wrong\n");
+//	}
+//	return 0;
+//}
+//1198: 压缩字符串
+// 错误版
+//int main()
+//{
+//	char arr[10000];
+//	while ((gets(arr)) != EOF)
+//	{
+//		char ch = arr[0];
+//		int count = 1;
+//		for (int i = 1; arr[i-1] != '\0'; i++)
+//		{
+//			
+//			if (arr[i] == ch)
+//			{
+//				count++;
+//			}
+//			else
+//			{
+//				
+//				printf("%c%d", arr[i - 1], count);
+//				if (arr[i] == '\0')
+//					break;
+//				ch = arr[i];
+//				count = 1;
+//			}
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	char arr[10000];
+//	while ((gets(arr)) !=NULL)
+//	{
+//		char ch[100][3];
+//		int temp = 0;
+//		ch[temp][0] = arr[0];
+//		int count = 1;
+//		for (int i = 1; ; i++)
+//		{
+//			
+//			if (ch[temp][0] == arr[i])
+//			{
+//				count++;
+//			}
+//			else 
+//			{
+//				ch[temp][1] =count+'0';
+//				if (arr[i] == '\0')
+//					break;
+//				temp++;
+//				ch[temp][0] = arr[i];
+//				count = 1;
+//			}
+//		}
+//		int signal = 0;
+//		for (int i = 0; i <= temp; i++)
+//		{
+//			if (ch[i][1] != '1')
+//			{
+//				signal = 1;
+//				break;
+//			}
+//		}
+//		for (int i = 0; i <= temp; i++)
+//		{
+//			if (signal == 1)
+//			{
+//				printf("%c%c", ch[i][0], ch[i][1]);
+//			}
+//			else
+//			{
+//				printf("%c", ch[i][0]);
+//			}
+//		}
+//		printf("\n");
+//
+//	}
+//	return 0;
+//}
+//1199: 字符串的旋转
+//int main()
+//{
+//	char arr[150];
+//	while ((scanf("%s",&arr)) !=EOF)
+//	{
+//		int a, b;
+//		scanf("%d %d", &a, &b);
+//		for (int i = b; i < a; i++)
+//		{
+//			putchar(arr[i]);
+//		}
+//		for (int i = 0; i < b; i++)
+//		{
+//			putchar(arr[i]);
+//		}
+//		printf("\n");
+//	}
+//	
+//	return 0;
+//}
+//int main()
+//{
+//	char arr[150];
+//	while ((gets(arr) )!= NULL)
+//	{
+//		int a, b;
+//		scanf("%d %d", &a, &b);
+//		for (int i = b; i < a; i++)
+//		{
+//			putchar(arr[i]);
+//		}
+//		for (int i = 0; i < b; i++)
+//		{
+//			putchar(arr[i]);
+//		}
+//		printf("\n");
+//		getchar();
+//		//getchar();
+//	}
+//
+//	return 0;
+//}
+//1200: 字符串的子串
+//
+//int main()
+//{
+//	char arr[55];
+//	while ((gets(arr)) != NULL)
+//	{
+//		int sz = strlen(arr);
+//		for (int i = sz; i > 0; i--)
+//		{
+//			for (int k = 0; k + i <=sz; k++)
+//			{
+//				int j = k;
+//				for (; j < k+i; j++)
+//				{
+//					putchar(arr[j]);
+//				}
+//				putchar(' ');
+//				
+//			}
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+//1201: 10进制转3进制
+//int main()
+//{
+//	int n;
+//	while ((scanf("%d", &n)) != EOF)
+//	{
+//		int arr[100];
+//		int i = 0;
+//		while (n)
+//		{
+//			arr[i] = n % 3;
+//			i++;
+//			n /= 3;
+//
+//		}
+//		for (int j = i - 1; j >= 0; j--)
+//		{
+//			printf("%d", arr[j]);
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+//void kun(int n)
+//{
+//	if (n > 0)
+//	{
+//		kun(n / 3);
+//		printf("%d", n % 3);
+//	}
+//	else
+//	{
+//		return;
+//	}
+//}
+//int main()
+//{
+//	int n;
+//	scanf("%d", &n);
+//	kun(n);
+//}
+// 1203: 单词的缩写
+//int main()
+//{
+//	char arr[100];
+//	while ((gets(arr)) != NULL)
+//	{
+//		char ch[7] = { 'a','e','i','o','u','y'};
+//		putchar(arr[0]);
+//		for (int i = 1; arr[i] != '\0'; i++)
+//		{
+//			int signal = 0;
+//			for (int j = 0; j < 6; j++)
+//			{
+//				if (arr[i]== ch[j])
+//				{
+//					signal = 1;
+//					break;
+//				}
+//			}
+//			if (signal != 1)
+//			{
+//				putchar(arr[i]);
+//			}
+//		}
+//		putchar('\n');
+//	}
+//	return 0;
+//}
 //1250: 输出一行文字
 //int main()
 //{
