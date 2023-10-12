@@ -5799,13 +5799,71 @@
 //	}
 //	return 0;
 //}
+// 1204: 字符串的大小 暂写
+//int main()
+//{
+//	const char* arr[3];
+//	while (scanf("%s", &arr[0]) != EOF)
+//	{
+//		scanf("%s", &arr[1]);
+//		scanf("%s", &arr[2]);
+//		printf("%s\n", strcmp(arr[2], strcmp(arr[1], arr[0])));
+//	}
+//	return 0;
+//}
+// 1205: 删除字符串末尾的0
+//int main()
+//{
+//	char arr[100];
+//	while ((gets(arr)) != EOF)
+//	{
+//
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	char arr[100];
+//	while (gets(arr) != EOF)
+//	{
+//		
+//		char ch[10];
+//		//printf("OK");
+//		//printf("\n");
+//		//scanf("%s", &ch[0]);
+//	}
+//
+//	return 0;
+//}
 //1250: 输出一行文字
 //int main()
 //{
 //	printf("\"衡量一个人的真正品格, 是看他在知道没有人会发觉的时候做什么.\"___孟德斯鸠");
 //	return 0;
 //}
-
+//
+////#include <stdio.h>
+//int main()
+//{
+//	char arr[150];
+//	while ((gets(arr)) != EOF)
+//	{
+//		int a, b;
+//		scanf("%d %d", &a, &b);
+//		for (int i = b; i < a; i++)
+//		{
+//			putchar(arr[i]);
+//		}
+//		for (int i = 0; i < b; i++)
+//		{
+//			putchar(arr[i]);
+//		}
+//		//printf("\n");
+//		//getchar();
+//		//getchar();
+//	}
+//	return 0;
+//}
 
 // //1254: 读取字节的低4位
 //int main()
