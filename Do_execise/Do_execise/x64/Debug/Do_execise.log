@@ -1,3 +1,2 @@
 ﻿  do_exercise.c
-F:\visual studio code\c-language\Do_execise\Do_execise\do_exercise.c(5849,10): warning C4013: “gets”未定义；假设外部返回 int
   Do_execise.vcxproj -> F:\visual studio code\c-language\Do_execise\x64\Debug\Do_execise.exe

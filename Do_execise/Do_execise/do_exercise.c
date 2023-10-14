@@ -5556,7 +5556,14 @@
 //	//wprintf(L"%lc", s[2]);    //输出
 //	return 0;
 //}
-
+//int main()
+//{
+//	const char* arr[100];
+//	while ((scanf("%s", arr[0])))
+//	{
+//
+//	}
+//}
 
 
 //1196: 字符串中没有重复的中英文字符(3分)
@@ -5611,6 +5618,7 @@
 //	}
 //	return 0;
 //}
+// 正确版
 //int main()
 //{
 //	char arr[10000];
@@ -5618,27 +5626,28 @@
 //	{
 //		char ch[100][3];
 //		int temp = 0;
-//		ch[temp][0] = arr[0];
-//		int count = 1;
+//		ch[temp][0] = arr[0];//先去一个字符
+//		int count = 1;//已经有一个字符，默认计数开始为1
 //		for (int i = 1; ; i++)
 //		{
 //			
-//			if (ch[temp][0] == arr[i])
+//			if (ch[temp][0] == arr[i])//循环，判断字符的个数
 //			{
 //				count++;
 //			}
-//			else 
+//			else //如果不相等，说明有新的字符
 //			{
-//				ch[temp][1] =count+'0';
-//				if (arr[i] == '\0')
+//				ch[temp][1] =count+'0';//这里因为count是整形，而我用的是数字字符，所以让count存的数字转化为字符
+//				if (arr[i] == '\0')//如果下一个字符是'\0'，就说明字符串走完了，跳出循环
 //					break;
-//				temp++;
-//				ch[temp][0] = arr[i];
-//				count = 1;
+//				temp++;//这里存到二维数组的下一行，一行只存一组
+//				ch[temp][0] = arr[i];//把新字符给存到二维数组
+//				count = 1;//默认开始为1
 //			}
 //		}
-//		int signal = 0;
-//		for (int i = 0; i <= temp; i++)
+//		//下面的代码是为了，判断是不是存在"ABC"这种，如果存在，按照题目要求输出ABC
+//		int signal = 0;//定义一个变量来判断
+//		for (int i = 0; i <= temp; i++)//判断二维数组里面存的是不是字符1，如果都是字符1，直接输出
 //		{
 //			if (ch[i][1] != '1')
 //			{
@@ -5771,6 +5780,30 @@
 //	scanf("%d", &n);
 //	kun(n);
 //}
+// 
+// 1202: Lucky 7 in the Pocket
+//int main()
+//{
+//	int n;
+//	while ((scanf("%d", &n)) != EOF)
+//	{
+//		int arr[100];
+//		for (int i = 0; i < n; i++)
+//		{
+//			scanf("%d", &arr[i]);
+//			while(!(arr[i] % 7 == 0 && arr[i]%4 != 0))
+//			{
+//				arr[i]++;
+//			}
+//			printf("%d\n", arr[i]);
+//			
+//		}
+//		
+//	}
+//	return 0;
+//}
+// 
+// 
 // 1203: 单词的缩写
 //int main()
 //{
@@ -5815,26 +5848,250 @@
 //int main()
 //{
 //	char arr[100];
-//	while ((gets(arr)) != EOF)
+//	while ((gets(arr)) != NULL)
 //	{
-//
+//		int sz = strlen(arr);
+//		for (int i = sz - 1; arr[i]=='0'; i--)
+//		{
+//			arr[i] = '\0';
+//		}
+//		printf("%s\n", arr);
 //	}
 //	return 0;
 //}
+
+//1206: 删除字符串前面的0
 //int main()
 //{
 //	char arr[100];
-//	while (gets(arr) != EOF)
+//	while (gets(arr) != NULL)
 //	{
-//		
-//		char ch[10];
-//		//printf("OK");
-//		//printf("\n");
-//		//scanf("%s", &ch[0]);
+//		int i = 0;
+//		while (arr[i] != '\0' &&arr[i]=='0')
+//		{
+//			i++;
+//		}
+//		for (int j = i; arr[j] != '\0'; j++)
+//		{
+//			printf("%c", arr[j]);
+//		}
+//		printf("\n");
 //	}
 //
 //	return 0;
 //}
+// 
+// 1207: 字符串的长度  暂写
+//int main()
+//{
+//	char arr1[100];
+//	while ((gets(arr1)) != NULL)
+//	{
+//		char ch[100], sh[100];
+//		gets(ch); 
+//		gets(sh);
+//		int arr[3];
+//		arr[0] = strlen(arr1);
+//		arr[1] = strlen(sh);
+//		arr[2] = strlen(ch);
+//		int max, min, middle;
+//		max = arr[2] > (arr[0] > arr[1] ? arr[0] : arr[1]) ? arr[2] : (arr[0] > arr[1] ? arr[0] : arr[1]);
+//		middle = arr[2] < (arr[0] > arr[1] ? arr[0] : arr[1]) ? arr[2] : (arr[0] > arr[1] ? arr[0] : arr[1]);
+//		min = arr[0] < arr[1] ? arr[0] : arr[1];
+//		if (max == arr[0])
+//		{
+//			printf("%s>", arr1);
+//		}
+//		else if(max==arr[1])
+//		{
+//			printf("%s>", sh);
+//		}
+//		else
+//		{
+//			printf("%s>", ch);
+//		}
+//		if (middle == arr[0])
+//		{
+//			printf("%s>", arr1);
+//		}
+//		else if(middle==arr[1])
+//		{
+//			printf("%s>", sh);
+//		}
+//		else
+//		{
+//			printf("%s>", ch);
+//		}
+//		if (min == arr[1])
+//		{
+//			printf("%s", sh);
+//		}
+//		else if(min=arr[0])
+//		{
+//			printf("%s", arr1);
+//		}
+//		else
+//		{
+//			printf("%s", ch);
+//		}
+//	}
+//	return 0;
+//}
+// 
+// 
+// 1208: 按降序输出日期
+//struct mydate 
+//{
+//	int year;
+//	int mon;
+//	int day;
+//};
+//int compare(const void* a, const void* b)
+//{
+//	if ((((const struct mydate*)b)->year - ((struct mydate*)a)->year)!=0)
+//	{
+//		return ((const struct mydate*)b)->year - ((struct mydate*)a)->year;
+//	}
+//	else if ((((const struct mydate*)b)->mon - ((struct mydate*)a)->mon) != 0)
+//	{
+//		return ((const struct mydate*)b)->mon - ((struct mydate*)a)->mon;
+//	}
+//	else
+//	{
+//		return ((const struct mydate*)b)->day - ((struct mydate*)a)->day;
+//	}
+//	
+//}
+//int main()
+//{
+//	int n = 0;
+//	while ((scanf("%d", &n)) != EOF)
+//	{
+//		struct mydate date[50];
+//	
+//		for (int i = 0; i < n; i++)
+//		{
+//			scanf("%d %d %d", &(date[i].year), &(date[i].mon), &(date[i].day));
+//		}
+//		qsort(date, n, sizeof(date[0]), compare);
+//		for (int i = 0; i <n; i++)
+//		{
+//			printf("%d %d %d\n", (date[i].year), (date[i].mon), (date[i].day));
+//		}
+//	}
+//	return 0;
+//}
+// //使用qsort()函数按年龄排序结构体
+//#define _CRT_SECURE_NO_WARNINGS 1
+//#include<stdio.h>
+////创建结构体
+//struct Stu
+//{
+//	char name[20];
+//	int age;
+//};
+////compar_按年龄排序
+//int compar_Stu_age(const void* p1, const void* p2)
+//{
+//	return ((struct Stu*)p1)->age - ((struct Stu*)p2)->age;
+//}
+//
+//int main()
+//{
+//	struct Stu s[3] = { {"zhangsan",20} ,{"lisi",30},{"wangmazi",25} };
+//	size_t num = sizeof(s) / sizeof(s[0]);
+//	size_t sz = sizeof(s[0]);
+//
+//	qsort(s, num, sz, compar_Stu_age);
+//	for (int i = 0; i < 3; i++)
+//	{
+//		printf("%s,%d\n", s[i].name, s[i].age);
+//	}
+//	return 0;
+//}
+// 
+// 1222: 输出下面的字符串
+// 方法一：
+//int main()
+//{
+//	printf("I love this \"game\"!");
+//}
+// 
+// 1223: 10进制 to 8进制和16进制
+//int eight(int n)
+//{
+//	if (n > 0)
+//	{
+//		
+//		eight(n / 8);
+//		printf("%d", n % 8);
+//		
+//	}
+//	else
+//	{
+//		return;
+//	}
+//}
+//int sixteen(int n)
+//{
+//	char arr[] = { '0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'};
+//	if (n > 0)
+//	{
+//		
+//		sixteen(n / 16);
+//		printf("%c", arr[n % 16]);
+//	}
+//	else
+//	{
+//		return;
+//	}
+//}
+//int main()
+//{
+//	int n;
+//	scanf("%d", &n);
+//	eight(n);
+//	printf(",");
+//	sixteen(n);
+//
+//}
+// 方法二：
+// #include <stdio.h>
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	printf("%o ", n);
+//	printf("%x\n", n);
+//
+//	return 0;
+//}
+//1224: 输出正整数，零，负整数
+//int main()
+//{
+//	int n;
+//	scanf("%d", &n);
+//	if (n > 0)
+//	{
+//		putchar('+');
+//	}
+//	else if(n<0)
+//	{
+//		putchar('-');
+//	}
+//	else
+//	{
+//		putchar('0');
+//	}
+//	return 0;
+//}
+
+//1225: x天后是星期几
+int main()
+{
+
+	return 0;
+}
 //1250: 输出一行文字
 //int main()
 //{
