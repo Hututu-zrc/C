@@ -5655,18 +5655,26 @@
 //				break;
 //			}
 //		}
-//		for (int i = 0; i <= temp; i++)
+//		if ((temp+1) * 2 == strlen(arr))
 //		{
-//			if (signal == 1)
-//			{
-//				printf("%c%c", ch[i][0], ch[i][1]);
-//			}
-//			else
-//			{
-//				printf("%c", ch[i][0]);
-//			}
+//			printf("%s\n",arr);
 //		}
-//		printf("\n");
+//		else
+//		{
+//			for (int i = 0; i <= temp; i++)
+//			{
+//				if (signal == 1)
+//				{
+//					printf("%c%c", ch[i][0], ch[i][1]);
+//				}
+//				else
+//				{
+//					printf("%c", ch[i][0]);
+//				}
+//			}
+//			printf("\n");
+//		}
+//	
 //
 //	}
 //	return 0;
@@ -6089,7 +6097,8 @@
 //1225: x天后是星期几
 int main()
 {
-
+	int n = 0;
+	scanf("%d")
 	return 0;
 }
 //1250: 输出一行文字
