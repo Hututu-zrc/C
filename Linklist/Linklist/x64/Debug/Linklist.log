@@ -1,0 +1,5 @@
+﻿  Linklist.c
+F:\visual studio code\c-language\Linklist\Linklist\Linklist.c(72,1): warning C4029: 声明的形参表不同于定义
+  test.c
+  正在生成代码...
+  Linklist.vcxproj -> F:\visual studio code\c-language\Linklist\x64\Debug\Linklist.exe

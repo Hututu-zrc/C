@@ -1,0 +1,7 @@
+﻿  Scan_Mine.c
+F:\visual studio code\c-language\Scan_Mine\Scan_Mine\Scan_Mine.c(45,19): warning C4028: 形参 1 与声明不同
+F:\visual studio code\c-language\Scan_Mine\Scan_Mine\Scan_Mine.c(104,30): warning C4047: “=”:“char”与“char [10]”的间接级别不同
+  test.c
+F:\visual studio code\c-language\Scan_Mine\Scan_Mine\test.c(12,28): warning C4305: “初始化”: 从“int”到“char”截断
+  正在生成代码...
+  Scan_Mine.vcxproj -> F:\visual studio code\c-language\Scan_Mine\x64\Debug\Scan_Mine.exe
