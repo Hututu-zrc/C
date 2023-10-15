@@ -6095,12 +6095,343 @@
 //}
 
 //1225: x天后是星期几
-int main()
-{
-	int n = 0;
-	scanf("%d")
-	return 0;
-}
+//int main()
+//{
+//	int n = 0;
+//	char* arr[] = { "0", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六","星期日"};
+//	scanf("%d", &n);
+//	printf("%s\n", arr[(n + 1) % 7 +1]);
+//	return 0;
+//}
+// 
+// #include <stdio.h>
+//int main()
+//{
+//	int n = 0;
+//	char* arr[] = { "星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六" };
+//	while (scanf("%d", &n) != EOF)
+//	{
+//		printf("%s\n", arr[(n + 2) % 7]);
+//	}
+//
+//	return 0;
+//}
+// 
+// 1226: 按降序输出
+//int main()
+//{
+//	int a, b, c;
+//	scanf("%d %d %d", &a, &b, &c);
+//	int temp;
+//	if (a < b) {
+//		temp = a;
+//		a = b;
+//		b = temp;
+//	}
+//	if (a < c) {
+//		temp = a;
+//		a = c;
+//		c = temp;
+//	}
+//	if (b < c) {
+//		temp = b;
+//		b = c;
+//		c = temp;
+//	}
+//
+//	// 输出降序排列的三个整数
+//	printf("%d,%d,%d\n", a, b, c);
+//	return 0;
+//	
+//
+//}
+// 
+// 1227: 时间是：几点几分
+//#include <stdio.h>
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int hour = ((n + 31) / 60 + 14) % 24;
+//	int minute = (n + 31) % 60;
+//	printf("%d点%d分\n", hour, minute);
+//	return 0;
+//}
+// 
+// 1228: 奇数还是偶数
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	if (n % 2 == 0)
+//		printf("EVEN\n");
+//	if (n % 2 == 1)
+//		printf("ODD\n");
+//	return 0;
+//}
+// 
+// 1229: 输出x的倍数
+//int main()
+//{
+//	int n;
+//	while ((scanf("%d", &n)) != EOF)
+//	{
+//		int i = n;
+//		for (; i <= 100; i+=n)
+//		{
+//			if (i % n == 0)
+//			{
+//				printf("%d", i);
+//			}
+//			if (i + n <= 100)
+//			{
+//				printf(",");
+//			}
+//		}
+//	
+//		printf("\n");
+//	}
+//	return 0;
+//}
+// 
+// 1230: 求1/2+2/3+3/5+5/8 . . .共100项的和
+//int main()
+//{
+//
+//	double sum = 0.0;
+//	int n = 1, m = 2;
+//	for (int count = 1; count <= 100; count++)
+//	{
+//		
+//		sum += n*1.0 / m;
+//		int temp = n;
+//		n = m;
+//		m += temp;;
+//		
+//	}
+//	printf("%.5lf\n", sum);
+//	
+//	return 0;
+//}
+// 
+// 1231: 输出三角形-3
+//int main()
+//{
+//	int n = 0;
+//	while ((scanf("%d", &n)) != EOF)
+//	{
+//		for (int i = 1; i <= n; i++)
+//		{
+//			for (int j = i; j <= n; j++)
+//			{
+//				printf("*");
+//				if (j != n)
+//					printf(" ");
+//			}
+//			printf("\n");
+//		}
+//	}
+//	return 0;
+//}
+// 
+// 1232: 输出三角形-4
+//int main()
+//{
+//	int n = 0;
+//	while ((scanf("%d", &n)) != EOF)
+//	{
+//		for (int i = 1; i <= n; i++)
+//		{
+//			for (int j = 1; j <=2*n-2*i ; j++)
+//			{
+//				printf(" ");
+//			}
+//			for (int k = 1; k <=i ; k++)
+//			{
+//				printf("*");
+//				if (k !=i)
+//				{
+//					printf(" ");
+//				}
+//			}
+//			
+//			printf("\n");
+//		}
+//	}
+//	return 0;
+//}
+ 
+//1233: 求1 + 1/2 + 1/3 + 1/4 + 1/5 . . + 1/100 共100项的和
+//int main()
+//{
+//	int n = 1;
+//	double sum = 0.0;
+//	for (; n <= 100; n++)
+//	{
+//		sum += 1.0 / n;
+//	}
+//	printf("%.5lf\n", sum);
+//	return 0;
+//}
+// 
+// 1234: 输出下面的句子
+//int main()
+//{
+//	printf("a common danger causes common action.\n");
+//	printf("---- \" 同舟共济，武汉加油!”\n");
+//	return 0;
+//}
+// 
+// 1235: 四则运算（20分）
+//int main()
+//{
+//	int a, b;
+//	scanf("%d %d", &a, &b);
+//	printf("%d + %d = %d\n", a, b, a + b);
+//	printf("%d - %d = %d\n", a, b, a - b);
+//	printf("%d * %d = %d\n", a, b, a * b);
+//	printf("%d / %d = %d\n", a, b, a / b);
+//	return 0;
+//
+//}
+// 
+// 1236: 求商和余数
+//int main()
+//{
+//	int a, b;
+//	scanf("%d %d", &a, &b);
+//	printf("%d / %d = %d\n", a, b, a / b);
+//	printf("%d %c %d = %d\n", a,'%', b, a % b);
+//	return 0;
+//}
+// 
+// 1237: 大写英文字母的变换
+//int main()
+//{
+//	char ch;
+//	scanf("%c", &ch);
+//	if (ch + 6 > 90)
+//	{
+//		printf("%c\n", ch-20);
+//	}
+//	else
+//		printf("%c\n", ch + 6);
+//	return 0;
+//}
+// 
+// 1238: 输出一个3位整数的逆数
+
+//int main()
+//{
+//	int n = 0;
+//	while (scanf("%d", &n) != EOF)
+//	{
+//		while (n % 10 == 0)
+//		{
+//			n /= 10;
+//		}
+//		while (n)
+//		{
+//			printf("%d", n % 10);
+//			n /= 10;
+//		}
+//		printf("\n");
+//	}
+//
+//	return 0;
+//}
+// 
+// 1239: 求时间差
+//int main()
+//{
+//	int a, b, c, d;
+//	scanf("%d:%d", &a, &b);
+//	scanf("%d:%d", &c, &d);
+//	if (d - b < 0)
+//	{
+//		printf("%d\n", (c - a - 1) * 60 + 60 + d - b);
+//	}
+//	else
+//	{
+//		printf("%d\n", (c - a) * 60 + d - b);
+//	}
+//	return 0;
+//}
+// 
+// 1240: 输出字符的ASCII码值
+//int main()
+//{
+//	char ch;
+//	scanf("%c", &ch);
+//	printf("%d\n", ch);
+//	return 0;
+//}
+// 
+// 1241: 输出无符号整数
+//int main()
+//{
+//	int a;
+//	scanf("%d", &a);
+//	printf("%u\n", a);
+//	return 0;
+//}
+// 
+// 1242: 时间格式的转换：H-->HH
+//int main()
+//{
+//	int a, b, c;
+//	scanf("%d:%d:%d", &a, &b, &c);
+//	printf("%02d:%02d:%02d", a, b, c);
+//}
+// 1244: 是哪种三角形--1
+// int main()
+//{
+//
+//	int a, b, c;
+//	while((scanf("%d %d %d", &a, &b, &c))!=EOF)
+//	{
+//		
+//		if (a * a + b * b == c * c || b * b + c * c == a * a || a * a + c * c == b * b)
+//		{
+//			printf("good\n");
+//		}
+//		else if (a == b || b == c || a == c)
+//		{
+//			printf("perfect\n");
+//		}
+//		else
+//		{
+//			printf("just a triangle\n");
+//		}
+//	}
+//	return 0;
+//}
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
 //1250: 输出一行文字
 //int main()
 //{
