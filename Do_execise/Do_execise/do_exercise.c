@@ -5523,7 +5523,41 @@
 //1195: 中文字符串没有重复的汉字
 //int main()
 //{
-//	
+//	char arr[200][3];
+//	while ((scanf("%c%c", &arr[0][0],&arr[0][1])) != EOF)
+//	{
+//		int i = 1;
+//		for ( ;1; i++)
+//		{
+//			scanf("%c", &arr[i][0]);
+//			if (arr[i][0] == '\n')
+//				break;
+//			scanf("%c", &arr[i][1]);
+//		}
+//		int h=0; 
+//		for (h = 0; h < i; h++)
+//		{
+//			int k=0;
+//			for (k = h+1; k < i; k++)
+//			{
+//				if (arr[h][0] == arr[k][0] && arr[h][1] == arr[k][1])
+//				{
+//					arr[k][0] = arr[k][1] = '\n';
+//				}
+//			}
+//		}
+//		int j=0;
+//		for (j = 0; j < i; j++)
+//		{
+//			if (arr[j][0] != '\n')
+//			{
+//				printf("%c%c", arr[j][0], arr[j][1]);
+//			}
+//			
+//		}
+//		printf("\n");
+//
+//	}
 //}
 //#include <stdio.h>
 //#include <locale.h>
@@ -5841,14 +5875,32 @@
 //	return 0;
 //}
 // 1204: 字符串的大小 暂写
+
 //int main()
 //{
-//	const char* arr[3];
-//	while (scanf("%s", &arr[0]) != EOF)
+//	char arr[3][50];
+//	while (scanf("%s", arr[0]) != EOF)
 //	{
-//		scanf("%s", &arr[1]);
-//		scanf("%s", &arr[2]);
-//		printf("%s\n", strcmp(arr[2], strcmp(arr[1], arr[0])));
+//		scanf("%s", arr[1]);
+//		scanf("%s", arr[2]);
+//		char* ps[3], * temp;
+//		for (int i = 0; i < 3; i++)
+//		{
+//			ps[i] = arr[i];
+//		}
+//		for (int i = 0; i < 2; i++)
+//		{
+//			for (int j = 0; j < 2 - i; j++)
+//			{
+//				if (strcmp(ps[j], ps[j+1]) < 0)
+//				{
+//					temp = ps[j];
+//					ps[j] = ps[j + 1];
+//					ps[j + 1] = temp;
+//				}
+//			}
+//		}
+//		printf("%s>%s>%s\n", ps[0], ps[1], ps[2]);
 //	}
 //	return 0;
 //}
