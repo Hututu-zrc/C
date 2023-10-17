@@ -790,6 +790,16 @@ LNode* InitList_B()//带头结点的链表初始化
 	Lb->next = NULL;
 	return Lb;
 }
+LNode* InitList_C()//带头结点的链表初始化
+{
+	LinkList Lc = (LNode*)malloc(sizeof(LNode));
+	if (Lc==NULL)
+	{
+		exit (-1);
+	}
+	Lc->next = NULL;
+	return Lc;
+}
 LNode* CreateNode()
 {
 	LNode *newnode= (LNode*)malloc(sizeof(LNode));
@@ -811,7 +821,7 @@ void CreateList_A(LNode **phead,int n)
 	for (int i = 0; i < n; i++)
 	{
 	
-		LNode* s = CreateNode();
+		LNode* s = CreateNode();//这里的s是指针，s里面存放的是结构体的地址，指向了结构体，我们&s得到的才是结构体的地址
 		p->next = s;
 		scanf("%d %d", &s->stnumber,&s->score);
 		s->next = NULL;
@@ -835,17 +845,75 @@ void CreateList_B(LNode **phead,int m)
 		
 	}
 }
+void MergeList_L(LNode** La, LNode** Lb, LNode** Lc)
+{
+	LNode* pa = (*La)->next;
+	LNode* pb = (*Lb)->next;
+	LNode* pc;
+	(*Lc) = pc = *La;
+	while (pa && pb)
+	{
+		if (pa->stnumber <= pb->stnumber)
+		{
+			pc->next = pa;
+			pc = pa;
+			pa = pa->next;
+		}
+		else 
+		{
+			pc->next = pb;
+			pc = pb;
+			pb = pb->next;
+		}
+	}
+	pc->next = pa ? pa : pb;
+}
+void print(LNode*Lc)
+{
+	LNode* p=Lc->next;
+	while (p != NULL)
+	{
+		printf("%d %d\n", p->stnumber, p->score);
+		p = p->next;
+	}
+
+}
+void DestroyList(LNode** L)
+{
+	LinkList pp = *L;
+	while (pp)
+	{
+		*L = (*L)->next;
+		free(pp);
+		pp = *L;
+	}
+}
 int main()
 {
 	int n, m;
 	scanf("%d %d", &n, &m);
 	LNode* La = InitList_A();
 	LNode* Lb = InitList_B();
+	LNode* Lc = InitList_C();
 	CreateList_A(&La, n);
-	CreateList_A(&Lb, m);
+	CreateList_B(&Lb, m);
+	MergeList_L(&La, &Lb, &Lc);
+	print(Lc);
+	DestroyList(&La);
+	DestroyList(&Lb);
+	DestroyList(&Lc);
 	return 0;
 }
- 
+//void FreeList(LinkList* phead) {
+	//	LNode* current = (*phead)->next;
+	//	while (current != NULL) {
+	//		LNode* temp = current;
+	//		current = current->next;
+	//		free(temp); // 释放当前节点的内存
+	//	}
+	//	free(*phead); // 释放头结点的内存
+	//	*phead = NULL; // 将头指针设置为NULL，以避免悬空指针
+	//}
 //1044: 设计一个函数，使得给出一个16位整数的原码，能够得到该数的补码。
 //int main()
 //{
