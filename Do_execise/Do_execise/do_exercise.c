@@ -762,40 +762,90 @@
 //	free1(&space);
 //	printf("OK");
 //}
-//// 1041: 链表的合并。
-//typedef struct Stu1
-//{
-//	int num;
-//	int grade;
-//	St* next;
-//}St;
-//
-//St* LinkListInit()
-//{
-//	St* p = (St*)malloc(sizeof(St));
-//	if (p == NULL)
-//	{
-//		printf("malloc fail\n");
-//		exit(-1);
-//	}
-//
-//	return p;
-//}
-//
-//int main()
-//{
-//	int m, n;
-//	scanf("%d %d", &m, &n);
-//	St s1;
-//	St s2;
-//	St s3;
-//	LinkListInit(&s1);
-//	LinkListInit(&s2);
-//	LinkListInit(&s3);
-//
-//	return 0;
-//}
-// 
+// 1041: 链表的合并。
+typedef struct LNode 
+{
+	int stnumber;
+	int score;
+	struct LNode* next;
+
+}LNode,*LinkList ;
+LNode*  InitList_A()//带头结点的链表初始化
+{
+	LinkList La = (LNode*)malloc(sizeof(LNode));
+	if (La==NULL)
+	{
+		exit (-1);
+	}
+	La->next = NULL;
+	return La;
+}
+LNode* InitList_B()//带头结点的链表初始化
+{
+	LinkList Lb = (LNode*)malloc(sizeof(LNode));
+	if (Lb==NULL)
+	{
+		exit (-1);
+	}
+	Lb->next = NULL;
+	return Lb;
+}
+LNode* CreateNode()
+{
+	LNode *newnode= (LNode*)malloc(sizeof(LNode));
+	if (newnode == NULL)
+	{
+		printf("malloc fail\n");
+		exit(-1);
+	}
+	newnode->next = NULL;
+	return newnode;
+}
+void CreateList_A(LNode **phead,int n)
+{
+	LNode* p = *phead;
+	while(p->next)
+	{
+		p = p->next;
+	}
+	for (int i = 0; i < n; i++)
+	{
+	
+		LNode* s = CreateNode();
+		p->next = s;
+		scanf("%d %d", &s->stnumber,&s->score);
+		s->next = NULL;
+		p = p->next;
+	}
+}
+void CreateList_B(LNode **phead,int m)
+{
+	LNode* p = *phead;
+	while (p->next)
+	{
+		p = p->next;
+	}
+	for (int i = 0; i < m; i++)
+	{
+		LNode* s = CreateNode();
+		p->next = s;
+		scanf("%d %d",&s->stnumber,&s->score);
+		s->next = NULL;
+		p = p->next;
+		
+	}
+}
+int main()
+{
+	int n, m;
+	scanf("%d %d", &n, &m);
+	LNode* La = InitList_A();
+	LNode* Lb = InitList_B();
+	CreateList_A(&La, n);
+	CreateList_A(&Lb, m);
+	return 0;
+}
+ 
 //1044: 设计一个函数，使得给出一个16位整数的原码，能够得到该数的补码。
 //int main()
 //{
@@ -6496,24 +6546,25 @@
 // 
 // 
 // 1249: 输出中间的一个数
-int main()
-{
-	char arr[1000][100];
-	int i = 1;;
-	while ((scanf("%s", &arr[0])) != EOF)
-	{
-		
-		while ((scanf("%s", &arr[i])) != EOF)
-		{
-			if (arr[i] == '\n')
-				break;
-			i++;
-		}
-	
-	}
+//int main()
+//{
+//	char arr[1000][100];
+//	int i = 1;;
+//	while ((scanf("%s", &arr[0])) != EOF)
+//	{
+//		
+//		while ((scanf("%s", &arr[i])) != EOF)
+//		{
+//			if (arr[i] == '\n')
+//				break;
+//			i++;
+//		}
+//	
+//	}
+//
+//	return 0;
+//}
 
-	return 0;
-}
 //1250: 输出一行文字
 //int main()
 //{
