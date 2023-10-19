@@ -4231,66 +4231,85 @@
 //}
 //
 //1158: 一个拆二代的征婚广告 不会
-//int  main()
+int  main()
+{
+	int num = 2;
+	int a = 0;
+	int b = 0;
+	int k = 0;
+	long int c = 7140229933;
+	//判断一个数是不是素数
+	double f=0.0;
+	k = (int)sqrt((double)num);
+	while (num <= c)
+	{
+		for (int i = 2; i <= k; i++)
+		{
+			if (num % i == 0)
+			{
+				break;
+			}
+		}
+		if (num > k)//确定一个较小的素数
+		{
+			a = num;
+			f = c*1.0 / a;//用c除以这个素数得到的是小数直接排除
+			if (f != (int)f)
+			{
+				break;
+			}
+			else if(num % 6 != 1 && num % 6 != 5)
+			{
+				break;
+			}
+			else
+			{
+				//判断另一个数是不是素数
+				for (int i = 2; i <= (int)sqrt((double)f); i++)
+				{
+					if ((int)f % i == 0)
+					{
+						break;
+					}
+				}
+				if ((int)f > (int)sqrt((double)f))
+				{
+					break;
+				}
+				else
+				{
+					num++;
+				}
+			}
+		}
+		else
+		{
+			num++;
+		}
+	}
+	printf("Lin%d%d", num, (int)f);
+	return 0;
+}
+
+//#include <stdio.h>
+//int main()
 //{
-//	int num = 2;
-//	int a = 0;
-//	int b = 0;
-//	int k = 0;
-//	long int c = 7140229933;
-//	//判断一个数是不是素数
-//	double f=0.0;
-//	k = (int)sqrt((double)num);
-//	while (num <= c)
+//	for (long long int i = 2; i < 100000; i++)
 //	{
-//		for (int i = 2; i <= k; i++)
+//		if (i % 2 != 0 && i % 3 != 0 && i % 5 != 0 && i % 7 != 0)
 //		{
-//			if (num % i == 0)
+//			for (long long int j = i + 1; j < 100000; j++)
 //			{
-//				break;
-//			}
-//		}
-//		if (num > k)//确定一个较小的素数
-//		{
-//			a = num;
-//			f = c*1.0 / a;//用c除以这个素数得到的是小数直接排除
-//			if (f != (int)f)
-//			{
-//				break;
-//			}
-//			else if(num % 6 != 1 && num % 6 != 5)
-//			{
-//				break;
-//			}
-//			else
-//			{
-//				//判断另一个数是不是素数
-//				for (int i = 2; i <= (int)sqrt((double)f); i++)
+//				if (j % 2 != 0 && j % 3 != 0 && j % 5 != 0 && j % 7 != 0 && i * j == 7140229933)
 //				{
-//					if ((int)f % i == 0)
-//					{
-//						break;
-//					}
-//				}
-//				if ((int)f > (int)sqrt((double)f))
-//				{
+//					printf("Lin%lld%lld", i, j);
 //					break;
 //				}
-//				else
-//				{
-//					num++;
-//				}
 //			}
 //		}
-//		else
-//		{
-//			num++;
-//		}
 //	}
-//	printf("Lin%d%d", num, (int)f);
 //	return 0;
 //}
-//
 //1160: 输出大写的英文字母
 //int main()
 //{
@@ -5216,10 +5235,26 @@
 //}
 // 
 // 1180: 最长子序列
-int main()
-{
-
-}
+//int main()
+//{
+//	int n;
+//	while ((scanf("%d", &n)) != EOF)
+//	{
+//		int arr[100] = { 0 };
+//		for (int i = 0; i < n; i++)
+//			scanf("%d", &arr[i]);
+//		int count = 1,maxlen=0;
+//		for (int i = 0; i<n; i++)
+//		{
+//			if (arr[i] < arr[i + 1])
+//				count++;
+//			else
+//				count = 1;
+//			maxlen = maxlen > count ? maxlen : count;
+//		}
+//		printf("%d\n", maxlen);
+//	}
+//}
 //1181: 最长子字符串  最大的子字符串，并且连续
 //int compare(const void* a, const void* b)
 //{
