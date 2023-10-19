@@ -107,7 +107,7 @@ void SLpopBack(SLNode** pphead)//*pphead¾ÍÊÇplist
 }
 void SLPopFront(SLNode** pphead)
 {
-	assert(*pphead != NULL);
+	//assert(*pphead != NULL);
 	SLNode* next = (*pphead)->next;
 	free(*pphead);
 	*pphead = next;

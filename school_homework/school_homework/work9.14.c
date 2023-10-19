@@ -490,4 +490,246 @@
 //	return 0;
 //}
 
+//
+//#include <stdio.h>
+//int main()
+//{
+//	int year = 0;
+//	while (scanf("%d", &year) != EOF)
+//	{
+//		int start_year = 1900;
+//		int start_week = 1;
+//		int count1 = 0;
+//		int count2 = 0;
+//		for (int i = 1900; i <= year - 1; i++)
+//		{
+//			if (i % 4 == 0 && i % 100 != 0 || i % 400 == 0)
+//			{
+//				count1++;
+//			}
+//		}
+//		int new_week = (year - start_year + count1 + start_week - 1) % 7 + 1;
+//		int s = 365;
+//		int arr[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+//		if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
+//		{
+//			s = 366;
+//			arr[1] = 29;
+//		}
+//		for (int i = 1; i <= s - 1; i++)
+//		{
+//			int sign1 = (new_week + i - 1) % 7 + 1;
+//			int sign2;
+//			int sum = 0;
+//			int x = 0;
+//			for (int j = 0; j < 12; j++)
+//			{
+//				if (j > 0)
+//				{
+//					x += arr[j - 1];
+//				}
+//				sum += arr[j];
+//				if (1 + i <= sum)
+//				{
+//					break;
+//				}
+//			}
+//			sign2 = (i + 1 - x);
+//			if (sign1 == 5 && sign2 == 13)
+//			{
+//				count2++;
+//			}
+//		}
+//		if (count2 > 0)
+//		{
+//			printf("%d\n", count2);
+//		}
+//		else
+//		{
+//			printf("NO\n");
+//		}
+//	}
+//	return 0;
+//}
 
+
+//2022级C语言第四次作业
+//问题 A: 字符出现的次数
+//#include <stdio.h>
+//int main()
+//{
+//	char arr[100];
+//	while ((fgets(arr, 100, stdin)) != NULL)
+//	{
+//		char ch;
+//		scanf("%c", &ch);
+//		int i = 0;
+//		int count = 0;
+//		while (arr[i] != '\0')
+//		{
+//			if (arr[i] == ch)
+//			{
+//				count++;
+//			}
+//			i++;
+//		}
+//		printf("%d\n", count);
+//		getchar();
+//		getchar();
+//	}
+//	return 0;
+//}
+// 
+//问题 B : 字符在字符串中出现的位置
+//int main()
+//{
+//	char arr[101];
+//	while ((fgets(arr,101,stdin)) != NULL)
+//	{
+//		char ch;
+//		scanf("%c", &ch);
+//		int i = 0,signal=0;
+//		while (arr[i] != '\0')
+//		{
+//			if (ch == arr[i])
+//			{
+//				printf("%d ", i);
+//				signal = 1;
+//			}
+//			i++;
+//				
+//		}
+//		if (signal == 0)
+//		{
+//			printf("NULL");
+//		}
+//		printf("\n");
+//		getchar();
+//	}
+//	return 0;
+//}
+
+//问题 C: 删除字符串末尾的0
+//int main()
+//{
+//	char arr[100];
+//	while ((gets(arr)) != NULL)
+//	{
+//		int sz = strlen(arr);
+//		for (int i = sz - 1; i >= 0; i--)
+//		{
+//			if (arr[i] != '0')
+//				break;
+//			arr[i] = '\0';
+//		}
+//		puts(arr);
+//	}
+//	return 0;
+//}
+
+//问题 D: 删除字符串前面的0
+//int main()
+//{
+//	char arr[100];
+//	while ((gets(arr)) != NULL)
+//	{
+//		int sz = strlen(arr);
+//		while (arr[0] == '0')
+//		{
+//			for (int j = 0; arr[j] != '\0'; j++)
+//				arr[j] = arr[j + 1];
+//		}
+//		puts(arr);
+//	}
+//	return 0;
+//}
+
+//问题 E: 字符串的大小
+//#include <stdio.h>
+//int main()
+//{
+//	char arr[3][50];
+//	while (scanf("%s", arr[0]) != EOF)
+//	{
+//		scanf("%s", arr[1]);
+//		scanf("%s", arr[2]);
+//		char* ps[3], * temp;
+//		for (int i = 0; i < 3; i++)
+//		{
+//			ps[i] = arr[i];
+//		}
+//		for (int i = 0; i < 2; i++)
+//		{
+//			for (int j = 0; j < 2 - i; j++)
+//			{
+//				if (strcmp(ps[j], ps[j + 1]) < 0)
+//				{
+//					temp = ps[j];
+//					ps[j] = ps[j + 1];
+//					ps[j + 1] = temp;
+//				}
+//			}
+//		}
+//		printf("%s>%s>%s\n", ps[0], ps[1], ps[2]);
+//	}
+//	return 0;
+//}
+
+//问题 F : 数字字符串
+//#include<string.h>
+//#include <stdio.h>
+//int main()
+//{
+//	char arr[101];
+//	while ((gets(arr)) != NULL)
+//	{
+//		int singal = 0;
+//		for (int i = 0; arr[i] != '\0'; i++)
+//		{
+//			if (!(isdigit(arr[i])))
+//			{
+//				puts("NO");
+//				singal = 1;
+//				break;
+//			}
+//		}
+//		if(singal==0)
+//			puts("YES");
+//	}
+//	return 0;
+//}
+
+//问题 G: 是否可能是身份证号码
+//#include <stdio.h>
+//#include <string.h>
+//int main()
+//{
+//	char arr[50];
+//	while((gets(arr)) != NULL)
+//	{
+//		int signal = 0;
+//		int sz = strlen(arr);
+//		if (sz != 18)
+//		{
+//			puts("NO");	signal = 1;
+//			goto again;
+//		}
+//		for (int i = 0;i<sz-2; i++)
+//		{
+//			if (!(isdigit(arr[i])))
+//			{
+//				
+//				puts("NO"); signal = 1;
+//				break;
+//			}	
+//		}
+//		if (!((isdigit(arr[17])) || arr[17] == 'X' || arr[17] == 'x'))
+//		{
+//			puts("NO"); signal = 1;
+//		}
+//		again:
+//		if (signal == 0)
+//			puts("YES");
+//	}
+//	return 0;
+//}

@@ -4966,7 +4966,41 @@
 //	return 0;
 //}
 
- 
+////1174: 黑色星期五
+//int main()
+//{
+//	int n, start=1;
+//	while ((scanf("%d",&n)) != EOF)
+//	{
+//		int count = 0, sum = 0, init = 0;
+//		for (int i = 1900; i < n; i++)
+//		{
+//			sum += 365 + (i % 4 == 0 && i % 100 != 0 || i % 400 == 0);
+//		}
+//		start =1+ (sum) % 7 ;
+//		int arr[13] = { 0,31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+//		if (n % 4 == 0 && n % 100 != 0 || n % 400 == 0)
+//			arr[2] = 29;
+//		init = (start + 5);
+//		if (init > 7)
+//			init = (start + 5) % 7;
+//		for (int i = 0; i < 12; i++)
+//		{
+//			if((init+arr[i])%7==5)
+//			{ 
+//				count++;
+//			}
+//			init = (init + arr[i]) % 7;
+//		}
+//		if (count != 0)
+//			printf("%d\n", count);
+//		else
+//			printf("NO\n");
+//		
+//	}
+//	return 0;
+//}
+// 
 //// 1175: 真假身份证
 //#include <stdio.h>
 //#include <string.h>
@@ -5180,6 +5214,12 @@
 //	}
 //	return 0;
 //}
+// 
+// 1180: 最长子序列
+int main()
+{
+
+}
 //1181: 最长子字符串  最大的子字符串，并且连续
 //int compare(const void* a, const void* b)
 //{
@@ -6895,86 +6935,86 @@
 //	print(p);
 //	return 0;
 //}
-
-#include <stdio.h>
-#include <stdlib.h>
-
-typedef struct LNode {
-	int stnumber;
-	int score;
-	struct LNode* next;
-
-} LNode, * LinkList;
-
-void CreateList(LinkList &phead, int n) {
-	LinkList p = phead;
-	while (p->next) {
-		p = p->next;
-	}
-	for (int i = 0; i < n; i++) {
-		LinkList s = (LinkList)malloc(sizeof(LNode));
-		p->next = s;
-		scanf("%d %d", &s->stnumber, &s->score);
-		s->next = NULL;
-		p = p->next;
-	}
-}
-void InitList(LinkList &L) {
-	L = (LinkList)malloc(sizeof(LNode));
-	L->next = NULL;
-}
-void MergeList_L(LinkList &La, LinkList& Lb, LinkList& Lc) {
-	LinkList pa = La->next;
-	LinkList pb = Lb->next;
-	LinkList pc;
-	Lc = pc = La;
-	while (pa && pb) {
-		if (pa->stnumber <= pb->stnumber) {
-			pc->next = pa;
-			pc = pa;
-			pa = pa->next;
-
-		}
-		else {
-			pc->next = pb;
-			pc = pb;
-			pb = pb->next;
-		}
-	}
-	pc->next = pa ? pa : pb;
-}
-
-void print(LinkList  &Lc) {
-	LinkList p = Lc->next;
-	while (p != NULL) {
-		printf("%d %d\n", p->stnumber, p->score);
-		p = p->next;
-	}
-}
-
-void DestroyList(LinkList &L) {
-	LinkList pp = L;
-	while (pp) {
-		L = L->next;
-		free(pp);
-		pp = L;
-	}
-}
-
-
-
-int main() {
-	int n, m;
-	scanf("%d %d", &n, &m);
-	LinkList La, Lb, Lc;
-	InitList(La);
-	InitList(Lb);
-	CreateList(La, n);
-	CreateList(Lb, m);
-	MergeList_L(La, Lb, Lc);
-	print(Lc);
-	DestroyList(La);
-	DestroyList(Lb);
-	DestroyList(Lc);
-	return 0;
-}
+//
+//#include <stdio.h>
+//#include <stdlib.h>
+//
+//typedef struct LNode {
+//	int stnumber;
+//	int score;
+//	struct LNode* next;
+//
+//} LNode, * LinkList;
+//
+//void CreateList(LinkList &phead, int n) {
+//	LinkList p = phead;
+//	while (p->next) {
+//		p = p->next;
+//	}
+//	for (int i = 0; i < n; i++) {
+//		LinkList s = (LinkList)malloc(sizeof(LNode));
+//		p->next = s;
+//		scanf("%d %d", &s->stnumber, &s->score);
+//		s->next = NULL;
+//		p = p->next;
+//	}
+//}
+//void InitList(LinkList &L) {
+//	L = (LinkList)malloc(sizeof(LNode));
+//	L->next = NULL;
+//}
+//void MergeList_L(LinkList &La, LinkList& Lb, LinkList& Lc) {
+//	LinkList pa = La->next;
+//	LinkList pb = Lb->next;
+//	LinkList pc;
+//	Lc = pc = La;
+//	while (pa && pb) {
+//		if (pa->stnumber <= pb->stnumber) {
+//			pc->next = pa;
+//			pc = pa;
+//			pa = pa->next;
+//
+//		}
+//		else {
+//			pc->next = pb;
+//			pc = pb;
+//			pb = pb->next;
+//		}
+//	}
+//	pc->next = pa ? pa : pb;
+//}
+//
+//void print(LinkList  &Lc) {
+//	LinkList p = Lc->next;
+//	while (p != NULL) {
+//		printf("%d %d\n", p->stnumber, p->score);
+//		p = p->next;
+//	}
+//}
+//
+//void DestroyList(LinkList &L) {
+//	LinkList pp = L;
+//	while (pp) {
+//		L = L->next;
+//		free(pp);
+//		pp = L;
+//	}
+//}
+//
+//
+//
+//int main() {
+//	int n, m;
+//	scanf("%d %d", &n, &m);
+//	LinkList La, Lb, Lc;
+//	InitList(La);
+//	InitList(Lb);
+//	CreateList(La, n);
+//	CreateList(Lb, m);
+//	MergeList_L(La, Lb, Lc);
+//	print(Lc);
+//	DestroyList(La);
+//	DestroyList(Lb);
+//	DestroyList(Lc);
+//	return 0;
+//}
