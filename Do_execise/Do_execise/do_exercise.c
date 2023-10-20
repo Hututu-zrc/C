@@ -4230,66 +4230,66 @@
 //
 //}
 //
-//1158: 一个拆二代的征婚广告 不会
-int  main()
-{
-	int num = 2;
-	int a = 0;
-	int b = 0;
-	int k = 0;
-	long int c = 7140229933;
-	//判断一个数是不是素数
-	double f=0.0;
-	k = (int)sqrt((double)num);
-	while (num <= c)
-	{
-		for (int i = 2; i <= k; i++)
-		{
-			if (num % i == 0)
-			{
-				break;
-			}
-		}
-		if (num > k)//确定一个较小的素数
-		{
-			a = num;
-			f = c*1.0 / a;//用c除以这个素数得到的是小数直接排除
-			if (f != (int)f)
-			{
-				break;
-			}
-			else if(num % 6 != 1 && num % 6 != 5)
-			{
-				break;
-			}
-			else
-			{
-				//判断另一个数是不是素数
-				for (int i = 2; i <= (int)sqrt((double)f); i++)
-				{
-					if ((int)f % i == 0)
-					{
-						break;
-					}
-				}
-				if ((int)f > (int)sqrt((double)f))
-				{
-					break;
-				}
-				else
-				{
-					num++;
-				}
-			}
-		}
-		else
-		{
-			num++;
-		}
-	}
-	printf("Lin%d%d", num, (int)f);
-	return 0;
-}
+////1158: 一个拆二代的征婚广告
+//int  main()
+//{
+//	int num = 2;
+//	int a = 0;
+//	int b = 0;
+//	int k = 0;
+//	long int c = 7140229933;
+//	//判断一个数是不是素数
+//	double f=0.0;
+//	k = (int)sqrt((double)num);
+//	while (num <= c)
+//	{
+//		for (int i = 2; i <= k; i++)
+//		{
+//			if (num % i == 0)
+//			{
+//				break;
+//			}
+//		}
+//		if (num > k)//确定一个较小的素数
+//		{
+//			a = num;
+//			f = c*1.0 / a;//用c除以这个素数得到的是小数直接排除
+//			if (f != (int)f)
+//			{
+//				break;
+//			}
+//			else if(num % 6 != 1 && num % 6 != 5)
+//			{
+//				break;
+//			}
+//			else
+//			{
+//				//判断另一个数是不是素数
+//				for (int i = 2; i <= (int)sqrt((double)f); i++)
+//				{
+//					if ((int)f % i == 0)
+//					{
+//						break;
+//					}
+//				}
+//				if ((int)f > (int)sqrt((double)f))
+//				{
+//					break;
+//				}
+//				else
+//				{
+//					num++;
+//				}
+//			}
+//		}
+//		else
+//		{
+//			num++;
+//		}
+//	}
+//	printf("Lin%d%d", num, (int)f);
+//	return 0;
+//}
 
 //#include <stdio.h>
 //int main()
@@ -4305,6 +4305,36 @@ int  main()
 //					printf("Lin%lld%lld", i, j);
 //					break;
 //				}
+//			}
+//		}
+//	}
+//	return 0;
+//}
+// 1159: 输出一个数的最大素因子。
+//int prime(int n)
+//{
+//	int i = 2;
+//	for (; i <sqrt(n); i++)
+//	{
+//		if (n % i == 0)
+//			break;
+//	}
+//	if (i <= sqrt(n))
+//		return 0;
+//	else
+//		return 1;
+//}
+//int main()
+//{
+//	int n;
+//	while ((scanf("%d", &n)) != EOF)
+//	{
+//		for (int i = n; i >= 2; i--)
+//		{
+//			if (n % i == 0 && prime(i) == 1)
+//			{
+//				printf("%d\n", i);
+//				break;
 //			}
 //		}
 //	}
@@ -5409,6 +5439,27 @@ int  main()
 //	}
 //	return 0;
 //}
+// 1185: 输出子字符串
+//int main()
+//{
+//	char arr[101];
+//	while ((gets(arr)) != NULL)
+//	{
+//		char ch;scanf("%c", &ch);
+//		int i = 0,count=0;
+//		while (arr[i] != '\0')
+//		{
+//			if (arr[i] != ch)
+//				printf("%c", arr[i]);
+//			else
+//				printf("\n");
+//			i++;
+//		}
+//		printf("\n");
+//		getchar();
+//	}
+//	return 0;
+//}
 //1186: 将字符串转换为整数。
 //int main()
 //{
@@ -6138,59 +6189,28 @@ int  main()
 //	return 0;
 //}
 // 
-// 1207: 字符串的长度  暂写
+// 1207: 字符串的长度  
+//#include <stdio.h>
+//#include <string.h>
 //int main()
 //{
-//	char arr1[100];
-//	while ((gets(arr1)) != NULL)
+//	char str[3][101];
+//	while (scanf("%s%s%s", &str[0], &str[1], &str[2]) != EOF)
 //	{
-//		char ch[100], sh[100];
-//		gets(ch); 
-//		gets(sh);
-//		int arr[3];
-//		arr[0] = strlen(arr1);
-//		arr[1] = strlen(sh);
-//		arr[2] = strlen(ch);
-//		int max, min, middle;
-//		max = arr[2] > (arr[0] > arr[1] ? arr[0] : arr[1]) ? arr[2] : (arr[0] > arr[1] ? arr[0] : arr[1]);
-//		middle = arr[2] < (arr[0] > arr[1] ? arr[0] : arr[1]) ? arr[2] : (arr[0] > arr[1] ? arr[0] : arr[1]);
-//		min = arr[0] < arr[1] ? arr[0] : arr[1];
-//		if (max == arr[0])
+//		for (int i = 0; i < 2; i++)
 //		{
-//			printf("%s>", arr1);
+//			for (int j = 0; j < 2 - i; j++)
+//			{
+//				if (strlen(str[j]) < strlen(str[j+1]))
+//				{
+//					char temp[101];
+//					strcpy(temp, str[j]);
+//					strcpy(str[j], str[j + 1]);
+//					strcpy(str[j + 1], temp);
+//				}
+//			}
 //		}
-//		else if(max==arr[1])
-//		{
-//			printf("%s>", sh);
-//		}
-//		else
-//		{
-//			printf("%s>", ch);
-//		}
-//		if (middle == arr[0])
-//		{
-//			printf("%s>", arr1);
-//		}
-//		else if(middle==arr[1])
-//		{
-//			printf("%s>", sh);
-//		}
-//		else
-//		{
-//			printf("%s>", ch);
-//		}
-//		if (min == arr[1])
-//		{
-//			printf("%s", sh);
-//		}
-//		else if(min=arr[0])
-//		{
-//			printf("%s", arr1);
-//		}
-//		else
-//		{
-//			printf("%s", ch);
-//		}
+//		printf("%s>%s>%s\n", str[0], str[1], str[2]);
 //	}
 //	return 0;
 //}
