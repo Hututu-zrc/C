@@ -6287,6 +6287,70 @@
 //	return 0;
 //}
 // 
+// 1209: 时间的显示
+//struct mytime
+//{
+//	char hour[3];
+//	char min[3];
+//	char sec[3];
+//};
+//int main()
+//{
+//	int n;
+//	while (scanf("%d", &n) != EOF)
+//	{
+//		getchar();
+//		struct mytime s[10];
+//		for (int i = 0; i < n; i++)
+//		{
+//			scanf("%s:%s:%s", &s[i].hour, &s[i].min, &s[i].sec);
+//			s[i].hour[2] = s[i].min[2] = s[i].sec[2] = '\0';
+//		}
+//		for (int i = 0; i < n; i++)
+//		{
+//			if (atoi(s[i].hour) < 12)
+//				printf("%d:%d:%d AM\n", atoi(s[i].hour), atoi(s[i].min), atoi(s[i].sec));
+//			else
+//				printf("%d:%d:%d PM\n", atoi(s[i].hour)-12, atoi(s[i].min), atoi(s[i].sec));
+//		}
+//	}
+//	return 0;
+//}
+// 1210: 最高分是谁
+//struct stu
+//{
+//	char name[9];
+//	int m_sco, y_sco, e_sco;
+//};
+//int main()
+//{
+//	int n;
+//	while (scanf("%d", &n) != EOF)
+//	{
+//		struct stu s[100];
+//		int  sum[100] = { 0 };
+//		getchar();
+//		for (int i = 0; i < n; i++)
+//		{
+//			scanf("%s%d%d%d", &s[i].name, &s[i].m_sco, &s[i].y_sco, &s[i].e_sco);
+//			sum[i] = (s[i].m_sco) + (s[i].y_sco) +(s[i].e_sco);
+//		}
+//		int max[1][2];
+//		max[0][0] = 0;
+//		for (int i = 0; i < n; i++)
+//		{
+//			if (max[0][0] < sum[i])
+//			{
+//				max[0][0] = sum[i];
+//				max[0][1] = i;
+//			}
+//		}
+//		printf("%s\n", s[max[0][1]].name);
+//
+//	}
+//
+//	return 0;
+//}
 // 1222: 输出下面的字符串
 // 方法一：
 //int main()
