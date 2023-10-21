@@ -6351,6 +6351,132 @@
 //
 //	return 0;
 //}
+// 1211: 函数sprintf的用法-时间的不同格式
+//#include <stdio.h>
+//
+//int main()
+//{
+//	int a, b, c;
+//	while (scanf("%d:%d:%d", &a, &b, &c)!=EOF)
+//	{
+//		char ch[100];
+//		sprintf(ch, "%02d:%02d:%02d", a, b, c);
+//		puts(ch);
+//	}
+//	return 0;
+//}
+// 1212: 身份证号码中的性别标识
+//int main()
+//{
+//	char arr[20];
+//	while (fgets(arr,20,stdin)!=NULL)
+//	{
+//		char ch[3];gets(ch);
+//		char sh[2][3]; strcpy(sh[0], "女");strcpy(sh[1], "男");
+//		int signal = 0;//默认男
+//		if (arr[16] % 2 == 0)
+//		{
+//			signal = 1;//女
+//		}
+//		if (signal == 1)
+//			if (ch[1] != sh[0][1] || ch[0] != sh[0][0])
+//				printf(arr);
+//		if (signal == 0)
+//			if (ch[1] != sh[1][1] || ch[0] != sh[1][0])
+//				printf(arr);
+//	}
+//	return 0;
+//}
+// 1214: 合法的日期
+//int main()
+//{
+//	char arr[20];
+//	{
+//	again:
+//		while ((gets(arr)) != NULL)
+//		{
+//			int ch[13] = { 0,31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+//			if (arr[4] != '-' || arr[7] != '-')
+//			{
+//				puts("NO"); goto again;
+//			}
+//			char* token = strtok(arr, "-"); char* temp;
+//			if (strspn(token, "0123456789") != 4 || atoi(token) < 0 || atoi(token) > 9999)
+//			{
+//				puts("NO"); goto again;
+//			}
+//			ch[2] = 28 + (atoi(token) % 4 == 0 && atoi(token) % 100 != 0 || atoi(token) % 400 == 0);
+//			token = temp = strtok(NULL, "-");
+//			if (strspn(token, "0123456789") != 2 || atoi(token) < 0 || atoi(token) > 12)
+//			{
+//				puts("NO"); goto again;
+//			}
+//			token = strtok(NULL, "-");
+//			if (strspn(token, "0123456789") != 2 || atoi(token) > ch[atoi(temp)] || atoi(token) < 0)
+//			{
+//				puts("NO"); goto again;
+//			}
+//			puts("YES");
+//		}
+//	}
+//	return 0;
+//
+// 1215: Warmup!!!
+//int main()
+//{
+//	printf("\"There is a will, \\\\//\\\\// there is a way!\"");
+//	return 0;
+//}
+// 1216: 身份证号码的过滤
+//int main()
+//{
+//	int  a,b,c;
+//	int a1,b1,c1;
+//	while (scanf("%d-%d-%d %d-%d-%d", &a,&b,&c,&a1,&b1,&c1) != EOF)
+//	{
+//		char arr[20];
+//		getchar();
+//		while (gets(arr) != NULL)
+//		{
+//			int temp = 0; int year = 0, month = 0, day = 0;
+//			for (int i = 9; i >= 6; i--)
+//			{
+//				year += (arr[i] - '0') * pow(10, temp);
+//				temp++;
+//			}
+//			month = (arr[11]-'0') + (arr[10]-'0') * 10;
+//			day = (arr[12]-'0') * 10 + (arr[13]-'0');
+//			if ((year < a1 && year > a) )
+//			{
+//					puts(arr);
+//			}
+//			if ((year == a && month > b))
+//			{
+//				puts(arr);
+//			}
+//			else if(year==a)
+//			{
+//				if ((month == b && day >= c))
+//				{
+//					puts(arr);
+//				}
+//			}
+//			if ((year == a1 && month < b1))
+//			{
+//				puts(arr);
+//			}
+//			else if(year==a1)
+//			{
+//				if ((month == b1 && day <= c1))
+//				{
+//					puts(arr);
+//				}
+//			}
+//		}
+//	
+//	}
+//	return 0;
+//}
 // 1222: 输出下面的字符串
 // 方法一：
 //int main()
@@ -6773,25 +6899,8 @@
 // 
 // 
 // 
-// 1249: 输出中间的一个数
-//int main()
-//{
-//	char arr[1000][100];
-//	int i = 1;;
-//	while ((scanf("%s", &arr[0])) != EOF)
-//	{
-//		
-//		while ((scanf("%s", &arr[i])) != EOF)
-//		{
-//			if (arr[i] == '\n')
-//				break;
-//			i++;
-//		}
-//	
-//	}
-//
-//	return 0;
-//}
+ //1249: 输出中间的一个数  暂做
+
 
 //1250: 输出一行文字
 //int main()
