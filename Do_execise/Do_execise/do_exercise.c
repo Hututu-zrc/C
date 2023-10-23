@@ -6512,8 +6512,22 @@
 //	printf("%d\n", i);
 //}
 // 1221: 字符串版的求余数
+//#include <stdio.h>
+//#include <string.h>
 //int main()
 //{
+//	char A[3001];
+//	int a = 10007;
+//	while (scanf("%s", A) != EOF) {
+//		int b = strlen(A);
+//		int c = 0;
+//		for (int i = 0; i < b; i++) 
+//		{
+//			c = (c * 10 + A[i] - '0') % a;
+//		}
+//		printf("%d\n", c);
+//	}
+//	return 0;
 //}
 // 1222: 输出下面的字符串
 // 方法一：
@@ -7088,6 +7102,48 @@
 //		i++;
 //	}
 //	
+//	return 0;
+//}
+// 1266: 数组的循环移动
+//int main()
+//{
+//	int n,m; int arr[100];
+//	scanf("%d", &n);
+//	for (int i = 0; i < n; i++)
+//		scanf("%d", &arr[i]);
+//	scanf("%d", &m);
+//	for (int i = n - m; i <n; i++)
+//		printf("%d ", arr[i]);
+//	for (int i = 0; i < n - m; i++)
+//		printf("%d ", arr[i]);
+//	return 0;
+//}
+//void reverse(int arr[], int x,int init)
+//{
+//	int count = 0;
+//	for (int i = init; i < x+init; i++)
+//	{
+//		int temp = arr[i];
+//		arr[i] = arr[x +init- count - 1];
+//		arr[x +init- count - 1] = temp;
+//		count++;
+//		if (count == x / 2)
+//			break;
+//	}
+//
+//}
+//int main()
+//{
+//	int n,m; int arr[100];
+//	scanf("%d", &n);
+//	for (int i = 0; i < n; i++)
+//		scanf("%d", &arr[i]);
+//	scanf("%d", &m);
+//	reverse(arr, n,0);
+//	reverse(arr, m,0);
+//	reverse(arr, n-m,m);
+//	for (int i = 0; i < n; i++)
+//		printf("%d ", arr[i]);
 //	return 0;
 //}
 // 1267: 比特字符串的变换
