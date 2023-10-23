@@ -581,33 +581,33 @@
 //}
 // 
 //问题 B : 字符在字符串中出现的位置
-//int main()
-//{
-//	char arr[101];
-//	while ((fgets(arr,101,stdin)) != NULL)
-//	{
-//		char ch;
-//		scanf("%c", &ch);
-//		int i = 0,signal=0;
-//		while (arr[i] != '\0')
-//		{
-//			if (ch == arr[i])
-//			{
-//				printf("%d ", i);
-//				signal = 1;
-//			}
-//			i++;
-//				
-//		}
-//		if (signal == 0)
-//		{
-//			printf("NULL");
-//		}
-//		printf("\n");
-//		getchar();
-//	}
-//	return 0;
-//}
+int main()
+{
+	char arr[101];
+	while ((fgets(arr,101,stdin)) != NULL)
+	{
+		char ch;
+		scanf("%c", &ch);
+		int i = 0,signal=0;
+		while (arr[i] != '\0')
+		{
+			if (ch == arr[i])
+			{
+				printf("%d ", i);
+				signal = 1;
+			}
+			i++;
+				
+		}
+		if (signal == 0)
+		{
+			printf("NULL");
+		}
+		printf("\n");
+		getchar();
+	}
+	return 0;
+}
 //
 //问题 C: 删除字符串末尾的0
 //int main()

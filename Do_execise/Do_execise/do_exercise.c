@@ -6477,6 +6477,44 @@
 //	}
 //	return 0;
 //}
+//// 1217: 身份证号码的条数(去重)
+//int main()
+//{
+//	char arr[100][20];
+//	int i = 0;
+//	char ch[20] = { 0 };
+//	while (gets(arr[i]) != NULL)
+//		i++;
+//	int count = i;
+//	for (int j = 0; j < i; j++)
+//	{
+//		for (int k = j+1; k < i; k++)
+//		{
+//			if (!(strcmp(arr[j], arr[k])) &&arr[j][0]!='\0')
+//			{
+//				strcpy(arr[k], ch);
+//				count--;
+//			}
+//		}
+//	}
+//	printf("%d\n", count);
+//	return 0;
+//}
+// #include <stdio.h>
+////1218: 身份证号码的条数(不去重)
+//int main()
+//{
+//	char arr[100][20];
+//	int i = 0;
+//	char ch[20] = { 0 };
+//	while (gets(arr[i]) != NULL)
+//		i++;
+//	printf("%d\n", i);
+//}
+// 1221: 字符串版的求余数
+//int main()
+//{
+//}
 // 1222: 输出下面的字符串
 // 方法一：
 //int main()
