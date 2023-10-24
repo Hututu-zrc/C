@@ -7070,6 +7070,82 @@
 //	printf("%d\n", ((ch >> 4) & 0x0f) | ((ch << 4) & 0xf0));
 //	return 0;
 //}
+// 1261: 交换字符中的数位-1
+//int main()
+//{
+//	char ch; scanf("%c", &ch);
+//	printf("%d", (((ch & 0x08) >> 3) | (ch & 0x01) << 3) | (ch & 0x20) << 1 | (ch & 0x40) >> 1 | (ch & 0x96));
+//	return 0;
+//}
+// 
+//  | |
+// 1263: 没有重复字符的字符串
+//int main()
+//{
+//	char arr[100];
+//	while ((gets(arr)) != NULL)
+//	{
+//		int sz = strlen(arr), signal = 0;
+//		for (int i = 1; i<sz;i++)
+//		{
+//			for (int j = i-1; j >= 0; j--)
+//			{
+//				if (arr[i] == arr[j])
+//				{
+//					signal = 1;
+//					puts("NO");
+//					break;
+//				}
+//			}
+//			if (signal == 1)
+//				break;
+//		}
+//		if (signal == 0)
+//			puts("YES");
+//	}
+//	return 0;
+//}
+// 1264: 反向输出数组
+//int main()
+//{
+//	int n;
+//	while ((scanf("%d", &n)) != EOF)
+//	{
+//		int arr[100];
+//		for (int i = 0; i < n; i++)
+//			scanf("%d", &arr[i]);
+//		for (int i = n - 1; i >= 0; i--)
+//			printf("%d ", arr[i]);
+//		printf("\n");
+//	}
+//	return 0;
+//}
+// 
+// 方法二：
+//void reverse(int* arr,int n)
+//{
+//	for (int i = 0; i < n / 2; i++)
+//	{
+//		int temp = arr[i];
+//		arr[i] = arr[n - i - 1];
+//		arr[n - i - 1] = temp;
+//	}
+//}
+//int main()
+//{
+//	int n;
+//	while ((scanf("%d", &n)) != EOF)
+//	{
+//		int arr[100];
+//		for (int i = 0; i < n; i++)
+//			scanf("%d", &arr[i]);
+//		reverse(arr, n);
+//		for (int i = 0; i<n; i++)
+//			printf("%d ", arr[i]);
+//		printf("\n");
+//	}
+//	return 0;
+//}
 //1265: 问候语
 //int main()
 //{
@@ -7120,17 +7196,12 @@
 //}
 //void reverse(int arr[], int x,int init)
 //{
-//	int count = 0;
-//	for (int i = init; i < x+init; i++)
+//	for (int i = 0; i <x; i++)
 //	{
-//		int temp = arr[i];
-//		arr[i] = arr[x +init- count - 1];
-//		arr[x +init- count - 1] = temp;
-//		count++;
-//		if (count == x / 2)
-//			break;
+//		int temp = arr[init+i];
+//		arr[init+i] = arr[init+2*x-i];
+//		arr[init+2*x-i] = temp;
 //	}
-//
 //}
 //int main()
 //{
@@ -7139,9 +7210,9 @@
 //	for (int i = 0; i < n; i++)
 //		scanf("%d", &arr[i]);
 //	scanf("%d", &m);
-//	reverse(arr, n,0);
-//	reverse(arr, m,0);
-//	reverse(arr, n-m,m);
+//	reverse(arr, n/2,0);
+//	reverse(arr, m/2,0);
+//	reverse(arr, (n-m)/2,m);
 //	for (int i = 0; i < n; i++)
 //		printf("%d ", arr[i]);
 //	return 0;
