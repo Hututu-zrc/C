@@ -1,5 +1,5 @@
+#define _CRT_SECURE_NO_WARNINGS 1
 #pragma once
-#define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<math.h>
 #include<stdlib.h>
@@ -7,11 +7,13 @@
 #define N 1000
 #define Expand 10
 typedef int Elemtype;
-typedef struct 
+
+typedef struct
 {
 	Elemtype* elem;
 	int length;
 	int listsize;
+	
 }SL;
 
 void InitSeqList();
