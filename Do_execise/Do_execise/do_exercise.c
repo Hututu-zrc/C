@@ -6987,6 +6987,74 @@
 // //思路：1.首先遍历，取出来里面的数字（从一个运算符遍历的下一个运算符，然后用乘法相加）和运算符号，存入对应数组，运算符数组第一个为0
 //	 //	  2.我们需要计算的数字就是，假设运算符下标为i，arr[2*i-1]运算符arr[2*i+1]
 // //		3.每运算一次，数字数组进行向前的覆盖2位
+void convert(int* arr, int i, int sz)
+{
+	for (int j = i + 1; j < sz; j++)
+		arr[j] = arr[j + 1];
+	for (int k = i; k < sz; k++)
+		arr[k] = arr[k + 1];
+}
+int main()
+{
+	char arr[100];
+	while ((fgets(arr,100,stdin)) != NULL)
+	{
+		int num[100]; char ope[100];
+		int sz = strlen(arr);
+		ope[0] = '0', num[0] = 0;
+		int count1 = 1, count2 = 1;
+		for (int i = 0; i < sz; i++)
+		{
+			if (!isdigit(arr[i]) )//遇到非数字进来
+			{
+				ope[count2] = arr[i];//运算符放到对应数组
+				count2++;
+				num[count1] = 0;
+				int power = 0;
+				for (int j = i-1; j >= 0&&isdigit(arr[j]); j--)//循环往回走储存数字
+				{
+					num[count1] += (arr[j]-'0') * (int)pow(10, power);
+					power++;
+				}
+				count1++;
+			}
+		}
+		for (int i = 1; i < count2-1; i++)
+		{
+			if (ope[i] == '*')
+			{
+				num[2 * i - 1] *= num[2 * i + 1];
+				convert(num, i, count2);
+			}
+			if (ope[i] == '/')
+			{
+				num[2 * i - 1] /= num[2 * i + 1];
+				convert(num, i, count2);
+			}	
+		}	
+		//这里需要修改，运算符数组也需要覆盖，并且对应的应该是arr[i],arr[i+1]
+		for (int i = 1; i < count2-1; i++)
+		{
+			if (ope[i] != '*' && ope[i] != '/')
+			{
+				if (ope[i] == '+')
+				{
+					num[2 * i - 1] += num[2 * i + 1];
+					convert(num, i, count1);
+				}
+				if (ope[i] == '-')
+				{
+					num[2 * i - 1] -= num[2 * i + 1];
+					convert(num, i, count1);
+				}
+			}
+		}
+		printf("%d\n", num[1]);
+		getchar();
+	}
+	return 0;
+}
+// 
 // 
 //void convert(char *arr,int i,int sz)
 //{
@@ -7133,11 +7201,11 @@
 // 
 //
 // 1262: Longest Substring Without Repeating Characters
-int main()
-{
-
-	return 0;
-}
+//int main()
+//{
+//
+//	return 0;
+//}
 // 1263: 没有重复字符的字符串
 //int main()
 //{
