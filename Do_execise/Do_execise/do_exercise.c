@@ -6983,6 +6983,59 @@
 //	}
 //	return 0;
 //}
+// 1251: 求表达式的值(2分) 暂做
+// //思路：1.首先遍历，取出来里面的数字（从一个运算符遍历的下一个运算符，然后用乘法相加）和运算符号，存入对应数组，运算符数组第一个为0
+//	 //	  2.我们需要计算的数字就是，假设运算符下标为i，arr[2*i-1]运算符arr[2*i+1]
+// //		3.每运算一次，数字数组进行向前的覆盖2位
+// 
+//void convert(char *arr,int i,int sz)
+//{
+//	for (int j = i+1; j < sz; j++)
+//		arr[j] = arr[j + 1];
+//	for (int k = i; k < sz; k++)
+//		arr[k] = arr[k + 1];
+//}
+//int main()
+//{
+//	char arr[100];
+//	while (gets(arr) != NULL)
+//	{
+//		int sz = strlen(arr);
+//		char add = '+', sub = '-', mul = '*', div = '/';
+//		for (int i = 1; i<sz; i+=2)
+//		{
+//			if (arr[i] == '*')
+//			{
+//				arr[i-1] = ((arr[i - 1]-'0') * (arr[i + 1]-'0')) + '0';
+//				convert(arr,i,sz);
+//				i = 1, sz - 2;
+//			}	
+//			if (arr[i] == '/')
+//			{
+//				arr[i - 1] = ((arr[i - 1] - '0') / (arr[i + 1] - '0')) + '0';
+//				convert(arr, i, sz);
+//				i = 1, sz - 2;
+//			}
+//		}
+//		for (int i = 1; i < sz; i += 2)
+//		{
+//			if (arr[i] == '+')
+//			{
+//				arr[i - 1] = ((arr[i - 1] - '0') + (arr[i + 1] - '0')) + '0';
+//				convert(arr, i, sz);
+//				i = 1, sz - 2;
+//			}
+//			if (arr[i] == '-')
+//			{
+//				arr[i - 1] = ((arr[i - 1] - '0') - (arr[i + 1] - '0')) + '0';
+//				convert(arr, i, sz);
+//				i = 1, sz - 2;
+//			}
+//		}
+//		printf("%d\n", arr[0] - '0');
+//	}
+//	return 0;
+//}
 //1252: python中的汉字
 //#include <stdio.h>
 //int main()
@@ -7078,7 +7131,13 @@
 //	return 0;
 //}
 // 
-//  | |
+//
+// 1262: Longest Substring Without Repeating Characters
+int main()
+{
+
+	return 0;
+}
 // 1263: 没有重复字符的字符串
 //int main()
 //{
