@@ -101,51 +101,19 @@ void Delete()
 	printf("请输入你要删除的同学名字：");
 	scanf("%s", temp);
 	fgets(line, 200, fp);
+
 	while (!feof(fp))
 	{
 		sscanf(line, "%s\t%s\t%d\t%d\t%d", str_xh, stu_xm, &m_sco, &e_sco, &l_sco);
 		if (strcmp(stu_xm, temp) != 0)
 		{
-			fprintf(fp1, "%s\t%s\t%d\t%d\t%d", str_xh, stu_xm, m_sco, e_sco, l_sco);
+			fprintf(fp1,line);
 		}
 		fgets(line, 200, fp);
 	}
 	fclose(fp);
 	fclose(fp1);
-	Filecopy();
-}
+	system("del F:\\C_program\\c1_suo.txt");
+	system("copy F:\\C_program\\c1_sco.txt F:\\C_program\\c1_suo.txt");
 
-int   Filecopy()
-{
-	FILE* fp, * fp1;
-	char line[200];
-
-	// 打开源文件以供读取
-	fp = fopen("F:\\C_program\\c1_sco.txt", "r");
-	if (fp == NULL) 
-	{
-		printf("无法打开源文件\n");
-		exit(0);
-	}
-
-	// 打开目标文件以供写入
-	fp1 = fopen("F:\\C_program\\c1_suo.txt", "w");
-	if (fp1 == NULL) 
-	{
-		printf("无法创建目标文件\n");
-		exit(0);
-	}
-	fgets(line, 200,fp);
-	int sz = strlen(line)-1;
-	// 从源文件读取字符并写入目标文件，直到文件末尾
-	while (!feof(fp))
-	{
-		line[strlen(line) - 1] = '\0';
-		fprintf(fp1, "%s\n", line);
-		fgets(line, 200, fp);
-	}
-	// 关闭文件
-	fclose(fp);
-	fclose(fp1);
-	return 0;
 }

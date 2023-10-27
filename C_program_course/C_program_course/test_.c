@@ -25,6 +25,7 @@
 //	while (!feof(fp))
 //	{
 //		line[strlen(line) - 1] = '\0';
+// //读出来一行姓名和学号后，后面有一个换行，我们这里把换行变成\0
 //		//printf(line);
 //		if(strlen(line)<sz)
 //			fprintf(fp1, "%s\t\t%d\t%d\t%d\n", line, rand() % 41 + 60, rand() % 41 + 60, rand() % 41 + 60);//写入另一个文件
