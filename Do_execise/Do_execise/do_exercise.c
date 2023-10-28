@@ -6950,9 +6950,111 @@
 // 
 // 
 // 
-// 
- //1249: 输出中间的一个数  暂做
+// 1248: 联接最大数
+//void swap(char(*a)[100], char(*b)[100])
+//{
+//	char temp[100];
+//	strcpy(temp, *a);
+//	strcpy(*a, *b);
+//	strcpy(*b, temp);
+//	
+//}
+//int main()
+//{
+//	int input; scanf("%d", &input);
+//	char arr[100][100];
+//	for (int i = 0; i < input; i++)
+//		scanf("%s", &arr[i]);
+//	for (int i = 0; i < input-1; i++)
+//	{
+//		for (int k = 0; k < input-1 - i; k++)
+//		{
+//
+//			int sz1 = strlen(arr[k]);
+//			int sz2 = strlen(arr[k + 1]);
+//			int min = sz1 < sz2 ? sz1 : sz2;
+//			for (int j = 0; j < min; j++)
+//			{
+//				if (arr[k][j] > arr[k + 1][j])
+//					break;
+//				if (arr[k][j] < arr[k + 1][j] )
+//				{
+//					swap(&arr[k], &arr[k + 1]);
+//					break;
+//				}
+//				if (j == min - 1)
+//				{
+//					if(sz1>sz2)
+//						swap(&arr[k], &arr[k + 1]);
+//				}
+//			}
+//		}
+//	}
+//	for (int i = 0; i < input; i++)
+//		printf("%s", arr[i]);
+//	printf("\n");
+//}
+// #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
+//void swap(char** a, char** b) {
+//	char* temp = *a;
+//	*a = *b;
+//	*b = temp;
+//}
+//
+//int compare(const void* a, const void* b) {
+//	char ab[200], ba[200];
+//	sprintf(ab, "%s%s", *(const char**)a, *(const char**)b);
+//	sprintf(ba, "%s%s", *(const char**)b, *(const char**)a);
+//	return strcmp(ba, ab);
+//}
+//
+//int main() {
+//	int input;
+//	scanf("%d", &input);
+//
+//	char* arr[20];
+//
+//	for (int i = 0; i < input; i++) {
+//		arr[i] = (char*)malloc(11 * sizeof(char));
+//		scanf("%s", arr[i]);
+//	}
+//
+//	qsort(arr, input, sizeof(char*), compare);
+//
+//	for (int i = 0; i < input; i++) {
+//		printf("%s", arr[i]);
+//		free(arr[i]);
+//	}
+//
+//	printf("\n");
+//
+//	return 0;
+//}
+
+// 
+ //1249: 输出中间的一个数 
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <string.h>
+//int main()
+//{
+//	int count = 0;
+//	char arr[100];
+//	char ch[100];
+//	gets(arr);
+//	char* token = strtok(arr, " "); ch[count] = atoi(token);;
+//	while (token != NULL)
+//	{
+//		ch[count] = atoi(token) + '0';
+//		token = strtok(NULL, " ");
+//		count++;
+//	}
+//	printf("%c\n", ch[count / 2]);
+//	
+//}
 
 //1250: 输出一行文字
 //int main()
@@ -6987,73 +7089,83 @@
 // //思路：1.首先遍历，取出来里面的数字（从一个运算符遍历的下一个运算符，然后用乘法相加）和运算符号，存入对应数组，运算符数组第一个为0
 //	 //	  2.我们需要计算的数字就是，假设运算符下标为i，arr[2*i-1]运算符arr[2*i+1]
 // //		3.每运算一次，数字数组进行向前的覆盖2位
-void convert(int* arr, int i, int sz)
-{
-	for (int j = i + 1; j < sz; j++)
-		arr[j] = arr[j + 1];
-	for (int k = i; k < sz; k++)
-		arr[k] = arr[k + 1];
-}
-int main()
-{
-	char arr[100];
-	while ((fgets(arr,100,stdin)) != NULL)
-	{
-		int num[100]; char ope[100];
-		int sz = strlen(arr);
-		ope[0] = '0', num[0] = 0;
-		int count1 = 1, count2 = 1;
-		for (int i = 0; i < sz; i++)
-		{
-			if (!isdigit(arr[i]) )//遇到非数字进来
-			{
-				ope[count2] = arr[i];//运算符放到对应数组
-				count2++;
-				num[count1] = 0;
-				int power = 0;
-				for (int j = i-1; j >= 0&&isdigit(arr[j]); j--)//循环往回走储存数字
-				{
-					num[count1] += (arr[j]-'0') * (int)pow(10, power);
-					power++;
-				}
-				count1++;
-			}
-		}
-		for (int i = 1; i < count2-1; i++)
-		{
-			if (ope[i] == '*')
-			{
-				num[2 * i - 1] *= num[2 * i + 1];
-				convert(num, i, count2);
-			}
-			if (ope[i] == '/')
-			{
-				num[2 * i - 1] /= num[2 * i + 1];
-				convert(num, i, count2);
-			}	
-		}	
-		//这里需要修改，运算符数组也需要覆盖，并且对应的应该是arr[i],arr[i+1]
-		for (int i = 1; i < count2-1; i++)
-		{
-			if (ope[i] != '*' && ope[i] != '/')
-			{
-				if (ope[i] == '+')
-				{
-					num[2 * i - 1] += num[2 * i + 1];
-					convert(num, i, count1);
-				}
-				if (ope[i] == '-')
-				{
-					num[2 * i - 1] -= num[2 * i + 1];
-					convert(num, i, count1);
-				}
-			}
-		}
-		printf("%d\n", num[1]);
-		getchar();
-	}
-	return 0;
-}
+//void convert(int* arr, int i, int sz)
+//{
+//	for (int k = i; k < sz; k++)
+//		arr[k] = arr[k + 1];
+//}
+//void convert_2(char * arr, int i, int sz)
+//{
+//	for (int k = i; k < sz; k++)
+//		arr[k] = arr[k + 1];
+//}
+//int main()
+//{
+//	char arr[100];
+//	while ((fgets(arr,100,stdin)) != NULL)
+//	{
+//		int num[100]; char ope[100];
+//		int sz = strlen(arr);
+//		ope[0] = '0';
+//		int count1 = 0, count2 = 1;
+//		for (int i = 0; i < sz; i++)
+//		{
+//			if (!isdigit(arr[i]) )//遇到非数字进来
+//			{
+//				ope[count2] = arr[i];//运算符放到对应数组
+//				count2++;
+//				num[count1] = 0;
+//				int power = 0;
+//				for (int j = i-1; j >= 0&&isdigit(arr[j]); j--)//循环往回走储存数字
+//				{
+//					num[count1] += (arr[j]-'0') * (int)pow(10, power);
+//					power++;
+//				}
+//				count1++;
+//			}
+//		}
+//		for (int i = 1; i < count2; i++)
+//		{
+//			if (ope[i] == '*')
+//			{
+//				num[ i - 1] *= num[ i ];
+//				convert(num, i, count1);  count1--;
+//				convert_2(ope, i, count2); count2--;
+//	
+//			}
+//			if (ope[i] == '/')
+//			{
+//				num[i - 1] /= num[ i ];
+//				convert(num, i, count1);  count1--;
+//				convert_2(ope, i, count2); count2--;
+//			}	
+//		}	
+//		//这里需要修改，运算符数组也需要覆盖，并且对应的应该是arr[i],arr[i+1]
+//		for (int i = 1; i < count2; i++)
+//		{
+//			if (ope[i] != '*' && ope[i] != '/')
+//			{
+//				if (ope[i] == '+')
+//				{
+//					num[i-1] += num[i];
+//					convert(num, i, count1);  count1--;
+//					convert_2(ope, i, count2); count2--;
+//					i = 0;
+//				}
+//				if (ope[i] == '-')
+//				{
+//					num[i-1] -= num[i];
+//					convert(num, i, count1);  count1--;
+//					convert_2(ope, i, count2); count2--;
+//					i = 0;
+//				}
+//			}
+//		}
+//		printf("%d\n", num[0]);
+//		//getchar();
+//	}
+//	return 0;
+//}
 // 
 // 
 //void convert(char *arr,int i,int sz)
@@ -7111,6 +7223,27 @@ int main()
 //	printf("中文\0​");
 //	return 0;
 //}
+// 1253: 奇偶校验问题
+//int main()
+//{
+//	char arr[100]; 
+//	while (gets(arr)!= NULL)
+//	{
+//		
+//		for (int j = 0; arr[j] != '\0'; j++)
+//		{
+//			int count = 0;
+//			for (int i = 0; i < 8; i++)
+//			{
+//				if (((arr[j] >> i) & 0x01) == 1)
+//					count++;
+//			}
+//			printf("%d\n", count);
+//		}
+//	}
+//	return 0;
+//}
+// 
 // //1254: 读取字节的低4位
 //int main()
 //{
@@ -7388,6 +7521,11 @@ int main()
 //		count++;
 //	}
 //	return 0;
+//}
+// 1269: 通配符
+//int main()
+//{
+//
 //}
 //1271: 问候语
 //int main()
