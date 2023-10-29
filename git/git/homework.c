@@ -199,62 +199,62 @@
 //}
 
 //猜数字游戏
- #define _CRT_SECURE_NO_WARNINGS
-#include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
- void menu()
-{
-	printf("******************************\n");
-	printf("******    1. play        *****\n");
-	printf("******    0. exit        *****\n");
-	printf("******************************\n");
-}
- void game()
-{
-
-	 int guess = 0;
-	 int ret = rand() % 100 + 1;
-	 while (1)
-	{
-		printf("请输入你猜想的数字：");
-		scanf("%d", &guess);
-		if (guess < ret)
-			printf("猜小啦\n");
-		else if (guess > ret)
-			printf("猜大啦\n");
-		else
-		{
-			printf("猜对了\n");
-			break;
-		}
-	}
-}
- int main()
- {
-	 srand((unsigned int) time(NULL));
-	 int input = 0;
-	 
-	 do
-	 {
-		 menu();
-		 printf("请输入你的选择：", input);
-		 scanf("%d", &input);
-		 switch (input)
-		 {
-		 case 1:
-			game();
-			break;
-		 case 0:
-			printf("退出游戏!\n");
-			break;
-		 default:
-			printf("请按规定输入！！！\n");
-			break;
-		}
-	 } while (input);
-	 return 0;
-}
+// #define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//#include<stdlib.h>
+//#include<time.h>
+// void menu()
+//{
+//	printf("******************************\n");
+//	printf("******    1. play        *****\n");
+//	printf("******    0. exit        *****\n");
+//	printf("******************************\n");
+//}
+// void game()
+//{
+//
+//	 int guess = 0;
+//	 int ret = rand() % 100 + 1;
+//	 while (1)
+//	{
+//		printf("请输入你猜想的数字：");
+//		scanf("%d", &guess);
+//		if (guess < ret)
+//			printf("猜小啦\n");
+//		else if (guess > ret)
+//			printf("猜大啦\n");
+//		else
+//		{
+//			printf("猜对了\n");
+//			break;
+//		}
+//	}
+//}
+// int main()
+// {
+//	 srand((unsigned int) time(NULL));
+//	 int input = 0;
+//	 
+//	 do
+//	 {
+//		 menu();
+//		 printf("请输入你的选择：", input);
+//		 scanf("%d", &input);
+//		 switch (input)
+//		 {
+//		 case 1:
+//			game();
+//			break;
+//		 case 0:
+//			printf("退出游戏!\n");
+//			break;
+//		 default:
+//			printf("请按规定输入！！！\n");
+//			break;
+//		}
+//	 } while (input);
+//	 return 0;
+//}
 
 
 ////二分查找某个整形有序数组的下标，有则输出下标，找不到则输出：找不到
@@ -1326,3 +1326,50 @@
 //    }
 //    return 0;
 //}
+
+//关于函数指针的复现
+int Add(int a,int b)
+{
+	return a + b;
+}
+int Sub(int a,int b)
+{
+	return a - b;
+}
+int Mul(int a,int b)
+{
+	return a * b;
+}
+int Div(int a,int b)
+{
+	return a / b;
+}
+void menu()
+{
+	printf("******************************\n");
+	printf("******    1. Add      *****\n");
+	printf("******    2.Sub       *****\n");
+	printf("******    3.Mul       *****\n");
+	printf("******    4.Div        *****\n");
+	printf("******    0. exit        *****\n");
+	printf("******************************\n");
+}
+int main()
+{
+	int input;
+	int (*pf[100])(int, int) = { 0,Add,Sub,Mul,Div };
+	do
+	{
+		menu();
+		printf("请选择你要进行的操作：");
+		scanf("%d", &input);
+		if (input == 0)
+			exit(0);
+		printf("请输入操作数：");
+		int a, b;
+		scanf("%d %d", &a, &b);
+		printf("%d\n", pf[input](a, b));
+		
+	} while(input);
+	return 0;
+}
