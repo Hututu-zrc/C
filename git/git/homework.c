@@ -1327,49 +1327,78 @@
 //    return 0;
 //}
 
-//关于函数指针的复现
-int Add(int a,int b)
+////关于函数指针的复现
+//int Add(int a,int b)
+//{
+//	return a + b;
+//}
+//int Sub(int a,int b)
+//{
+//	return a - b;
+//}
+//int Mul(int a,int b)
+//{
+//	return a * b;
+//}
+//int Div(int a,int b)
+//{
+//	return a / b;
+//}
+//void menu()
+//{
+//	printf("******************************\n");
+//	printf("******    1. Add      *****\n");
+//	printf("******    2.Sub       *****\n");
+//	printf("******    3.Mul       *****\n");
+//	printf("******    4.Div        *****\n");
+//	printf("******    0. exit        *****\n");
+//	printf("******************************\n");
+//}
+//int main()
+//{
+//	int input;
+//	int (*pf[100])(int, int) = { 0,Add,Sub,Mul,Div };
+//	do
+//	{
+//		menu();
+//		printf("请选择你要进行的操作：");
+//		scanf("%d", &input);
+//		if (input == 0)
+//			exit(0);
+//		printf("请输入操作数：");
+//		int a, b;
+//		scanf("%d %d", &a, &b);
+//		printf("%d\n", pf[input](a, b));
+//		
+//	} while(input);
+//	return 0;
+//}
+
+//关于strcat的复现
+#include <stdio.h>
+#include <string.h>
+#include <assert.h>
+
+char* my_strcat(char *dest,const char*src)
 {
-	return a + b;
-}
-int Sub(int a,int b)
-{
-	return a - b;
-}
-int Mul(int a,int b)
-{
-	return a * b;
-}
-int Div(int a,int b)
-{
-	return a / b;
-}
-void menu()
-{
-	printf("******************************\n");
-	printf("******    1. Add      *****\n");
-	printf("******    2.Sub       *****\n");
-	printf("******    3.Mul       *****\n");
-	printf("******    4.Div        *****\n");
-	printf("******    0. exit        *****\n");
-	printf("******************************\n");
+	assert(dest);
+	assert(src);
+	char* ret = dest;
+	while (*dest != '\0')
+		dest++;
+	while (*dest = *src)
+	{
+		dest++;
+		src++;
+	}
+	return ret;
 }
 int main()
 {
-	int input;
-	int (*pf[100])(int, int) = { 0,Add,Sub,Mul,Div };
-	do
-	{
-		menu();
-		printf("请选择你要进行的操作：");
-		scanf("%d", &input);
-		if (input == 0)
-			exit(0);
-		printf("请输入操作数：");
-		int a, b;
-		scanf("%d %d", &a, &b);
-		printf("%d\n", pf[input](a, b));
-		
-	} while(input);
+	char arr1[10] = { "abced" };
+	char arr2[10] = "efg";
+	//strcat(arr1, arr2);
+	my_strcat(arr1, arr2);
+	printf(arr1);
 	return 0;
 }
