@@ -1378,27 +1378,47 @@
 #include <stdio.h>
 #include <string.h>
 #include <assert.h>
+//
+//char* my_strcat(char *dest,const char*src)
+//{
+//	assert(dest);
+//	assert(src);
+//	char* ret = dest;
+//	while (*dest != '\0')
+//		dest++;
+//	while (*dest = *src)
+//	{
+//		dest++;
+//		src++;
+//	}
+//	return ret;
+//}
+//int main()
+//{
+//	char arr1[10] = { "abced" };
+//	char arr2[10] = "efg";
+//	//strcat(arr1, arr2);
+//	my_strcat(arr1, arr2);
+//	printf(arr1);
+//	return 0;
+//}
 
-char* my_strcat(char *dest,const char*src)
-{
-	assert(dest);
-	assert(src);
-	char* ret = dest;
-	while (*dest != '\0')
-		dest++;
-	while (*dest = *src)
-	{
-		dest++;
-		src++;
-	}
-	return ret;
-}
+
+//strncpy的实践
+//int main()
+//{
+//	char arr1[20];
+//	char arr2[20] = "abc";
+//	strncpy(arr1, arr2, 4);
+//	printf(arr1);
+//	return 0;
+//}
+//strncat的一点思考
 int main()
 {
-	char arr1[10] = { "abced" };
-	char arr2[10] = "efg";
-	//strcat(arr1, arr2);
-	my_strcat(arr1, arr2);
-	printf(arr1);
+	char arr1[5]="efd";
+	char arr2[3] = "abc";
+	strncpy(arr2, arr1, 4);//此时目标的字符数组的长度不够，会造成越界的问题
+	printf(arr2);
 	return 0;
 }
