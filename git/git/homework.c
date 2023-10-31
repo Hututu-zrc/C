@@ -1494,3 +1494,19 @@
 //	printf("%s\n",ret3);
 //	return 0;
 //}
+
+//strtokº¯Êý
+int main()
+{
+	const char ch[] = "@.";
+	char arr[100] = "2144846840@@qq.com";
+	char arr2[100];
+	strcpy(arr2, arr);
+	char* ret = strtok(arr, ch);
+	printf("%s\n", ret);
+	ret = strtok(NULL, ch);
+	printf("%s\n", ret);
+	ret = strtok(NULL, ch);
+	printf("%s\n", ret);
+	return 0;
+}
