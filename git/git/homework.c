@@ -1496,6 +1496,7 @@
 //}
 
 //strtok函数
+//strtok函数，可以按照多个字符进行分割
 int main()
 {
 	const char ch[] = "@.";
