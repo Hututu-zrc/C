@@ -1496,18 +1496,97 @@
 //}
 
 //strtok函数
-//strtok函数，可以按照多个字符进行分割
+////strtok函数，可以按照多个字符进行分割
+//int main()
+//{
+//	const char ch[] = "@.";
+//	char arr[100] = "2144846840@@qq.com";
+//	char arr2[100];
+//	strcpy(arr2, arr);
+//	char* ret = strtok(arr, ch);
+//	printf("%s\n", ret);
+//	ret = strtok(NULL, ch);
+//	printf("%s\n", ret);
+//	ret = strtok(NULL, ch);
+//	printf("%s\n", ret);
+//	return
+
+
+//关于qsort函数实现结构体的排序
+//typedef struct Stu
+//{
+//	char name[20];
+//	int age;
+//	char sex[5];
+//}stu;
+//
+//
+//int compare(const void* a, const void* b)
+//{
+//	return strcmp(((stu*)a)->name, ((stu*)b)->name);
+//}
+//int compare2(const void* a, const void* b)
+//{
+//	return ((stu*)b)->age-((stu*)a)->age;
+//}
+//
+//int main()
+//{
+//	struct Stu stu[] = { {"zhuruncai",15,"男"},{"liyichen",18,"男"},{"hujin",19,"男"} };
+//	int sz = sizeof(stu) / sizeof(stu[0]);
+//	qsort(stu, sz, sizeof(stu[0]), compare2);
+//
+//	return 0;
+//}
+// 
+//// //关于qsort排序二维数组
+//int compare(const void*a, const void*b)
+//{
+//	return (*((int*)b+2)) - (*((int*)a+2));
+//}
+//int main()
+//{
+//	int arr[3][4] = { 1,2,1,4,5,6,3,8,9,10,7,12};
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	qsort(arr, sz, sizeof(arr[0]), compare);
+//}
+//关于冒泡排序实现qsort
+int compare(const void* a,const void* b)
+{
+	return (*(int*)b) - (*(int*)a);
+}
+void Swap(char* e1, char* e2, int width)
+{
+	for (int i = 0; i < width; i++)
+	{
+		char temp = *(e1+i);
+		*(e1 + i) = *(e2 + i);
+		*(e2 + i) = temp;
+	}
+}
+//下面是函数内部的编写
+void bubble_sort(void* base, int sz, int width, int(*cmp)(const void* e1, const void* e2))
+{
+	for (int i = 0; i < sz - 1; i++)
+	{
+		int flag = 1;
+		for (int j = 0; j < sz - 1 - i; j++)
+		{
+			if (cmp((char*)base+j*width,(char*)base+(j+1)*width)>0)
+			{
+				//这里的第四个参数，使用的是,const内容不可被修改，只能用对应方法比较后，返回对应的值，判断大小进行交换
+				//交换，这里的交换不是const修饰，所以可以对内同进修改
+				Swap((char*)base + j * width, (char*)base + (j + 1) * width, width);
+
+			}
+		}
+	}
+}
 int main()
 {
-	const char ch[] = "@.";
-	char arr[100] = "2144846840@@qq.com";
-	char arr2[100];
-	strcpy(arr2, arr);
-	char* ret = strtok(arr, ch);
-	printf("%s\n", ret);
-	ret = strtok(NULL, ch);
-	printf("%s\n", ret);
-	ret = strtok(NULL, ch);
-	printf("%s\n", ret);
-	return 0;
+	int arr[] = {1,2,3,4,5,6,7,8,9};
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	bubble_sort(arr, sz, sizeof(arr[0]),compare);
+	for (int i = 0; i < sz; i++)
+		printf("%d ", arr[i]);
 }
