@@ -3,10 +3,10 @@
 #include<stdlib.h>
 typedef int SLDatetype;
 
-typedef struct SListcode
+typedef struct SListnode
 {
 	SLDatetype data;
-	struct SListcode* next;//指向下一个同类型的指针
+	struct SListnode* next;//指向下一个同类型的指针
 
 }SLNode;
 

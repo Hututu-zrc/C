@@ -7676,3 +7676,51 @@
 //	DestroyList(Lc);
 //	return 0;
 //}
+
+
+//关于循环节问题
+int main()
+{
+	int n, m;
+	scanf("%d %d", &n, &m);
+	int arr[1000];
+	int signal = 0, i = 0,tep1=0,tep2=0;
+	while (signal != 1)
+	{
+		arr[i] = (n * ( long long int)pow(10, i ) / m) % 10;
+		int  pos = 0;
+		for (int j = i-1; j > 0; j--)
+		{
+			if (arr[j] == arr[i])
+			{
+				pos = j;
+				break;
+			}
+		}
+		if (pos != 0)
+		{
+			int temp = i+1, k = pos+1;
+			for (; k < i; k++)
+			{
+				arr[temp] = (n * (long long int)pow(10, temp ) / m) % 10;
+				if (arr[k] != arr[temp])
+				{
+					signal = 0; break;
+				}
+				temp++;
+			}
+			if (k == i && i > 0)
+			{
+				tep1 = pos; tep2 = i;
+				signal = 1;
+			}
+		}
+		i++;
+	}
+	printf("循环节为：");
+	for (int o = tep1; o < tep2; o++)
+	{
+		printf("%d", arr[o]);
+	}
+	printf("\n");
+}
