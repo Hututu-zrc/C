@@ -7678,49 +7678,143 @@
 //}
 
 
-//关于循环节问题
-int main()
-{
-	int n, m;
-	scanf("%d %d", &n, &m);
-	int arr[1000];
-	int signal = 0, i = 0,tep1=0,tep2=0;
-	while (signal != 1)
-	{
-		arr[i] = (n * ( long long int)pow(10, i ) / m) % 10;
-		int  pos = 0;
-		for (int j = i-1; j > 0; j--)
-		{
-			if (arr[j] == arr[i])
-			{
-				pos = j;
-				break;
-			}
-		}
-		if (pos != 0)
-		{
-			int temp = i+1, k = pos+1;
-			for (; k < i; k++)
-			{
-				arr[temp] = (n * (long long int)pow(10, temp ) / m) % 10;
-				if (arr[k] != arr[temp])
-				{
-					signal = 0; break;
-				}
-				temp++;
-			}
-			if (k == i && i > 0)
-			{
-				tep1 = pos; tep2 = i;
-				signal = 1;
-			}
-		}
-		i++;
-	}
-	printf("循环节为：");
-	for (int o = tep1; o < tep2; o++)
-	{
-		printf("%d", arr[o]);
-	}
-	printf("\n");
-}
+//关于循环节问题 
+//int main()
+//{
+//	int n, m;
+//	scanf("%d %d", &n, &m);
+//	int arr[1000];
+//	int signal = 0, i = 0,tep1=0,tep2=0;
+//	while (signal != 1)
+//	{
+//		arr[i] = (n * ( long long int)pow(10, i ) / m) % 10;
+//		int  pos = 0;
+//		for (int j = i-1; j > 0; j--)
+//		{
+//			if (arr[j] == arr[i])
+//			{
+//				pos = j;
+//				break;
+//			}
+//		}
+//		if (pos != 0)
+//		{
+//			int temp = i+1, k = pos+1;
+//			for (; k < i; k++)
+//			{
+//				arr[temp] = (n * (long long int)pow(10, temp ) / m) % 10;
+//				if (arr[k] != arr[temp])
+//				{
+//					signal = 0; break;
+//				}
+//				temp++;
+//			}
+//			if (k == i && i > 0)
+//			{
+//				tep1 = pos; tep2 = i;
+//				signal = 1;
+//			}
+//		}
+//		i++;
+//	}
+//	printf("循环节为：");
+//	for (int o = tep1; o < tep2; o++)
+//	{
+//		printf("%d", arr[o]);
+//	}
+//	printf("\n");
+//}
+
+
+//待做
+//int Mod(int i, int n, int m)
+//{
+//	char arr[1000] = { "0" };
+//	while (n != 0)
+//	{
+//		arr[i] = (n % 10) + '0';
+//		n /= 10;
+//		i++;
+//	}
+//	int sz = strlen(arr), mod = 0;
+//	for (int j = 0; j < sz; j++)
+//	{
+//		mod = (mod * 10 + arr[j] - '0') % m;
+//	}
+//	return mod;
+//}
+//int main()
+//{
+//	int n, m;
+//	scanf("%d %d", &n, &m);
+//	int arr[1000];
+//	int signal = 0, i = 0, tep1 = 0, tep2 = 0;
+//	while (signal != 1)
+//	{
+//		arr[i] = Mod(i + 1, n, m);
+//		int  pos = 0;
+//		for (int j = i - 1; j > 0; j--)
+//		{
+//			if (arr[j] == arr[i])
+//			{
+//				pos = j;
+//				break;
+//			}
+//		}
+//		if (pos != 0)
+//		{
+//			int temp = i + 1, k = pos + 1;
+//			for (; k < i; k++)
+//			{
+//				arr[temp] = Mod(temp + 1, n, m);
+//				if (arr[k] != arr[temp])
+//				{
+//					signal = 0; break;
+//				}
+//				temp++;
+//			}
+//			if (k == i && i > 0)
+//			{
+//				tep1 = pos; tep2 = i;
+//				signal = 1;
+//			}
+//		}
+//		i++;
+//	}
+//	printf("循环节为：");
+//	for (int o = tep1; o < tep2; o++)
+//	{
+//		printf("%d", arr[o]);
+//	}
+//	printf("\n");
+//}
+//
+//#include <stdio.h>
+//
+//int main() {
+//	int a, b, t, k, i;
+//	int find[1000], count[1000];
+//	scanf("%d %d", &a, &b);
+//
+//	count[0] = a / b;
+//	t = a % b;
+//	find[t] = 1;
+//	printf("%d\n", t);
+//
+//	count[1] = (t * 10) / b;
+//	t = (t * 10) % b;
+//	k = 2;
+//
+//	while (find[t] != 1) {
+//		t *= 10;
+//		count[k] = t / b;
+//		t = t % b;
+//		k++;
+//	}
+//
+//	printf("%d.[", count[0]);
+//	for (i = 1; i < k; i++)
+//		printf("%d", count[i]);
+//	printf("]");
+//	return 0;
+//}

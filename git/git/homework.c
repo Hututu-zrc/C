@@ -1176,13 +1176,13 @@
 //}
 
 
-//////买汽水问题，1元1瓶，2个空瓶兑换一瓶汽水
+////////买汽水问题，1元1瓶，2个空瓶兑换一瓶汽水
 //int main()
 //{
 //	int money = 0;
 //	printf("请输入你的钱数：");
 //	scanf("%d", &money);
-//	//方法一：
+////	//方法一：
 //	int total = money;
 //	int empty = money;
 //	while (empty >= 2)
@@ -1190,16 +1190,15 @@
 //		total += empty / 2;
 //		empty = (empty / 2) + (empty % 2);
 //	}
-////	//方法二：
-////	if (money > 0)
-////	{
-////		printf("%d\n", money);
-////	}
-////	else
-////	{
-////		printf("%d\n", 0);
-////	}
-////	
+//	if (money > 0)
+//	{
+//		printf("%d\n", money);
+//	}
+//	else
+//	{
+//		printf("%d\n", 0);
+//	}
+//	
 //	printf("%d\n", total);
 //	return 0;
 //}
@@ -1550,43 +1549,179 @@
 //	int sz = sizeof(arr) / sizeof(arr[0]);
 //	qsort(arr, sz, sizeof(arr[0]), compare);
 //}
-//关于冒泡排序实现qsort
-int compare(const void* a,const void* b)
-{
-	return (*(int*)b) - (*(int*)a);
-}
-void Swap(char* e1, char* e2, int width)
-{
-	for (int i = 0; i < width; i++)
-	{
-		char temp = *(e1+i);
-		*(e1 + i) = *(e2 + i);
-		*(e2 + i) = temp;
-	}
-}
-//下面是函数内部的编写
-void bubble_sort(void* base, int sz, int width, int(*cmp)(const void* e1, const void* e2))
-{
-	for (int i = 0; i < sz - 1; i++)
-	{
-		int flag = 1;
-		for (int j = 0; j < sz - 1 - i; j++)
-		{
-			if (cmp((char*)base+j*width,(char*)base+(j+1)*width)>0)
-			{
-				//这里的第四个参数，使用的是,const内容不可被修改，只能用对应方法比较后，返回对应的值，判断大小进行交换
-				//交换，这里的交换不是const修饰，所以可以对内同进修改
-				Swap((char*)base + j * width, (char*)base + (j + 1) * width, width);
+////关于冒泡排序实现qsort
+//int compare(const void* a,const void* b)
+//{
+//	return (*(int*)b) - (*(int*)a);
+//}
+//void Swap(char* e1, char* e2, int width)
+//{
+//	for (int i = 0; i < width; i++)
+//	{
+//		char temp = *(e1+i);
+//		*(e1 + i) = *(e2 + i);
+//		*(e2 + i) = temp;
+//	}
+//}
+////下面是函数内部的编写
+//void bubble_sort(void* base, int sz, int width, int(*cmp)(const void* e1, const void* e2))
+//{
+//	for (int i = 0; i < sz - 1; i++)
+//	{
+//		int flag = 1;
+//		for (int j = 0; j < sz - 1 - i; j++)
+//		{
+//			if (cmp((char*)base+j*width,(char*)base+(j+1)*width)>0)
+//			{
+//				//这里的第四个参数，使用的是,const内容不可被修改，只能用对应方法比较后，返回对应的值，判断大小进行交换
+//				//交换，这里的交换不是const修饰，所以可以对内同进修改
+//				Swap((char*)base + j * width, (char*)base + (j + 1) * width, width);
+//
+//			}
+//		}
+//	}
+//}
+//int main()
+//{
+//	int arr[] = {1,2,3,4,5,6,7,8,9};
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	bubble_sort(arr, sz, sizeof(arr[0]),compare);
+//	for (int i = 0; i < sz; i++)
+//		printf("%d ", arr[i]);
+//}
+//// 
+//// 
+////写一个二分查找函数
+////功能：在一个升序数组中查找指定的数值，找到了就返回下标，找不到就返回 - 1.
+//int Binary_Search(int arr[], int left, int right, int key)
+//{
+//	while (left <= right)
+//	{
+//		int mid = (right + left) / 2;
+//		if (arr[mid] > key)
+//		{
+//			right = mid - 1;
+//		}
+//		else if (arr[mid] < key)
+//		{
+//			left = mid + 1;
+//		}
+//		else
+//		{
+//			return mid;
+//		}
+//	}
+//	return -1;
+//}
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int ret = Binary_Search(arr, 0, sz,5);
+//	printf("%d\n", ret);
+//	return 0;
+//}
 
-			}
-		}
-	}
-}
+//#include <stdio.h>
+//int main()
+//{
+//    int i = 0;
+//    int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//    for (i = 0; i <= 12; i++)
+//    {
+//        arr[i] = 0;
+//        printf("hello bit\n");
+//    }
+//    return 0;
+//}
+
+//喝汽水问题
+////喝汽水，1瓶汽水1元，2个空瓶可以换一瓶汽水，给20元，可以喝多少汽水（编程实现）。
+//实际上就是求商和求模的问题
 int main()
 {
-	int arr[] = {1,2,3,4,5,6,7,8,9};
-	int sz = sizeof(arr) / sizeof(arr[0]);
-	bubble_sort(arr, sz, sizeof(arr[0]),compare);
-	for (int i = 0; i < sz; i++)
-		printf("%d ", arr[i]);
+	int money;
+	printf("请输入你的钱数：");
+	scanf("%d", &money);
+	int count = money;
+	int vacant =money;
+	int empty = 0;
+	while (vacant+empty >= 2)
+	{
+		if (empty == 2)
+		{
+			count += vacant / 2 + empty / 2;
+			empty %= 2;
+		}
+		else
+		{
+			count += vacant / 2 ;
+		}
+		empty += vacant % 2;
+		vacant = vacant / 2;
+		
+		
+	}
+	printf("%d\n", count);
+	return 0;
 }
+
+
+////输出菱形
+//int main()
+//{
+//
+//	return 0;
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////买汽水问题，1元1瓶，2个空瓶兑换一瓶汽水
+//int main()
+//{
+//	int money = 0;
+//	printf("请输入你的钱数：");
+//	scanf("%d", &money);
+//	int total = money;
+//	int empty = money;
+//	while (empty >= 2)
+//	{
+//		total += empty / 2;
+//		empty = (empty / 2) + (empty % 2);
+//	}
+//	if (money > 0)
+//	{
+//		printf("%d\n", money);
+//	}
+//	else
+//	{
+//		printf("%d\n", 0);
+//	}
+//	
+//	printf("%d\n", total);
+//	return 0;
+//}
