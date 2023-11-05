@@ -44,7 +44,7 @@ void InsertSeqList(SL* L, int n,Elemtype e)
 	}
 	L->elem[n - 1] = e;
 	L->length++;
-}v 
+}
 void DleteSeqList(SL* L, int n,Elemtype e)
 {
 	if (L->length > 0)

@@ -1590,95 +1590,12 @@
 //		printf("%d ", arr[i]);
 //}
 //// 
-//// 
-////写一个二分查找函数
-////功能：在一个升序数组中查找指定的数值，找到了就返回下标，找不到就返回 - 1.
-//int Binary_Search(int arr[], int left, int right, int key)
-//{
-//	while (left <= right)
-//	{
-//		int mid = (right + left) / 2;
-//		if (arr[mid] > key)
-//		{
-//			right = mid - 1;
-//		}
-//		else if (arr[mid] < key)
-//		{
-//			left = mid + 1;
-//		}
-//		else
-//		{
-//			return mid;
-//		}
-//	}
-//	return -1;
-//}
-//int main()
-//{
-//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
-//	int sz = sizeof(arr) / sizeof(arr[0]);
-//	int ret = Binary_Search(arr, 0, sz,5);
-//	printf("%d\n", ret);
-//	return 0;
-//}
 
-//#include <stdio.h>
-//int main()
-//{
-//    int i = 0;
-//    int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
-//    for (i = 0; i <= 12; i++)
-//    {
-//        arr[i] = 0;
-//        printf("hello bit\n");
-//    }
-//    return 0;
-//}
-
-//喝汽水问题
-////喝汽水，1瓶汽水1元，2个空瓶可以换一瓶汽水，给20元，可以喝多少汽水（编程实现）。
-//实际上就是求商和求模的问题
 int main()
 {
-	int money;
-	printf("请输入你的钱数：");
-	scanf("%d", &money);
-	int count = money;
-	int vacant =money;
-	int empty = 0;
-	while (vacant+empty >= 2)
-	{
-		if (empty == 2)
-		{
-			count += vacant / 2 + empty / 2;
-			empty %= 2;
-		}
-		else
-		{
-			count += vacant / 2 ;
-		}
-		empty += vacant % 2;
-		vacant = vacant / 2;
-		
-		
-	}
-	printf("%d\n", count);
+	printf("11.5\n");
 	return 0;
 }
-
-
-////输出菱形
-//int main()
-//{
-//
-//	return 0;
-//}
-
-
-
-
-
-
 
 
 
