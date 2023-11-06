@@ -553,4 +553,113 @@
 //}
 
 
+//递归和非递归分别实现求第n个斐波那契数
+//int Fib(int n)
+//{
+//	if (n == 1 || n == 2)
+//		return 1;
+//	else
+//		return Fib(n - 1) + Fib(n - 2);
+//}
+//int main()
+//{
+//	int n;
+//	while (scanf("%d", &n) != EOF)
+//	{
+//		int ret = Fib(n);
+//		printf("%d\n", ret);
+//	}
+//	return 0;
+//}
 
+//递归实现n的k次方
+//int Power(int n, int k)
+//{
+//	if (k == 1)
+//		return n;
+//	else
+//		return n*Power(n, k - 1);
+//}
+//int main()
+//{
+//	int n,k;
+//	while ((scanf("%d %d", &n,&k)) != EOF)
+//	{
+//		int ret = Power(n,k);
+//		printf("%d\n", ret);
+//	}
+//	return 0;
+//}
+
+
+////递归实现阶乘
+//int Factorial(int n)
+//{
+//	if (n == 1)
+//		return 1;
+//	else
+//		return n * Factorial(n - 1);
+//}
+//int main()
+//{
+//	int n;
+//	while ((scanf("%d", &n))!= EOF)
+//	{
+//		int ret = Factorial(n);
+//		printf("%d\n", ret);
+//	}
+//}
+//非递归实现阶乘
+//int Fac(int n)
+//{
+//	int sum = 1;
+//	for (int i = 1; i <= n; i++)
+//	{
+//		sum *= i;
+//	}
+//	return sum;
+//}
+//int main()
+//{
+//	int n;
+//	while (scanf("%d", &n) != EOF)
+//	{
+//		int ret = Fac(n);
+//		printf("%d\n", ret);
+//	}
+//	return 0;
+//}
+
+////计算一个数的每位之和（递归实现）
+//int DigitSum(int input)
+//{
+//	static int sum = 0;
+//	if (input)
+//		DigitSum(input / 10);
+//	return sum += input % 10;
+//
+//}
+//int main()
+//{
+//	int input;
+//	scanf("%d", &input);
+//	int ret = DigitSum(input);
+//	printf("%d\n", ret);
+//	return 0;
+//}
+
+////打印一个数的每一位
+//void Print(int n)
+//{
+//	if (n>10)
+//		Print(n / 10);
+//	printf("%d ", n % 10);
+//}
+//int main()
+//{
+//	int n;
+//	scanf("%d",&n);
+//	Print(n);
+//	return 0;
+//
+//}
