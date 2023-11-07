@@ -663,3 +663,24 @@
 //	return 0;
 //
 //}
+
+
+//打印整数二进制的奇数位和偶数位
+//int main()
+//{
+//	int n;
+//	scanf("%d", &n);
+//	printf("偶数位为：");
+//	for (int i = 1; i < 8; i += 2)
+//	{
+//		printf("%d ", n >> i & 1);
+//	}	
+//	printf("\n");
+//	printf("奇数位为：");
+//	for (int i = 0; i < 8; i += 2)
+//	{
+//		printf("%d ", n >> i & 1);
+//	}
+//	printf("\n");
+//	return 0;
+//}
