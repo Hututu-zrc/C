@@ -684,3 +684,33 @@
 //	printf("\n");
 //	return 0;
 //}
+
+//
+////不创建临时变量，交换两数
+//#include <stdio.h>
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	a = a ^ b;
+//	b = a ^ b;
+//	a = a ^ b;
+//	printf("a = %d b = %d\n", a, b);
+//	return 0;
+//}
+
+//输出二进制里面的1
+#include <stdio.h>
+int main()
+{
+	int n;
+	scanf("%d", &n);
+	int count = 0;
+	for (int i = 0; i < 32; i++)
+	{
+		if (((n >> i) & 1) == 1)
+			count++;
+	}
+	printf("%d\n", count);
+	return 0;
+}
