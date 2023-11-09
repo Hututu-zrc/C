@@ -580,34 +580,34 @@
 //	return 0;
 //}
 // 
-//问题 B : 字符在字符串中出现的位置
-int main()
-{
-	char arr[101];
-	while ((fgets(arr,101,stdin)) != NULL)
-	{
-		char ch;
-		scanf("%c", &ch);
-		int i = 0,signal=0;
-		while (arr[i] != '\0')
-		{
-			if (ch == arr[i])
-			{
-				printf("%d ", i);
-				signal = 1;
-			}
-			i++;
-				
-		}
-		if (signal == 0)
-		{
-			printf("NULL");
-		}
-		printf("\n");
-		getchar();
-	}
-	return 0;
-}
+////问题 B : 字符在字符串中出现的位置
+//int main()
+//{
+//	char arr[101];
+//	while ((fgets(arr,101,stdin)) != NULL)
+//	{
+//		char ch;
+//		scanf("%c", &ch);
+//		int i = 0,signal=0;
+//		while (arr[i] != '\0')
+//		{
+//			if (ch == arr[i])
+//			{
+//				printf("%d ", i);
+//				signal = 1;
+//			}
+//			i++;
+//				
+//		}
+//		if (signal == 0)
+//		{
+//			printf("NULL");
+//		}
+//		printf("\n");
+//		getchar();
+//	}
+//	return 0;
+//}
 //
 //问题 C: 删除字符串末尾的0
 //int main()
@@ -762,6 +762,138 @@ int main()
 //				printf("\n");
 //			}
 //
+//	}
+//	return 0;
+//}
+
+//问题 A: 奇数还是偶数
+//int Judge(int n)
+//{
+//	if (n % 2 == 0)
+//		return n % 2;
+//	else
+//		return n % 2;
+//}
+//int main()
+//{
+//	int n;
+//	scanf("%d", &n);
+//	int ret = Judge(n);
+//	if (ret == 0)
+//		printf("EVEN\n");
+//	else
+//		printf("ODD\n");
+//	return 0;
+//}
+
+//问题 B: 读入两个正整数m和n，计算m和n的最大公约数
+//int Max(int n, int m)
+//{
+//	int temp;
+//	do
+//	{
+//		temp = n % m;
+//		n = m;
+//		m = temp;
+//	} while (temp);
+//	return n;
+//}
+//int main()
+//{
+//	int n, m;
+//	scanf("%d %d", &n, &m);
+//	int ret = Max(n, m);
+//	printf("%d\n", ret);
+//}
+
+
+//问题 C: 是否素数。(15分)4
+//#include <stdio.h>
+//#include <math.h>
+//void Prime(int n)
+//{
+//	int signal = 0;
+//	for (int i = 2; i <n; i++)
+//	{
+//		if (n % i == 0)
+//		{
+//			puts("not prime");
+//			signal = 1;
+//			break;
+//		}
+//	}
+//	if (signal == 0)
+//		puts("prime");
+//}
+//int main()
+//{
+//	int n;
+//	scanf("%d", &n);
+//	Prime(n);
+//	return 0;
+//}
+
+//问题 D: 完数
+//void Sum(int n)
+//{
+//	int sum = 0;
+//	for (int i = 1; i < n; i++)
+//	{
+//		if (n % i == 0)
+//			sum += i;
+//	}
+//	if (sum == n)
+//		puts("YES");
+//	else
+//		puts("NO");
+//}
+//int main()
+//{
+//	int n;
+//	while (scanf("%d", &n) != EOF)
+//	{
+//		Sum(n);
+//	}
+//	return;
+//}
+
+//问题 E : 相邻的素数
+//int Prime(int n)
+//{
+//	int signal = 0;
+//	for (int i = 2; i < n; i++)
+//	{
+//		if (n % i == 0)
+//		{
+//			signal = 1;
+//			return 0;
+//			break;
+//		}
+//	}
+//	if (signal == 0)
+//		return n;
+//}
+//int main()
+//{
+//	int n;
+//	while (scanf("%d", &n) != EOF)
+//	{
+//		for (int i = n - 1; i >= 2; i--)
+//		{
+//			if (Prime(i) != 0)
+//			{
+//				printf("%d<", i);
+//				break;
+//			}
+//		}
+//		for (int j = n + 1; j; j++)
+//		{
+//			if (Prime(j) != 0)
+//			{
+//				printf("%d<%d\n", n, j);
+//				break;
+//			}
+//		}
 //	}
 //	return 0;
 //}
