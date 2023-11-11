@@ -704,17 +704,77 @@
 //1.移位
 //2.模上2
 //3.n&n-1
-#include <stdio.h>
-int main()
-{
-	int n;
-	scanf("%d", &n);
-	int count = 0;
-	for (int i = 0; i < 32; i++)
-	{
-		if (((n >> i) & 1) == 1)
-			count++;
-	}
-	printf("%d\n", count);
-	return 0;
-}
+//#include <stdio.h>
+//int main()
+//{
+//	int n;
+//	scanf("%d", &n);
+//	int count = 0;
+//	for (int i = 0; i < 32; i++)
+//	{
+//		if (((n >> i) & 1) == 1)
+//			count++;
+//	}
+//	printf("%d\n", count);
+//	return 0;
+//}
+
+
+//操作符作业
+//#include <stdio.h>
+//int main()
+//{
+//    int i = 1;
+//    int ret = (++i) + (++i) + (++i);
+//    printf("ret = %d\n", ret);
+//    return 0;
+//}
+
+//
+//#include <stdio.h>
+//int i;
+//int main()
+//{
+//    i--;
+//    if (i > sizeof(i))
+//    {
+//        printf(">\n");
+//    }
+//    else
+//    {
+//        printf("<\n");
+//    }
+//    return 0;
+//}
+
+//在一个整型数组中，只有一个数字出现一次，其他数组都是成对出现的，
+// 请找出那个只出现一次的数字。
+//例如：
+//数组中有：1 2 3 4 5 1 2 3 4，只有5出现一次，其他数字都出现2次，找出5
+//#include <stdio.h>
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,6,1,2,3,4,5};
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	for (int i = 0; i < sz - 1; i++)
+//	{
+//		for (int j = 0; j < sz - 1 - i; j++)
+//		{
+//			if (arr[j + 1] < arr[j])
+//			{
+//				int temp = arr[j];
+//				arr[j] = arr[j + 1];
+//				arr[j + 1] = temp;
+//			}
+//		}
+//	}
+//	for (int i = 0; i < sz; i+=2)
+//	{
+//		if (arr[i] != arr[i + 1] || i==sz-1)
+//		{
+//			printf("%d\n", arr[i]);
+//			break;
+//		}
+//	}
+//	return 0;
+//}
