@@ -897,3 +897,67 @@
 //	}
 //	return 0;
 //}
+
+
+//¼Æ¿Æ 099 Ì´½­ºÆ
+#include<stdio.h>
+int A(int x)
+{
+	int i, j;
+	int count = 0;
+	int low = 0;
+	int t;
+	for (i = x - 1; i > 1; i--)
+	{
+		for (j = 2; j < i; j++)
+		{
+			if (i % j == 0)
+			{
+				count++;
+			}
+		}
+		t = i;
+		if (count == 0)
+		{
+			low = t;
+			break;
+		}
+	}
+	return(low);
+}
+
+int B(int x)
+{
+	int i, j;
+	int count = 0;
+	int high = 0;
+	int t;
+	for (i = x + 1; i <= 2 * x; i++)
+	{
+		for (j = 2; j < i; j++)
+		{
+			if (i % j == 0)
+			{
+				count++;
+			}
+		}
+		t = i;
+		if (count == 0)
+		{
+			high = t;
+			break;
+		}
+	}
+	return(high);
+}
+main()
+{
+	int n;
+	int p, q;
+	while (scanf("%d", &n) != EOF)
+	{
+		p = A(n);
+		q = B(n);
+		printf("%d<%d<%d\n", p, n, q);
+	}
+}
