@@ -789,12 +789,53 @@
 //	return 0;
 //}
 
-#include <stdio.h>
-int main()
-{
-	int a = 0x11223344;
-	char* pc = (char*)&a;
-	*pc = 0;
-	printf("%x\n", a);
-	return 0;
-}
+//#include <stdio.h>
+//int main()
+//{
+//	int a = 0x11223344;
+//	char* pc = (char*)&a;
+//	*pc = 0;
+//	printf("%x\n", a);
+//	return 0;
+//}
+
+//字符串逆序
+//#include <stdio.h>
+//
+//int main()
+//{
+//    char arr[10000] = { 0 };
+//    gets(arr);
+//    int sz = strlen(arr);
+//    for (int i = sz - 1; i >= 0; i--)
+//    {
+//        printf("%c", arr[i]);
+//    }
+//    printf("\n");
+//    return 0;
+//}
+
+////实现一个函数，可以左旋字符串中的k个字符。
+////例如：
+////ABCD左旋一个字符得到BCDA
+////ABCD左旋两个字符得到CDAB
+//#include <stdio.h>
+//#include <string.h>
+//void LeftRevolve(char* arr, int input,int sz)
+//{
+//	char temp[100];
+//	strncpy(temp,arr+ input,sz+1-input);
+//	strncat(temp, arr, input);
+//	strcpy(arr, temp);
+//}
+//int main()
+//{
+//	char arr[100];
+//	gets(arr);
+//	int input;
+//	scanf("%d", &input);
+//	int sz = strlen(arr);
+//	LeftRevolve(arr, input, sz);
+//	puts(arr);
+//	return 0;
+//}
