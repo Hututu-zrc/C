@@ -857,3 +857,73 @@
 //	printf("%d\n", ret);
 //	return 0;
 //}
+
+//写一个函数打印arr数组的内容，不使用数组下标，使用指针。
+//arr是一个整形一维数组
+//int main()
+//{
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int* p = arr;
+//	for (int i = 0; i < sz; i++)
+//	{
+//		printf("%d ", *(p + i));
+//	}
+//	printf("\n");
+//	return 0;
+//}
+
+////实现一个对整形数组的冒泡排序
+//void Bubble(int* arr, int sz)
+//{
+//	for (int i = 0; i < sz - 1; i++)
+//	{
+//		for (int j = 0; j < sz - i - 1; j++)
+//		{
+//			if (arr[j] < arr[j + 1])
+//			{
+//				int temp = arr[j];
+//				arr[j] = arr[j + 1];
+//				arr[j+1] = temp;
+//			}
+//		}
+//	}
+//}
+//int main()
+//{
+//	int arr[10] = { 9,12,45,6,4,8,9,5,1,6 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	Bubble(arr, sz);
+//	for (int i = 0; i < sz; i++)
+//		printf("%d ", arr[i]);
+//	return 0;
+//}
+
+
+////调整数组使奇数全部都位于偶数前面。
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10,56,16,19,58 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int left = 0, right = sz - 1;
+//	while (left < right)
+//	{
+//		if (arr[right] % 2 == 1 && arr[left]%2==0)
+//		{
+//			int temp = arr[left];
+//			arr[left] = arr[right];
+//			arr[right] = temp;
+//			left++, right--;
+//		}
+//		else
+//		{
+//			left += arr[left] % 2;
+//			right -= arr[right] % 2+1;
+//		}
+//	}
+//	for (int i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	return 0;
+//}
