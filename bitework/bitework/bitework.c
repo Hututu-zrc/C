@@ -824,7 +824,7 @@
 //void LeftRevolve(char* arr, int input,int sz)
 //{
 //	char temp[100];
-//	strncpy(temp,arr+ input,sz+1-input);
+//	strncpy(temp,arr+ input,sz+1-input);                                                    
 //	strncat(temp, arr, input);
 //	strcpy(arr, temp);
 //}
@@ -837,5 +837,23 @@
 //	int sz = strlen(arr);
 //	LeftRevolve(arr, input, sz);
 //	puts(arr);
+//	return 0;
+//}
+
+//模拟实现strlen()函数
+//int My_strlen(char *arr)
+//{
+//	int count = 0;
+//	if (*arr)
+//		return 1 + My_strlen(++arr);
+//	else
+//		return 0;
+//}
+//int main()
+//{
+//	char arr[1000];
+//	gets(arr);
+//	int ret = My_strlen(arr);
+//	printf("%d\n", ret);
 //	return 0;
 //}
