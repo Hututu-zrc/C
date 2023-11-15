@@ -933,3 +933,94 @@
 //AABCD左旋一个字符得到ABCDA
 //AABCD左旋两个字符得到BCDAA
 //AABCD右旋一个字符得到DAABC
+#include <stdio.h>
+#include <string.h>
+//char* Reverse(char* arr, int method, int input,int sz)
+//{
+//	char temp[100] = { 0 };
+//	if (method == 1)
+//	{
+		//strcpy(temp, arr + input);
+		//strncat(temp, arr, input);
+		//strcpy(arr, temp);
+//	}
+//	else
+//	{
+		/*for (int i = 0; i < input; i++)
+			temp[i] = arr[sz - 1];
+		strncpy(temp, arr, sz - input);
+		strcpy(arr, temp);*/
+//	}
+//	return arr;
+//}
+
+//int Reverse(char* s1, char* s2, int sz1, int sz2)
+//{
+//	if (sz1 != sz2)
+//		return 0;
+//	else
+//	{
+//		for (int i = 1; i < sz1; i++)
+//		{
+//			char temp[100] = { 0 };
+//			strcpy(temp, s1 + i);
+//			strncat(temp, s1, i);
+//			if (!strcmp(temp, s2))
+//				return 1;
+//		}
+//		for (int j = 1; j < sz1; j++)
+//		{
+//			char temp[100] = { 100 };
+//			for (int i = 0; i < j; i++)
+//				temp[i] = s1[sz1 - 1];
+//			strncpy(temp, s1, sz1 - j);
+//			if (!strcmp(temp, s2))
+//				return 1;
+//		}
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	char s1[100];
+//	char s2[100];
+//	gets(s1);
+//	gets(s2);
+//	int sz1 = strlen(s1), sz2 = strlen(s2);
+//	int ret= Reverse(s1,s2,sz1,sz2);
+//	printf("%d\n", ret);
+//	return 0;
+//}
+
+//有一个数字矩阵，矩阵的每行从左到右是递增的，矩阵从上到下是递增的，
+// 请编写程序在这样的矩阵中查找某个数字是否存在。
+//要求：时间复杂度小于O(N)
+//int main()
+//{
+//	int arr[3][5] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 };
+//	int i = 0, j = 0,input;
+//	scanf("%d", &input);
+//	for (; i < 3; i++)
+//	{
+//		if (arr[i][4] >= input)
+//			break;
+//	}
+//	int left = 0, right = 4, mid =0,signal=1;
+//	while (left <= right)
+//	{
+//		mid = (left + right) / 2;
+//		if (arr[i][mid] < input)
+//			left = mid + 1;
+//		else if (arr[i][mid] > input)
+//			right = mid - 1;
+//		else
+//		{
+//			signal = 0;
+//			puts("该数存在");
+//			break;
+//		}
+//	}
+//	if(signal)
+//		puts("该数不存在");
+//	return 0;
+//}
