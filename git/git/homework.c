@@ -1596,14 +1596,96 @@
 //	printf("11.5\n");
 //	return 0;
 //}
+
+
+////memcpy复现
+//#include <stdio.h>
+//#include <assert.h>
+//#include <stdlib.h>
+//void* my_memcpy(void* dest, const void* str, size_t n)
+//{
+//	assert(dest && str);
+//	void* ret = dest;
+//	while (n--)
+//	{
+		//*(char*)dest = *(char*)str;
+		//dest = (char*)dest + 1;
+		//str = (char*)str + 1;
+//	}
+//	return ret;
+//}
+//int main()
+//{
+//	const char src[50] = "http://www.runoob.com";
+//	char dest[50];
+//	char* tem=my_memcpy(dest, src, strlen(src) + 1);
+//	printf("dest = %s\n",tem);
+//
+//	return(0);
+//}
+
+//memmove的复现
+//#include <stdio.h>
+//#include <assert.h>
+//#include <stdlib.h>
+//void* my_memmove(void* dest, const void* str, size_t n)
+//{
+//	assert(dest && str);
+//	void* ret = dest;
+//	//比较我们的目的地址和起始地址，数组地址是由低到高
+//	//如果目的地址小于起始地址，证明我们的目标是把后面的元素赋给前面的元素，
+//	//此时我们仍然采用memcpy的思路。
+//	//如果目的地址大于起始地址，证明我们的目标是把前面的元素赋给后面的元素，
+//	//和上面相同，但是我们需要注意的是，此时我们必须把元素从后面向前面进行赋值
+//	//因为如果我们仍然采用从后往前赋值的情况，我们赋值会重复
+//	//例如：123456 把1234变成3456
+//	//如果是从前往后赋值，赋值两个元素后会变成343456，此时赋值完毕后，会变成343434.
+//	if (dest < str)
+//	{
+//		while (n--)
+//		{
+//			*(char*)dest = *(char*)str;
+//			dest = (char*)dest + 1;
+//			str = (char*)str + 1;
+//		}
+//	}
+//	else
+//	{
+//		while (n--)
+//			*((char*)dest + n) = *((char*)str + n);
+//	}
+//	return ret;
+//}
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	my_memmove(arr , arr+2, 20);
+//	for (int i = 0; i < 10; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	return(0);
+//}
+//
+//memcmp的使用
+//int main()
+//{
+//	int arr1[] = { 1,3,5,7 };
+//	int arr2[] = { 1,3,5,9 };
+//	int ret = memcmp(arr1, arr2, 12);
+//	printf("%d\n", ret);
+//	return 0;
+//}
+
+//memset函数的使用 C 库函数 void *memset(void *str, int c, size_t n)
+//  复制字符 c（一个无符号字符）到参数 str 所指向的字符串的前 n 个字符。
 int main()
 {
-	printf("11.6\n");
+	//char arr[100] = "hello world";
+	//memset(arr + 6, 'c', 10);
+	//printf("%s\n", arr);
 	return 0;
 }
-
-
-
 
 
 
