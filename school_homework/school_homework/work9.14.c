@@ -900,64 +900,199 @@
 
 
 //计科 099 檀江浩
-#include<stdio.h>
-int A(int x)
-{
-	int i, j;
-	int count = 0;
-	int low = 0;
-	int t;
-	for (i = x - 1; i > 1; i--)
-	{
-		for (j = 2; j < i; j++)
-		{
-			if (i % j == 0)
-			{
-				count++;
-			}
-		}
-		t = i;
-		if (count == 0)
-		{
-			low = t;
-			break;
-		}
-	}
-	return(low);
-}
+//#include<stdio.h>
+//int A(int x)
+//{
+//	int i, j;
+//	int count = 0;
+//	int low = 0;
+//	int t;
+//	for (i = x - 1; i > 1; i--)
+//	{
+//		for (j = 2; j < i; j++)
+//		{
+//			if (i % j == 0)
+//			{
+//				count++;
+//			}
+//		}
+//		t = i;
+//		if (count == 0)
+//		{
+//			low = t;
+//			break;
+//		}
+//	}
+//	return(low);
+//}
+//
+//int B(int x)
+//{
+//	int i, j;
+//	int count = 0;
+//	int high = 0;
+//	int t;
+//	for (i = x + 1; i <= 2 * x; i++)
+//	{
+//		for (j = 2; j < i; j++)
+//		{
+//			if (i % j == 0)
+//			{
+//				count++;
+//			}
+//		}
+//		t = i;
+//		if (count == 0)
+//		{
+//			high = t;
+//			break;
+//		}
+//	}
+//	return(high);
+//}
+//main()
+//{
+//	int n;
+//	int p, q;
+//	while (scanf("%d", &n) != EOF)
+//	{
+//		p = A(n);
+//		q = B(n);
+//		printf("%d<%d<%d\n", p, n, q);
+//	}
+//}
 
-int B(int x)
-{
-	int i, j;
-	int count = 0;
-	int high = 0;
-	int t;
-	for (i = x + 1; i <= 2 * x; i++)
-	{
-		for (j = 2; j < i; j++)
-		{
-			if (i % j == 0)
-			{
-				count++;
-			}
-		}
-		t = i;
-		if (count == 0)
-		{
-			high = t;
-			break;
-		}
-	}
-	return(high);
-}
-main()
-{
-	int n;
-	int p, q;
-	while (scanf("%d", &n) != EOF)
-	{
-		p = A(n);
-		q = B(n);
-		printf("%d<%d<%d\n", p, n, q);
-	}
-}
+//问题 A: 输出一个整数的逆数
+//void Inverse(int input)
+//{
+//	while (input % 10 == 0)
+//		input /= 10;
+//	while (input)
+//	{
+//		printf("%d", input % 10);
+//		input /= 10;
+//	}
+//}
+//int main()
+//{
+//	int input;
+//	scanf("%d", &input);
+//	Inverse(input);
+//	return 0;
+//}
+
+//问题 B: Prime Number
+//int Prime(int n)
+//{
+//	int signal = 1;
+//	for (int i = 2; i < n; i++)
+//	{
+//		if (n % i == 0)
+//		{
+//			signal = 0;
+//			break;
+//		}	
+//	}
+//	return signal;
+//}
+//int main()
+//{
+//	int input;
+//	
+//	while (scanf("%d", &input) != EOF)
+//	{
+//		int i = 3;
+//		if (input == 1)
+//			puts("2");
+//		else
+//		{
+//			int count = 1;
+//			while (i &&count<input)
+//			{
+//				if (Prime(i) == 1)
+//					count++;
+//				i++;
+//			}
+//		}
+//		printf("%d\n", i - 1);
+//	}
+//	return 0;
+//}
+
+//问题 C: 1的个数
+//int Count(int n)
+//{
+//	int count = 0;
+//	for (int i = 1; i <= n; i++)
+//	{
+//		int temp = i;
+//		while (temp)
+//		{
+//			if (temp % 10 == 1)
+//				count++;
+//			temp /= 10;
+//		}
+//	}
+//	return count;
+//}
+//int main()
+//{
+//	int input;
+//	while (scanf("%d", &input) != EOF)
+//	{
+//		int ret = Count(input);
+//		printf("%d\n", ret);
+//	}
+//	return 0;
+//}
+
+//问题 D: 求和-n
+//int Sum(int n)
+//{
+//	int sum = 0;
+//	if (n == 1)
+//		return 1;
+//	else
+//	{
+//		for (int i = 2; i <= n; i++)
+//		{
+//			for (int j = 1; j <= i; j++)
+//			{
+//				sum += i * 10 + j;
+//			}
+//		}
+//		return sum+1;
+//	}
+//}
+//int main()
+//{
+//	int input;
+//	while (scanf("%d", &input)!= EOF)
+//	{
+//		int ret = Sum(input);
+//		printf("%d\n", ret);
+//	}
+//	return 0;
+//}
+
+//问题 E: 10进制转3进制
+//void Scale(int n)
+//{
+//	if (n < 3)
+//		printf("%d",n);
+//	else
+//	{
+//		Scale(n /3);
+//		printf("%d", n % 3);
+//	}
+//}
+//int main()
+//{
+//	int input;
+//	while (scanf("%d", &input) != EOF)
+//	{
+//		Scale(input);
+//		printf("\n");
+//	}
+//	return 0;
+//}
