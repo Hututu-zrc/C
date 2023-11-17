@@ -1679,14 +1679,20 @@
 
 //memset函数的使用 C 库函数 void *memset(void *str, int c, size_t n)
 //  复制字符 c（一个无符号字符）到参数 str 所指向的字符串的前 n 个字符。
+//int main()
+//{
+//	//char arr[100] = "hello world";
+//	//memset(arr + 6, 'c', 10);
+//	//printf("%s\n", arr);
+//	return 0;
+//}
+//
+
 int main()
 {
-	//char arr[100] = "hello world";
-	//memset(arr + 6, 'c', 10);
-	//printf("%s\n", arr);
+	printf("I am sick.Date:11.17");
 	return 0;
 }
-
 
 
 
