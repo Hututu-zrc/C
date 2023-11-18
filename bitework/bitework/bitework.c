@@ -1024,3 +1024,97 @@
 //		puts("该数不存在");
 //	return 0;
 //}
+//
+//日本某地发生了一件谋杀案，警察通过排查确定杀人凶手必为4个嫌疑犯的一个。
+//以下为4个嫌疑犯的供词:
+//A说：不是我。
+//B说：是C。
+//C说：是D。
+//D说：C在胡说
+//已知3个人说了真话，1个人说的是假话。
+//现在请根据这些信息，写一个程序来确定到底谁是凶手。
+
+//typedef struct LinkList
+//{
+//	char* arr;
+//	int judge;
+//	struct LinkList* next;
+//
+//}L;
+//int Judge(L* temp,L*D)
+//{
+//	temp->judge = 0;
+//	temp = temp->next;
+//	int count = 0;
+//	static int counter = 0;
+//	while(temp->judge == 1)
+//	{
+//		if (temp == D)
+//		{
+//			temp->next->judge = 0;
+//		}
+//		temp = temp->next;
+//		count++;
+//	}
+//	if (count+counter == 3 && counter!=0 &&counter!=1)
+//		return 1;
+//	else
+//	{
+//		counter++;
+//		return 0;
+//	}	
+//}
+//int main()
+//{
+//	L A, B, C, D;
+//		L*head,*signal;
+//	
+//	
+//	A.arr = "A\0";
+//	head = signal = &A;
+//	B.arr = "B\0";
+//	C.arr = "C\0";
+//	D.arr = "D\0";
+//
+//	B.next = &C;
+//	A.next = &B;
+//	C.next = &D;
+//	D.next = &C;
+//	 
+//	int count = 0;
+//	while (count!=4)
+//	{
+//		A.judge = 1;	B.judge = 1;
+//		C.judge = 1; D.judge = 1;
+//		if (Judge(signal,&D))
+//		{
+//			printf("%s\n", signal->arr);
+//			break;
+//		}
+//		signal = signal->next;
+//		count++;
+//	}
+//	return 0;
+//}
+
+//在屏幕上打印杨辉三角。
+//#define N 25
+//int main()
+//{
+//	int arr[N][N];
+//	arr[0][0] = 1; arr[1][0] = 1;
+//	arr[1][1] = 1;
+//	for (int i = 2; i < N; i++)
+//	{
+//		arr[i][0] = 1;
+//		arr[i][i] = 1;
+//		for (int j = 1; j < i; j++)
+//			arr[i][j] = arr[i - 1][j - 1] + arr[i - 1][j];
+//	}
+//	for (int i = 0; i < N; i++)
+//	{
+//		for (int j = 0; j <= i ; j++)
+//			printf("%d ", arr[i][j]);
+//		printf("\n");
+//	}
+//}
