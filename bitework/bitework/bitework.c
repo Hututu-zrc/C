@@ -1118,3 +1118,8 @@
 //		printf("\n");
 //	}
 //}
+
+int main()
+{
+	return 0;
+}
