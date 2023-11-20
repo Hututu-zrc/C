@@ -1118,8 +1118,134 @@
 //		printf("\n");
 //	}
 //}
+// 
 
-int main()
-{
-	return 0;
-}
+
+
+
+////关于函数指针的复现
+//int Add(int a,int b)
+//{
+//	return a + b;
+//}
+//int Sub(int a,int b)
+//{
+//	return a - b;
+//}
+//int Mul(int a,int b)
+//{
+//	return a * b;
+//}
+//int Div(int a,int b)
+//{
+//	return a / b;
+//}
+//void menu()
+//{
+//	printf("******************************\n");
+//	printf("******    1. Add      *****\n");
+//	printf("******    2.Sub       *****\n");
+//	printf("******    3.Mul       *****\n");
+//	printf("******    4.Div        *****\n");
+//	printf("******    0. exit        *****\n");
+//	printf("******************************\n");
+//}
+//int main()
+//{
+//	int input;
+//	int (*pf[100])(int, int) = { 0,Add,Sub,Mul,Div };
+//	do
+//	{
+//		menu();
+//		printf("请选择你要进行的操作：");
+//		scanf("%d", &input);
+//		if (input == 0)
+//			exit(0);
+//		printf("请输入操作数：");
+//		int a, b;
+//		scanf("%d %d", &a, &b);
+//		printf("%d\n", pf[input](a, b));
+//		
+//	} while(input);
+//	return 0;
+//}
+
+// //关于qsort排序二维数组
+//int compare(const void* a, const void* b)
+//{
+//	return (*((int*)b + 2)) - (*((int*)a + 2));
+//}
+//int main()
+//{
+//	int arr[3][4] = { 1,2,1,4,5,6,3,8,9,10,7,12 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	qsort(arr, sz, sizeof(arr[0]), compare);
+//	for (int i = 0; i < 3; i++)
+//	{
+//		for (int j = 0; j < 4; j++)
+//			printf("%d ", arr[i][j]);
+//		printf("\n");
+//	}
+//}
+//
+// 
+//int compare(const void* a, const void* b)
+//{
+//	return *(int*)b - *(int*)a;
+//}
+//int main()
+//{
+//	int arr[5] = { 9,8,10,6 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	qsort(arr, sz, sizeof(int), compare);
+//	for (int i = 0; i < 5; i++)
+//		printf("%d ", arr[i]);
+//}
+
+//
+//typedef struct Stu
+//{
+//	char name[20];
+//	int age;
+//	char sex[5];
+//}stu;
+//
+//
+//int compare(const void* a, const void* b)
+//{
+//	return strcmp(((stu*)a)->name, ((stu*)b)->name);
+//}
+//int compare2(const void* a, const void* b)
+//{
+//	return ((stu*)b)->age - ((stu*)a)->age;
+//}
+//
+//int main()
+//{
+//	struct Stu stu[] = { {"zhuruncai",15,"男"},{"liyichen",18,"男"},{"hujin",19,"男"} };
+//	int sz = sizeof(stu) / sizeof(stu[0]);
+//	qsort(stu, sz, sizeof(stu[0]), compare2);
+//	for(int i=0;i<sz;i++)
+//		printf("%s %d %s\n", stu[i].name, stu[i].age, stu[i].sex);
+//	return 0;
+//}
+
+//单身狗问题
+//int compare(const void* a, const void* b)
+//{
+//	return *(int*)a - *(int*)b;
+//}
+//int main()
+//{
+//	int arr[] = { 0,2,3,4,5,1,2,3,4,6,5 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	qsort(arr, sz, sizeof(int), compare);
+//	for (int i = 0; i < sz; i++)
+//	{
+//		if (arr[i] == arr[i + 1])
+//			i++;
+//		else
+//			printf("%d ", arr[i]);
+//	}
+//}
+//
