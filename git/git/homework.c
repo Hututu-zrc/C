@@ -1549,6 +1549,11 @@
 //	int sz = sizeof(arr) / sizeof(arr[0]);
 //	qsort(arr, sz, sizeof(arr[0]), compare);
 //}
+// 
+
+
+
+//
 ////关于冒泡排序实现qsort
 //int compare(const void* a,const void* b)
 //{
@@ -1589,7 +1594,14 @@
 //	for (int i = 0; i < sz; i++)
 //		printf("%d ", arr[i]);
 //}
-//// 
+// 
+
+
+
+
+
+
+
 
 //int main()
 //{
@@ -1688,16 +1700,6 @@
 //}
 //
 
-int main()
-{
-	printf("I am sick.Date:11.17");
-	return 0;
-}
-
-
-
-
-
 
 
 
@@ -1735,3 +1737,9 @@ int main()
 //	printf("%d\n", total);
 //	return 0;
 //}
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+ 
