@@ -1250,16 +1250,20 @@
 //}
 //
 
-//输出月份
-#include <stdio.h>
-int main()
-{
-    int year, month;
-    while (scanf("%d %d", &year, &month) != EOF)
-    {
-        int arr[] = { 0,31,28,31,30,31,30,31,31,30,31,30,31 };
-        arr[2] += (year % 100 != 0 && year % 4 == 0 || year % 400 == 0);
-        printf("%d\n", arr[month]);
-    }
-    return 0;
-}
+////输出月份
+//#include <stdio.h>
+//int main()
+//{
+//    int year, month;
+//    while (scanf("%d %d", &year, &month) != EOF)
+//    {
+//        int arr[] = { 0,31,28,31,30,31,30,31,31,30,31,30,31 };
+//        arr[2] += (year % 100 != 0 && year % 4 == 0 || year % 400 == 0);
+//        printf("%d\n", arr[month]);
+//    }
+//    return 0;
+//}
+
+//通讯录的编写
+
+
