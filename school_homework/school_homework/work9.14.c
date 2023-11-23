@@ -1096,3 +1096,183 @@
 //	}
 //	return 0;
 //}
+
+
+//问题 A: 输出中间的一个数
+//#include <stdio.h>
+//#include<string.h>
+//int main()
+//{
+//	char arr[100] = { 0 };
+//	gets(arr);
+//	char temp[2] =" ";
+//	int arr1[100] = { 0 };
+//	int count = 0;
+//	char* token = strtok(arr,temp);
+//	while (token != NULL)
+//	{
+//		arr1[count] = atoi(token);
+//		count++;
+//		token = strtok(NULL, temp);
+//	}
+//	printf("%d\n", arr1[count / 2]);
+//	return 0;
+//}
+//
+//
+////问题 B: 数组的循环移动
+//#include <stdio.h>
+//int main()
+//{
+//	int n, m; int arr[100];
+//	scanf("%d", &n);
+//	for (int i = 0; i < n; i++)
+//		scanf("%d", &arr[i]);
+//	scanf("%d", &m);
+//	for (int i = n - m; i < n; i++)
+//		printf("%d ", arr[i]);
+//	for (int i = 0; i < n - m; i++)
+//		printf("%d ", arr[i]);
+//	return 0;
+//}
+//
+////问题 C: 哥德巴赫猜想
+//int prime(int n)
+//{
+//	int signal = 0;
+//	for (int i = 2; i < n; i++)
+//	{
+//		if (n % i == 0)
+//		{
+//			signal = 1;
+//			break;
+//		}
+//	}
+//	if (signal == 0)
+//	{
+//		return 1;
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	int input;
+//	
+//	while (scanf("%d", &input) !=EOF)
+//	{
+//		int count = 0;
+//		int arrcount = 0;
+//		int arr[100];
+//		for (int i = 2; i < input; i++)
+//		{
+//			if (prime(i))
+//			{
+//				arr[arrcount] = i;
+//				arrcount++;
+//			}
+//		}
+//		int mid = input / 2;
+//		int numsignal = 0;
+//		int tmp1 = 2, tmp2 = input - 1;
+//		for (int i = 0; i <= arrcount-1; i++)
+//		{
+//			if (mid < arr[i])
+//			{
+//				numsignal = i-1;
+//				break;
+//			}
+//		}
+//		for (int i = 0; i <= numsignal; i++)
+//		{
+//			for (int j = arrcount-1; j >= numsignal; j--)
+//			{
+//				if (arr[i] + arr[j] == input)
+//					count++;
+//			}
+//		}
+//		printf("%d\n", count);
+//	}
+//	return 0;
+//}
+//
+////问题 D : 出现的次数
+//#include <stdio.h>
+//int main()
+//{
+//	int n = 0;
+//	while (scanf("%d", &n) != EOF)//循环
+//	{
+//		int arr[1000] = { 0 };
+//		for (int x = 0; x < n; x++)
+//		{
+//			scanf("%d", &arr[x]);//读入
+//		}
+//		//排序
+//		for (int i = 0; i < n - 1; i++)
+//		{
+//			for (int j = 0; j < n - 1 - i; j++)
+//			{
+//				if (arr[j] > arr[j + 1])
+//				{
+//					int temp = arr[j];
+//					arr[j] = arr[j + 1];
+//					arr[j + 1] = temp;
+//				}
+//			}
+//		}
+//		int array1[1000][3] = { 0 };
+//		int count = 0;
+//		array1[count][1] = 0;
+//		array1[count][0] = arr[0];
+//		for (int i = 0; i < n; i++)
+//		{
+//
+//			if (arr[i] == array1[count][0])
+//			{
+//				array1[count][1]++;
+//			}
+//			else
+//			{
+//				count++;
+//				array1[count][0] = arr[i];
+//				array1[count][1] = 1;
+//			}
+//		}
+//		for (int i = 0; i >= 0; i++)
+//		{
+//			if (array1[i][0] == 0)
+//			{
+//				break;
+//			}
+//			else
+//			{
+//				printf("%d %d\n", array1[i][0], array1[i][1]);
+//			}
+//		}
+//
+//	}
+//	return 0;
+//}
+//
+////问题 E: 最长子序列
+//#include <stdio.h>
+//int main()
+//{
+//	int n;
+//	while ((scanf("%d", &n)) != EOF)
+//	{
+//		int arr[100] = { 0 };
+//		for (int i = 0; i < n; i++)
+//			scanf("%d", &arr[i]);
+//		int count = 1, maxlen = 0;
+//		for (int i = 0; i < n; i++)
+//		{
+//			if (arr[i] < arr[i + 1])
+//				count++;
+//			else
+//				count = 1;
+//			maxlen = maxlen > count ? maxlen : count;
+//		}
+//		printf("%d\n", maxlen);
+//	}
+//}
