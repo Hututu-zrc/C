@@ -1119,7 +1119,24 @@
 //	return 0;
 //}
 //
-//
+
+int main()
+{
+	char arr[100] = { 0 };
+	gets(arr);
+	int i = 0, count = 0;
+	while (arr[i] != '\0')
+	{
+		if (isdigit(arr[i]))
+			count++;
+		i++;
+	}
+	printf("%c\n", arr[(count/2)*2]);
+	return 0;
+}
+
+
+
 ////问题 B: 数组的循环移动
 //#include <stdio.h>
 //int main()
