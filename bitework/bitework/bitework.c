@@ -1284,6 +1284,7 @@
 
 int main()
 {
+	puts("11.24");
 	return 0;
 }
 
