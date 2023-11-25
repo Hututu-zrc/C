@@ -1282,10 +1282,159 @@
 //	return 0;
 //}
 
-int main()
-{
-	puts("今天我的gitee坏了，但是我乱搞搞好了");
-	return 0;
-}
 
 
+//
+//int main()
+//{
+//	unsigned char a = 200;
+//	unsigned char b = 100;
+//	unsigned char c = 0;
+//	c = a + b;
+//	printf("%d %d", a + b, c);
+//	return 0;
+//}
+
+//#include <stdio.h>
+//int main()
+//{
+//	int a = 0x11223344;
+//	char* pc = (char*)&a;
+//	*pc = 0;
+//	printf("%x\n", a);
+//	return 0;
+//}
+
+//判断机器的大小端
+//union Un 
+//{
+//	int a;
+//	char b;
+//}un;
+//int main()
+//{
+//	un.a=1;
+//	if(un.b==1)
+//		puts("小端");
+//	else if(un.b==0)
+//		puts("大端"); 
+//	return 0;
+// } 
+//
+
+////strstr 的复现
+//void My_strcpy(char *temp,char*arr,int sz)
+//{
+//	int i=0;
+//	for(i=0;i<sz;i++)
+//	{
+//		temp[i]=arr[i];
+//	}
+//}
+//int main()
+//{
+//	char arr[1000];
+//	scanf("%s",arr);
+//	int sz=strlen(arr);
+//	char temp[1000];
+//	My_strcpy(temp,arr,sz);
+//	puts(temp);
+//}
+
+////模拟实现strcmp
+//int My_strcmp(char*arr,char*arr1)
+//{
+//	int flag=0;
+//	while(*arr!='\0' &&*arr1!='\0') 
+//	{
+//		if(*arr!=*arr1)
+//		{
+//			flag=1;
+//			break;
+//		}
+//		arr++; arr1++;
+//	}
+//	if(flag==0)
+//		return 0;
+//	else
+//	{
+//		if(*arr>*arr1)
+//			return 1;
+//		else
+//			return -1;
+//	}
+//}
+//int main()
+//{
+//	char arr[100];
+//	gets(arr);
+//	char arr1[100];
+//	gets(arr1);
+//	if(!My_strcmp(arr,arr1))
+//		puts("相同");
+//	else if(My_strcmp(arr,arr1)>1)
+//		puts("第一个数组大");
+//	else
+//		puts("第二个数组大"); 
+//	return 0;
+// } 
+//
+//
+
+////模拟实现strcat
+//void My_strcat(char* arr, char* arr1)
+//{
+//	while (*arr != '\0')
+//		arr++;
+//	while (*arr1 != '\0')
+//	{
+//		*arr = *arr1;
+//		arr++;
+//		arr1++;
+//	}
+//	*arr = '\0';
+//}
+//int main()
+//{
+//	char arr[100];
+//	char arr1[100];
+//	gets(arr);
+//	gets(arr1);
+//	My_strcat(arr, arr1);
+//	puts(arr);
+//	return 0;
+//}
+
+////模拟实现strstr
+//#include <assert.h>
+//char* My_strstr(char* arr, char* temp)
+//{
+//	assert(arr && temp);
+//	char* tmp = temp;
+//	char* tmp2 = arr;
+//	while (*tmp2 != '\0')
+//	{
+//		while(*temp == *tmp2 && *tmp2!='\0')
+//		{
+//			temp++; tmp2++;
+//			if (*temp == '\0')
+//				break;
+//		}
+//		
+//		if (*temp == '\0')
+//			return arr;
+//		tmp2++; arr++;
+//	}
+//	if (*tmp2 == '\0' && *temp == '\0')
+//		return NULL;
+//}
+//int main()
+//{
+//	char arr[100];
+//	gets(arr);
+//	char temp[100];
+//	gets(temp);
+//	char* ret = My_strstr(arr, temp);
+//	printf("%s\n", ret);
+//	return 0;
+//}
