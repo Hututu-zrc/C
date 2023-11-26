@@ -1448,16 +1448,40 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+//int main()
+//{
+//	int* ptr = (int*)malloc(sizeof(int) * 10);
+//	assert(ptr);
+//	for (int i = 0; i < 10; i++)
+//		*(ptr + i) = i;
+//	for (int i = 0; i < 10; i++)
+//		printf("%d ", *(ptr + i));
+//	printf("\n");
+//	free(ptr);
+//	ptr = NULL;
+//	return 0;
+//}
+
+//int main()
+//{
+//	int* ptr = (int*)calloc(10, sizeof(int));
+//	assert(ptr);
+//	//for (int i = 0; i < 10; i++)
+//	//	*(ptr + i) = i;
+//	for (int i = 0; i < 10; i++)
+//		printf("%d ", *(ptr + i));
+//	printf("\n");
+//	free(ptr);
+//	ptr = NULL;
+//	return 0;
+//}
+
 int main()
 {
 	int* ptr = (int*)malloc(sizeof(int) * 10);
 	assert(ptr);
 	for (int i = 0; i < 10; i++)
 		*(ptr + i) = i;
-	for (int i = 0; i < 10; i++)
-		printf("%d ", *(ptr + i));
-	printf("\n");
-	free(ptr);
-	ptr = NULL;
+	
 	return 0;
 }
