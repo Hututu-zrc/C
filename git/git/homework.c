@@ -1423,76 +1423,76 @@
 //}
 
 
-//关于strstr函数的复现
-//#include <assert.h>
-////自己写的
-//char* my_strstr1(char*dest,char*src)//这个地方应该使用const，但是如果使用const，不符合我的代码逻辑，我的代码需要更改dest和src
-//{
-//	assert(dest && src);
-//	int count = 0;
-//	int i = 0,j=0;
-//	while (src[i] != '\0')
-//		i++;
-//	while (count<=i && *dest!='\0' &&*src!='\0')
-//	{
-//		if (*dest == *src)
-//		{
-//			count++;
-//			dest++;
-//			src++;
-//			
-//		}
-//		else
-//		{
-//			if(count==0)
-//				dest++;
-//			else
-//			{
-//				dest -= count-1;
-//				src -= count;
-//				count = 0;
-//			}
-//		}
-//	}
-//	if (count == i)
-//		return dest -= count;
-//	else
-//		return NULL;
-//	
-//}
-////鹏哥写的
-//char* my_strstr2(const char* dest, const char* src)
-//{
-//	assert(dest && src);
-//	const char* s1 = dest;
-//	const char* s2 = src;
-//	const char* p = dest;
-//	while (*p)
-//	{
-//		s1 = p;
-//		s2 = src;
-//		while (*s1 != '\0' && *s2 != '\0' && *s1 == *s2)
-//		{
-//			s1++; s2++;
-//		}
-//		if (*s2 == '\0')
-//			return (char*)p;
-//		p++;
-//	}
-//	return NULL;
-//}
-//int main()
-//{
-//	char arr[100] = "abbbcdefg";
-//	char ch[100] = "efg";
-//	char* ret1 = strstr(arr, ch);
-//	char* ret2 = my_strstr1(arr, ch);
-//	char* ret3 = my_strstr2(arr, ch);
-//	printf("%s\n",ret1);
-//	printf("%s\n",ret2);
-//	printf("%s\n",ret3);
-//	return 0;
-//}
+/////关于strstr函数的复现
+#include <assert.h>
+//自己写的
+char* my_strstr1(char*dest,char*src)//这个地方应该使用const，但是如果使用const，不符合我的代码逻辑，我的代码需要更改dest和src
+{
+	assert(dest && src);
+	int count = 0;
+	int i = 0,j=0;
+	while (src[i] != '\0')
+		i++;
+	while (count<=i && *dest!='\0' &&*src!='\0')
+	{
+		if (*dest == *src)
+		{
+			count++;
+			dest++;
+			src++;
+			
+		}
+		else
+		{
+			if(count==0)
+				dest++;
+			else
+			{
+				dest -= count-1;
+				src -= count;
+				count = 0;
+			}
+		}
+	}
+	if (count == i)
+		return dest -= count;
+	else
+		return NULL;
+	
+}
+//鹏哥写的
+char* my_strstr2(const char* dest, const char* src)
+{
+	assert(dest && src);
+	const char* s1 = dest;
+	const char* s2 = src;
+	const char* p = dest;
+	while (*p)
+	{
+		s1 = p;
+		s2 = src;
+		while (*s1 != '\0' && *s2 != '\0' && *s1 == *s2)
+		{
+			s1++; s2++;
+		}
+		if (*s2 == '\0')
+			return (char*)p;
+		p++;
+	}
+	return NULL;
+}
+int main()
+{
+	char arr[100] = "abbbcdefg";
+	char ch[100] = "bcd";
+	char* ret1 = strstr(arr, ch);
+	char* ret2 = my_strstr1(arr, ch);
+	char* ret3 = my_strstr2(arr, ch);
+	printf("%s\n",ret1);
+	printf("%s\n",ret2);
+	printf("%s\n",ret3);
+	return 0;
+}
 
 //strtok函数
 ////strtok函数，可以按照多个字符进行分割
