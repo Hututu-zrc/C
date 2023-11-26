@@ -1482,6 +1482,13 @@ int main()
 	assert(ptr);
 	for (int i = 0; i < 10; i++)
 		*(ptr + i) = i;
-	
+	int* ps = NULL;
+	ps = (int*)realloc(ptr, sizeof(int) * 20);
+	assert(ps);
+	ptr = ps;
+	for (int i = 10; i < 20; i++)
+		*(ptr + i) = i;
+	for (int i = 0; i < 20; i++)
+		printf("%d ", *(ptr + i));
 	return 0;
 }
