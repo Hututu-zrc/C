@@ -1484,6 +1484,7 @@ int main()
 		*(ptr + i) = i;
 	int* ps = NULL;
 	ps = (int*)realloc(ptr, sizeof(int) * 20);
+	//这个地方不可以直接赋值给ptr，因为可能会扩容失败
 	assert(ps);
 	ptr = ps;
 	for (int i = 10; i < 20; i++)
