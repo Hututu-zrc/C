@@ -1476,20 +1476,70 @@
 //	return 0;
 //}
 
+//int main()
+//{
+//	int* ptr = (int*)malloc(sizeof(int) * 10);
+//	assert(ptr);
+//	for (int i = 0; i < 10; i++)
+//		*(ptr + i) = i;
+//	int* ps = NULL;
+//	ps = (int*)realloc(ptr, sizeof(int) * 20);
+//	//这个地方不可以直接赋值给ptr，因为可能会扩容失败
+//	assert(ps);
+//	ptr = ps;
+//	for (int i = 10; i < 20; i++)
+//		*(ptr + i) = i;
+//	for (int i = 0; i < 20; i++)
+//		printf("%d ", *(ptr + i));
+//	free(ptr);
+//	free(ps);
+//	ps = ptr = NULL;
+//	return 0;
+//}
+
+
+
+
+//关于柔性数组
+//注意柔性数组要放在最后一个
+//方法一
+typedef struct ST
+{
+	int num;
+	int arr[];
+}st;
 int main()
 {
-	int* ptr = (int*)malloc(sizeof(int) * 10);
-	assert(ptr);
+	int sz1 = sizeof(st);
+	st* s = (st*)malloc(sizeof(st) + sizeof(int) * 10);
+	//柔性数组，前面开辟的是结构体的空间，后面开辟的就是柔性数组的空间
+	s->num = 10;
 	for (int i = 0; i < 10; i++)
-		*(ptr + i) = i;
-	int* ps = NULL;
-	ps = (int*)realloc(ptr, sizeof(int) * 20);
-	//这个地方不可以直接赋值给ptr，因为可能会扩容失败
-	assert(ps);
-	ptr = ps;
-	for (int i = 10; i < 20; i++)
-		*(ptr + i) = i;
-	for (int i = 0; i < 20; i++)
-		printf("%d ", *(ptr + i));
+		(s->arr[i]) = i;
+	for (int i = 0; i < 10; i++)
+		printf("%d ", s->arr[i]);
+	printf("%d\n", s->num);
+	free(s);
+	s = NULL;
 	return 0;
+
 }
+
+//方法二
+//typedef struct ST
+//{
+//	int n;
+//	int* arr;
+//}st;
+//int main()
+//{
+//	st* s = (st*)malloc(sizeof(st));
+//	//这里我们是对结构体里面的指针进行动态扩容
+//	s->arr = (int*)malloc(sizeof(int) * 10);
+//	//我们这里的最后进行动态内存的释放要进行两边
+//	free(s->arr);
+//	s->arr = NULL;
+//	free(s);
+//	s = NULL;
+//	return 0;
+//}
