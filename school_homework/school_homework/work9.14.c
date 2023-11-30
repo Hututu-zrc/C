@@ -1297,35 +1297,33 @@
 
 //C_language_work_8
 //问题 A: 是否标识符
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
-int main()
-{
-	char arr[100];
-	again:
-	while (gets(arr) != NULL)
-	{
-		if (!isalpha(arr[0])&&arr[0]!='_')
-		{
-			puts("NO");
-			goto again;
-			break;
-		}
-		for (int i = 1; arr[i] != '\0'; i++)
-		{
-			if (!isdigit(arr[i]) && !isalpha(arr[i]) && arr[i]!= '_')
-			{
-				puts("NO");
-				break;
-				goto again;
-			}
-		}
-		puts("YES");
-	}
-	return 0;
-}
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <string.h>
+//#include <ctype.h>
+//int main()
+//{
+//	char arr[100];
+//	again:
+//	while (gets(arr) != NULL)
+//	{
+//		if (!isalpha(arr[0])&&arr[0]!='_')
+//		{
+//			puts("NO");
+//			goto again;
+//		}
+//		for (int i = 1; arr[i] != '\0'; i++)
+//		{
+//			if (!isdigit(arr[i]) && !isalpha(arr[i]) && arr[i]!= '_')
+//			{
+//				puts("NO");
+//				goto again;
+//			}
+//		}
+//		puts("YES");
+//	}
+//	return 0;
+//}
 //#include <stdio.h>
 //#include <string.h>        
 //int main()
@@ -1654,3 +1652,51 @@ int main()
 //			puts("YES");
 //	}
 //}
+
+
+//#include <stdio.h>
+//#include <string.h>
+//
+//int isMatch(char* pattern, char* str) {
+//    if (*pattern == '\0' && *str == '\0') {
+//        return 1;
+//    }
+//
+//    if (*pattern == '*') {
+//        int i;
+//        for (i = 0; i <= strlen(str); i++) {
+//            if (isMatch(pattern + 1, str + i)) {
+//                return 1;
+//            }
+//        }
+//    }
+//
+//    if (*pattern == '?' || *pattern == *str) {
+//        return isMatch(pattern + 1, str + 1);
+//    }
+//
+//    return 0;
+//}
+//
+//int main() {
+//    char pattern[100];
+//    scanf("%s", pattern);
+//
+//    char str[100];
+//    while (scanf("%s", str) != EOF) {
+//        if (isMatch(pattern, str)) {
+//            printf("YES\n");
+//        }
+//        else {
+//            printf("NO\n");
+//        }
+//    }
+//
+//    return 0;
+//}
+
+int main()
+{
+	
+	return 0;
+}
