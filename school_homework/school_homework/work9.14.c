@@ -1,14 +1,14 @@
-#define _CRT_SECURE_NO_WARNINGS
+ï»¿#define _CRT_SECURE_NO_WARNINGS
 #include"Head.h"
-//CÓïÑÔµÚÒ»´Î×÷Òµ
-////A	Êä³öÏÂÃæµÄ×Ö·û´®-2
+//Cè¯­è¨€ç¬¬ä¸€æ¬¡ä½œä¸š
+////A	è¾“å‡ºä¸‹é¢çš„å­—ç¬¦ä¸²-2
 //int main()
 //{
 //	printf("I love \\t this \\bgame \\n !\\n");
 //	return 0;
 //}
 // 
-////B	Êä³öÒ»¸öĞ¡ÊıµÄÌì»¨°åºÍµØ°å
+////B	è¾“å‡ºä¸€ä¸ªå°æ•°çš„å¤©èŠ±æ¿å’Œåœ°æ¿
 //int main()
 //{
 //	double a = 0;
@@ -18,7 +18,7 @@
 //	return 0;
 //}
 
-////ÎÊÌâ C: Çóa/b ²»±£ÁôĞ¡Êı
+////é—®é¢˜ C: æ±‚a/b ä¸ä¿ç•™å°æ•°
 //int main()
 //{
 //	int a = 0;
@@ -27,7 +27,7 @@
 //	printf("%d\n", a / b);
 //}
 
-////ÎÊÌâ D: ¶ÁÈëÒ»¸ö´óĞ´×ÖÄ¸£¬Êä³ö¶ÔÓ¦µÄĞ¡Ğ´×ÖÄ¸
+////é—®é¢˜ D: è¯»å…¥ä¸€ä¸ªå¤§å†™å­—æ¯ï¼Œè¾“å‡ºå¯¹åº”çš„å°å†™å­—æ¯
 //int main()
 //{
 //	char a = { 0 };
@@ -36,7 +36,7 @@
 //	return 0;
 //}
 // 
-////ÎÊÌâ E : ÊäÈëÁ½¸öÕûÊı£¬ÇóËûÃÇÏà³ıµÄÓàÊı
+////é—®é¢˜ E : è¾“å…¥ä¸¤ä¸ªæ•´æ•°ï¼Œæ±‚ä»–ä»¬ç›¸é™¤çš„ä½™æ•°
 //int main()
 //{
 //	int a = 0;
@@ -46,8 +46,8 @@
 //	return 0;
 //}
 
-////ÎÊÌâ F: NÔÂºóÊÇ¼¸ÔÂ
-// ¿ìËÙ°æ
+////é—®é¢˜ F: Næœˆåæ˜¯å‡ æœˆ
+// å¿«é€Ÿç‰ˆ
 //int mian()
 //{
 //	int n = 0;
@@ -80,9 +80,9 @@
 //	return 0;
 //}
 
-//CÓïÑÔµÚ¶ş´Î×÷Òµ
+//Cè¯­è¨€ç¬¬äºŒæ¬¡ä½œä¸š
 
-////ÎÊÌâ A: ÊäÈëÒ»¸ö×Ö·û£¬ÅĞ¶ÏÊÇ·ñ°¢À­²®Êı×Ö
+////é—®é¢˜ A: è¾“å…¥ä¸€ä¸ªå­—ç¬¦ï¼Œåˆ¤æ–­æ˜¯å¦é˜¿æ‹‰ä¼¯æ•°å­—
 //int main()
 //{
 //	char ch = { 0 };
@@ -96,7 +96,7 @@
 //		printf("NO\n");
 //	}
 //}
-//ÎÊÌâ B: ±àĞ´³ÌĞò£¬ÊäÈëx£¬Êä³öy
+//é—®é¢˜ B: ç¼–å†™ç¨‹åºï¼Œè¾“å…¥xï¼Œè¾“å‡ºy
 //
 //int main()
 //{
@@ -113,7 +113,7 @@
 //	
 //	return 0;
 //}
-////ÎÊÌâ C: Êä³ö×î´óµÄÊı¡£
+////é—®é¢˜ C: è¾“å‡ºæœ€å¤§çš„æ•°ã€‚
 //int main()
 //{
 //	int a, b, c;
@@ -123,7 +123,7 @@
 //	printf("%d\n", ret);
 //	return 0;
 //}
-//ÎÊÌâ D: ÊÇ·ñÈòÄê.
+//é—®é¢˜ D: æ˜¯å¦é—°å¹´.
 //int main()
 //{
 //	int year;
@@ -138,35 +138,35 @@
 //	}
 //	return 0;
 //}
-//ÎÊÌâ E: ÈËÃñ±Ò´óĞ´-1
+//é—®é¢˜ E: äººæ°‘å¸å¤§å†™-1
 //int main()
 //{
 //	int N = 0;
 //	scanf("%d", &N);
-//	char arr[10][5] = { "Áã","Ò¼","·¡","Èş","ËÁ","Îé","Â½","Æâ","°Æ","¾Á" };
-//	char arr1[4][5] = {"Ê°","°Û","Õû","Ôª"};
+//	char arr[10][5] = { "é›¶","å£¹","è´°","å","è‚†","ä¼","é™†","æŸ’","æŒ","ç–" };
+//	char arr1[4][5] = {"æ‹¾","ä½°","æ•´","å…ƒ"};
 //	if (N < 10 && N>=0)
 //	{
-//		printf("ÈËÃñ±Ò£º%s%s%s\n", arr[N],arr1[3],arr1[2]);
+//		printf("äººæ°‘å¸ï¼š%s%s%s\n", arr[N],arr1[3],arr1[2]);
 //	}
 //	else if (N == 10)
 //	{
-//		printf("ÈËÃñ±Ò£º%s%s%s\n", arr1[0], arr1[3], arr1[2]);
+//		printf("äººæ°‘å¸ï¼š%s%s%s\n", arr1[0], arr1[3], arr1[2]);
 //	}
 //	else if (N % 10 == 0)
 //	{
-//		printf("ÈËÃñ±Ò£º%s%s%s%s\n", arr[N / 10], arr1[0], arr1[3], arr1[2]);
+//		printf("äººæ°‘å¸ï¼š%s%s%s%s\n", arr[N / 10], arr1[0], arr1[3], arr1[2]);
 //	}
 //	
 //	else if (N < 100 && N > 10 && N%10!=0)
 //	{
-//		printf("ÈËÃñ±Ò£º%s%s%s%s%s\n",arr[N/10],arr1[0],arr[N%10],arr1[3],arr1[2]);
+//		printf("äººæ°‘å¸ï¼š%s%s%s%s%s\n",arr[N/10],arr1[0],arr[N%10],arr1[3],arr1[2]);
 //	}
 //	
 //	return 0;
 //}
 // 
-// ////ÎÊÌâF£ºÈÕÆÚµÄ´óĞ¡
+// ////é—®é¢˜Fï¼šæ—¥æœŸçš„å¤§å°
 //#include <stdio.h>
 //int main()
 //{
@@ -206,12 +206,12 @@
 //    }
 //    return 0;
 //}
-// ÎÊÌâ G: ÈËÃñ±ÒµÄ´óĞ´
+// é—®é¢˜ G: äººæ°‘å¸çš„å¤§å†™
 //int main()
 //{
 //	int num = 0;
-//	char arr1[10][5] = { "Áã","Ò¼","·¡","Èş","ËÁ","Îé","Â½","Æâ","°Æ","¾Á" };
-//	char arr2[5][5] = {"Ê°","°Û","Çª","Õû","Ôª"};
+//	char arr1[10][5] = { "é›¶","å£¹","è´°","å","è‚†","ä¼","é™†","æŸ’","æŒ","ç–" };
+//	char arr2[5][5] = {"æ‹¾","ä½°","ä»Ÿ","æ•´","å…ƒ"};
 //	while (scanf("%d", &num) != EOF)
 //	{
 //		if (num % 100 == 0)
@@ -234,7 +234,7 @@
 //	return 0;
 //}
 //
-////ÎÊÌâH£º	2019Äê1ÔÂ1ÈÕÊÇĞÇÆÚ¶ş£¬2019ÄêxÔÂyÈÕÊÇĞÇÆÚ¼¸
+////é—®é¢˜Hï¼š	2019å¹´1æœˆ1æ—¥æ˜¯æ˜ŸæœŸäºŒï¼Œ2019å¹´xæœˆyæ—¥æ˜¯æ˜ŸæœŸå‡ 
 //int main()
 //{
 //	int arr[] = { 0,31,28,31,30,31,30,31,31,30,31,30,31 };
@@ -280,15 +280,15 @@
 //{
 //	int  ten, one;
 //	int N = 0;
-//	const char* D[] = { "","Ò¼","·¡","Èş","ËÁ","Îé","Â½","Æâ","°Æ","¾Á" };
+//	const char* D[] = { "","å£¹","è´°","å","è‚†","ä¼","é™†","æŸ’","æŒ","ç–" };
 //	ten = N / 10;
 //	one = N % 10;
 //	scanf("%d", &N);
 //	if (N % 10 == 0) {
-//		printf("ÈËÃñ±Ò£º%sÊ°ÔªÕû", D[ten]);
+//		printf("äººæ°‘å¸ï¼š%sæ‹¾å…ƒæ•´", D[ten]);
 //	}
 //	else {
-//		printf("ÈËÃñ±Ò£º%sÊ°%sÔªÕû", D[ten], D[one]);
+//		printf("äººæ°‘å¸ï¼š%sæ‹¾%så…ƒæ•´", D[ten], D[one]);
 //	}
 //
 //}
@@ -297,31 +297,31 @@
 //int main() {
 //    int N, ten, one;
 //
-//    // Êı×Ö´óĞ´±í
-//    const char* num[] = { "", "Ò¼", "·¡", "Èş", "ËÁ", "Îé", "Â½", "Æâ", "°Æ", "¾Á" };
+//    // æ•°å­—å¤§å†™è¡¨
+//    const char* num[] = { "", "å£¹", "è´°", "å", "è‚†", "ä¼", "é™†", "æŸ’", "æŒ", "ç–" };
 //    scanf("%d", &N);
 //
-//    ten = N / 10;  // Ê®Î»Êı×Ö
-//    one = N % 10;  // ¸öÎ»Êı×Ö
+//    ten = N / 10;  // åä½æ•°å­—
+//    one = N % 10;  // ä¸ªä½æ•°å­—
 //
-//    printf("ÈËÃñ±Ò£º");
+//    printf("äººæ°‘å¸ï¼š");
 //
-//    if (ten > 0) {  // Ê®Î»Êı×Ö²»Îª0Ê±
-//        printf("%sÊ°", num[ten]);
+//    if (ten > 0) {  // åä½æ•°å­—ä¸ä¸º0æ—¶
+//        printf("%sæ‹¾", num[ten]);
 //    }
 //
-//    if (one == 0) {  // ¸öÎ»Êı×ÖÎª0Ê±
-//        printf("ÔªÕû");
+//    if (one == 0) {  // ä¸ªä½æ•°å­—ä¸º0æ—¶
+//        printf("å…ƒæ•´");
 //    }
 //    else {
-//        printf("%sÔªÕû", num[one]);
+//        printf("%så…ƒæ•´", num[one]);
 //    }
 //
 //    return 0;
 //}
 ///
-//CÓïÑÔµÚÈı´Î×÷Òµ
-//ÎÊÌâ A: Êä³öÒ»¸öÕûÊıµÄÄæÊı
+//Cè¯­è¨€ç¬¬ä¸‰æ¬¡ä½œä¸š
+//é—®é¢˜ A: è¾“å‡ºä¸€ä¸ªæ•´æ•°çš„é€†æ•°
 //int main()
 //{
 //	int n = 0;
@@ -344,7 +344,7 @@
 //	
 //	return 0;
 //}
-//ÎÊÌâ B: 1µÄ¸öÊı
+//é—®é¢˜ B: 1çš„ä¸ªæ•°
 //int main()
 //{
 //	int n = 0;
@@ -367,7 +367,7 @@
 //	}
 //	return 0;
 //}
-//ÎÊÌâ C: 1970Äê1ÔÂ1ÈÕÊÇĞÇÆÚËÄ£¬xÄêyÔÂzÈÕÊÇĞÇÆÚ¼¸
+//é—®é¢˜ C: 1970å¹´1æœˆ1æ—¥æ˜¯æ˜ŸæœŸå››ï¼Œxå¹´yæœˆzæ—¥æ˜¯æ˜ŸæœŸå‡ 
 //#include <stdio.h>
 //int main()
 //{
@@ -404,7 +404,7 @@
 //	//printf("%d", sum);
 //	return 0;
 //}
-//ÎÊÌâ D: ¼ÆËãÕûÊı¸öÊı
+//é—®é¢˜ D: è®¡ç®—æ•´æ•°ä¸ªæ•°
 //#include <stdio.h>
 //int main()
 //{
@@ -439,7 +439,7 @@
 //	}
 //}
 //
-//ÎÊÌâ E: count characters
+//é—®é¢˜ E: count characters
 //int main()
 //{
 //	int n = 0;
@@ -450,7 +450,7 @@
 //	printf("%d\n", n);
 //	return 0;
 //}
-//ÎÊÌâ F: ×î¸´ÔÓµÄÊı
+//é—®é¢˜ F: æœ€å¤æ‚çš„æ•°
 //#include <stdio.h>
 //
 //int main()
@@ -462,14 +462,14 @@
 //		int max, max_num;
 //		for (int i = 0; i < T; i++)
 //		{
-//			scanf("%d", &arr[i]);//¶ÁÈ¡¶à¸öÊı
-//			max = 0;//×î´óµÄÔ¼Êı
-//			max_num = 0;//Ô¼Êı¸öÊı
-//			for (int j = 1; j <= arr[i]; j++)//Ã¿¸öÊı£¬´Ó1µ½arr[i]
+//			scanf("%d", &arr[i]);//è¯»å–å¤šä¸ªæ•°
+//			max = 0;//æœ€å¤§çš„çº¦æ•°
+//			max_num = 0;//çº¦æ•°ä¸ªæ•°
+//			for (int j = 1; j <= arr[i]; j++)//æ¯ä¸ªæ•°ï¼Œä»1åˆ°arr[i]
 //			{
 //				int count = 0;
 //				
-//				//¼ÆËãÔ¼Êı
+//				//è®¡ç®—çº¦æ•°
 //				for (int k = 1; k <= j; k++)
 //				{
 //					if (j % k == 0)
@@ -553,8 +553,8 @@
 //}
 
 
-//2022¼¶CÓïÑÔµÚËÄ´Î×÷Òµ
-//ÎÊÌâ A: ×Ö·û³öÏÖµÄ´ÎÊı
+//2022çº§Cè¯­è¨€ç¬¬å››æ¬¡ä½œä¸š
+//é—®é¢˜ A: å­—ç¬¦å‡ºç°çš„æ¬¡æ•°
 //#include <stdio.h>
 //int main()
 //{
@@ -580,7 +580,7 @@
 //	return 0;
 //}
 // 
-////ÎÊÌâ B : ×Ö·ûÔÚ×Ö·û´®ÖĞ³öÏÖµÄÎ»ÖÃ
+////é—®é¢˜ B : å­—ç¬¦åœ¨å­—ç¬¦ä¸²ä¸­å‡ºç°çš„ä½ç½®
 //int main()
 //{
 //	char arr[101];
@@ -609,7 +609,7 @@
 //	return 0;
 //}
 //
-//ÎÊÌâ C: É¾³ı×Ö·û´®Ä©Î²µÄ0
+//é—®é¢˜ C: åˆ é™¤å­—ç¬¦ä¸²æœ«å°¾çš„0
 //int main()
 //{
 //	char arr[100];
@@ -627,7 +627,7 @@
 //	return 0;
 //}
 //
-//ÎÊÌâ D: É¾³ı×Ö·û´®Ç°ÃæµÄ0
+//é—®é¢˜ D: åˆ é™¤å­—ç¬¦ä¸²å‰é¢çš„0
 //int main()
 //{
 //	char arr[100];
@@ -644,7 +644,7 @@
 //	return 0;
 //}
 //
-//ÎÊÌâ E: ×Ö·û´®µÄ´óĞ¡
+//é—®é¢˜ E: å­—ç¬¦ä¸²çš„å¤§å°
 //#include <stdio.h>
 //int main()
 //{
@@ -675,7 +675,7 @@
 //	return 0;
 //}
 //
-//ÎÊÌâ F : Êı×Ö×Ö·û´®
+//é—®é¢˜ F : æ•°å­—å­—ç¬¦ä¸²
 //#include<string.h>
 //#include <stdio.h>
 //int main()
@@ -699,7 +699,7 @@
 //	return 0;
 //}
 //
-//ÎÊÌâ G: ÊÇ·ñ¿ÉÄÜÊÇÉí·İÖ¤ºÅÂë
+//é—®é¢˜ G: æ˜¯å¦å¯èƒ½æ˜¯èº«ä»½è¯å·ç 
 //#include <stdio.h>
 //#include <string.h>
 //int main()
@@ -734,7 +734,7 @@
 //	return 0;
 //}
 
-//Ä§·½ÕóÎÊÌâ  ÅÜ²»³öÀ´
+//é­”æ–¹é˜µé—®é¢˜  è·‘ä¸å‡ºæ¥
 // 
 //int main()
 //{
@@ -766,7 +766,7 @@
 //	return 0;
 //}
 
-//ÎÊÌâ A: ÆæÊı»¹ÊÇÅ¼Êı
+//é—®é¢˜ A: å¥‡æ•°è¿˜æ˜¯å¶æ•°
 //int Judge(int n)
 //{
 //	if (n % 2 == 0)
@@ -786,7 +786,7 @@
 //	return 0;
 //}
 
-//ÎÊÌâ B: ¶ÁÈëÁ½¸öÕıÕûÊımºÍn£¬¼ÆËãmºÍnµÄ×î´ó¹«Ô¼Êı
+//é—®é¢˜ B: è¯»å…¥ä¸¤ä¸ªæ­£æ•´æ•°må’Œnï¼Œè®¡ç®—må’Œnçš„æœ€å¤§å…¬çº¦æ•°
 //int Max(int n, int m)
 //{
 //	int temp;
@@ -807,7 +807,7 @@
 //}
 
 
-//ÎÊÌâ C: ÊÇ·ñËØÊı¡£(15·Ö)4
+//é—®é¢˜ C: æ˜¯å¦ç´ æ•°ã€‚(15åˆ†)4
 //#include <stdio.h>
 //#include <math.h>
 //void Prime(int n)
@@ -833,7 +833,7 @@
 //	return 0;
 //}
 
-//ÎÊÌâ D: ÍêÊı
+//é—®é¢˜ D: å®Œæ•°
 //void Sum(int n)
 //{
 //	int sum = 0;
@@ -857,7 +857,7 @@
 //	return;
 //}
 
-//ÎÊÌâ E : ÏàÁÚµÄËØÊı
+//é—®é¢˜ E : ç›¸é‚»çš„ç´ æ•°
 //int Prime(int n)
 //{
 //	int signal = 0;
@@ -899,7 +899,7 @@
 //}
 
 
-//¼Æ¿Æ 099 Ì´½­ºÆ
+//è®¡ç§‘ 099 æª€æ±Ÿæµ©
 //#include<stdio.h>
 //int A(int x)
 //{
@@ -962,7 +962,7 @@
 //	}
 //}
 
-//ÎÊÌâ A: Êä³öÒ»¸öÕûÊıµÄÄæÊı
+//é—®é¢˜ A: è¾“å‡ºä¸€ä¸ªæ•´æ•°çš„é€†æ•°
 //void Inverse(int input)
 //{
 //	while (input % 10 == 0)
@@ -981,7 +981,7 @@
 //	return 0;
 //}
 
-//ÎÊÌâ B: Prime Number
+//é—®é¢˜ B: Prime Number
 //int Prime(int n)
 //{
 //	int signal = 1;
@@ -1019,7 +1019,7 @@
 //	return 0;
 //}
 
-//ÎÊÌâ C: 1µÄ¸öÊı
+//é—®é¢˜ C: 1çš„ä¸ªæ•°
 //int Count(int n)
 //{
 //	int count = 0;
@@ -1046,7 +1046,7 @@
 //	return 0;
 //}
 
-//ÎÊÌâ D: ÇóºÍ-n
+//é—®é¢˜ D: æ±‚å’Œ-n
 //int Sum(int n)
 //{
 //	int sum = 0;
@@ -1075,7 +1075,7 @@
 //	return 0;
 //}
 
-//ÎÊÌâ E: 10½øÖÆ×ª3½øÖÆ
+//é—®é¢˜ E: 10è¿›åˆ¶è½¬3è¿›åˆ¶
 //void Scale(int n)
 //{
 //	if (n < 3)
@@ -1098,7 +1098,7 @@
 //}
 
 
-//ÎÊÌâ A: Êä³öÖĞ¼äµÄÒ»¸öÊı
+//é—®é¢˜ A: è¾“å‡ºä¸­é—´çš„ä¸€ä¸ªæ•°
 //#include <stdio.h>
 //#include<string.h>
 //int main()
@@ -1120,24 +1120,24 @@
 //}
 //
 
-int main()
-{
-	char arr[100] = { 0 };
-	gets(arr);
-	int i = 0, count = 0;
-	while (arr[i] != '\0')
-	{
-		if (isdigit(arr[i]))
-			count++;
-		i++;
-	}
-	printf("%c\n", arr[(count/2)*2]);
-	return 0;
-}
+//int main()
+//{
+//	char arr[100] = { 0 };
+//	gets(arr);
+//	int i = 0, count = 0;
+//	while (arr[i] != '\0')
+//	{
+//		if (isdigit(arr[i]))
+//			count++;
+//		i++;
+//	}
+//	printf("%c\n", arr[(count/2)*2]);
+//	return 0;
+//}
 
 
 
-////ÎÊÌâ B: Êı×éµÄÑ­»·ÒÆ¶¯
+////é—®é¢˜ B: æ•°ç»„çš„å¾ªç¯ç§»åŠ¨
 //#include <stdio.h>
 //int main()
 //{
@@ -1153,7 +1153,7 @@ int main()
 //	return 0;
 //}
 //
-////ÎÊÌâ C: ¸çµÂ°ÍºÕ²ÂÏë
+////é—®é¢˜ C: å“¥å¾·å·´èµ«çŒœæƒ³
 //int prime(int n)
 //{
 //	int signal = 0;
@@ -1212,19 +1212,19 @@ int main()
 //	return 0;
 //}
 //
-////ÎÊÌâ D : ³öÏÖµÄ´ÎÊı
+////é—®é¢˜ D : å‡ºç°çš„æ¬¡æ•°
 //#include <stdio.h>
 //int main()
 //{
 //	int n = 0;
-//	while (scanf("%d", &n) != EOF)//Ñ­»·
+//	while (scanf("%d", &n) != EOF)//å¾ªç¯
 //	{
 //		int arr[1000] = { 0 };
 //		for (int x = 0; x < n; x++)
 //		{
-//			scanf("%d", &arr[x]);//¶ÁÈë
+//			scanf("%d", &arr[x]);//è¯»å…¥
 //		}
-//		//ÅÅĞò
+//		//æ’åº
 //		for (int i = 0; i < n - 1; i++)
 //		{
 //			for (int j = 0; j < n - 1 - i; j++)
@@ -1271,7 +1271,7 @@ int main()
 //	return 0;
 //}
 //
-////ÎÊÌâ E: ×î³¤×ÓĞòÁĞ
+////é—®é¢˜ E: æœ€é•¿å­åºåˆ—
 //#include <stdio.h>
 //int main()
 //{
@@ -1291,5 +1291,366 @@ int main()
 //			maxlen = maxlen > count ? maxlen : count;
 //		}
 //		printf("%d\n", maxlen);
+//	}
+//}
+
+
+//C_language_work_8
+//é—®é¢˜ A: æ˜¯å¦æ ‡è¯†ç¬¦
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+int main()
+{
+	char arr[100];
+	again:
+	while (gets(arr) != NULL)
+	{
+		if (!isalpha(arr[0])&&arr[0]!='_')
+		{
+			puts("NO");
+			goto again;
+			break;
+		}
+		for (int i = 1; arr[i] != '\0'; i++)
+		{
+			if (!isdigit(arr[i]) && !isalpha(arr[i]) && arr[i]!= '_')
+			{
+				puts("NO");
+				break;
+				goto again;
+			}
+		}
+		puts("YES");
+	}
+	return 0;
+}
+//#include <stdio.h>
+//#include <string.h>Â Â Â Â Â Â Â  
+//int main()
+//{
+//	char s[1000];
+//	while (scanf("%s", s) != EOF)
+//	{
+//		int flag = 0;
+//		if ((s[0] >= 'a' && s[0] <= 'z') || (s[0] >= 'A' && s[0] <= 'Z') || s[0] == '_')
+//		{
+//			flag = 2;
+//			for (int i = 1; i < strlen(s); i++)
+//			{
+//				if (s[i] != '_' && ((s[i] > 'z' || s[i] < 'a') && (s[0] < 'A' || s[0] > 'Z') &&
+//					(s[i] < '0' || s[i] > '9')))
+//				{
+//					flag = 1;
+//					break;
+//				}
+//			}
+//		}
+//		if (flag == 0 || flag == 1)
+//		{
+//			printf("NO\n");
+//		}
+//		else if (flag == 2)
+//		{
+//			printf("YES\n");
+//		}
+//	}
+//	return 0;
+//}
+
+
+//é—®é¢˜ B : Reverse your input string
+//#include <stdio.h>
+//int main()
+//{
+//	char ch[1000] = { 0 };
+//	while (scanf("%s", ch) != EOF)
+//	{
+//		int sz = strlen(ch);
+//		for (int i = 0; i < sz - 1; i++)
+//		{
+//			for (int j = 0; j < sz - 1 - i; j++)
+//			{
+//				char tmp = ch[j];
+//				ch[j] = ch[j + 1];
+//				ch[j + 1] = tmp;
+//			}
+//		}
+//		printf("%s\n", ch);
+//		for (int i = 0; i < sz; i++)
+//		{
+//			ch[i] = '\0';
+//		}
+//	}
+//
+//	return 0;
+//}
+
+
+//é—®é¢˜ C: å®‰å…¨çš„å¯†ç 
+//#include <stdio.h>
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int arr[4] = { 0 };
+//	for (int i = 0; i < n; i++)
+//	{
+//		char ch[100] = { 0 };
+//		scanf("%s", ch);
+//		char sh[] = { '!','~','@','#','$','%','^' };
+//		int sz = strlen(ch);
+//		for (int j = 0; j < sz; j++)
+//		{
+//			if (ch[j] > 'A' && ch[j] < 'Z')
+//			{
+//				arr[0] = 1;
+//			}
+//			else if (ch[j] > 'a' && ch[j] < 'z')
+//			{
+//				arr[1] = 1;
+//			}
+//			else if (ch[j] > '0' && ch[j] < '9')
+//			{
+//				arr[2] = 1;
+//			}
+//			else
+//			{
+//				for (int x = 0; x < 7; x++)
+//				{
+//					if (ch[j] == sh[x])
+//					{
+//						arr[3] = 1;
+//					}
+//				}
+//			}
+//		}
+//		int sum = 0;
+//		for (int i = 0; i < 4; i++)
+//		{
+//			sum += arr[i];
+//			arr[i] = 0;
+//		}
+//		if (sum < 3 || sz >= 16 || sz < 8)
+//		{
+//
+//			printf("NO\n");
+//		}
+//		else if (sum >= 3 && sz < 16 && sz >= 8)
+//		{
+//			printf("YES\n");
+//		}
+//
+//	}
+//}
+
+//é—®é¢˜ D: IPåœ°å€çš„åˆæ³•æ€§æ£€æŸ¥ã€‚
+//#include <stdio.h>
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	for (int i = 0; i < n; i++)
+//	{
+//		int a, b, c, d;
+//		char ch[10] = { 0 };
+//		if ((scanf("%d.%d.%d.%d", &a, &b, &c, &d)) != 4)
+//		{
+//			printf("NO\n");
+//		}
+//
+//		else
+//		{
+//			gets(ch);
+//			if ((a >= 0 && a <= 255) && (b >= 0 && b <= 255)
+//				&& (c >= 0 && c <= 255) && (d >= 0 && d <= 255))
+//			{
+//				int signal = 0;
+//				for (int j = 0; j < 10; j++)
+//				{
+//					if (ch[j] != '\0')
+//					{
+//						signal = 1;
+//					}
+//				}
+//				if (signal == 0)
+//				{
+//					printf("YES\n");
+//				}
+//				else
+//				{
+//					printf("NO\n");
+//				}
+//			}
+//			else
+//			{
+//				printf("NO\n");
+//			}
+//		}
+//	}
+//	return 0;
+//}
+//
+//
+
+//é—®é¢˜ E: æœ€é•¿å­å­—ç¬¦ä¸²
+//#include <string.h>
+//#include <stdio.h>
+//int main()
+//{
+//	char arr1[100];
+//	char arr2[100];
+//	while (gets(arr1) != NULL && gets(arr2) != NULL)
+//	{
+//		int i=0, j=0,count=0,maxlen=0,signal=0;
+//		while (arr2[j] != '\0')
+//		{
+//			if (arr1[i] == '\0')
+//			{
+//				i = 0;
+//				j++;
+//			}
+//			if (arr1[i] != arr2[j])
+//			{
+//				
+//				if (maxlen < count)
+//				{
+//					maxlen = count;
+//					count = 0;
+//					signal = i-maxlen;
+//				}
+//				i++;
+//			}
+//			else
+//			{
+//				count++; i++; j++;
+//			}
+//		}
+//		if (maxlen < count)
+//		{
+//			maxlen = count;
+//			signal = i - maxlen;
+//		}
+//		for (int k = 0; k < maxlen; k++)
+//			printf("%c", arr1[signal + k]);
+//		printf("\n");
+//	}
+//
+//	return 0;
+//}
+
+
+//é—®é¢˜ F: é€šé…ç¬¦
+//#include <stdio.h>
+//#include <string.h>
+//int main()
+//{
+//	char arr1[100];
+//	char arr2[100];
+//	char temp[100] = { 0 };
+//	gets(arr1);
+//	int counts = 0, countn = 0;
+//	for (int i = 0; arr1[i] != '\0'; i++)
+//	{
+//		if (arr1[i] == '?')
+//			counts++;
+//		else if (arr1[i] != '*')
+//			countn++;
+//	}
+//	while (gets(arr2) != NULL)
+//	{
+//		int sz2 = strlen(arr2);
+//		int i = 0, j = 0;
+//		while (arr2[j] != '\0')
+//		{
+//			if (arr1[i] != arr2[j] || arr1[i]=='*')
+//			{
+//				if (arr1[i] == '?')
+//				{
+//					temp[j] = arr2[j];
+//					i++; j++;
+//				}
+//				else if (arr1[i] == '*')
+//				{
+//					i++;
+//					if (sz2 - countn - counts >= 0)
+//					{
+//						strncpy(temp + j, arr2 + j, (sz2 - countn - counts));
+//						j += sz2 - countn - counts;
+//					}
+//					else
+//						goto loop;
+//					
+//				}
+//			}
+//			else 
+//			{
+//				temp[j] = arr2[j];
+//				i++; j++;
+//			}
+//		}
+//		if (!strcmp(temp, arr2))
+//			puts("YES");
+//		else
+//		{
+//			loop:
+//			puts("NO");
+//		}
+//			
+//	}
+//	return 0;
+//}
+//
+
+//#include <stdio.h>
+//#include <string.h>
+//int main()
+//{
+//	char arr1[100];
+//	gets(arr1);
+//	int count1 = 0;//other
+//	for (int i = 0; arr1[i] != '\0'; i++)
+//	{
+//		if (arr1[i] != '*')
+//			count1++;
+//	}
+//	char arr2[100];
+//	while (scanf("%s", arr2) != EOF)
+//	{
+//		int i = 0, j = 0;
+//		int sz = strlen(arr2);
+//		int signal = 0;
+//		int other = sz - count1;
+//		if (other < 0)
+//			signal = 1;
+//		while (arr2[j] != '\0')
+//		{
+//			if (arr1[i] != arr2[j] || arr1[i]=='*')
+//			{
+//				if (arr1[i] == '?')
+//				{
+//					i++; j++;
+//				}
+//				else if (arr1[i] == '*')
+//				{
+//					i++;
+//					j += other;
+//				}
+//				else
+//				{
+//					signal = 1;
+//					i++; j++;
+//				}
+//			}
+//			else 
+//			{
+//				i++; j++;
+//			}
+//		}
+//		if (signal == 1)
+//			puts("NO");
+//		else
+//			puts("YES");
 //	}
 //}
