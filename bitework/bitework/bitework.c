@@ -1499,31 +1499,31 @@
 
 
 
-
-//关于柔性数组
-//注意柔性数组要放在最后一个
-//方法一
-typedef struct ST
-{
-	int num;
-	int arr[];
-}st;
-int main()
-{
-	int sz1 = sizeof(st);
-	st* s = (st*)malloc(sizeof(st) + sizeof(int) * 10);
-	//柔性数组，前面开辟的是结构体的空间，后面开辟的就是柔性数组的空间
-	s->num = 10;
-	for (int i = 0; i < 10; i++)
-		(s->arr[i]) = i;
-	for (int i = 0; i < 10; i++)
-		printf("%d ", s->arr[i]);
-	printf("%d\n", s->num);
-	free(s);
-	s = NULL;
-	return 0;
-
-}
+//
+////关于柔性数组
+////注意柔性数组要放在最后一个
+////方法一
+//typedef struct ST
+//{
+//	int num;
+//	int arr[];
+//}st;
+//int main()
+//{
+//	int sz1 = sizeof(st);
+//	st* s = (st*)malloc(sizeof(st) + sizeof(int) * 10);
+//	//柔性数组，前面开辟的是结构体的空间，后面开辟的就是柔性数组的空间
+//	s->num = 10;
+//	for (int i = 0; i < 10; i++)
+//		(s->arr[i]) = i;
+//	for (int i = 0; i < 10; i++)
+//		printf("%d ", s->arr[i]);
+//	printf("%d\n", s->num);
+//	free(s);
+//	s = NULL;
+//	return 0;
+//
+//}
 
 //方法二
 //typedef struct ST
@@ -1543,3 +1543,39 @@ int main()
 //	s = NULL;
 //	return 0;
 //}
+
+//关于atoi的复现
+//#include <stdio.h>
+//#include <math.h>
+//#include <stdlib.h>
+//#include <ctype.h>
+//int My_atoi(const char *str)
+//{
+//	int sum = 0;
+//	int count = 0;
+//	for (count = 0; isdigit(*(str + count));)
+//		count++;
+//	while (*str != '\0')
+//	{
+//		if (isdigit(*str))
+//		{
+//			sum += (int)pow(10, count-1) * ((*str)-'0');
+//			count--;
+//		}
+//		else
+//			return sum;
+//		str++;
+//	}
+//	return sum;
+//}
+//int main()
+//{
+//	char arr[100];
+//	fgets(arr, 100, stdin);
+//	int ret1 = My_atoi(arr);
+//	int ret2 = atoi(arr);
+//	printf("%d\n", ret1);
+//	printf("%d\n", ret2);
+//	return 0;
+//}
+
