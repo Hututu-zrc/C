@@ -1741,5 +1741,15 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
+int main()
+{
+	FILE* pf = fopen("D:\\×ÀÃæ\\exercise.txt", "a");
+	assert(pf);
+	char arr[100] = { "132456"};
+	char temp[100] = { 0 };
+	fprintf(pf, "%s", arr);
+	fputs("woaini", pf);
+	fclose(pf);
+	return 0;
+}
  
