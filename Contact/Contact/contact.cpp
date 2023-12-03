@@ -136,3 +136,8 @@ void Sort(Ct& con) //按照名字排序
 	qsort(con.data, con.count, sizeof(PI), compare);
 	printf("排序成功\n");
 }
+
+void ConserveCon(Ct& con)
+{
+
+}

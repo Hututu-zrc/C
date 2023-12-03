@@ -1739,17 +1739,39 @@
 //}
 
 
-#include <stdio.h>
-#include <stdlib.h>
+//#include <stdio.h>
+//#include <stdlib.h>
+//int main()
+//{
+//	FILE* pf = fopen("D:\\桌面\\exercise.txt", "a");
+//	assert(pf);
+//	char arr[100] = { "132456"};
+//	char temp[100] = { 0 };
+//	fprintf(pf, "%s", arr);
+//	fputs("woaini", pf);
+//	fclose(pf);
+//	return 0;
+//}
+// 
+
+typedef struct Stu
+{
+	char name[100];
+	int age;
+	double score;
+}stu;
+
+
 int main()
 {
-	FILE* pf = fopen("D:\\桌面\\exercise.txt", "a");
-	assert(pf);
-	char arr[100] = { "132456"};
-	char temp[100] = { 0 };
-	fprintf(pf, "%s", arr);
-	fputs("woaini", pf);
-	fclose(pf);
+	stu s = { "zhuruncai",20,50.0 };
+	stu temp = { 0 };
+	char buf[100];
+	//sprintf将格式化数据转化为字符串,这里是把结构体s里面的数据存到buf里面去
+	sprintf(buf, "%s %d %lf", s.name, s.age, s.score);
+	puts(buf);
+	//sscanf将字符串转化为格式化数据,将字符串buf,按照格式化分割,存到结构体temp里面
+	sscanf(buf, "%s %d %lf", temp.name, &temp.age, &temp.score);
+	printf("%s %d %.3lf", temp.name, temp.age, temp.score);
 	return 0;
 }
- 

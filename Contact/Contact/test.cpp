@@ -6,6 +6,19 @@ void Del(Ct& con);
 void Search(Ct& con);
 void Modify(Ct& con);
 void Sort(Ct& con);
+void ConserveCon(Ct& con);
+
+enum funtion
+{
+	ADD=1,
+	DEL,
+	SEARCH,
+	MODIFY,
+	SHOW,
+	SORT,
+	EXIT
+
+};
 int main()
 {
 
@@ -19,25 +32,25 @@ int main()
 		scanf("%d", &input);
 		switch (input)
 		{
-		case 1:
+		case ADD:
 			Add(con);
 			break;
-		case 2:
+		case DEL:
 			Del(con);
 			break;
-		case 3:
+		case SEARCH:
 			Search(con);
 			break;
-		case 4:
+		case MODIFY:
 			Modify(con);
 			break;
-		case 5:
+		case SORT:
 			Sort(con);
 			break;
-		case 6:
+		case SHOW:
 			Show(con);
 			break;
-		case 7:
+		case EXIT:
 			printf("�˳�ͨѶ¼\n");
 			exit(0);
 		default:

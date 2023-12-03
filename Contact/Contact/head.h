@@ -22,10 +22,12 @@ typedef struct Contact
 }Ct;
 
 void menu();
-void InitContact(Ct &con);
+void InitContact(Ct& con);
 void Add(Ct &con);
 void Show(Ct& con);
 void Del(Ct& con);
 void Search(Ct& con);
 void Modify(Ct& con);
 void Sort(Ct& con);
+//±£´æÊý¾Ý
+void ConserveCon(Ct & con);
