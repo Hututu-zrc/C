@@ -1764,7 +1764,8 @@ int main()
 	char temp[100] = { 0 };
 	fseek(pf, 2, SEEK_SET);
 	char ch = fgetc(pf);
-	printf("%c\n", ch);	
+	printf("%c\n", ch);
+	fseek(pf, 2, SEEK_CUR);
 	ch = fgetc(pf);
 	printf("%c\n", ch);
 	/*fprintf(pf, "%s", arr);
