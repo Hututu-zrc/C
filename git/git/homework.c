@@ -1754,27 +1754,27 @@
 //}
 // 
 
-#include <stdio.h>
-#include <stdlib.h>
-int main()
-{
-	FILE* pf = fopen("D:\\×ÀÃæ\\exercise.txt", "r");
-	assert(pf);
-	char arr[100] = { "132456"};
-	char temp[100] = { 0 };
-	fseek(pf, 2, SEEK_SET);
-	char ch = fgetc(pf);
-	printf("%c\n", ch);
-	fseek(pf, 2, SEEK_CUR);
-	ch = fgetc(pf);
-	printf("%c\n", ch);
-	/*fprintf(pf, "%s", arr);
-	fputs("woaini", pf);*/
-	fclose(pf);
-	pf = NULL;
-	return 0;
-}
- 
+//#include <stdio.h>
+//#include <stdlib.h>
+//int main()
+//{
+//	FILE* pf = fopen("D:\\×ÀÃæ\\exercise.txt", "r");
+//	assert(pf);
+//	char arr[100] = { "132456"};
+//	char temp[100] = { 0 };
+//	fseek(pf, 2, SEEK_SET);
+//	char ch = fgetc(pf);
+//	printf("%c\n", ch);
+//	fseek(pf, 2, SEEK_CUR);
+//	ch = fgetc(pf);
+//	printf("%c\n", ch);
+//	/*fprintf(pf, "%s", arr);
+//	fputs("woaini", pf);*/
+//	fclose(pf);
+//	pf = NULL;
+//	return 0;
+//}
+// 
 
 //typedef struct Stu
 //{
@@ -1797,3 +1797,27 @@ int main()
 //	printf("%s %d %.3lf", temp.name, temp.age, temp.score);
 //	return 0;
 //}
+
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+	FILE* pf = fopen("D:\\×ÀÃæ\\exercise.txt", "r");
+	assert(pf);
+	char arr[100] = { "132456"};
+	char temp[100] = { 0 };
+	fseek(pf, 2, SEEK_SET);
+	char ch = fgetc(pf);
+	printf("%c\n", ch);
+	printf("%d\n", ftell(pf));
+	fseek(pf, 2, SEEK_CUR);
+	ch = fgetc(pf);
+	printf("%c\n", ch);
+	printf("%d\n", ftell(pf));
+	/*fprintf(pf, "%s", arr);
+	fputs("woaini", pf);*/
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
+ 
