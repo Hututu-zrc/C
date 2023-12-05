@@ -1798,26 +1798,59 @@
 //	return 0;
 //}
 
+//#include <stdio.h>
+//#include <stdlib.h>
+//int main()
+//{
+//	FILE* pf = fopen("D:\\桌面\\exercise.txt", "r");
+//	assert(pf);
+//	char arr[100] = { "132456"};
+//	char temp[100] = { 0 };
+//	fseek(pf, 2, SEEK_SET);
+//	char ch = fgetc(pf);
+//	printf("%c\n", ch);
+//	printf("%d\n", ftell(pf));
+//	fseek(pf, 2, SEEK_CUR);
+//	ch = fgetc(pf);
+//	printf("%c\n", ch);
+//	printf("%d\n", ftell(pf));
+//	/*fprintf(pf, "%s", arr);
+//	fputs("woaini", pf);*/
+//	fclose(pf);
+//	pf = NULL;
+//	return 0;
+//}
+// 
+
+
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
-int main()
+int main(void)
 {
-	FILE* pf = fopen("D:\\桌面\\exercise.txt", "r");
-	assert(pf);
-	char arr[100] = { "132456"};
-	char temp[100] = { 0 };
-	fseek(pf, 2, SEEK_SET);
-	char ch = fgetc(pf);
-	printf("%c\n", ch);
-	printf("%d\n", ftell(pf));
-	fseek(pf, 2, SEEK_CUR);
-	ch = fgetc(pf);
-	printf("%c\n", ch);
-	printf("%d\n", ftell(pf));
-	/*fprintf(pf, "%s", arr);
-	fputs("woaini", pf);*/
-	fclose(pf);
-	pf = NULL;
-	return 0;
+	int c; // 注意：int，非char，要求处理EOF
+	FILE* fp = fopen("D:\\桌面\\test.txt", "r");
+	if (!fp) {
+		perror("File opening failed");
+		return EXIT_FAILURE;
+	}
+	//fgetc 当读取失败的时候或者遇到文件结束的时候，都会返回EOF
+	while ((c = fgetc(fp)) != EOF) // 标准C I/O读取文件循环
+	{
+		putchar(c);
+	}
+	if (ferror(fp))
+		puts("I/O error when reading");
+	else if (feof(fp))
+		puts("End of file reached successfully");
+	fclose(fp);
+	fp = NULL;
 }
- 
+
+
+
+
+
+

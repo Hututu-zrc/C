@@ -22,6 +22,7 @@ void InitContact(Ct& con)//¶¯Ì¬¿ª±Ù
 }
 void LoadContact(Ct& con)
 {
+	assert(&con);
 
 }
 void Add(Ct &con)

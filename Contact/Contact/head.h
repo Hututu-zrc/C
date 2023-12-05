@@ -5,6 +5,8 @@
 #include<stdlib.h>
 #include<assert.h>
 #include<math.h>
+#include<time.h>
+#include <Windows.h>
 #define MAX 100
 #define Extend 25
 typedef struct PeoInfo
