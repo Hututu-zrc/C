@@ -1,26 +1,43 @@
 #include "head.h"
 void menu()
 {
-	printf("\n******** 1.Add       2.Del    ********\n");
+	printf("\n******** 1.Add     2.Del    ********\n");
 	printf("******** 3.Search    4.Modify ********\n");
 	printf("******** 5.Sort      6.Show   ********\n");
 	printf("******** 7.exit               ********\n");
 }
 
-void InitContact(Ct& con)
+void InitContact(Ct& con)//动态开辟
 {
 	assert(&con);
 	con.count = 0;
-	memset(con.data, 0, sizeof(con.data));
+	con.data = (PI*)calloc(MAX,sizeof(PI));
+	if (con.data == NULL)
+	{
+		printf("InitContact:%s\n", strerror(errno));
+		exit(0);
+	}
+	con.capacity = MAX;
+	LoadContact(con);
 }
+void LoadContact(Ct& con)
+{
 
+}
 void Add(Ct &con)
 {
 	assert(&con);
 	if (con.count == MAX)
 	{
-		printf("通讯录已满，无法添加！！！\n");
-		return;
+		printf("通讯录已满，扩容中!!!\n");
+		con.data=ExtendCapacity(con);
+		printf("请稍后：");
+		for (int i = 0; i < 10; i++)
+		{
+			printf("*");
+			Sleep(0.01);
+		}
+		printf("\n扩容成功!!!\n");
 	}
 	printf("请输入你要添加人的姓名：");
 	scanf("%s", con.data[con.count].name);
@@ -137,7 +154,36 @@ void Sort(Ct& con) //按照名字排序
 	printf("排序成功\n");
 }
 
-void ConserveCon(Ct& con)
+void ConserveCon( Ct& con)
 {
+	assert(&con);
+	//打开文件
+	FILE* pf = fopen("D:\\桌面\\Correspondence.txt", "wb");
+	if (pf == NULL)
+	{
+		perror("ConserveCon");
+		return;
+	}
+	//写入文件--二进制文件
+	for (int i = 0; i < con.count; i++)
+	{
+		fwrite(con.data + i, sizeof(PI), 1, pf);
+	}
+	//关闭文件
+	fclose(pf);
+	pf = NULL;
+}
 
+PI* ExtendCapacity(Ct& con)
+{
+	assert(&con);
+	PI* temp;
+	temp = (PI*)realloc(con.data, sizeof(PI) * (con.capacity + Extend));
+	if (temp == NULL)
+	{
+		printf("扩容失败!!!\n");
+		exit(0);
+	}
+	con.capacity += Extend;
+	return temp;
 }

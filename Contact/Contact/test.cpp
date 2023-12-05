@@ -5,7 +5,7 @@ void Add(Ct& con);
 void Del(Ct& con);
 void Search(Ct& con);
 void Modify(Ct& con);
-void Sort(Ct& con);
+void Sort(Ct &con);
 void ConserveCon(Ct& con);
 
 enum funtion
@@ -14,8 +14,8 @@ enum funtion
 	DEL,
 	SEARCH,
 	MODIFY,
-	SHOW,
 	SORT,
+	SHOW,
 	EXIT
 
 };
@@ -51,6 +51,7 @@ int main()
 			Show(con);
 			break;
 		case EXIT:
+			ConserveCon(con);
 			printf("�˳�ͨѶ¼\n");
 			exit(0);
 		default:

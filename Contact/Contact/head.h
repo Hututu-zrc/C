@@ -6,6 +6,7 @@
 #include<assert.h>
 #include<math.h>
 #define MAX 100
+#define Extend 25
 typedef struct PeoInfo
 {
 	char name[20];
@@ -17,8 +18,9 @@ typedef struct PeoInfo
 
 typedef struct Contact
 {
-	PI data[MAX];
-	int count;
+	PI *data;
+	int count;//记录有多少个联系人
+	int capacity;//记录通讯录的容量有多少个
 }Ct;
 
 void menu();
@@ -31,3 +33,5 @@ void Modify(Ct& con);
 void Sort(Ct& con);
 //保存数据
 void ConserveCon(Ct & con);
+void LoadContact(Ct& con);
+PI* ExtendCapacity(Ct &con);
