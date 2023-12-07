@@ -23,7 +23,24 @@ void InitContact(Ct& con)//¶¯Ì¬¿ª±Ù
 void LoadContact(Ct& con)
 {
 	assert(&con);
-
+	FILE* pfread = fopen("D:\\×ÀÃæ\\Correspondence.txt", "rb");
+	if ( pfread == NULL)
+	{
+		perror("LoadContact");
+		exit(0);
+	}
+	PI tmp = { 0 };
+	while (fread(&tmp, sizeof(PI), 1, pfread) == 1)
+	{
+		if (con.count == con.capacity)
+			ExtendCapacity(con);
+		con.data[con.count] = tmp;
+		con.count++;
+	}
+	
+	
+	fclose(pfread);
+	pfread = NULL;
 }
 void Add(Ct &con)
 {

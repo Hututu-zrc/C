@@ -7,7 +7,7 @@
 #include<math.h>
 #include<time.h>
 #include <Windows.h>
-#define MAX 100
+#define MAX 3
 #define Extend 25
 typedef struct PeoInfo
 {
@@ -35,5 +35,7 @@ void Modify(Ct& con);
 void Sort(Ct& con);
 //保存数据
 void ConserveCon(Ct & con);
+//上传数据
 void LoadContact(Ct& con);
+//扩容
 PI* ExtendCapacity(Ct &con);
