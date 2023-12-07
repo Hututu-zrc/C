@@ -1579,3 +1579,21 @@
 //	return 0;
 //}
 
+
+
+int main()
+{
+	int arr[2][2] = { 1,2,3,4 };
+	printf("%p\n", &arr[0][0]);
+	printf("%p\n", &arr[0][1]);
+	printf("%p\n", &arr[1][0]);
+	printf("%p\n", &arr[1][1]);
+	printf("%p\n", &arr[0]);
+	printf("%p\n", &(arr+1)[0]);
+	printf("%p\n", &arr[1][0]);
+	//printf("%p\n", &(arr+2)[0]);
+	printf("%d\n", arr[0][0]);
+
+	return 0;
+}
+

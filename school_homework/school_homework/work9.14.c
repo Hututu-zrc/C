@@ -1695,8 +1695,330 @@
 //    return 0;
 //}
 
+//int main()
+//{
+//	printf("NO");
+//	return 0;
+//}
+
+////C语言上级作业第九次
+//问题 A: Write a program that prints its input one word per line.
+//#include <stdio.h>
+//int main()
+//{
+//	char ch;
+//	char prechar;
+//	while ((ch = getchar()) != EOF)
+//	{
+//		if (ch != ' ' && ch != '\t' && ch != '\n')
+//		{
+//			putchar(ch);
+//		}
+//		else if (prechar != '\t' && prechar != '\n' && prechar != ' ')
+//		{
+//			putchar('\n');
+//		}
+//		prechar = ch;
+//	}
+//	return 0;
+//}
+
+
+//问题 B: 合法的日期
+//#include <stdio.h>
+//#include <string.h>
+//#include <stdlib.h>
+//int main()
+//{
+//	char arr[20];
+//	{
+//	again:
+//		while ((gets(arr)) != NULL)
+//		{
+//			int ch[13] = { 0,31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+//			if (arr[4] != '-' || arr[7] != '-')
+//			{
+//				puts("NO"); goto again;
+//			}
+//			char* token = strtok(arr, "-"); char* temp;
+//			if (strspn(token, "0123456789") != 4 || atoi(token) < 0 || atoi(token) > 9999)
+//			{
+//				puts("NO"); goto again;
+//			}
+//			ch[2] = 28 + (atoi(token) % 4 == 0 && atoi(token) % 100 != 0 || atoi(token) % 400 == 0);
+//			token = temp = strtok(NULL, "-");
+//			if (strspn(token, "0123456789") != 2 || atoi(token) < 0 || atoi(token) > 12)
+//			{
+//				puts("NO"); goto again;
+//			}
+//			token = strtok(NULL, "-");
+//			if (strspn(token, "0123456789") != 2 || atoi(token) > ch[atoi(temp)] || atoi(token) < 0)
+//			{
+//				puts("NO"); goto again;
+//			}
+//			puts("YES");
+//		}
+//	}
+//	return 0;
+//}
+
+//
+//#include <stdio.h>
+//#include <string.h>
+//#include <ctype.h>
+//int main()
+//{
+//	char arr[20];
+//	again:
+//	while (gets(arr) != NULL)
+//	{
+//		int ch[13] = { 0,31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+//		if (arr[4] != '-' || arr[7] != '-')
+//		{
+//			puts("NO");
+//			goto again;
+//		}
+//		for (int i = 0; arr[i] != '\0'; i++)
+//		{
+//			if (i != 4 && i != 7)
+//			{
+//				if (isdigit(arr[i]) == 0)
+//				{
+//					puts("NO");
+//					goto again;
+//				}
+//			}
+//		}
+//		char* temp = strtok(arr, "-");
+//		int year = atoi(temp);
+//		temp = strtok(NULL, "-");
+//		int month = atoi(temp);
+//		int day = (arr[8]-'0') * 10 + (arr[9]-'0');
+//		temp = NULL;
+//		if (!(year >= 0 &&  year <= 9999))
+//		{
+//			puts("NO");
+//			goto again;
+//		}
+//		else if (!(month >= 1 && month <= 12))
+//		{
+//			puts("NO");
+//			goto again;
+//		}
+//		else
+//		{
+//			ch[2] += (year % 4 == 0 && year % 100 != 0 || year % 400 == 0);
+//			if (!(day >= 1 && day <= ch[month]))
+//			{
+//				puts("NO");
+//				goto again;
+//			}
+//		}
+//		puts("YES");
+//	}
+//	return 0;
+//}
+
+
+//问题 C: 单词的缩写
+//#include <stdio.h>
+//int main()
+//{
+//	char arr[100];
+//	while ((gets(arr)) != NULL)
+//	{
+//		char ch[7] = { 'a','e','i','o','u','y' };
+//		putchar(arr[0]);
+//		for (int i = 1; arr[i] != '\0'; i++)
+//		{
+//			int signal = 0;
+//			for (int j = 0; j < 6; j++)
+//			{
+//				if (arr[i] == ch[j])
+//				{
+//					signal = 1;
+//					break;
+//				}
+//			}
+//			if (signal != 1)
+//			{
+//				putchar(arr[i]);
+//			}
+//		}
+//		putchar('\n');
+//	}
+//	return 0;
+//}
+
+
+////问题 D: 输出< >间的信息
+//#include <stdio.h>
+//int main()
+//{
+//	char arr[150];
+//	while ((gets(arr)) != NULL)
+//	{
+//		int ch[50][2];
+//		int sz = strlen(arr);
+//		int k = 0;
+//		int signal = 0;
+//		for (int i = 0; i < sz; i++)
+//		{
+//			if (arr[i] == '<')
+//			{
+//				ch[k][0] = i;
+//				for (int j = i; j < sz; j++)
+//				{
+//					if (arr[j] == '>')
+//					{
+//
+//						ch[k][1] = j;
+//
+//						for (int x = ch[k][0]; x <= ch[k][1]; x++)
+//						{
+//							printf("%c", arr[x]);
+//							signal = 1;
+//						}
+//						i = ch[k][1];
+//						k++;
+//						printf("\n");
+//						break;
+//					}
+//				}
+//			}
+//		}
+//		if (signal == 0)
+//		{
+//			printf("NO\n");
+//		}
+//	}
+//	return 0;
+//}
+//
+
+////问题 E: 压缩字符串
+//#include <stdio.h>
+//#include <string.h>
+//int compact(char* string)
+//{
+//	int count = 0;
+//	while (*string == *(string + 1))
+//	{
+//		count++;
+//		string++;
+//	}
+//	return count+1;
+//}
+//int main()
+//{
+//	char arr[1000];
+//	while (gets(arr) != NULL)
+//	{
+//		int sz1 = strlen(arr);
+//		char arra[200] = { 0 };
+//		char* p = arr;
+//		int count = 0;
+//		while (*p != '\0')
+//		{
+//			arra[count]= *p;
+//			count++;
+//			int ret = compact(p);
+//			arra[count] = ret + '0';
+//			count++;
+//			p += ret;
+//		}
+//		int sz2 = strlen(arra);
+//		if (sz1<=sz2)
+//			printf("%s\n",arr);
+//		else
+//			printf("%s\n",arra);
+//	}
+//	return 0;
+//}
+
+
+
+////问题 F: 字符串没有重复的字符
+//首个和所有的比较
+//遇到相同就先前覆盖，代码简单，但是时间复杂度高
+//#include <stdio.h>
+//int main()
+//{
+//	char arr[1000];
+//	while ((gets(arr)) != NULL)
+//	{
+//		int k;
+//		for (int i = 0; arr[i]; i++)
+//		{
+//			for (int j = i + 1; arr[j];)
+//			{
+//				if (arr[i] == arr[j])
+//				{
+//					for (k = j; arr[k]; k++)
+//					{
+//						arr[k] = arr[k + 1];
+//					}
+//				}
+//				else
+//				{
+//					j++;
+//				}
+//			}
+//		}
+//		puts(arr);
+//	}
+//	return 0;
+//}
+
+
+//问题 G: 身份证号码的条数(去重)
+#include <stdio.h>
+#include <string.h>
 int main()
 {
-	printf("NO");
+	char arr[20] = { 0 };
+	char twoarr[1000][20] = { 0 };
+	int count = 0;
+	while (scanf("%s",arr) !=EOF && arr[0] != '0')
+	{
+		int signal = 0;
+		for (int i = 0; i < count; i++)
+		{
+			if (strcmp(twoarr[i], arr) == 0)
+			{
+				signal = 1;
+				break;
+			}
+		}
+		if (signal == 0)
+		{
+			strcpy(twoarr[count], arr);
+			count++;
+		}	
+		
+	}
+	//for (int i = 0; i < count-1; i++)
+	//{
+	//	for (int j = 0; j < count - 1-i; j++)
+	//	{
+	//		if (twoarr[j][0] < twoarr[j + 1][0])
+	//		{
+	//			char temp[20];
+	//			strcpy(temp, twoarr[j]);
+	//			strcpy(twoarr[j], twoarr[j+1]);
+	//			strcpy(twoarr[j + 1], temp);
+	//		}
+	//	}
+	//}
+	/*int ret = count;
+	for (int i = 0; i < count; i++)
+	{
+		for (int j = i+1; j < count; j++)
+		{
+			if (strcmp(twoarr[j], twoarr[i]) == 0)
+				ret--;
+		}
+	}*/
+	printf("%d\n", count);
 	return 0;
 }
