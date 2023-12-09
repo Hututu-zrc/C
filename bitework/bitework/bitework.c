@@ -1580,24 +1580,88 @@
 //}
 
 
+//
+//int main()
+//{
+//	int arr[2][2] = { 1,2,3,4 };
+//	printf("%p\n", &arr[0][0]);
+//	printf("%p\n", &arr[0][1]);
+//	printf("%p\n", &arr[1][0]);
+//	printf("%p\n", &arr[1][1]);
+//	printf("%p\n", &arr[0]);
+//	printf("%p\n", &(arr+1)[0]);
+//	printf("%p\n", &arr[1][0]);
+//	//printf("%p\n", &(arr+2)[0]);
+//	printf("%d\n", arr[0][0]);
+//
+//	return 0;
+//}
+
+
+//#define Max 100  //注意：这里是define定义的标识符
+////标识符和所替换的东西之间有间隔
+//#define Square(x) ((x)*(x))  //这里是define定义宏
+////这个Square(x) 之间是没有空格的；如果有空格，就变成了定义标识符
+//int main()
+//{
+//	//int max = Max;
+//	//printf("%d\n", max);
+//	int r = Square(5); printf("%d\n", r);
+//	
+//	int r2 = Square(5 + 1);//这里的宏是有缺陷的，他传进去的必须是直接的数，不能计算式子
+//	//这里会变成 Square(5+1) ; 5+1*5+1=11;
+//	//我们可以对宏进行修改 改为#define Square(x) ((x)*(x))
+//	//这里的大括号也有用处 例如：define Doubel(x) (x)+(x)
+//	// 10*Double(x)=10*(x)+(x) 我们的计算顺序还是会变的 所以：应是 #define Double(x) ((x)+(x)) 
+//	printf("%d\n", r2);
+//	return 0;
+//}
+//
+//int main()
+//{
+//	printf("hello world\n");
+//	printf("hello ""world\n");//这里两个字符串可以合并为一个字符串
+//	//在C语言里面支持这种写法
+//}
+
+//
+//#define Print(N) printf("the value of "#N" is %d\n",N)
+////这里#N可以把我们传进来的N，变成字符串，然后利用我们上面的多个字符串叠加输出的原理
+////最后可以达到我们想要的效果
+//int main()
+//{
+//	int a = 10; int b = 20;
+//	printf("the value of a is %d\n", a);
+//	printf("the value of b is %d\n", b);
+//	//这种我们无法利用函数实现，这里我们使用#define实现
+//	Print(a);
+//	Print(b);
+//	return 0;
+//}
+//
+
+
+
+// 
+////关于##的使用
+//#define CAT(hu,bei) hu##bei
+////##可以把位于它两边的符号合成一个符号
+////它允许宏定义从分离的文本片段创建标识符
+//int main()
+//{
+//	int hubei = 10;
+//	printf("%d\n", CAT(hu,bei));
+//	printf("%d\n", hubei);
+//
+//	return 0;
+//}
+
 
 int main()
 {
-	int arr[2][2] = { 1,2,3,4 };
-	printf("%p\n", &arr[0][0]);
-	printf("%p\n", &arr[0][1]);
-	printf("%p\n", &arr[1][0]);
-	printf("%p\n", &arr[1][1]);
-	printf("%p\n", &arr[0]);
-	printf("%p\n", &(arr+1)[0]);
-	printf("%p\n", &arr[1][0]);
-	//printf("%p\n", &(arr+2)[0]);
-	printf("%d\n", arr[0][0]);
-
+	float a = 1.2f, b = 1.5f;
+	float ret = a > b ? a : b;
+	printf("Max=%.3f", ret);
 	return 0;
-}
 
-int main()
-{
-	return 0;
 }
