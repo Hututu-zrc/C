@@ -7818,3 +7818,30 @@
 //	printf("]");
 //	return 0;
 //}
+//
+////1119: 2个日期间的天数。
+//#include <stdio.h>
+//#define RUN(year) (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
+//int main()
+//{
+//	int year1, year2, month1, month2, day1, day2,sum=0;
+//	scanf("%d-%d-%d\n%d-%d-%d", &year1, &month1, &day1, &year2, &month2, &day2);
+//	int arr[] = { 0,31,28,31,30,31,30,31,31,30,31,30,31 };
+//	for (int i = year1; i < year2; i++)
+//		sum += 365+RUN(i);
+//	arr[2] += RUN(year1);
+//	//起始年份计算天数
+//	for (int i = 1; i < month1; i++)
+//		sum -= arr[i];
+//	sum -= day1;
+//	if (RUN(year2))
+//		arr[2] = 29;
+//	else
+//		arr[2]=28;
+//	for (int i = 1; i < month2; i++)
+//		sum += arr[i];
+//	sum += day2;
+//	printf("%d\n", sum);
+//	return 0;
+//}
+
