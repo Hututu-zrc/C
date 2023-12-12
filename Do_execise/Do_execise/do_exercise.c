@@ -3247,26 +3247,63 @@
 //	}
 //	return 0;
 ////}
-//// 1128: 哥德巴赫猜想
+////1128: 哥德巴赫猜想
+//int prime(int n)
+//{
+//	int signal = 0;
+//	for (int i = 2; i < n; i++)
+//	{
+//		if (n % i == 0)
+//		{
+//			signal = 1;
+//			break;
+//		}
+//	}
+//	if (signal == 0)
+//	{
+//		return 1;
+//	}
+//	return 0;
+//}
 //int main()
 //{
-//	int n = 0;
-//	while (scanf("%d", &n) != EOF)
+//	int input;
+//	
+//	while (scanf("%d", &input) !=EOF)
 //	{
 //		int count = 0;
-//		int m = 0;
-//		int i = 2;
-//		while (m % i != 0)
+//		int arrcount = 0;
+//		int arr[100];
+//		for (int i = 2; i < input; i++)
 //		{
-//			i++;
-//			if (i >= m - 1)
+//			if (prime(i))
 //			{
-//				
+//				arr[arrcount] = i;
+//				arrcount++;
+//			}
+//		}
+//		int mid = input / 2;
+//		int numsignal = 0;
+//		int tmp1 = 2, tmp2 = input - 1;
+//		for (int i = 0; i <= arrcount-1; i++)
+//		{
+//			if (mid < arr[i])
+//			{
+//				numsignal = i-1;
 //				break;
 //			}
 //		}
+//		for (int i = 0; i <= numsignal; i++)
+//		{
+//			for (int j = arrcount-1; j >= numsignal; j--)
+//			{
+//				if (arr[i] + arr[j] == input)
+//					count++;
+//			}
+//		}
+//		printf("%d\n", count);
 //	}
-//	
+//	return 0;
 //}
 //1129: 杨辉三角
 //int main()
@@ -7522,7 +7559,53 @@
 //	}
 //	return 0;
 //}
-// 1269: 通配符
+// 1269: 通配符 
+// 暂做   这题是借鉴的，看李浩宇的
+// 这题关键点是要解决，多个'*'号的代替问题，
+// 李浩宇采用的是递归遍历所有可能性，只要找到就返回答应“YES”，我的话不会，暂时没想到
+// 我可以解决一个‘*’的情况，但是多个'*'，
+// 我暂时是没有思路的，等到以后学点算法，有点思路了，我再回来看看
+// 
+//#include <stdio.h>
+//#include <string.h>
+//
+//int isMatch(char* pattern, char* str) {
+//	if (*pattern == '\0' && *str == '\0') {
+//		return 1;
+//	}
+//
+//	if (*pattern == '*') {
+//		int i;
+//		for (i = 0; i <= strlen(str); i++) {
+//			if (isMatch(pattern + 1, str + i)) {
+//				return 1;
+//			}
+//		}
+//	}
+//
+//	if (*pattern == '?' || *pattern == *str) {
+//		return isMatch(pattern + 1, str + 1);
+//	}
+//
+//	return 0;
+//}
+//
+//int main() {
+//	char pattern[100];
+//	scanf("%s", pattern);
+//
+//	char str[100];
+//	while (scanf("%s", str) != EOF) {
+//		if (isMatch(pattern, str)) {
+//			printf("YES\n");
+//		}
+//		else {
+//			printf("NO\n");
+//		}
+//	}
+//
+//	return 0;
+//}
 //int main()
 //{
 //
