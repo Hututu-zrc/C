@@ -1851,7 +1851,7 @@
 //}
 
 
-////问题 D: 输出< >间的信息
+//问题 D: 输出< >间的信息
 //#include <stdio.h>
 //int main()
 //{
@@ -1971,54 +1971,54 @@
 //}
 
 
-//问题 G: 身份证号码的条数(去重)
-#include <stdio.h>
-#include <string.h>
-int main()
-{
-	char arr[20] = { 0 };
-	char twoarr[1000][20] = { 0 };
-	int count = 0;
-	while (scanf("%s",arr) !=EOF && arr[0] != '0')
-	{
-		int signal = 0;
-		for (int i = 0; i < count; i++)
-		{
-			if (strcmp(twoarr[i], arr) == 0)
-			{
-				signal = 1;
-				break;
-			}
-		}
-		if (signal == 0)
-		{
-			strcpy(twoarr[count], arr);
-			count++;
-		}	
-		
-	}
-	//for (int i = 0; i < count-1; i++)
-	//{
-	//	for (int j = 0; j < count - 1-i; j++)
-	//	{
-	//		if (twoarr[j][0] < twoarr[j + 1][0])
-	//		{
-	//			char temp[20];
-	//			strcpy(temp, twoarr[j]);
-	//			strcpy(twoarr[j], twoarr[j+1]);
-	//			strcpy(twoarr[j + 1], temp);
-	//		}
-	//	}
-	//}
-	/*int ret = count;
-	for (int i = 0; i < count; i++)
-	{
-		for (int j = i+1; j < count; j++)
-		{
-			if (strcmp(twoarr[j], twoarr[i]) == 0)
-				ret--;
-		}
-	}*/
-	printf("%d\n", count);
-	return 0;
-}
+////问题 G: 身份证号码的条数(去重)
+//#include <stdio.h>
+//#include <string.h>
+//int main()
+//{
+//	char arr[20] = { 0 };
+//	char twoarr[1000][20] = { 0 };
+//	int count = 0;
+//	while (scanf("%s",arr) !=EOF && arr[0] != '0')
+//	{
+//		int signal = 0;
+//		for (int i = 0; i < count; i++)
+//		{
+//			if (strcmp(twoarr[i], arr) == 0)
+//			{
+//				signal = 1;
+//				break;
+//			}
+//		}
+//		if (signal == 0)
+//		{
+//			strcpy(twoarr[count], arr);
+//			count++;
+//		}	
+//		
+//	}
+//	//for (int i = 0; i < count-1; i++)
+//	//{
+//	//	for (int j = 0; j < count - 1-i; j++)
+//	//	{
+//	//		if (twoarr[j][0] < twoarr[j + 1][0])
+//	//		{
+//	//			char temp[20];
+//	//			strcpy(temp, twoarr[j]);
+//	//			strcpy(twoarr[j], twoarr[j+1]);
+//	//			strcpy(twoarr[j + 1], temp);
+//	//		}
+//	//	}
+//	//}
+//	/*int ret = count;
+//	for (int i = 0; i < count; i++)
+//	{
+//		for (int j = i+1; j < count; j++)
+//		{
+//			if (strcmp(twoarr[j], twoarr[i]) == 0)
+//				ret--;
+//		}
+//	}*/
+//	printf("%d\n", count);
+//	return 0;
+//}
