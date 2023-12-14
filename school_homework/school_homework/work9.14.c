@@ -2233,6 +2233,8 @@
 //	else
 //		return 1;
 //}
+// 
+// 
 //int main()
 //{
 //	int input;
@@ -2250,22 +2252,83 @@
 //	return 0;
 //}
 
-//问题 I: Lucky 7 in the Pocket
+#include <stdio.h>
+#include <string.h>
 int main()
 {
-	int input;
-	while (scanf("%d", &input) != EOF)
-	{
-		int i = input;
-		while(i)
-		{
-			if (i % 7 == 0 && i % 4 != 0)
-			{
-				printf("%d\n", i);
-				break;
-			}
-			i++;
-		}
-	}
-	return 0;
+    char s[100] = { 0 };
+    char input[100] = { 0 };
+    while (fgets(s,sizeof(s),stdin))
+    {
+        strcat(input, s);
+    }
+    char* mark = strtok(input, " ");
+    while (mark)
+    {
+        printf("%s\n", mark);
+        mark = strtok(NULL, " ");
+    }
+    return 0;
 }
+
+//问题 I: Lucky 7 in the Pocket
+//int main()
+//{
+//	int input,count;
+//	scanf("%d", &count);
+//	for (int i = 0; i < count; i++)
+//	{
+//		scanf("%d", &input);
+//		int tmp = input;
+//		while (tmp)
+//		{
+//			if (tmp % 7 == 0 && tmp % 4 != 0)
+//			{
+//				printf("%d\n", tmp);
+//				break;
+//			}
+//			tmp++;
+//		}
+//	}
+//	return 0;
+//}
+
+//问题 J: Longest Substring Without Repeating Characters
+//int main()
+//{
+//	char arr[1000];
+//	while (scanf("%s", arr) != EOF)
+//	{
+//		int length = 1, maxlen = 1;
+//		char* head, * tail, * start;
+//		head = tail =start= arr;
+//		again:
+//		while (*(tail) != '\0')
+//		{
+//			int  sign = 0;
+//			tail++;
+//			if (*tail == '\0')
+//				goto again;
+//			for (int i = 0; i < length; i++)
+//			{
+//				if (*(head + i) == *(tail))
+//				{
+//					head++;
+//					tail = head;
+//					sign = 1;
+//					length = 1;
+//				}
+//			}
+//			if (sign != 1)
+//				length++;
+//			if (maxlen < length)
+//			{
+//				start = head;
+//				maxlen = length;
+//			}
+//		}
+//		for (int i = 0; i < maxlen; i++)
+//			printf("%c", *(start + i));
+//		printf("\n");
+//	}
+//}
