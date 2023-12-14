@@ -1852,10 +1852,10 @@
 
 int main()
 {
-	float a = 1.5f;
+	/*float a = 1.5f;
 	float b = 1.2f;
 	double c = 90.12;
-	printf("%7.2lf\n", c);
+	printf("%7.2lf\n", c);*/
 	/*int a = 100;
 	printf("%5d\n", a);*/
 	//printf("%3.1f\n", a - b);
