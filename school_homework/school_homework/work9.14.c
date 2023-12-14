@@ -2262,9 +2262,12 @@ int main()
     {
         strcat(input, s);
     }
+    input[strlen(input)-1] = '\0';
     char* mark = strtok(input, " ");
     while (mark)
     {
+        if (*mark == '\n')
+            mark++;
         printf("%s\n", mark);
         mark = strtok(NULL, " ");
     }
