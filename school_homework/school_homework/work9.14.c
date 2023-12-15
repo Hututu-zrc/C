@@ -2252,27 +2252,49 @@
 //	return 0;
 //}
 
-#include <stdio.h>
-#include <string.h>
-int main()
-{
-    char s[100] = { 0 };
-    char input[100] = { 0 };
-    while (fgets(s,sizeof(s),stdin))
-    {
-        strcat(input, s);
-    }
-    input[strlen(input)-1] = '\0';
-    char* mark = strtok(input, " ");
-    while (mark)
-    {
-        if (*mark == '\n')
-            mark++;
-        printf("%s\n", mark);
-        mark = strtok(NULL, " ");
-    }
-    return 0;
-}
+//#include <stdio.h>
+//#include <string.h>
+//int main()
+//{
+//    char s[100] = { 0 };
+//    char input[100] = { 0 };
+//    while (fgets(s,sizeof(s),stdin))
+//    {
+//        strcat(input, s);
+//    }
+//    input[strlen(input)-1] = '\0';
+//    char* mark = strtok(input, " ");
+//    while (mark)
+//    {
+//        if (*mark == '\n')
+//            mark++;
+//        printf("%s\n", mark);
+//        mark = strtok(NULL, " ");
+//    }
+//    return 0;
+//}
+
+//oj过的答案
+//#include <stdio.h>
+//int main()
+//{
+//	char ch;
+//	char prechar;
+//	while ((ch = getchar()) != EOF)
+//	{
+//		if (ch != ' ' && ch != '\t' && ch != '\n')
+//		{
+//			putchar(ch);
+//		}
+//		else if (prechar != '\t' && prechar != '\n' && prechar != ' ')
+//		{
+//			putchar('\n');
+//		}
+//		prechar = ch;
+//	}
+//	return 0;
+//}
+
 
 //问题 I: Lucky 7 in the Pocket
 //int main()
@@ -2332,6 +2354,55 @@ int main()
 //		}
 //		for (int i = 0; i < maxlen; i++)
 //			printf("%c", *(start + i));
+//		printf("\n");
+//	}
+//}
+
+////檀江浩的
+//#include<stdio.h>
+//#include<string.h>
+//main()
+//{
+//	int legth, max;
+//	char a[100];
+//	int end, i, j;
+//	while (scanf("%s", a) != EOF)
+//	{
+//		max = 0; legth = 0;
+//		for (i = 0; i < strlen(a); i++)
+//		{
+//			if (a[i + 1] != a[i])
+//			{
+//				legth++;
+//				if (legth > max)
+//				{
+//					end = i;
+//					max = legth;
+//				}
+//			}
+//			if (a[i + 1] == a[i])
+//			{
+//				legth = 0;
+//			}
+//		}
+//
+//		for (i = end - max + 1; i <= end; i++)
+//		{
+//
+//			int count = 0;
+//			for (j = i - 1; j >= end - max + 1; j--)
+//			{
+//				if (a[j] == a[i])
+//				{
+//					count = 1;
+//					break;
+//				}
+//			}
+//			if (count == 0)
+//			{
+//				printf("%c", a[i]);
+//			}
+//		}
 //		printf("\n");
 //	}
 //}
