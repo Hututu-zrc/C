@@ -2406,3 +2406,14 @@
 //		printf("\n");
 //	}
 //}
+
+int main()
+{
+	FILE* pf = fopen("D:\\桌面\\diary_12.16.txt","w");
+	char arr[] = "12.16号，我考了四级，个人感觉过线比较难。\
+		不会的东西比较多，四级四级，哥们轻敌了！！！";
+	fprintf(pf, "%s", arr);
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
