@@ -1863,7 +1863,27 @@
 //}
 //
 //
-//
+
+//int main()
+//{
+//	for (int i = 0; i < 5; i++)
+//		for (int k = 0; k < 3; k++)
+//			printf("hha ");
+//	return 0;
+//}
+
+
+int main()
+{
+	char p[] = { '0','1','2'};
+	for (int i = 0; p[i] != '\0'; i++)
+		printf("%c ", p[i]);
+	int sz = sizeof(p) / sizeof(p[0]);
+	int sz1 = strlen(p);
+	printf("%d ", sz);
+	printf("%d ", sz1);
+	return 0;
+}
 
 
 
