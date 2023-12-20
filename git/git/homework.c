@@ -1873,19 +1873,57 @@
 //}
 
 
+//int main()
+//{
+//	char p[] = { '0','1','2'};
+//	for (int i = 0; p[i] != '\0'; i++)
+//		printf("%c ", p[i]);
+//	printf("\n");
+//	int sz = sizeof(p) / sizeof(p[0]);
+//	int sz1 = strlen(p);
+//	printf("%d \n", sz);
+//	printf("%d ", sz1);
+//	return 0;
+//}
+
+//////这个是字符串的翻转
+//int main()
+//{
+//	char arr[100];
+//	while (gets(arr) != NULL)
+//	{
+//		//这种偶数个字符串或者奇数个字符串，只能保证一方，所以我们得使用新的方法
+//		int sz = strlen(arr) - 1;
+//		for (int i = 0; i < sz / 2; i++)
+//		{
+//			char tmp = arr[i];
+//			arr[i] = arr[sz - i];
+//			arr[sz - i] = tmp;
+//		}
+//		puts(arr);
+//	}
+//	
+//	return 0;
+//}
+//
+
+//int main()
+//{
+//	char arr[10][20];
+//	//二维数组不可以一行赋值，但是可以strcpy赋值
+//	strcpy(arr[0], "right");
+//	puts(arr[0]);
+//	return 0;
+//}
+//
+
+struct stu
+{
+	int a, b;
+}s[2] = { 10,100,20,200 };
 int main()
 {
-	char p[] = { '0','1','2'};
-	for (int i = 0; p[i] != '\0'; i++)
-		printf("%c ", p[i]);
-	int sz = sizeof(p) / sizeof(p[0]);
-	int sz1 = strlen(p);
-	printf("%d ", sz);
-	printf("%d ", sz1);
+	struct stu tmp = s[1];
+
 	return 0;
 }
-
-
-
-
-
