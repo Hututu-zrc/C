@@ -1917,13 +1917,34 @@
 //}
 //
 
-struct stu
-{
-	int a, b;
-}s[2] = { 10,100,20,200 };
-int main()
-{
-	struct stu tmp = s[1];
+//struct stu
+//{
+//	int a, b;
+//}s[2] = { 10,100,20,200 };
+//int main()
+//{
+//	struct stu tmp = s[1];
+//
+//	return 0;
+//}
 
-	return 0;
+//int main()
+//{
+//	int i = 0;
+//	if (++i)
+//		if (i--)
+//			printf("%d", i);
+//	return 0;
+//}
+
+#include <stdio.h>
+#include <string.h>
+main()
+{
+    char  p[4] = { 'a', 'b', 'c', 'd' }, q[] = "abc", r[] = "abcde";
+	char a[] = { 'a','b' };
+	//strlen 计算没有\0的字符串
+	//sizeofJ计算长度不需要\0
+    strcat(a, r);    //strcpy(p + strlen(q), q);
+    printf("%d\n", strlen(a));
 }
