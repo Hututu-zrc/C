@@ -1907,6 +1907,8 @@
 //}
 //
 
+
+//关于二维数组一行赋值的问题
 //int main()
 //{
 //	char arr[10][20];
@@ -1917,6 +1919,8 @@
 //}
 //
 
+
+//关于结构之间的赋值问题，可以直接创建相同的结构体，直接进行赋值
 //struct stu
 //{
 //	int a, b;
@@ -1937,14 +1941,78 @@
 //	return 0;
 //}
 
-#include <stdio.h>
-#include <string.h>
-main()
+
+//关于数组里面的'\0'
+//#include <stdio.h>
+//#include <string.h>
+//main()
+//{
+//    char  p[4] = { 'a', 'b', 'c', 'd' }, q[] = "abc", r[] = "abcde";
+//	char a[] = { 'a','b' };
+//	//strlen 计算没有\0的字符串
+//	//sizeofJ计算长度不需要\0
+//    strcat(a, r);    //strcpy(p + strlen(q), q);
+//    printf("%d\n", strlen(a));
+//}
+
+//关于while ,if-else,for的语句问题
+//int main()
+//{
+//	int i = 1;
+	//while (i)
+	//	printf("1");//这条语句默认是while下面的
+	//printf("%d\n", i);
+	//if (i)
+	//	printf("1");
+	//else
+	//	printf("NO");
+	//for (int k = 0; k < 10; k++)
+	//	printf("%d ", k);
+	/*while(i)
+		if (i)
+		{
+			printf("1");
+			break;
+		}
+		else
+			printf("NO");*/
+
+//}
+
+////switch
+enum day
 {
-    char  p[4] = { 'a', 'b', 'c', 'd' }, q[] = "abc", r[] = "abcde";
-	char a[] = { 'a','b' };
-	//strlen 计算没有\0的字符串
-	//sizeofJ计算长度不需要\0
-    strcat(a, r);    //strcpy(p + strlen(q), q);
-    printf("%d\n", strlen(a));
+	MON = 1, 
+	TUE, 
+	WED, 
+	THU, 
+	FRI, 
+	SAT, 
+	SUN
+
+};
+int main()
+{
+	int i = 0;
+	while (scanf("%d", &i) != EOF)
+	{
+		switch (i) //switch('A')
+		{
+		default:
+			puts("NO");
+	
+		case 1:
+			printf("1\n");
+		case 'A' + 1:
+			printf("0\n");
+		case 65:
+			printf("2\n");
+		}
+	}
+	return 0;
 }
+
+
+
+
+
