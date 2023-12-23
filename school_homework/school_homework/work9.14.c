@@ -2159,6 +2159,50 @@
 //    return 0;
 //}
 
+//#include <stdio.h>
+//#include <string.h>
+//int main()
+//{
+//    char s[100] = { 0 };
+//    char input[100] = { 0 };
+//    while (fgets(s,sizeof(s),stdin))
+//    {
+//        strcat(input, s);
+//    }
+//    input[strlen(input)-1] = '\0';
+//    char* mark = strtok(input, " ");
+//    while (mark)
+//    {
+//        if (*mark == '\n')
+//            mark++;
+//        printf("%s\n", mark);
+//        mark = strtok(NULL, " ");
+//    }
+//    return 0;
+//}
+
+//oj过的答案
+//#include <stdio.h>
+//int main()
+//{
+//	char ch;
+//	char prechar;
+//	while ((ch = getchar()) != EOF)
+//	{
+//		if (ch != ' ' && ch != '\t' && ch != '\n')
+//		{
+//			putchar(ch);
+//		}
+//		else if (prechar != '\t' && prechar != '\n' && prechar != ' ')
+//		{
+//			putchar('\n');
+//		}
+//		prechar = ch;
+//	}
+//	return 0;
+//}
+
+
 //问题 F: the sum of prime number
 //int Prime(int n)
 //{
@@ -2248,49 +2292,6 @@
 //			i++;
 //		}
 //		printf("%d\n", i - 1);
-//	}
-//	return 0;
-//}
-
-//#include <stdio.h>
-//#include <string.h>
-//int main()
-//{
-//    char s[100] = { 0 };
-//    char input[100] = { 0 };
-//    while (fgets(s,sizeof(s),stdin))
-//    {
-//        strcat(input, s);
-//    }
-//    input[strlen(input)-1] = '\0';
-//    char* mark = strtok(input, " ");
-//    while (mark)
-//    {
-//        if (*mark == '\n')
-//            mark++;
-//        printf("%s\n", mark);
-//        mark = strtok(NULL, " ");
-//    }
-//    return 0;
-//}
-
-//oj过的答案
-//#include <stdio.h>
-//int main()
-//{
-//	char ch;
-//	char prechar;
-//	while ((ch = getchar()) != EOF)
-//	{
-//		if (ch != ' ' && ch != '\t' && ch != '\n')
-//		{
-//			putchar(ch);
-//		}
-//		else if (prechar != '\t' && prechar != '\n' && prechar != ' ')
-//		{
-//			putchar('\n');
-//		}
-//		prechar = ch;
 //	}
 //	return 0;
 //}
@@ -2407,13 +2408,140 @@
 //	}
 //}
 
-int main()
-{
-	FILE* pf = fopen("D:\\桌面\\diary_12.16.txt","w");
-	char arr[] = "12.16号，我考了四级，个人感觉过线比较难。\
-		不会的东西比较多，四级四级，哥们轻敌了！！！";
-	fprintf(pf, "%s", arr);
-	fclose(pf);
-	pf = NULL;
-	return 0;
-}
+////问题 K: A simple function
+//#include <stdio.h>
+//#include<ctype.h>
+//int main()
+//{
+//	char ch;
+//	while (scanf("%c", &ch) != EOF)
+//	{
+//		if (isdigit(ch))
+//			puts("1");
+//		else if (isalpha(ch))
+//			puts("2");
+//		else
+//			puts("0");
+//		getchar();
+//	}
+//	return 0;
+//}
+
+////问题 L: The index of a character in a string
+//#include <stdio.h>
+//int Find(char* pf, char ch)
+//{
+//	int ret = 0;
+//	while (*pf != ch && *pf!='\0')
+//	{
+//		ret++;
+//		pf++;
+//	}
+//	if (*pf == ch)
+//		return ret;
+//	else
+//		return -1;
+//}
+//int main()
+//{
+//	char arr[100];
+//	char ch;
+//	while (scanf("%s %c", arr, &ch) != EOF)
+//	{
+//		int ret = Find(arr, ch);
+//		printf("%d\n", ret);
+//	}
+//	return 0;
+//}
+
+
+////问题 M: Reverse the string
+//#include <stdio.h>
+//void Reverse(char* p, int sz)
+//{
+//
+//	if (sz % 2 == 0)
+//	{
+//		for (int i = 0; i < sz / 2; i++)
+//		{
+//			char tmp = p[i];
+//			p[i] = p[sz  - 1 - i];
+//			p[sz  - 1 - i] = tmp;
+//		}
+//	}
+//	else
+//	{
+//		sz = sz - 1;
+//		for (int i = 0; i < sz / 2; i++)
+//		{
+//			char tmp = p[i];
+//			p[i] = p[sz - i];
+//			p[sz - i] = tmp;
+//		}
+//	}
+//}
+//
+//int main()
+//{
+//	char arr[100];
+//	while (gets(arr) != NULL)
+//	{
+//		int sz = strlen(arr);
+//		Reverse(arr,sz);
+//		puts(arr);
+//	}
+//	return 0;
+//}
+
+//#include <stdio.h>
+//void Reverse(char* p, int sz)
+//{
+//	int left = 0;
+//	int right = sz - 1;
+//	while (left < right)
+//	{
+//		char tmp = p[left];
+//		p[left] = p[right];
+//		p[right] = tmp;
+//		right--;
+//		left++;
+//	}
+//}
+//int main()
+//{
+//	char arr[100];
+//	while (gets(arr) != NULL)
+//	{
+//		int sz = strlen(arr);
+//		Reverse(arr,sz);
+//		puts(arr);
+//	}
+//	return 0;
+//}
+
+
+
+//问题 N: The repeated digits
+//#include <stdio.h>
+//int Differ(char* p)
+//{
+//	for (int i = 0; p[i] != '\0'; i++)
+//	{
+//		for (int j = i+1; p[j] != '\0'; j++)
+//		{
+//			if (p[i] == p[j])
+//				return 0;
+//		}
+//	}
+//	return 1;
+//}
+//int main()
+//{
+//	char arr[100];
+//	while (gets(arr) != NULL)
+//	{
+//		int ret=Differ(arr);
+//		printf("%d\n", ret);
+//	}
+//	return 0;
+//}
