@@ -1979,40 +1979,50 @@
 
 //}
 
-////switch
-enum day
-{
-	MON = 1, 
-	TUE, 
-	WED, 
-	THU, 
-	FRI, 
-	SAT, 
-	SUN
-
-};
+//////switch
+//enum day
+//{
+//	MON = 1, 
+//	TUE, 
+//	WED, 
+//	THU, 
+//	FRI, 
+//	SAT, 
+//	SUN
+//
+//};
+//int main()
+//{
+//	int i = 0;
+//	while (scanf("%d", &i) != EOF)
+//	{
+//		switch (i) //switch('A')
+//		{
+//		default:
+//			puts("NO");
+//	
+//		case 1:
+//			printf("1\n");
+//		case 'A' + 1:
+//			printf("0\n");
+//		case 65:
+//			printf("2\n");
+//		}
+//	}
+//	return 0;
+//}
+//
+//
+////
+//关于二级指针的类型问题
 int main()
 {
-	int i = 0;
-	while (scanf("%d", &i) != EOF)
-	{
-		switch (i) //switch('A')
-		{
-		default:
-			puts("NO");
-	
-		case 1:
-			printf("1\n");
-		case 'A' + 1:
-			printf("0\n");
-		case 65:
-			printf("2\n");
-		}
-	}
+	int arr1[2][3] = { 1,2,3 };
+	int arr2[3] = { 1,2,3 };
+	int* p[3] = { 0 };
+	p[0] = &arr2;//p[0]是int *类型，而arr2是int类型，&arr2也是int*类型
+	//&arr2=&arr2[0]这是等价的
+	p[1] = &arr2[0];
+	p[2] = &arr1[0][0];
 	return 0;
 }
-
-
-
-
-
