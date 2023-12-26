@@ -2014,15 +2014,28 @@
 //
 //
 ////
-//关于二级指针的类型问题
+////关于二级指针的类型问题
+//int main()
+//{
+//	int arr1[2][3] = { 1,2,3 };
+//	int arr2[3] = { 1,2,3 };
+//	int* p[3] = { 0 };
+//	p[0] = &arr2;//p[0]是int *类型，而arr2是int类型，&arr2也是int*类型
+//	//&arr2=&arr2[0]这是等价的
+//	p[1] = &arr2[0];
+//	p[2] = &arr1[0][0];
+//	return 0;
+//}
+
+//关于结构体
+typedef struct 
+{
+	int c;
+}a;
 int main()
 {
-	int arr1[2][3] = { 1,2,3 };
-	int arr2[3] = { 1,2,3 };
-	int* p[3] = { 0 };
-	p[0] = &arr2;//p[0]是int *类型，而arr2是int类型，&arr2也是int*类型
-	//&arr2=&arr2[0]这是等价的
-	p[1] = &arr2[0];
-	p[2] = &arr1[0][0];
+	a b = { 6 };
+	b.c = 10;
+	printf("%d\n", b.c);
 	return 0;
 }
