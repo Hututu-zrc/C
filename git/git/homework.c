@@ -2027,15 +2027,27 @@
 //	return 0;
 //}
 
-//关于结构体
-typedef struct 
-{
-	int c;
-}a;
+////关于结构体
+//typedef struct 
+//{
+//	int c;
+//}a;
+//int main()
+//{
+//	a b = { 6 };
+//	b.c = 10;
+//	printf("%d\n", b.c);
+//	return 0;
+//}
+
+
+
+
 int main()
 {
-	a b = { 6 };
-	b.c = 10;
-	printf("%d\n", b.c);
+	char ch[] = "\\\"";
+	for (int i = 0; i < strlen(ch); i++)
+		printf("%c ", ch[i]);
 	return 0;
+
 }
