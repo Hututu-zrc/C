@@ -2040,14 +2040,96 @@
 //	return 0;
 //}
 
+//关于字符串转义里面'\0'
+//int main()
+//{
+//	char ch[] = "\\\"";
+//	for (int i = 0; i < strlen(ch); i++)
+//		printf("%c ", ch[i]);
+//	return 0;
+//
+//}
 
-
-
-int main()
-{
-	char ch[] = "\\\"";
-	for (int i = 0; i < strlen(ch); i++)
-		printf("%c ", ch[i]);
-	return 0;
-
-}
+//关于链栈的问题
+//typedef int elemtype;  //数据域数据类型
+//
+//typedef struct LinkedStackNode
+//{
+//	elemtype data;
+//	LinkedStackNode* next;
+//}LinkedStackNode, * LinkedStack;
+//
+//LinkedStack Init_LinkedStack()
+//{
+//	LinkedStack top = (LinkedStackNode*)malloc(sizeof(LinkedStackNode));
+//	//栈顶指针变量
+//	if (top != NULL)
+//	{
+//		top->next = NULL;
+//	}
+//	return top;
+//}
+//int LinkedStack_Empty(LinkedStack top)
+//{
+//	if (top->next == NULL)//如果栈顶的指针域指向空，则栈空
+//	{
+//		return 1;
+//	}
+//	else
+//	{
+//		return 0;
+//	}
+//}
+//
+//int Push_LinkedStack(LinkedStack top, elemtype x)
+//{
+//	LinkedStackNode* node = (LinkedStackNode*)malloc(sizeof(LinkedStackNode));
+//
+//	if (node == NULL)
+//	{
+//		return 0;
+//	}
+//	else
+//	{
+//		node->data = x;
+//		node->next = top->next;
+//		top = node;
+//		return 1;
+//	}
+//}
+//
+//int Pop_LinkedStack(LinkedStack top, elemtype* x)
+//{
+//	LinkedStackNode* node;
+//	if (top->next == NULL)
+//	{
+//		return 0;
+//	}
+//	else
+//	{
+//		node = top->next;
+//		*x = node->data;
+//		top->next = node->next;
+//		free(node);
+//		return 1;
+//	}
+//}
+//
+//int Get_LinkedStack(LinkedStack top, elemtype* x)
+//{
+//	if (top->next == NULL)
+//	{
+//		return 0;
+//	}
+//	else
+//	{
+//		*x = top->next->data;
+//		return 1;
+//	}
+//}
+//
+//int main()
+//{
+//
+//	return 0;
+//}
