@@ -2128,8 +2128,31 @@
 //	}
 //}
 //
+
+
+////关于二维数组去地址，使用数组指针接受的问题
 //int main()
 //{
+//	int arr[2][2] = { 1,2,3,4 };
+//	int(*p)[2] = &arr[0];
+//	for (int i = 0; i < 2; i++)
+//		printf("%d ", *(*(p)+i));
 //
+//	return 0;
+//}
+
+
+////关于取地址的问题
+//void test(int* pt)
+//{
+//	printf("%p\n", &pt);
+//	printf("%p\n", pt);
+//}
+//int main()
+//{
+//	int input = 10;
+//	int* p = &input;
+//	test(&input);
+//	printf("input的地址是:%p\n", p);
 //	return 0;
 //}
