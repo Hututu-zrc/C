@@ -2156,3 +2156,10 @@
 //	printf("inputµÄµØÖ·ÊÇ:%p\n", p);
 //	return 0;
 //}
+
+
+int main()
+{
+	printf("hello world");
+	return 0;
+}
