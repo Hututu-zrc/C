@@ -7928,3 +7928,37 @@
 //	return 0;
 //}
 
+//冒泡排序核心思想：相邻两个元素之间的比较
+//一趟冒号排序让一个数据来到它最终应该出现的位置上
+//n个元素则需要n-1趟
+//倒序打印
+void bubble_sort(int arr[], int sz)
+{
+	int i  = 0;
+	int ss = sizeof(arr) / sizeof(arr[0]);
+	printf("%d\n", ss);//注意：上面如果在函数里面求数组的长度，得到的是会是2
+	//因为我们传参的时候，传过来的时候是数组首地址，我们在计算数组长度计算的是数组首元素的地址，
+	// 64位电脑里面指针变量的大小是8，整形变量的大小是4，8/4=2；
+	for (i = 0; i < sz - 1; i++)//10个元素两两相比较，需要比较10-1=9趟
+	{
+		int j = 0;
+		for (j = 0; j < sz - 1 - i; j++) //每一趟排序后，完成一个元素，所以是sz-1-i
+		{      //交换相邻的两个元素
+			int tep = arr[j];
+			arr[j] = arr[j + 1];
+			arr[j + 1] = tep;
+		}
+	}
+}
+int main()
+{      //我们的目标是把数据升序
+	int arr[10] = { 9,8,7,6,5,4,3,2,1,0 };
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	bubble_sort(arr, sz);
+	int i = 0;
+	for (i = 0; i < 10; i++)
+	{
+		printf("%d ", arr[i]);
+	}
+	return 0;
+}
