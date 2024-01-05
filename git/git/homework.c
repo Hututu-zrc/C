@@ -2165,28 +2165,40 @@
 //}
 
 
-//这个是以前没有注意到的一个点
-//结构体a赋值给b，但是b里面的name是字符指针，使用strcpy改变b的name,是在那一段地址上面做更改
-//所以a里面的name也改变了，注意改变的是地址
-#include <stdio.h>
-#include <stdlib.h>
-struct stu
-{
-	char* name, gender;
-	int score;
-};
+////这个是以前没有注意到的一个点
+////结构体a赋值给b，但是b里面的name是字符指针，使用strcpy改变b的name,是在那一段地址上面做更改
+////所以a里面的name也改变了，注意改变的是地址
+//#include <stdio.h>
+//#include <stdlib.h>
+//struct stu
+//{
+//	char* name, gender;
+//	int score;
+//};
+//int main()
+//{
+//	struct stu a = { NULL,'m',290 }, b;
+//	a.name = (char*)malloc(10);
+//	strcpy(a.name, "Zhao");
+//	b = a;
+//	b.gender = 'f';
+//	b.score = 350;
+//	strcpy(b.name, "Qian");
+//	printf("%s,%c,%d\n", a.name, a.gender, a.score);
+//	printf("%s,%c,%d\n", b.name, b.gender, b.score);
+//	return 0;
+//}
+//
+//
+
+
 int main()
 {
-	struct stu a = { NULL,'m',290 }, b;
-	a.name = (char*)malloc(10);
-	strcpy(a.name, "Zhao");
-	b = a;
-	b.gender = 'f';
-	b.score = 350;
-	strcpy(b.name, "Qian");
-	printf("%s,%c,%d\n", a.name, a.gender, a.score);
-	printf("%s,%c,%d\n", b.name, b.gender, b.score);
+	if (0)
+		puts("1");
+	else if (0)
+		puts("2");
+	else
+		puts("NO");
 	return 0;
 }
-
-
