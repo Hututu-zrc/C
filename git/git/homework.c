@@ -2190,15 +2190,25 @@
 //}
 //
 //
+//
+//
+//int main()
+//{
+//	if (0)
+//		puts("1");
+//	else if (0)
+//		puts("2");
+//	else
+//		puts("NO");
+//	return 0;
+//}
 
-
+struct s
+{
+	int name;
+}f;
 int main()
 {
-	if (0)
-		puts("1");
-	else if (0)
-		puts("2");
-	else
-		puts("NO");
-	return 0;
+	struct s temp;
+	
 }
