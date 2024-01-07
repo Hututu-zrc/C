@@ -2203,12 +2203,17 @@
 //	return 0;
 //}
 
-struct s
-{
-	int name;
-}f;
+//struct s
+//{
+//	int name;
+//}f;
+//int main()
+//{
+//	struct s temp;
+//	
+//}
+
 int main()
 {
-	struct s temp;
-	
+	return 0;
 }
