@@ -2215,5 +2215,7 @@
 
 int main()
 {
+	char input[100];
+
 	return 0;
 }
