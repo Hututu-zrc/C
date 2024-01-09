@@ -2215,7 +2215,19 @@
 
 int main()
 {
-	char input[100];
-
+	char input[100] = { 0 };
+	while (gets(input) !=NULL)
+	{
+		int left = 0, right = strlen(input) - 1;
+		while (left <= right)
+		{
+			char ch = input[left];
+			input[left] = input[right];
+			input[right] = ch;
+			right--;
+			left++;
+		}
+		printf("%s\n", input);
+	}
 	return 0;
 }
