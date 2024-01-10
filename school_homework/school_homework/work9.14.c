@@ -2201,9 +2201,9 @@
 //	}
 //	return 0;
 //}
-
-
-//问题 F: the sum of prime number
+//
+//
+////问题 F: the sum of prime number
 //int Prime(int n)
 //{
 //	int flag = 0;
