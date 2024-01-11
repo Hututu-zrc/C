@@ -1666,15 +1666,181 @@
 //
 //}
 
-struct A
+//struct A
+//{
+//	int _a : 2;
+//	int _b : 5;
+//	int _c : 10;
+//	int _d : 30;
+//};
+//int main()
+//{
+//	printf("%d\n", sizeof(struct A));
+//	return 0;
+//}
+//
+//
+////待答
+//int main()
+//{
+//	unsigned char puc[4];
+//	struct tagPIM
+//	{
+//		unsigned char ucPim1;
+//		unsigned char ucData0 : 1;
+//		unsigned char ucData1 : 2;
+//		unsigned char ucData2 : 3;
+//	}*pstPimData;
+//	pstPimData = (struct tagPIM*)puc;
+//	memset(puc, 0, 4);
+//	pstPimData->ucPim1 = 2;
+//	pstPimData->ucData0 = 3;
+//	pstPimData->ucData1 = 4;
+//	pstPimData->ucData2 = 5;
+//	printf("%02x %02x %02x %02x\n", puc[0], puc[1], puc[2], puc[3]);
+//	return 0;
+//}
+
+//union Un
+//{
+//	int i;
+//	char c;
+//};
+//union Un un;
+//// 下面输出的结果是一样的吗？
+//int main()
+//{
+//	printf("%p\n", &(un.i));
+//	printf("%p\n", &(un.c));
+//	//下面输出的结果是什么？
+//	un.i = 0x11223344;
+//	un.c = 0x55;
+//	printf("%x\n", un.i);
+//	return 0;
+//}
+
+
+//#include<stdio.h>
+//int main() {
+//	int i = 0;
+//	printf("变种水仙花数：");
+//	for (i = 0; i < 99999; i++)
+//	{
+//		//12345   
+//		int a = (i / 10000) * (i % 10000);//1 * 2345
+//
+//		int b = (i / 1000) * (i % 1000); // 12 * 345
+//
+//		int c = (i / 100) * (i % 100); // 123 * 45
+//
+//		int d = (i / 10) * (i % 10); //1234 * 5 
+//		int sum = a + b + c + d;
+//		if (i == sum) //判断拆分后乘积之和是否等于自身
+//		{
+//			printf("%d ", i);
+//
+//		}
+//	}
+//	return 0;
+//}
+
+
+////变种水仙花数
+//#include <stdio.h>
+//#include<math.h>
+//int main()
+//{
+//    for (int i = 10000; i < 100000; i++)
+//    {
+//        int sum = 0, count =1;
+//        int temp = i;
+//        while (count < 5)
+//        {
+//            sum += ((temp % (int)pow(10,count)) * (temp / (int)pow(10, count)));
+//            count++;
+//        }
+//        if (sum == i)
+//            printf("%d ", i);
+//    }
+//    return 0;
+//}
+
+//
+//int main()
+//{
+//	int input = 0, count = 1;;
+//	scanf("%d", &input);
+//	while (count<3)
+//	{
+//		printf("/%: %d ", input % (int)pow(10, count));
+//		printf("/: %d\n", input / (int)pow(10, count));
+//		count++;
+//	}
+//}
+// 
+// 
+//int main()
+//{
+//    int temp;
+//    int count = 1, sum = 0;
+//    scanf("%d", &temp);
+//    int a = pow(10, count);
+//    int c = (int)pow(10, 3 - count);
+//    int b = temp / a;
+//    int d = temp % c;
+//    while (count < 3)
+//    {
+//        sum += ((temp % (int)pow(10, 3 - count)) * (temp / (int)pow(10, count)));
+//        count++;
+//    }
+//    if (sum == temp)
+//        printf("%d ", temp);
+//}
+//
+
+
+////删除指定的数
+//#include <stdio.h>
+//int main()
+//{
+//    int arr[50];
+//    int input = 0;
+//    scanf("%d", &input);
+//    for (int i = 0; i < input; i++)
+//        scanf("%d", &arr[i]);
+//    int del = 0;
+//    scanf("%d", &del);
+//    int i = 0;
+//    while (i < input)
+//        if (arr[i] != del)
+//        {
+//            printf("%d ", arr[i]);
+//            i++;
+//        }
+//    printf("\n");
+//    return 0;
+//}
+
+//使用联合体的知识，判断机器的大小端
+
+int is_judge()
 {
-	int _a : 2;
-	int _b : 5;
-	int _c : 10;
-	int _d : 30;
-};
+	union un
+	{
+		char a;
+		int b;
+	}u;
+	u.b = 1;
+	return u.a;
+}
 int main()
 {
-	printf("%d\n", sizeof(struct A));
+	int ret = is_judge();
+	int temp = 1;
+	if(1==ret)
+		printf("小端\n");
+	else
+		printf("大端\n");
+
 	return 0;
 }
