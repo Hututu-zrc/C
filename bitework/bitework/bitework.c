@@ -1657,11 +1657,24 @@
 //}
 
 
+//int main()
+//{
+//	float a = 1.2f, b = 1.5f;
+//	float ret = a > b ? a : b;
+//	printf("Max=%.3f", ret);
+//	return 0;
+//
+//}
+
+struct A
+{
+	int _a : 2;
+	int _b : 5;
+	int _c : 10;
+	int _d : 30;
+};
 int main()
 {
-	float a = 1.2f, b = 1.5f;
-	float ret = a > b ? a : b;
-	printf("Max=%.3f", ret);
+	printf("%d\n", sizeof(struct A));
 	return 0;
-
 }
