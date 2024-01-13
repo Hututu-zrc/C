@@ -12,7 +12,7 @@
 //	return 0;
 //}
 
-#include<stdio.h>
+//#include<stdio.h>
 //#include <stdio.h>
 //
 //int main() {
@@ -2010,19 +2010,69 @@
 //	return 0;
 //}
 
+////创建两个文件，实现文件的复制
+//int main()
+//{
+//	FILE* pf = fopen("D:\\桌面\\data.txt", "r");
+//	assert(pf);
+//	FILE* p = fopen("D:\\桌面\\data_copy.txt", "w");
+//	assert(p);
+//	char ch;
+//	while ((ch=fgetc(pf)) != EOF)
+//	{
+//		fputc(ch,p);
+//	}
+//	fclose(p);
+//	fclose(pf);
+//  p=pf=NULL;
+//	return 0;
+//}
 
+//
+////关于const修饰指针变量
+//int main()
+//{
+//	int num = 10;
+//	int variable = 20;
+//	const int* p = &num;
+//	//这里可以理解为const int (*p),我们保证的是(*p)不可以被更改
+//	//*p=20; err
+//	//p=&variable; OK
+//	printf("%d\n", *p);
+//	p = &variable;
+//	printf("%d\n", *p);
+//
+//	return 0;
+//}
+//
+//int main()
+//{
+//	int num = 10;
+//	int variable = 20;
+//	int* const  p = &num;
+//	//这里可以理解为int * const (p),我们保证的是(p)不可以被更改
+//	//*p=20; OK
+//	//p=&variable; err
+//	printf("%d\n", *p);
+//	*p = 20;
+//	printf("%d\n", *p);
+//
+//	return 0;
+//}
+
+
+//关于调试
 int main()
 {
-	FILE* pf = fopen("D:\\桌面\\data.txt", "r");
-	assert(pf);
-	FILE* p = fopen("D:\\桌面\\data_copy.txt", "w");
-	assert(p);
-	char ch;
-	while ((ch=fgetc(pf)) != EOF)
+	int arr[] = { 1,2,3,4,5,6,7,8,9 };
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	for (int i = 0; i < sz; i++)
 	{
-		fputc(ch,p);
+		arr[i] = i;
 	}
-	fclose(p);
-	fclose(pf);
+	for (int i = 0; i < sz; i++)
+	{
+		printf("%d ", arr[i]);
+	}
 	return 0;
 }
