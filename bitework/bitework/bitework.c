@@ -1823,24 +1823,206 @@
 
 //使用联合体的知识，判断机器的大小端
 
-int is_judge()
-{
-	union un
-	{
-		char a;
-		int b;
-	}u;
-	u.b = 1;
-	return u.a;
-}
+//int is_judge()
+//{
+//	union un
+//	{
+//		char a;
+//		int b;
+//	}u;
+//	u.b = 1;
+//	return u.a;
+//}
+//int main()
+//{
+//	int ret = is_judge();
+//	int temp = 1;
+//	if(1==ret)
+//		printf("小端\n");
+//	else
+//		printf("大端\n");
+//
+//	return 0;
+//}
+
+//数组串联
+//#include <stdio.h>
+//#include <ctype.h>
+//
+//int main()
+//{
+//	char arr[100] = { 0 };
+//	char ch = { 0 };
+//	int count = 0;
+//	while ((ch = getchar()) != EOF)
+//	{
+//		if (isdigit(ch))
+//		{
+//			arr[count] = ch;
+//			count++;
+//		}
+//	}
+//	char* p = NULL;
+//	p = (char*)malloc(sizeof(char) * count);
+//	putchar('[');
+//	for (int i = 0; i < count; i++)
+//		printf("%c,", arr[i]);
+//	for (int i = 0; i < count - 1; i++)
+//		printf("%c,", arr[i]);
+//	printf("%c]", arr[count - 1]);
+//	return 0;
+//}
+
+////malloc,calloc,realloc,free函数的使用
+//#define print(x) for (int i = 0; i < 10; i++) printf("%d ", *(x + i));
+//int main()
+//{
+//	int* p = (int*)malloc(sizeof(int) * 10);
+//	assert(p);
+//	for (int i = 0; i < 10; i++)
+//		*(p + i) = 1;
+//	int* p2 = (int*)calloc(10, sizeof(int));
+//	assert(p2);
+//	printf("malloc: "); print(p); printf("\n");
+//	printf("calloc: "); print(p2); printf("\n");
+//	int* p3 = (int*)realloc(p, sizeof(int) * 5);
+//	assert(p3);
+//	for (int i = 0; i < 5; i++)
+//		*(p3 + i) = 2;
+//	printf("realloc: "); 
+//	for (int i = 0; i < 5; i++)
+//		printf("%d ", *(p3 + i));
+//	free(p2);
+//	free(p3);
+//	p = p3 = NULL;
+//	return 0;
+//}
+//
+//malloc生成二维数组，三种方法
+//方法一：直接开辟空间，这里是模拟二维数组
+// 这里我们只是模拟实现，本质上还是一个一维数组，只不过按照二维数组的形式进行访问
+//int main()
+//{
+//  int row, col;
+//  printf("请输入行数和列数（逗号隔开）：");
+//  scanf("%d %d", &row, &col);
+//	int* p = (int*)malloc(sizeof(int) * row * col);
+//	for (int i = 0; i < row; i++)
+//	{
+//		for (int j = 0; j < col; j++)
+//		{
+//			p[i*row+j] = 2;
+//		}
+//	}
+//	for (int i = 0; i < row; i++)
+//	{
+//		for (int j = 0; j < col; j++)
+//		{
+//			printf("%d ", p[i*row+j]);
+//		}
+//		printf("\n");
+//	}
+//	free(p);
+//	p = NULL;
+//	return 0;
+//}
+
+
+//使用二级指针开辟row个一维数组，然后对每个一位数组开辟col个空间
+//int main()
+//{
+//	int row, col;
+//	printf("请输入行数和列数（逗号隔开）：");
+//	scanf("%d %d", &row, &col);
+//	int** p = (int**)malloc(sizeof(int*) * row);
+//	//这里是开辟row个一维数组，起始地址赋二级指针p
+//	for (int i = 0; i < row; i++)
+//		p[i] = (int*)malloc(sizeof(int) * col);
+//	//对每个一维数组，开辟col列
+//	for (int i = 0; i < row; i++)
+//	{
+//		for (int j = 0; j < col; j++)
+//		{
+//			p[i][j] = i + j;
+//			printf("%d ", p[i][j]);
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+////使用数组指针表示二维数组，这里具象化为3行5列的二维数组
+//int main()
+//{
+//	int(*p)[5] = (int(*)[5])malloc(sizeof(int) * 3 * 5);
+//	//这句话的意思就是开辟一个6个int的内存空间，然后将其转化为数组指针型的地址
+//	//int (*p)[5]表示的就是 ，一行有两个元素的一维数组，所以数组就是15/5=3,共3行的二维数组
+//	for (int i = 0; i < 3; i++)
+//	{
+//		for (int j = 0; j < 5; j++)
+//		{
+//			p[i][j] = i + j;
+//			printf("%d ", p[i][j]);
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+//#include<stdio.h>  
+//#include<stdlib.h>  
+//
+//
+//int main()
+//{
+//    int** a;  //用二级指针动态申请二维数组  
+//    int i, j;
+//    int m, n;
+//    printf("请输入行数\n");
+//    scanf("%d", &m);
+//    printf("请输入列数\n");
+//    scanf("%d", &n);
+//    a = (int**)malloc(sizeof(int*) * m);
+//    for (i = 0; i < m; i++)
+//        a[i] = (int*)malloc(sizeof(int) * n);
+//    for (i = 0; i < m; i++)
+//    {
+//        for (j = 0; j < n; j++)
+//        {
+//            printf("%p\n", &a[i][j]);     //输出每个元素地址，每行的列与列之间的地址时连续的，行与行之间的地址不连续
+//        }
+//    }
+//    for (i = 0; i < m; i++)
+//        free(a[i]);
+//
+//    free(a);
+//    return 0;
+//}
+//
+//
+////关于二维数组指针跳过的问题
+//int main()
+//{
+//	int arr[3][3] = { 0,8,2,3,4,5,6,7,8 };
+//	printf("%d\n", *(*(arr)+1));
+//	int* p = &(*(arr+1));
+//	int(*pf)[3] = &(*(arr + 1));
+//	return 0;
+//}
+
+
 int main()
 {
-	int ret = is_judge();
-	int temp = 1;
-	if(1==ret)
-		printf("小端\n");
-	else
-		printf("大端\n");
-
+	FILE* pf = fopen("D:\\桌面\\data.txt", "r");
+	assert(pf);
+	FILE* p = fopen("D:\\桌面\\data_copy.txt", "w");
+	assert(p);
+	char ch;
+	while ((ch=fgetc(pf)) != EOF)
+	{
+		fputc(ch,p);
+	}
+	fclose(p);
+	fclose(pf);
 	return 0;
 }
