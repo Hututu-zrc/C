@@ -2060,19 +2060,27 @@
 //	return 0;
 //}
 
+//
+////关于调试
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,6,7,8,9 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	for (int i = 0; i < sz; i++)
+//	{
+//		arr[i] = i;
+//	}
+//	for (int i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	return 0;
+//}
 
-//关于调试
 int main()
 {
-	int arr[] = { 1,2,3,4,5,6,7,8,9 };
-	int sz = sizeof(arr) / sizeof(arr[0]);
-	for (int i = 0; i < sz; i++)
-	{
-		arr[i] = i;
-	}
-	for (int i = 0; i < sz; i++)
-	{
-		printf("%d ", arr[i]);
-	}
+	int a = 10, b = 20, c = 30;
+	int max = a > (b > c ? b : c) ? a : (b > c ? b : c);
+
 	return 0;
 }
