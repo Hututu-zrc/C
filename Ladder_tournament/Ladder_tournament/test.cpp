@@ -1005,8 +1005,85 @@
 //	
 //}
 //
-// 
-// 
+
+//// L1-034 点赞
+//#include <stdio.h>
+//int main()
+//{
+//    int input;
+//    scanf("%d", &input);
+//    int rub[input];
+//    int character[10000];
+//    int count_num = 0;
+//    for (int i = 0; i < input; i++)
+//    {
+//        scanf("%d", &rub[i]);
+//        for (int j = 0; j < rub[i]; j++)
+//        {
+//            scanf("%d", &character[count_num]);
+//            count_num++;
+//        }
+//    }
+//    int flag[count_num];
+//    for (int i = 0; i < count_num; i++)
+//        flag[i] = 1;
+//    int max = 0, signal = 0;
+//    for (int i = 0; i < count_num; i++)
+//    {
+//
+//        for (int j = i + 1; j < count_num; j++)
+//        {
+//
+//            if (character[i] == 0)
+//                continue;
+//            if (character[i] == character[j])
+//            {
+//                character[j] = 0;
+//                flag[i]++;
+//            }
+//            if (max < flag[i])
+//            {
+//                max = flag[i];
+//                signal = i;
+//            }
+//            if (max == flag[i])
+//            {
+//                if (character[signal] < character[i])
+//                {
+//                    signal = i;
+//                }
+//            }
+//        }
+//    }
+//    printf("%d %d", character[signal], flag[signal]);
+//    return 0;
+//}
+
+////L1-035 情人节
+//#include <stdio.h>
+//int main()
+//{
+//    char arr[10000][12];
+//    int count = 1;
+//
+//    while (1)
+//    {
+//        scanf("%s", arr[count]);
+//        if (arr[count][0] == '.')
+//            break;
+//        count++;
+//
+//    }
+//    if (count < 2)
+//        printf("Momo... No one is for you ...");
+//    else if (count < 14)
+//        printf("%s is the only one for you...", arr[2]);
+//    else
+//        printf("%s and %s are inviting you to dinner...", arr[2], arr[14]);
+//    return 0;
+//}
+
+
 
 ////L1-036 A乘以B
 //#include <stdio.h>
@@ -1040,6 +1117,90 @@
 //	}
 //	return 0;
 //}
+
+//L1-038 新世界
+//#include <stdio.h>
+//int main()
+//{
+//	fprintf(stdout, "%s", "Hello World\nHello New World");
+//	return 0;
+//}
+// 
+
+//L1-039 古风排版  (20:18)
+//#include <stdio.h>
+//#include <string.h>
+//int main()
+//{
+//	int input;
+//	scanf("%d", &input);
+//	getchar();
+//	char arr[1002];
+//	fgets(arr, sizeof(arr), stdin);
+//	int sz = strlen(arr);
+//	arr[sz - 1] = '\0';
+//	int col = sz / input;
+//	int count = 0;
+//	char ans[input][col];
+//	for (int j = col - 1; j >= 0; j--)
+//	{
+//		for (int i = 0; i < input; i++)
+//		{
+//			if (count <sz - 1)
+//			{
+//				ans[i][j] = arr[count];
+//				count++;
+//			}
+//			else
+//            {
+//                if(sz==2)
+//                {
+//                	printf("%c",ans[0][0]);
+//                	return 0;
+//				}
+//                else
+//                    ans[i][j] = ' ';
+//            }
+//		}
+//	}
+//	for (int i = 0; i < input; i++)
+//	{
+//		for (int j = 0; j < col; j++)
+//			printf("%c", ans[i][j]);
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+
+//L1-040 最佳情侣身高差
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	int N;
+	scanf("%d",&N);
+	getchar();
+
+	char arr1[N];
+	double arr2[N];
+	for(int i=0;i<N;i++)
+	{
+		scanf("%c",&arr1[i]);
+		scanf("%lf",&arr2[i]);
+		getchar();
+		if(arr1[i]=='F')
+			arr2[i]*=1.09;
+		else 
+			arr2[i]/=1.09;
+	}
+	for(int i=0;i<N-1;i++)
+		printf("%.2f\n",arr2[i]);
+	printf("%.2f",arr2[N-1]);
+	return 0;
+}
+
+
 
 //L1-052 2018我们要赢
 //#include <stdio.h>
@@ -1110,6 +1271,8 @@
 //    printf("%s",arr2);
 //    return 0;
 //}
+
+
 
 
 
