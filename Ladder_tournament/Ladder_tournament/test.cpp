@@ -1172,34 +1172,260 @@
 //	return 0;
 //}
 
+//
+////L1-040 最佳情侣身高差
+//#include <stdio.h>
+//#include <string.h>
+//int main()
+//{
+//	int N;
+//	scanf("%d",&N);
+//	getchar();
+//
+//	char arr1[N];
+//	double arr2[N];
+//	for(int i=0;i<N;i++)
+//	{
+//		scanf("%c",&arr1[i]);
+//		scanf("%lf",&arr2[i]);
+//		getchar();
+//		if(arr1[i]=='F')
+//			arr2[i]*=1.09;
+//		else 
+//			arr2[i]/=1.09;
+//	}
+//	for(int i=0;i<N-1;i++)
+//		printf("%.2f\n",arr2[i]);
+//	printf("%.2f",arr2[N-1]);
+//	return 0;
+//}
 
-//L1-040 最佳情侣身高差
-#include <stdio.h>
-#include <string.h>
-int main()
-{
-	int N;
-	scanf("%d",&N);
-	getchar();
+////L1-041 寻找250
+//#include <stdio.h>
+//int main()
+//{
+//	int input;
+//	int count = 0;
+//	while (1)
+//	{
+//		scanf("%d", &input);
+//		count++;
+//		if (input == 250)
+//		{
+//			printf("%d", count);
+//			break;
+//		}
+//	}
+//	return 0;
+//}
 
-	char arr1[N];
-	double arr2[N];
-	for(int i=0;i<N;i++)
-	{
-		scanf("%c",&arr1[i]);
-		scanf("%lf",&arr2[i]);
-		getchar();
-		if(arr1[i]=='F')
-			arr2[i]*=1.09;
-		else 
-			arr2[i]/=1.09;
-	}
-	for(int i=0;i<N-1;i++)
-		printf("%.2f\n",arr2[i]);
-	printf("%.2f",arr2[N-1]);
-	return 0;
-}
+//L1-042 日期格式化
+//#include <stdio.h>
+//int main()
+//{
+//	int month, day, year;
+//	scanf("%d-%d-%d", &month, &day, &year);
+//	printf("%4d-%02d-%02d", year, month, day);
+//	return 0;
+//}
 
+//L1-043 阅览室  使用队列 （未写）
+//#include <stdio.h>
+//int calculate_interval(int s_hour,int s_min,int l_hour,int l_min)
+//{
+//	int sum = 0;
+//	if (s_min != 0)
+//	{
+//		sum += (60 - s_min);
+//		s_hour++;
+//		sum += (l_hour - s_hour) * 60 + l_min;
+//		return sum;
+//	}
+//	else
+//	{
+//		sum += (l_hour - s_hour) * 60 + l_min;
+//		return sum;
+//	}
+//}
+//int main()
+//{
+//	int N;
+//	scanf("%d", &N);
+//
+//	return 0;
+//}
+
+//L1-044 稳赢
+//#include <stdio.h>
+//#include <string.h>
+//int main()
+//{
+//	int inter = 0;
+//	scanf("%d", &inter);
+//	getchar();
+//	char arr[100];
+//	int count = 0;
+//	while (fgets(arr, sizeof(arr), stdin) != NULL)
+//	{
+//		int sz = strlen(arr);
+//		arr[sz - 1] = '\0';
+//		if (strcmp(arr, "End") == 0)
+//			return 0;
+//		if (count < inter)
+//		{
+//			if (strcmp(arr, "ChuiZi") == 0)
+//			{
+//				printf("Bu\n");
+//				count++;
+//			}
+//			else if (strcmp(arr, "JianDao") == 0)
+//			{
+//				printf("ChuiZi\n");
+//				count++;
+//			}
+//			else
+//			{
+//				printf("JianDao\n");
+//				count++;
+//			}
+//		}
+//		else
+//		{
+//			if (strcmp(arr, "ChuiZi") == 0)
+//			{
+//				printf("ChuiZi\n");
+//				count = 0;
+//			}
+//			else if (strcmp(arr, "JianDao") == 0)
+//			{
+//				printf("JianDao\n");
+//				count = 0;
+//			}
+//			else
+//			{
+//				printf("Bu\n");
+//				count = 0;
+//			}
+//		}
+//	}
+//	return 0;
+//}
+
+//L1-045 宇宙无敌大招呼
+//#include <stdio.h>
+//int main()
+//{
+//	char arr[10];
+//	gets(arr);
+//	printf("Hello %s", arr);
+//	return 0;
+//}
+
+//L1-046 整除光棍 难点：大数相乘 (不会）
+
+////L1-047 装睡
+//#include <stdio.h>
+//int main()
+//{
+//    int N;
+//    scanf("%d", &N);
+//    char name[N][5];
+//    int data[N][2];
+//    for (int i = 0; i < N; i++)
+//    {
+//        scanf("%s", name[i]);
+//        scanf("%d %d", &data[i][0], &data[i][1]);
+//        if (data[i][0] > 20 || data[i][0] < 15)
+//            printf("%s\n", name[i]);
+//        else if (data[i][1] < 50 || data[i][1]>70)
+//            printf("%s\n", name[i]);
+//    }
+//    return 0;
+//}
+// 
+
+//L1-048 矩阵A乘以B
+//#include <stdio.h>
+//int main()
+//{
+//	int Ra, Ca, Rb, Cb;
+//	scanf("%d %d", &Ra, &Ca);
+//	int arr1[Ra][Ca];
+//	for (int i = 0; i < Ra; i++)
+//	{
+//		for (int j = 0; j < Ca; j++)
+//			scanf("%d", &arr1[i][j]);
+//	}
+//	scanf("%d %d", &Rb, &Cb);
+//	int arr2[Rb][Cb];
+//	for (int i = 0; i < Rb; i++)
+//	{
+//		for (int j = 0; j < Cb; j++)
+//			scanf("%d", &arr2[i][j]);
+//	}
+//	int arr3[Ra][Cb];
+//	for (int i = 0; i < Ra; i++)
+//	{
+//		for (int j = 0; j < Cb; j++)
+//			arr3[i][j] = 0;
+//	}
+//	if (Ca != Rb)
+//	{
+//		printf("Error: %d != %d",Ca,Rb);
+//		return 0;
+//	}
+//	else
+//	{
+//		for (int i = 0; i < Ra; i++)
+//		{
+//			for (int j = 0; j < Cb; j++)
+//			{
+//				for (int k = 0; k < Rb; k++)
+//				{
+//					arr3[i][j] += arr1[i][k] * arr2[k][j];
+//				}
+//			}
+//		}
+//	}
+//	printf("%d %d\n",Ra,Cb);
+//	for (int i = 0; i < Ra; i++)
+//	{
+//		for (int j = 0; j < Cb-1; j++)
+//			printf("%d ", arr3[i][j]);
+//		printf("%d",arr3[i][Cb-1]);
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+////L1-050 倒数第N个字符串
+//#include<stdio.h>
+//#include<math.h>
+//int main() {
+//	int L, N, temp;
+//	scanf("%d%d", &L, &N);
+//	int arr[L], i;
+//	temp = pow(26, L) - N;                //pow(a,b)是标准库里一个数学函数，求的是a的b次方，头文件为 #include<math.h> 
+//	for (i = 0; i < L; i++) {
+//		arr[i] = temp % 26; 	        	//用创建的数组保存第 i 个位置上对26取得的余数； 
+//		temp /= 26;
+//	}
+//	for (i = L - 1; i >= 0; i--)
+//		printf("%c", 'a' + arr[i]);     //a 的ASCII码加上余数，就得到对应字母的ASCII码，不懂的可以取了解一下ASCII 
+//	return 0;
+//}
+
+
+////L1-051 打折
+//#include <stdio.h>
+//int main()
+//{
+//    int price;
+//    double discount;
+//    scanf("%d %lf", &price, &discount);
+//    printf("%.2f", price * discount / 10);
+//    return 0;
+//}
 
 
 //L1-052 2018我们要赢
@@ -1210,7 +1436,66 @@ int main()
 //	return 0;
 //}
 
+//L1-053 电子汪
+//#include <stdio.h>
+//int main()
+//{
+//	int A, B;
+//	scanf("%d %d", &A, &B);
+//	for (int i = 0; i < A + B; i++)
+//	{
+//		printf("Wang!");
+//	}
+//	return 0;
+//}
 
+////L1-054 福到了
+//#include <stdio.h>
+//int main()
+//{
+//	char ch;
+//	int input;
+//	scanf("%c %d",&ch,&input);
+//	getchar();
+//	char arr1[input][input+1];
+//	for(int i=0;i<input;i++)
+//	{
+//		gets(arr1[i]);
+//	}
+//	char arr2[input][input+1];
+//	for(int i=input-1;i>=0;i--)
+//	{
+//		for(int j=input-1;j>=0;j--)
+//		{
+//			if(arr1[i][j]!=' ')
+//				arr2[input-i-1][input-j-1]=ch;
+//			else
+//				arr2[input-i-1][input-j-1]=' ';
+//		}
+//	}
+//	int flag=0;
+//	for(int i=0;i<input;i++)
+//	{
+//		for(int j=0;j<input;j++)
+//		{
+//			if((arr1[i][j]!=' ' && arr2[i][j]==' ')|| (arr2[i][j]!=' ' && arr1[i][j]==' '))
+//				{
+//					flag=1;
+//					break;
+//				}
+//		}
+//		
+//	}
+//	if (flag == 0)
+//		printf("bu yong dao le\n");
+//	for(int i=0;i<input;i++)
+//	{
+//		for(int j=0;j<input;j++)
+//			printf("%c",arr2[i][j]);
+//		printf("\n");
+//	}
+//	return 0;
+// } 
 
 
 ////L1-057 PTA使我精神焕发
@@ -1269,6 +1554,22 @@ int main()
 //    }
 //    arr2[length-1] = '\0';
 //    printf("%s",arr2);
+//    return 0;
+//}
+
+
+//L1-060 心理阴影面积
+//#include <stdio.h>
+//#include <math.h>
+//int main()
+//{
+//    double height;
+//    int x,y;
+//    scanf("%d %d",&x,&y);
+//    int tmp=x-y;
+//    height=1.0*tmp/sqrt(2.0);
+//    double ret=height*sqrt(2)*50;
+//    printf("%d",(int)ret);
 //    return 0;
 //}
 
