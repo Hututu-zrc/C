@@ -165,30 +165,31 @@
 // } 
 
 
-//L1-009 N个数求和  (未过）
+////////L1-009 N个数求和  (未过）
 //#include <stdio.h>
 //int main()
 //{
 //	int input=0;
 //	scanf("%d",&input);
-//	int arr[10][3];
-//	int tmp1,tmp2;
+//	long long int arr[10][3];
+//	long long int tmp1,tmp2;
 //	for(int i=0;i<input;i++)
 //	{
-//		if(scanf("%d/%d",&tmp1,&tmp2))
+//		if(scanf("%lld/%lld",&tmp1,&tmp2))
 //		{
 //			arr[i][0]=tmp1; 
 //			arr[i][1]=tmp2; 
 //			arr[i][2]=0;
 //		}
-//		else if(scanf("-%d/%d",&tmp1,&tmp2))
+//		else if(scanf("-%lld/%lld",&tmp1,&tmp2))
 //		{
 //			arr[i][0]=tmp1; 
 //			arr[i][1]=tmp2; 
 //			arr[i][2]=1;
 //		}
 //	}
-//	int max=0,sum=0;
+//	long long int max=0,sum=0;
+//	//求出分母最大的数 
 //	for(int i=0;i<input;i++)
 //	{
 //		if(max<arr[i][1])
@@ -197,6 +198,7 @@
 //	int signal = 1;
 //	for (int i = max; i > 0; i++)
 //	{
+//		//寻找最小公倍数 
 //		for (int j = 0; j < input; j++)
 //		{
 //			signal = i % arr[j][1];
@@ -209,7 +211,7 @@
 //			break;
 //		}
 //	}
-//
+//	//同分母，相加减 
 //	for(int i=0;i<input;i++)
 //	{
 //		arr[i][0]*=(max/arr[i][1]);
@@ -219,27 +221,26 @@
 //			sum-=arr[i][0];
 //			
 //	}
-//	int min=max>sum?sum:max;
-//	for(int i=min-1;i>0;i--)
+//	long long int temp1=sum,temp2=max;
+//	while(temp2)
 //	{
-//		if(max%i==0 && sum%i==0)
-//		{
-//			min=i;
-//			break;
-//		}
-//	}
-//	sum/=min;
-//	max/=min;
-//	int ret1=sum/max,ret2=sum%max;
+//		long long int tmp=temp1%temp2;
+//		temp1=temp2;
+//		temp2=tmp;
+//	 } 
+//
+//	sum/=temp1;
+//	max/=temp1;
+//	long long int ret1=sum/max,ret2=sum%max;
 //	if(ret2==0)
 //		printf("%d",ret1);
 //	else if(ret1==0)
-//		printf("%d/%d",ret2,max);
+//		printf("%d/%d",sum,max);
 //	else
 //		printf("%d %d/%d",ret1,ret2,ret1);
 //	return 0;
 // } 
-//
+
 
 //L1-010 比较大小
 //#include <stdio.h>
@@ -1398,6 +1399,65 @@
 //	return 0;
 //}
 
+////L1-049 天梯赛座位分配  (不会）
+//#include <stdio.h>
+//void print(int num,int start,int row,int (*ans)[10])
+//{
+//    printf("#%d\n",num);
+//    for(int i=start;i<row+start;i++)
+//    {
+//        printf("%d",ans[i][0]);
+//        for(int j=1;j<10;j++)
+//        {
+//            printf(" %d",ans[i][j]);
+//        }
+//        printf("\n");
+//    }
+//}
+//int main()
+//{
+//    int input;
+//    scanf("%d",&input);
+//    int arr[100];
+//    int sum=0;
+//    for(int i=0;i<input;i++)
+//    {
+//        scanf("%d",&arr[i]);
+//        sum+=arr[i];
+//    }
+//    int ans[100][10];
+//    int flag=1;
+//    int k=flag;
+//    int count=0;
+//   	for(int i=1,j=1;i<=sum;i++,j++)
+//   	{
+//   		
+//   		for(int j=0;j<10;j++)
+//   		{
+//   			ans[i-1][j]=k;
+//   			k+=3;
+//		}
+//        k = flag;
+//		k+=30*j;
+//		count++;
+//        if (count == arr[flag - 1])
+//        {
+//            count = 0;
+//            flag++;
+//            k = flag;
+//            j = 0;
+//        }
+//	
+//	}
+//    int total=0;
+//    for(int i=1;i<=input;i++)
+//    {
+//        print(i,total,arr[i-1],ans);
+//        total+=arr[i-1];
+//    }
+//    return 0;
+//}
+
 ////L1-050 倒数第N个字符串
 //#include<stdio.h>
 //#include<math.h>
@@ -1557,6 +1617,69 @@
 //    return 0;
 //}
 
+//L1-059 敲笨钟
+//#include <stdio.h>
+//#include <string.h>
+//int main()
+//{
+//    int input = 0;
+//    scanf("%d", &input);
+//    getchar();
+//    char arr[100][102];
+//    for (int i = 0; i < input; i++)
+//    {
+//        fgets(arr[i], 102, stdin);
+//        int flag1 = 0, flag2 = 0;
+//        int count = 1;
+//        char temp[102];
+//        strcpy(temp, arr[i]);
+//        char* token = strtok(temp, " ");
+//        while (token)
+//        {
+//            token = strtok(NULL, " ");
+//            count++;
+//        }
+//        for (int fast = 0; arr[i][fast] != '\0'; fast++)
+//        {
+//
+//            if (arr[i][fast] == ',')
+//            {
+//                if (arr[i][fast - 1] == 'g' &&
+//                    arr[i][fast - 2] == 'n' &&
+//                    arr[i][fast - 3] == 'o')
+//                    flag1 = 1;
+//            }
+//            if (arr[i][fast] == '.')
+//            {
+//                if (arr[i][fast - 1] == 'g' &&
+//                    arr[i][fast - 2] == 'n' &&
+//                    arr[i][fast - 3] == 'o')
+//                    flag2 = 1;
+//            }
+//        }
+//        count--;
+//        if (flag1 == 1 && flag2 == 1)
+//        {
+//            char* token1 = strtok(arr[i], " ");
+//            printf("%s ", token1);
+//            int tmp = 1;
+//            while (tmp < count - 3)
+//            {
+//                token1 = strtok(NULL, " ");
+//                printf("%s ", token1);
+//                tmp++;
+//            }
+//            printf("qiao ben zhong.\n");
+//        }
+//        else
+//        {
+//            printf("Skipped\n");
+//            
+//        }
+//    }
+//    return 0;
+//}
+
 
 //L1-060 心理阴影面积
 //#include <stdio.h>
@@ -1573,14 +1696,239 @@
 //    return 0;
 //}
 
+//L1-064 估值一亿的AI核心代码
+//
+//#include <stdio.h>
+//#include <string.h>
+//#include<ctype.h>
+//char* RemoveBlank(char *p)
+//{
+//   char temp[1002];
+//    if(p[0]==' ')
+//        strcpy(temp,p+1)；
+//    for(int slow,fast=0;temp[fast]]!='\0';fast++)
+//    {
+//        while(temp[fast]==' ' &&temp[fast+1]==' ' )
+//        {
+//            while(isalpha(temp[fast+1])&& temp[fast]==' ')
+//                fast++;
+//            fast++;
+//        }
+//        p[slow++]=temp[fast];
+//    }
+//    p[slow]='\0';
+//    int sz=strlen(p);
+//    for(int i=sz-1;i>=0;i++)
+//    {
+//        if(isspace(p[i])))
+//            p[i]='\0';
+//        else
+//            break;
+//    }
+//
+//    return p;
+//}
+//int main()
+//{
+//    intinpupt;
+//    scanf("%d",&input);
+//    char p[1002];
+//    fegts(p,1002,stdin);
+//    //RemoveBlank
+//     char temp[1002];
+//    if(p[0]==' ')
+//        strcpy(temp,p+1)；
+//    for(int slow,fast=0;temp[fast]]!='\0';fast++)
+//    {
+//        while(temp[fast]==' ' &&temp[fast+1]==' ' )
+//        {
+//            while(isalpha(temp[fast+1])&& temp[fast]==' ')
+//                fast++;
+//            fast++;
+//        }
+//        p[slow++]=temp[fast];
+//    }
+//    p[slow]='\0';
+//    int sz=strlen(p);
+//    for(int i=sz-1;i>=0;i++)
+//    {
+//        if(isspace(p[i])))
+//            p[i]='\0';
+//        else
+//            break;
+//    }
+//    //大写转小写
+//
+//    //l or me convert to you
+//    for(m)
+//    return 0;
+//}
 
 
+//L1-071 前世档案
+//#include <stdio.h>
+//#include <math.h>
+//int main()
+//{
+//    int n=0,people=0;
+//    scanf("%d %d",&n,&people);
+//    char arr[people][31];
+//    int sum=(int)pow(2,n);
+//    for(int i=0;i<people;i++)
+//    {
+//        scanf("%s",&arr[i]);
+//        int flag=1,num=sum;
+//        for(int j=0;j<n;j++)
+//        {
+//            if(arr[i][j]=='n')
+//                flag+=num/2; 
+//            num /= 2;
+//        }
+//        printf("%d\n",flag);
+//    }
+//    return 0;
+//}
+//
+
+//L1-072 刮刮彩票  16/20
+//#include <stdio.h>
+//int main()
+//{
+//   int arr1[][2] = {
+//    {6, 10000},
+//    {7, 36},
+//    {8, 720},
+//    {9, 360},
+//    {10, 80},
+//    {11, 252},
+//    {12, 108},
+//    {13, 72},
+//    {14, 54},
+//    {15, 180},
+//    {16, 72},
+//    {17, 180},
+//    {18, 119},
+//    {19, 36},
+//    {20, 306},
+//    {21, 1080},
+//    {22, 144},
+//    {23, 1800},
+//    {24, 3600}
+//};
+//    int temp=1+2+3+4+5+6+7+8+9;
+//    int arr2[3][3];
+//    int flag[3][3];
+//    int start1 = 0, start2 = 0;
+//    for(int i=0;i<3;i++)
+//    {
+//          for(int j=0;j<3;j++)
+//        {
+//              scanf("%d",&arr2[i][j]);
+//              if(arr2[i][j]==0)
+//              {
+//                  flag[i][j]=1;
+//                  start1 = i; start2 = j;
+//              }
+//              temp-=arr2[i][j];
+//        }
+//    }
+//    int x=0,y=0;
+//    for(int i=0;i<3;i++)
+//    {
+//        scanf("%d %d",&x,&y);
+//        flag[x-1][y-1]=1;
+//    }
+//    for(int i=0;i<3;i++)
+//    {
+//        for(int j=0;j<3;j++)
+//        {
+//            if(flag[i][j]==1)
+//            {
+//                if(arr2[i][j]!=0)
+//                    printf("%d\n",arr2[i][j]);
+//            }
+//        }
+//    }
+//    arr2[start1][start2] = temp;
+//    int ope=0,signal=0;
+//    scanf("%d",&ope);
+//    switch(ope)
+//    {
+//            case 1:
+//               signal=arr2[0][0]+arr2[0][1]+arr2[0][2];
+//                break;
+//            case 2:
+//                signal=arr2[1][0]+arr2[1][1]+arr2[1][2];
+//                break;
+//            case 3:
+//                signal=arr2[2][0]+arr2[2][1]+arr2[2][2];
+//                break;
+//            case 4:
+//                signal=arr2[0][0]+arr2[1][0]+arr2[2][0];
+//                break;
+//            case 5:
+//                signal=arr2[0][1]+arr2[1][1]+arr2[2][1];
+//                break;
+//            case 6:
+//                signal=arr2[0][2]+arr2[1][2]+arr2[2][2];
+//                break;
+//            case 7:
+//                signal=arr2[0][0]+arr2[1][1]+arr2[2][2];
+//                break;
+//            case 8:
+//                signal=arr2[0][2]+arr2[1][1]+arr2[2][0];
+//                break;
+//    };
+//    for(int i=0;i<18;i++)
+//    {
+//        if(arr1[i][0]==signal)
+//        {
+//            printf("%d",arr1[i][1]);
+//            break;
+//        }
+//    }
+//    return 0;
+//}
 
 
-
-
-
-
-
-
-
+//L1-080 乘法口诀数列
+#include <stdio.h>
+int main()
+{
+    int a1, a2, n;
+    scanf("%d %d %d", &a1, &a2, &n);
+    int arr[n];
+    arr[0] = a1;
+    arr[1] = a2;
+    int slow = 0, fast = 1, count = 2;
+    int digit[100];
+    while (count <= n)
+    {
+        int temp = arr[slow] * arr[fast];
+        int num = 0;
+        while (temp)
+        {
+            digit[num] = temp % 10;
+            num++;
+            temp /= 10;
+        }
+        if (num == 0)
+        {
+            arr[count] = 0;
+            count++;
+        }
+        for (int i = num - 1; i >= 0; i--)
+        {
+            arr[count] = digit[i];
+            count++;
+        }
+        fast++;
+        slow++;
+    }
+    printf("%d", arr[0]);
+    for (int i = 1; i < n; i++)
+    {
+        printf(" %d", arr[i]);
+    }
+    return 0;
+}
