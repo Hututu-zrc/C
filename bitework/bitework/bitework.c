@@ -2085,8 +2085,3 @@
 //	return 0;
 //}
 
-int main()
-{
-	char arr[1][1];
-	return 0;
-}
