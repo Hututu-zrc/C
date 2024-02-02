@@ -2085,3 +2085,29 @@
 //	return 0;
 //}
 
+////写一个宏，计算结构体中某变量相对于首地址的偏移，并给出说明
+//#define OFFSET_OF(type, member) ((size_t) &(((type*)0)->member))
+////0强制类型转化为指针，访问member成员，得到的地址强制类型转化为size_t类型
+//struct Student
+//{
+//	char name;
+//	int age;
+//};
+//int main()
+//{
+//	struct Student stu;
+//	printf("name:%d\n", OFFSET_OF(struct Student, name));
+//	printf("name:%d", OFFSET_OF(struct Student, age));
+//	return 0;
+//}
+
+////写一个宏，可以将一个整数的二进制位的奇数位和偶数位交换。
+////主要的思想就是 取得其奇数位，将偶数位归零，右移交换
+////
+//#define CHANGE(num) (((num)&0xAAAAAAAA)>>1)| (((num)&0x55555555) <<1)
+//int main()
+//{
+//	int a = 5;
+//	printf("CHANEG : %d\n", CHANGE(a));
+//	return 0;
+//}
