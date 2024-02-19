@@ -1696,6 +1696,143 @@
 //    return 0;
 //}
 
+////L1-061 新胖子公式
+//#include <iostream>
+//#include <iomanip>
+//#include <math.h>
+//using namespace std;
+//int  main()
+//{
+//    double weight, height, ans;
+//    cin >> weight >> height;
+//    ans = weight / pow(height, 2);
+//    if (ans > 25)
+//    {
+//        cout << fixed << setprecision(1) << ans << endl;
+//        cout << "PANG" << endl;
+//    }
+//    else
+//    {
+//        cout << fixed << setprecision(1) << ans << endl;
+//        cout << "Hai Xing" << endl;
+//    }
+//    system("pasue");
+//    return 0;
+//}
+
+//L1-062 幸运彩票
+//#include <iostream>
+//using namespace std;
+//#include <vector>
+//#include <algorithm>
+//#include <string>
+//int main()
+//{
+//    int input;
+//    cin >> input;
+//    //string str[input];
+//    // for(int i=0;i<input;i++)
+//    //     cin>>str[i];
+//    // for(int i=0;i<input;i++)
+//    // {
+//    //     if(str[i][0]+str[i][1]+str[i][2]==str[i][3]+str[i][4]+str[i][5])
+//    //         cout<<"You are lucky!"<<endl;
+//    //     else
+//    //         cout<<"Wish you good luck."<<endl;
+//    // }
+//    vector<string> str;
+//    string temp;
+//    for (int i = 0; i < input; i++)
+//    {
+//        cin >> temp;
+//        str.push_back(temp);
+//    }
+//    for (int i = 0; i < input; i++)
+//    {
+//        if (str[i][0] + str[i][1] + str[i][2] == str[i][3] + str[i][4] + str[i][5])
+//            cout << "You are lucky!" << endl;
+//        else
+//            cout << "Wish you good luck." << endl;
+//    }
+//    system("pause");
+//    return 0;
+//}
+
+//L1-063 吃鱼还是吃肉
+
+//#include <iostream>
+//using namespace std;
+//#include <vector>
+//#define In(x) cin >> tmp; x.push_back(tmp);
+//
+//void My_Print(int input)
+//{
+//    switch (input)
+//    {
+//    case (1):
+//        cout << "duo chi yu!";;
+//        break;
+//    case (2):
+//        cout << "duo chi rou!";
+//        break;
+//    case (3):
+//        cout << "wan mei!";
+//        break;
+//    case (4):
+//        cout << "ni li hai!";
+//        break;
+//    case (5):
+//        cout << "shao chi rou!";
+//        break;
+//    }
+//}
+//
+//
+//void Judge(int T1, int T2, vector<int>& height, vector<int>& weight, int& i)
+//{
+//    if (height[i] < T1)
+//        My_Print(1);
+//    else if (height[i] > T1)
+//        My_Print(4);
+//    else
+//        My_Print(3);
+//    cout << " ";
+//    if (weight[i] > T2)
+//        My_Print(5);
+//    else if (weight[i] < T2)
+//        My_Print(2);
+//    else
+//        My_Print(3);
+//    cout << endl;
+//}
+//int main()
+//{
+//    int N;
+//    cin >> N;
+//    vector<int> sex;
+//    vector<int> height;
+//    vector<int> weight;
+//    for (int i = 0; i < N; i++)
+//    {
+//        int tmp;
+//
+//        In(sex);
+//        In(height);
+//        In(weight);
+//
+//    }
+//    for (int i = 0; i < N; i++)
+//    {
+//        if (sex[i])
+//            Judge(130, 27, height, weight, i);
+//        else
+//            Judge(129, 25, height, weight, i);
+//    }
+//
+//    system("pause");
+//    return 0;
+//}
+
 //L1-064 估值一亿的AI核心代码
 //
 //#include <stdio.h>
@@ -1764,6 +1901,147 @@
 //    return 0;
 //}
 
+//L1-065 嫑废话上代码
+//#include <iostream>
+//using namespace std;
+//int main()
+//{
+//    cout << "Talk is cheap. Show me the code." << endl;
+//    system("pause");
+//    return 0;
+//}
+
+//L1-066 猫是液体
+//#include <iostream>
+//using namespace std;
+//int main()
+//{
+//    int height, length, width;
+//    cin >> height >> length >> width;
+//    cout << height * width * length << endl;
+//    system("pause");
+//    return 0;
+//}
+
+////L1-067 洛希极限
+//#include <iostream>
+//#include <iomanip>
+//using namespace std;
+//int main()
+//{
+//    double rate, signal, dis;
+//    cin >> rate >> signal >> dis;
+//    if (signal)
+//        signal = 1.26;
+//    else
+//        signal = 2.455;
+//    if (rate * signal <= dis)
+//        cout << fixed << setprecision(2) << rate * signal << " " << "^_^" << endl;
+//
+//    else
+//        cout << fixed << setprecision(2) << rate * signal << " " << "T_T" << endl;
+//
+//    system("pause");
+//    return 0;
+//}
+
+
+//L1-068 调和平均
+//#include <iostream>
+//#include <iomanip>
+//using namespace std;
+//int main()
+//{
+//    int N;
+//    cin >> N;
+//    double sum = 0;
+//    for (int i = 0; i < N; i++)
+//    {
+//        double tmp;
+//        cin >> tmp;
+//        sum += 1 / tmp;
+//    }
+//    sum = sum / N;
+//    sum = 1 / sum;
+//    cout << fixed << setprecision(2) << sum << endl;
+//    system("pause");
+//    return 0;
+//}
+
+//
+////L1-069 胎压监测
+//#include<iostream>
+//using namespace std;
+//#include <vector>
+//int main()
+//{
+//    vector<int>v;
+//    int low, threshold, tmp, min = 10000, max = 0, signal = 0;
+//    for (int i = 0; i < 4; i++)
+//    {
+//        cin >> tmp;
+//        v.push_back(tmp);
+//        if (max < v[i])
+//            max = v[i];
+//        if (min > v[i])
+//        {
+//            min = v[i];
+//            signal = i + 1;
+//        }
+//    }
+//    cin >> low >> threshold;
+//    int count = 0;
+//    int diff = max - min;
+//    for (int i = 0; i < 4; i++)
+//    {
+//        if (v[i] < low)
+//        {
+//            count++;
+//            signal = i + 1;
+//        }
+//    }
+//    if (diff > threshold)
+//        count += 1;
+//    if (count == 1)
+//        cout << "Warning: please check #" << signal << "!" << endl;
+//    else if (count > 1)
+//        cout << "Warning: please check all the tires!" << endl;
+//    else
+//        cout << "Normal" << endl;
+//    system("pause");
+//    return 0;
+//}
+
+//L1-070 吃火锅
+#include <iostream>
+using namespace std;
+#include<string>
+int main()
+{
+    string str;
+    string arr = "chi1 huo3 guo1";
+    int num = 0, appear = -1, count = 0;
+    getline(cin, str);
+    while (str[0] != '.' && str.size()>1)
+    {
+        count++;
+        if (str.find(arr, 0) != -1)
+        {
+            num++;
+            if (appear == -1)
+                appear = count;
+        }
+        getline(cin, str);
+    }
+    cout << count << endl;
+    if (!num)
+        cout << "-_-#" << endl;
+    else
+        cout << appear << " " <<num << endl;
+    
+    system("pause");
+    return 0;
+}
 
 //L1-071 前世档案
 //#include <stdio.h>
@@ -1892,43 +2170,45 @@
 
 
 //L1-080 乘法口诀数列
-#include <stdio.h>
-int main()
-{
-    int a1, a2, n;
-    scanf("%d %d %d", &a1, &a2, &n);
-    int arr[n];
-    arr[0] = a1;
-    arr[1] = a2;
-    int slow = 0, fast = 1, count = 2;
-    int digit[100];
-    while (count <= n)
-    {
-        int temp = arr[slow] * arr[fast];
-        int num = 0;
-        while (temp)
-        {
-            digit[num] = temp % 10;
-            num++;
-            temp /= 10;
-        }
-        if (num == 0)
-        {
-            arr[count] = 0;
-            count++;
-        }
-        for (int i = num - 1; i >= 0; i--)
-        {
-            arr[count] = digit[i];
-            count++;
-        }
-        fast++;
-        slow++;
-    }
-    printf("%d", arr[0]);
-    for (int i = 1; i < n; i++)
-    {
-        printf(" %d", arr[i]);
-    }
-    return 0;
-}
+//#include <stdio.h>
+//int main()
+//{
+//    int a1, a2, n;
+//    scanf("%d %d %d", &a1, &a2, &n);
+//    int arr[n];
+//    arr[0] = a1;
+//    arr[1] = a2;
+//    int slow = 0, fast = 1, count = 2;
+//    int digit[100];
+//    while (count <= n)
+//    {
+//        int temp = arr[slow] * arr[fast];
+//        int num = 0;
+//        while (temp)
+//        {
+//            digit[num] = temp % 10;
+//            num++;
+//            temp /= 10;
+//        }
+//        if (num == 0)
+//        {
+//            arr[count] = 0;
+//            count++;
+//        }
+//        for (int i = num - 1; i >= 0; i--)
+//        {
+//            arr[count] = digit[i];
+//            count++;
+//        }
+//        fast++;
+//        slow++;
+//    }
+//    printf("%d", arr[0]);
+//    for (int i = 1; i < n; i++)
+//    {
+//        printf(" %d", arr[i]);
+//    }
+//    return 0;
+//}
+
+
