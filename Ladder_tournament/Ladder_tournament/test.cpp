@@ -1558,6 +1558,79 @@
 // } 
 
 
+////L1-055 谁是赢家
+//#include <iostream>
+//using namespace std;
+//#include <vector>
+//int main()
+//{
+//    int Pa, Pb;
+//    cin >> Pa >> Pb;
+//    vector <int>judge;
+//    int input = 0;
+//    int count01 = 0, count02 = 0;
+//    for (int i = 0; i < 3; i++)
+//    {
+//        cin >> input;
+//        judge.push_back(input);
+//        if (judge[i] == 0)
+//            count01++;
+//        else
+//            count02++;
+//    }
+//    if (Pa > Pb)
+//    {
+//        if (count01 > 0)
+//            cout << "The winner is a: " << Pa << " + " << count01 << endl;
+//        else
+//            cout << "The winner is b: " << Pb << " + " << count02 << endl;
+//    }
+//    else
+//    {
+//        if (count01 == 3)
+//            cout << "The winner is a: " << Pa << " + " << count01 << endl;
+//        else
+//            cout << "The winner is b: " << Pb << " + " << count02 << endl;
+//
+//    }
+//    system("pause");
+//    return 0;
+//}
+
+//L1-056 猜数字
+//#include <stdio.h>
+//int main()
+//{
+//    int input = 0;
+//    scanf("%d", &input);
+//    char name[input][10];
+//    int num[input];
+//    int sum = 0, average = 0;
+//    for (int i = 0; i < input; i++)
+//    {
+//        scanf("%s", &name[i]);
+//        scanf("%d", &num[i]);
+//        sum += num[i];
+//    }
+//    average = sum / input / 2;
+//    int diff[input], min = 0;
+//    for (int i = 0; i < input; i++)
+//    {
+//        if (average - num[i] < 0)
+//            diff[i] = -(average - num[i]);
+//        else
+//            diff[i] = average - num[i];
+//        if (diff[min] > diff[i])
+//            min = i;
+//    }
+//    printf("%d %s", average, name[min]);
+//
+//    return 0;
+//}
+//
+
+
+
 ////L1-057 PTA使我精神焕发
 //#include <stdio.h>
 //int main()
@@ -2013,35 +2086,35 @@
 //}
 
 //L1-070 吃火锅
-#include <iostream>
-using namespace std;
-#include<string>
-int main()
-{
-    string str;
-    string arr = "chi1 huo3 guo1";
-    int num = 0, appear = -1, count = 0;
-    getline(cin, str);
-    while (str[0] != '.' && str.size()>1)
-    {
-        count++;
-        if (str.find(arr, 0) != -1)
-        {
-            num++;
-            if (appear == -1)
-                appear = count;
-        }
-        getline(cin, str);
-    }
-    cout << count << endl;
-    if (!num)
-        cout << "-_-#" << endl;
-    else
-        cout << appear << " " <<num << endl;
-    
-    system("pause");
-    return 0;
-}
+//#include <iostream>
+//using namespace std;
+//#include<string>
+//int main()
+//{
+//    string str;
+//    string arr = "chi1 huo3 guo1";
+//    int num = 0, appear = -1, count = 0;
+//    getline(cin, str);
+//    while (str[0] != '.'|| str.size()>1)
+//    {
+//        count++;
+//        if (str.find(arr, 0) != -1)
+//        {
+//            num++;
+//            if (appear == -1)
+//                appear = count;
+//        }
+//        getline(cin, str);
+//    }
+//    cout << count << endl;
+//    if (!num)
+//        cout << "-_-#" << endl;
+//    else
+//        cout << appear << " " <<num << endl;
+//    
+//    system("pause");
+//    return 0;
+//}
 
 //L1-071 前世档案
 //#include <stdio.h>
@@ -2168,7 +2241,149 @@ int main()
 //    return 0;
 //}
 
+//L1-073 人与神
+//#include <iostream>
+//using namespace std;
+//int main()
+//{
+//    cout << "To iterate is human, to recurse divine." << endl;
+//    system("pause");
+//    return 0;
+//}
 
+//L1-074 两小时学完C语言
+//#include <iostream>
+//using namespace std;
+//int main()
+//{
+//    int total, speed, time;
+//    cin >> total >> speed >> time;
+//    cout << total - speed * time << endl;
+//    system("pause");
+//    return 0;
+//}
+
+////L1-075 强迫症
+//#include <iostream>
+//using namespace std;
+//#include <string>
+//int main()
+//{
+//    string str = "";
+//    cin >> str;
+//    int judge = stoi(str);
+//    if (judge > 9999)
+//    {
+//        string sub = str.substr(0, 4);
+//        cout << sub << "-" << str[4] << str[5];
+//    }
+//    else
+//    {
+//        int year = (str[0] - '0') * 10 + (str[1] - '0');
+//        if (year < 22)
+//            cout << "20" << str[0] << str[1] << "-" << str[2] << str[3] << endl;
+//        else
+//            cout << "19" << str[0] << str[1] << "-" << str[2] << str[3] << endl;
+//    }
+//    system("pause");
+//    return  0;
+//}
+//
+
+//L1-076 降价提醒机器人
+//#include <iostream>
+//using namespace std;
+//#include <vector>
+//#include <iomanip>
+//int main()
+//{
+//    int num = 0;
+//    double price;
+//    cin >> num >> price;
+//    double temp;
+//    vector <double>cost;
+//    for (int i = 0; i < num; i++)
+//    {
+//        cin >> temp;
+//        cost.push_back(temp);
+//        if (cost[i] < price)
+//            cout << "On Sale! " << fixed << setprecision(1) << cost[i] << endl;
+//    }
+//
+//    system("pause");
+//    return 0;
+//}
+
+////L1-077 大笨钟的心情
+//#include <iostream>
+//using namespace std;
+//#include<vector>
+//int main()
+//{
+//    vector <int>Mood;
+//    int temp = 0;
+//    for (int i = 0; i < 24; i++)
+//    {
+//        cin >> temp;
+//        Mood.push_back(temp);
+//    }
+//    while (cin >> temp && (temp >= 0 && temp <= 23))
+//    {
+//        if (temp < 0 || temp>23)
+//            break;
+//        if (Mood[temp] > 50)
+//            cout << Mood[temp] << " Yes" << endl;
+//        else
+//            cout << Mood[temp] << " No" << endl;
+//    }
+//    system("pause");
+//    return 0;
+//}
+//
+
+//L1-078 吉老师的回归
+// #include <iostream>
+//using namespace std;
+//#include <vector>
+//#include <string>
+//int judge(const string& str)
+//{
+//    int pos = -1;
+//    pos = str.find("easy");
+//    if (pos != -1)
+//        return pos;
+//    else
+//    {
+//        pos = str.find("qiandao");
+//        if (pos != -1)
+//            return pos;
+//    }
+//    return pos;
+//}
+//int main()
+//{
+//    int num, complete;
+//    cin >> num >> complete;
+//    vector<string> str;
+//    string input;
+//    getchar();
+//    for (int i = 0; i < num; i++)
+//    {
+//        
+//        getline(cin, input);
+//        str.push_back(input);
+//        if (judge(str[i]) == -1)
+//            complete--;
+//        if (complete == -1)
+//        {
+//            cout << str[i] << endl;
+//            return 0;
+//        }
+//    }
+//    cout << "Wo AK le" << endl;
+//    system("pause");
+//    return 0;
+//}
 //L1-080 乘法口诀数列
 //#include <stdio.h>
 //int main()
@@ -2212,3 +2427,367 @@ int main()
 //}
 
 
+
+
+//L1-081 今天我要赢
+//#include<stdio.h>
+//int main()
+//{
+//    printf("I'm gonna win! Today!\n");
+//    printf("2022-04-23");
+//        return 0;
+//}
+
+//L1-082 种钻石
+//#include <iostream>
+//using namespace std;
+//int main()
+//{
+//    int a, b;
+//    cin >> a >> b;
+//    cout << a / b << endl;
+//    system("pause");
+//    return 0;
+//}
+
+//L1-083 谁能进图书馆
+//#include <iostream>
+//using namespace std;
+//int main()
+//{
+//    int ban, company, visitor01, visitor02;
+//    cin >> ban >> company >> visitor01 >> visitor02;
+//    if (visitor01 >= ban && visitor02 >= ban)
+//    {
+//        cout << visitor01 << "-Y " << visitor02 << "-Y" << endl;
+//        cout << "huan ying ru guan" << endl;
+//    }
+//    else if (visitor01 >= ban && visitor02 < ban)
+//    {
+//        if (visitor01 >= company)
+//        {
+//            cout << visitor01 << "-Y " << visitor02 << "-Y" << endl;
+//            cout << "qing 1 zhao gu hao 2" << endl;
+//        }
+//        else
+//        {
+//
+//            cout << visitor01 << "-Y " << visitor02 << "-N" << endl;
+//            cout << "1: huan ying ru guan" << endl;
+//        }
+//    }
+//    else if (visitor02 >= ban && visitor01 < ban)
+//    {
+//        if (visitor02 >= company)
+//        {
+//            cout << visitor01 << "-Y " << visitor02 << "-Y" << endl;
+//            cout << "qing 2 zhao gu hao 1" << endl;
+//        }
+//        else
+//        {
+//
+//            cout << visitor01 << "-N " << visitor02 << "-Y" << endl;
+//            cout << "2: huan ying ru guan" << endl;
+//        }
+//    }
+//    else
+//    {
+//        cout << visitor01 << "-N " << visitor02 << "-N" << endl;
+//        cout << "zhang da zai lai ba" << endl;
+//    }
+//    system("pause");
+//    return 0;
+//}
+
+//L1-084 拯救外星人
+//#include<iostream>
+//using namespace std;
+//int main()
+//{
+//    int a, b;
+//    cin >> a >> b;
+//    long long int ret = 1;
+//    for (int i = 1; i <= a + b; i++)
+//        ret *= i;
+//    cout << ret << endl;
+//    system("pause");
+//    return 0;
+//}
+
+
+//L1-085 试试手气
+//#include <iostream>
+//using namespace std;
+//int main()
+//{
+//    int arr[6][6];
+//    for (int i = 0; i < 6; i++)
+//    {
+//        for (int j = 1; j < 7; j++)
+//            arr[i][j-1] = j;
+//    }
+//    int dot[6];
+//    cin >> dot[0] >> dot[1] >> dot[2] >> dot[3] >> dot[4] >> dot[5];
+//    int count;
+//    getchar();
+//    cin >> count;
+//    while (count--)
+//    {
+//        for (int i = 0; i < 6; i++)
+//        {
+//            arr[i][dot[i] - 1] = 0;
+//            for (int j = 5; j >= 0; j--)
+//            {
+//                if (arr[i][j] != 0)
+//                {
+//                    dot[i] = arr[i][j];
+//                    break;
+//
+//                }
+//            }
+//        }
+//    }
+//    cout << dot[0] <<" " << dot[1] << " " << dot[2] << " " << dot[3] << " " << dot[4] << " " << dot[5] << endl;
+//    system("pause");
+//    return 0;
+//}
+
+
+//L1-086 斯德哥尔摩火车上的题
+//#include <iostream>
+//using namespace std;
+//#include <string>
+//
+//string Change(string& str)
+//{
+//    string ret;
+//    for (int i = 1; str[i] != '\0'; i++)
+//    {
+//        if ((str[i] - '0') % 2 == (str[i - 1] - '0') % 2)
+//        {
+//            int max = (str[i] - '0') > (str[i - 1] - '0') ? (str[i] - '0') : (str[i - 1] - '0');
+//            ret += (max + '0');
+//        }
+//    }
+//    return ret;
+//}
+//
+//int main()
+//{
+//    string str1;
+//    string str2;
+//    cin >> str1;
+//    cin >> str2;
+//    string ret1;
+//    string ret2;
+//    ret1 = Change(str1);
+//    ret2 = Change(str2);
+//    int ret = ret1.compare(ret2);
+//    if (ret == 0)
+//        cout << ret1 << endl;
+//    else
+//    {
+//        cout << ret1 << endl;
+//        cout << ret2 << endl;
+//    }
+//    system("pause");
+//    return 0;
+//}
+
+//L1-087 机工士姆斯塔迪奥
+//#include <iostream>
+//using namespace std;
+//#include <vector>
+//int main()
+//{
+//    int row, col, Q;
+//    cin >> row >> col >> Q;
+//    int flag;
+//    int input = 0;
+//    vector<int>vc(100001);
+//    vector<int>vl(100001);
+//    int countc = 0, countr = 0;
+//    for (int i = 0; i < Q; i++)
+//    {
+//        cin >> flag >> input;
+//        if (flag && vc[input] != 1)
+//        {
+//            countc++;
+//            vc[input] = 1;
+//        }
+//        else if (flag == 0 && vl[input] != 1)
+//        {
+//            countr++;
+//            vl[input] = 1;
+//        }
+//    }
+//
+//    int ans = col * row - countc * row - countr * col + countc * countr;
+//    cout << ans << endl;
+//    system("pause");
+//    return 0;
+//}
+
+
+
+//L1-089 最好的文档
+//#include <iostream>
+//using namespace std;
+//int main()
+//{
+//    cout << "Good code is its own best documentation." << endl;
+//    return 0;
+//}
+
+////L1 - 090 什么是机器学习
+//#include <iostream>
+//using namespace std;
+//
+//int main()
+//{
+//    int a, b;
+//    cin >> a >> b;
+//    int ans = a + b;
+//    cout << ans - 16 << endl << ans - 3 << endl << ans - 1 << endl << ans << endl;
+//    system("pause");
+//    return 0;
+//}
+
+//L1-091 程序员买包子
+//#include <iostream>
+//using namespace std;
+//#include <string>
+//int main()
+//{
+//    int N, M, K;
+//    string X;
+//    cin >> N >> X >> M >> K;
+//    if (K == N)
+//        cout << "mei you mai " << X << " de" << endl;
+//    else if (K == M)
+//        cout << "kan dao le mai " << X << " de" << endl;
+//    else
+//        cout << "wang le zhao mai " << X << " de" << endl;
+//    system("pause");
+//    return 0;
+//}
+
+
+//L1-092 进化论
+//#include <iostream>
+//using namespace std;
+//int main()
+//{
+//    int N;
+//    cin >> N;
+//    int a, b, ans;
+//    for (int i = 0; i < N; i++)
+//    {
+//        cin >> a >> b >> ans;
+//        if (a * b == ans)
+//            cout << "Lv Yan" << endl;
+//        else if (a + b == ans)
+//            cout << "Tu Dou" << endl;
+//        else
+//            cout << "zhe du shi sha ya!" << endl;
+//    }
+//    system("pause");
+//    return 0;
+//}
+
+//L1-093 猜帽子游戏
+//#include <iostream>
+//using namespace std;
+//
+//int main()
+//{
+//    int N;
+//    cin >> N;
+//    int hat[N];
+//    for (int i = 0; i < N; i++)
+//        cin >> hat[i];
+//    int people = 0;
+//    cin >> people;
+//    int color[N];
+//
+//    for (int i = 0; i < people; i++)
+//    {
+//        int count0 = 0;
+//        int flag = 0;
+//        for (int j = 0; j < N; j++)
+//        {
+//            cin >> color[j];
+//            if (!color[j])
+//                count0++;
+//        }
+//        if (count0 == N)
+//        {
+//            cout << "Ai Ya" << endl;
+//            continue;
+//        }
+//        for (int k = 0; k < N; k++)
+//        {
+//            if (color[k] != 0 && color[k] != hat[k])
+//            {
+//                cout << "Ai Ya" << endl;
+//                flag = 1;
+//                break;
+//            }
+//        }
+//        if (flag != 1)
+//            cout << "Da Jiang!!!" << endl;
+//
+//    }
+//    system("pause");
+//    return 0;
+//}
+
+//L1-094 剪切粘贴
+//#include <iostream>
+//using namespace std;
+//#include <string>
+//int main()
+//{
+//    string S;
+//    cin >> S;
+//    int N;
+//    cin >> N;
+//    for (int i = 0; i < N; i++)
+//    {
+//        int xs, xd;
+//        cin >> xs >> xd;
+//        string ss, se;
+//        cin >> ss >> se;
+//        string temp;
+//        
+//        temp.append(S, xs - 1, xd - xs+1);
+//        S.erase(xs - 1, (xd - xs)+1);
+//        string start_end;
+//        start_end = ss;
+//        start_end += se;
+//        int start = -1;
+//        for (int j= 0; j < S.size();j++)
+//        {
+//            if (S[j] == ss[0])
+//            {
+//                string Primary;
+//                Primary.append(S, j, start_end.size());
+//                int ret = Primary.compare(start_end);
+//                if (ret == 0)
+//                {
+//                    start = j;
+//                    break;
+//                }
+//
+//            }
+//        }
+//        int end = start+ss.size();
+//        if (start != -1 && end != -1 && start + ss.size()==end)
+//            S.insert(end, temp);
+//        else
+//            S.append(temp);
+//    }
+//    cout << S << endl;
+//    system("pause");
+//    return 0;
+//}
