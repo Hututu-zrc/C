@@ -2791,3 +2791,115 @@
 //    system("pause");
 //    return 0;
 //}
+
+
+//L1-088 静静的推荐
+//#include <iostream>
+//using namespace std;
+//#include <set>
+//#include <utility>
+//int main()
+//{
+//    int num, recommend, interview;
+//    cin >> num >> recommend >> interview;
+//    multiset<pair<int, int>> s;
+//    s.insert(pair<int, int>(2, 10));
+//    s.insert(pair<int, int>(5, 20));
+//    s.insert(pair<int, int>(3, 30));
+//    s.insert(pair<int, int>(3, 50));
+//    for (set<pair<int, int>>::const_iterator it = s.begin(); it != s.end(); it++)
+//        cout << (*it).first << " " << (*it).second << endl;;
+//    cout << endl;
+//    system("pause");
+//    return 0;
+//}
+
+
+// 分数14/20;
+//#include <iostream>
+//using namespace std;
+//#include <set>
+//#include <utility>
+//int main()
+//{
+//    int num, recommend, interview;
+//    cin >> num >> recommend >> interview;
+//
+//    multiset<pair<int, int>> ms;
+//    set<int> s;
+//    int count = 0;
+//
+//    for (int i = 0; i < num; i++)
+//    {
+//        int ladder, pat;
+//        cin >> ladder >> pat;
+//        if (ladder >= 175)
+//        {
+//            s.insert(ladder);
+//            ms.insert(pair<int, int>(ladder, pat));
+//        }
+//    }
+//
+//    for (int i = 0; i < recommend; i++)
+//    {
+//        for (set<int>::iterator its = s.begin(); its != s.end(); its++)
+//        {
+//            int flag = 0, signal = 0;
+//            for (multiset<pair<int, int>>::iterator it = ms.begin(); it != ms.end(); )
+//            {
+//                
+//                if ((*it).first == (*its) && flag ==0)
+//                {
+//                    count++;
+//                    it=ms.erase(it); 
+//                    flag = 1;
+//
+//                }
+//                else if ((*it).first == (*its) && (*it).second >= interview)
+//                {
+//                    count++;
+//                    it=ms.erase(it);
+//                    signal = 1;
+//                }
+//                if (signal == 0 && it != ms.end())
+//                    it++;
+//                else if (it == ms.end() ||(*it).first > (*its) )
+//                    break;
+//                
+//            }
+//
+//        }
+//    }
+//    cout << count << endl;
+//    system("pause");
+//    return 0;
+//}
+
+
+//#include<iostream>
+//using namespace std;
+//int main()
+//{
+//	int arr[300];
+//	int num, recommend, interview;
+//	cin >> num >> recommend >> interview;
+//	int count = 0;
+//	while(num--)
+//	{
+//		int ladder_score, pat;
+//		cin >> ladder_score >> pat;
+//		if (ladder_score >= 175)
+//		{
+//			if (pat >= interview)
+//				count++;
+//			else if (arr[ladder_score] < recommend)
+//			{
+//				arr[ladder_score]++;
+//				count++;
+//			}
+//		}
+//	}
+//	cout << count << endl;
+//	system("pause");
+//	return 0;
+//}
