@@ -204,10 +204,3 @@ using namespace std;
 //    return 0;
 //}
 
-
-int main()
-{
-	cout << "我成功了" << endl;
-	cout << "3.11" << endl;
-	return 0;
-}
