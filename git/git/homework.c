@@ -2232,15 +2232,17 @@
 //	return 0;
 //}
 
-void func(int(*arr)[3])
-{
+//void func(int(*arr)[3])
+//{
+//
+//}
+//
+//
+//int main()
+//{
+//	int arr[3][3];
+//	func(arr);
+//	return 0;
+//}
 
-}
 
-
-int main()
-{
-	int arr[3][3];
-	func(arr);
-	return 0;
-}
