@@ -2,7 +2,5 @@
 
 int main()
 {
-	char a[] = "hello \
-world";
-	printf(a);
+	char ch[] = "";
 }
