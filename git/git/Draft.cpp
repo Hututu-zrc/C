@@ -1,6 +1,6 @@
-#include<iostream>
-#include <string>
-using namespace std;
+//#include<iostream>
+//#include <string>
+//using namespace std;
 //class Solution {
 //public:
 //    bool repeatedSubstringPattern(string s) {
@@ -204,3 +204,88 @@ using namespace std;
 //    return 0;
 //}
 
+#include <iostream>
+using namespace std;
+#include <list>
+#include <stack>
+
+
+
+struct ListNode {
+    int val;
+    struct ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
+};
+class PalindromeList {
+public:
+    bool chkPalindrome(ListNode* A) {
+        // write code here
+        if (A->next == nullptr)
+            return true;
+        ListNode* fast, * slow;
+        slow = A;
+        fast = A->next;
+        stack<int> S;
+        while (fast)
+        {
+            if (slow->val != fast->val)
+                S.push(slow->val);
+            else
+            {
+                fast = fast->next;
+                while (fast && !S.empty())
+                {
+                    if (fast->val != S.top())
+                        return false;
+                    else
+                        S.pop();
+                    fast = fast->next;
+
+                }
+                if (fast == nullptr && S.empty())
+                    return true;
+                else
+                    return false;
+
+            }
+            slow = slow->next;
+            fast = fast->next;
+        }
+        return false;
+    }
+};
+int main()
+{
+    ListNode* A, * cur;
+   
+    ListNode* B = new ListNode(1);
+    A=cur = B;
+   // cur = cur->next;
+
+    B = new ListNode(2);
+    cur->next = B;
+    cur = cur->next;
+    B = new ListNode(3);
+    cur->next = B;
+    cur = cur->next;
+
+    B = new ListNode(1);
+    cur->next = B;
+    cur = cur->next;
+
+
+    PalindromeList p;
+    bool ret=p.chkPalindrome(A);
+    if (ret)
+        cout << "ture" << endl;
+    else
+        cout << "false" << endl;
+    cur = A;
+    while (cur)
+    {
+        ListNode* tmp = cur;
+        cur = cur->next;
+        delete(tmp);
+    }
+	return 0;
+}
