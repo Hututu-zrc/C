@@ -347,64 +347,95 @@
 //    return 0;
 //}
 
+//#include <iostream>
+//using namespace std;
+//#include <string>
+//struct TreeNode {
+//    char val;
+//    struct TreeNode* left;
+//    struct TreeNode* right;
+//
+//    TreeNode(char x) : val(x), left(nullptr), right(nullptr) {}
+//};
+//
+//class Solution
+//{
+//public:
+//    void CreateTree(TreeNode *head,string& s, int &pos)
+//    {
+//        if (pos >= s.size())   return;
+//        //abc##de#g##f###
+//        
+//        for (int i = pos; i < s.size(); i++)
+//        {
+//            if (s[pos] == '#')
+//            {
+//                head = nullptr;
+//                return;
+//            }
+//            else
+//            {
+//                head = new TreeNode(s[pos]);
+//                CreateTree(head->left, s, ++pos);
+//                CreateTree(head->left, s,++pos);
+//            }
+//        }
+//   }
+//    void InOrder(string& s, TreeNode* cur)
+//    {
+//        if (cur == nullptr)  return;
+//
+//        InOrder(s, cur->left);
+//        s.push_back(cur->val);
+//        InOrder(s, cur->right);
+//    }
+//
+//};
+//int main()
+//{
+//    string s;
+//    getline(cin, s);
+//    Solution solution;
+//    int start = 0;
+//    TreeNode* head = nullptr;
+//    solution.CreateTree(head,s, start);
+//    string ret;
+//    solution.InOrder(ret, head);
+//    for (auto& ch : ret)
+//    {
+//        cout << ch << " ";
+//    }
+//    cout << endl;
+//    return 0;
+//}
+
 #include <iostream>
 using namespace std;
-#include <string>
-struct TreeNode {
-    char val;
-    struct TreeNode* left;
-    struct TreeNode* right;
-
-    TreeNode(char x) : val(x), left(nullptr), right(nullptr) {}
-};
-
-class Solution
+struct TreeNode
 {
-public:
-    void CreateTree(TreeNode *head,string& s, int &pos)
-    {
-        if (pos >= s.size())   return;
-        //abc##de#g##f###
-        
-        for (int i = pos; i < s.size(); i++)
-        {
-            if (s[pos] == '#')
-            {
-                head = nullptr;
-                return;
-            }
-            else
-            {
-                head = new TreeNode(s[pos]);
-                CreateTree(head->left, s, ++pos);
-                CreateTree(head->left, s,++pos);
-            }
-        }
-   }
-    void InOrder(string& s, TreeNode* cur)
-    {
-        if (cur == nullptr)  return;
-
-        InOrder(s, cur->left);
-        s.push_back(cur->val);
-        InOrder(s, cur->right);
-    }
-
+	int val;
+	TreeNode* left;
+	TreeNode* right;
+	TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 };
+
+void TreeDestroy(TreeNode* root)
+{
+	if (root == nullptr)
+		return;
+	TreeDestroy(root->left);
+	TreeDestroy(root->right);
+	free(root);
+	root = nullptr;
+}
 int main()
 {
-    string s;
-    getline(cin, s);
-    Solution solution;
-    int start = 0;
-    TreeNode* head = nullptr;
-    solution.CreateTree(head,s, start);
-    string ret;
-    solution.InOrder(ret, head);
-    for (auto& ch : ret)
-    {
-        cout << ch << " ";
-    }
-    cout << endl;
-    return 0;
+	TreeNode* root1 = nullptr;
+	root1 = new TreeNode(1);
+	root1->left = new TreeNode(2);
+	root1->right= new TreeNode(3);
+	root1->right->right = new TreeNode(4);
+	root1->left->left = new TreeNode(5);
+	TreeDestroy(root1);
+	return 0;
 }
